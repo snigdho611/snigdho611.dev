@@ -1,0 +1,11 @@
+body
+{
+    background-color: rgb(236, 236, 125);
+}
+
+button
+{
+    border-radius: 20px;
+    padding:10px;
+    background-color: greenyellow;
+}
