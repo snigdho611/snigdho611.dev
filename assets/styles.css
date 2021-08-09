@@ -2,3 +2,26 @@ body
 {
     background-color: rgb(174, 174, 174);
 }
+
+#identity-bar
+{
+    background-color: hotpink;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 10px; 
+}
+
+#identity-bar #photo 
+{
+    background-color: indigo;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: url("../assets/images/profile.jpg");
+    border-width: 2px;
+    border-style: solid;
+    border-color: lavender;
+    background-size: cover;
+
+}
+
