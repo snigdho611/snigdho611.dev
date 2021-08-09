@@ -3,25 +3,61 @@ body
     background-color: rgb(174, 174, 174);
 }
 
+body, html
+{
+    height: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+#container
+{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    top: 0;
+    padding-left: 10px;
+}
+
 #identity-bar
 {
     background-color: hotpink;
     display: flex;
     flex-direction: column;
-    padding: 10px 10px 10px 10px; 
+    padding: 10px 60px 10px 60px; 
+    /* height: 100%; */
+    /* width: 200px; */
 }
 
 #identity-bar #photo 
 {
     background-color: indigo;
-    width: 180px;
-    height: 180px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     background: url("../assets/images/profile.jpg");
     border-width: 2px;
     border-style: solid;
     border-color: lavender;
     background-size: cover;
-
 }
 
+#identity-bar #name
+{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0px 10px 0px;
+    background: lavenderblush;
+    text-align: center;
+}
+
+#identity-bar #name a
+{
+    text-decoration: none;
+    color: black;
+}
+
+#identity-bar #identity-list
+{
+    text-align: center;
+}
