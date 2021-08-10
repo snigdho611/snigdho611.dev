@@ -96,16 +96,16 @@ body, html
 
 #content-bar
 {
-    margin-right: 5%;
+    margin-right: 3%;
     margin-top: 220px;
-    margin-left: 5%;
-    width: 800px;
+    margin-left: 4%;
+    width: 830px;
 }
 
 #content-bar #description
 {
     background-color: burlywood;
-    padding: 5px 10px 5px 10px;
+    padding: 10px 15px 10px 15px;
     text-align: justify;
 }
 
@@ -114,4 +114,47 @@ body, html
     display: flex;
     flex-direction: row;
     color: brown;
+}
+
+#domains-list .domain-container
+{
+    background-color: coral;
+    border: 1px solid black;
+    width: 25%;
+    height: 150px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+}
+
+#domains-list .domain-container .domain-icon
+{
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#domains-list .domain-container #web .domain-icon
+{
+    background-image: url('../assets/images/icons/web.png');
+    background-color: cornflowerblue;
+}
+#domains-list .domain-container #software .domain-icon
+{
+    background-image: url('../assets/images/icons/software.png');
+    background-color: rgb(237, 100, 210);
+}
+#domains-list .domain-container #research .domain-icon
+{
+    background-image: url('../assets/images/icons/research.png');
+    background-color: rgb(100, 237, 127);
+}
+#domains-list .domain-container #problem-solving .domain-icon
+{
+    background-image: url('../assets/images/icons/problem-solving.png');
+    background-color: rgb(237, 194, 100);
 }
