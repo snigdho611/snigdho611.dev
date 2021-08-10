@@ -337,7 +337,7 @@ body, html
         width: 70px;
         min-width: 70px;
         height: 70px;
-        margin: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 10px;
     }
 
 
@@ -346,7 +346,7 @@ body, html
         flex-direction: row;
         margin-top: 40px;
         position: relative;
-        right: -25%;
+        right: -23%;
     }
 
     #identity-bar #identity-list a
