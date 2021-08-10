@@ -20,6 +20,11 @@ body, html
     --dark-grey: rgb(33, 33, 33);
 }
 
+#mobile-name
+{
+    display: none;
+}
+
 #container
 {
     display: flex;
@@ -77,6 +82,8 @@ body, html
 #identity-bar #identity-list
 {
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .list-items
@@ -182,18 +189,22 @@ body, html
 #domains-list .domain-container #web:hover
 {
     background-color: rgb(72, 98, 148);
+    /* background-color: rgb(72, 98, 148); */
 }
 #domains-list .domain-container #software:hover
 {
-    background-color: rgb(118, 67, 141);
+    background-color: rgb(72, 98, 148);
+    /* background-color: rgb(118, 67, 141); */
 }
 #domains-list .domain-container #research:hover
 {
-    background-color: rgb(60, 131, 74);
+    background-color: rgb(72, 98, 148);
+    /* background-color: rgb(60, 131, 74); */
 }
 #domains-list .domain-container #problem-solving:hover
 {
-    background-color: rgb(58, 120, 143);
+    background-color: rgb(72, 98, 148);
+    /* background-color: rgb(58, 120, 143); */
 }
 
 #domains-list .domain-container #web .domain-icon
@@ -230,21 +241,15 @@ body, html
     {
         display: flex;
         flex-direction: column;
-        /* background-color: aqua; */
     }
 
     #domains-list .domain-container
     {
-        width: 80%;
+        width: 30%;
+        min-width: 30%;
         height: 130px;
-        /* text-align: center; */
         display: flex;
         flex-direction: column;
-        /* margin-right: 10px;
-        margin-left: 10px;
-        margin-top: 10px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 5px var(--dark-grey); */
         align-self: center;
     }
 
@@ -263,21 +268,160 @@ body, html
 
 @media screen and (max-width: 760px) 
 {
+    html, body
+    {
+        max-width: 100%;
+        overflow-x: hidden;
+        /* background-color: aqua; */
+        margin: 0 auto;
+    }
     #container
     {
         flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+        /* width: 760px; */
+        /* margin-right: 0; */
+    }
+
+
+    #mobile-name
+    {
+        /* all: unset; */
+        display: inherit;
+        font-size: 20px;
+        font-weight: bold;
+        /* padding: 10px 0px 10px 0px; */
+        text-align: left;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        color: var(--dark-grey);
+        /* border: 1px solid black; */
+    }
+
+    #mobile-name a
+    {
+        text-decoration: none;
+        color: var(--dark-grey);
+    }
+
+    #mobile-name a:hover
+    {
+        color: var(--light-white);
     }
 
     #identity-bar
     {
-        /* background-color: var(--grey); */
-        /* display: flex; */
         flex-direction: row;
-        /* padding: 10px 0px 10px 0px; 
-        width: 320px;
-        max-width: 320px; */
-        margin-left: 0%;
+        margin-left: 0;
+        margin-right: 0;
         min-width: 100%;
-        /* margin-right: 0%; */
+        /* display: none; */
     }  
+
+    #identity-bar div
+    {
+        /* border: 1px solid black; */
+    }
+
+    #identity-bar #name
+    {
+        font-size: 14px;
+        margin-top: 0px;
+        margin-left: 8px;
+        display: none;
+    }
+
+    #identity-bar #photo 
+    {
+        width: 70px;
+        min-width: 70px;
+        height: 70px;
+        margin: 0px 0px 0px 0px;
+    }
+
+
+    #identity-bar #identity-list
+    {
+        flex-direction: row;
+        margin-top: 40px;
+        position: relative;
+        right: -25%;
+    }
+
+    #identity-bar #identity-list a
+    {
+        font-size: 14px;
+        padding: 0px 2px 0px 2px;
+        border-right: 1px solid var(--light-white);
+        border-left: 1px solid var(--light-white);
+    }
+
+    #content-bar
+    {
+        margin-top: 40px;
+    }
+
+    #content-bar #description
+    {
+        /* padding-top: 100px; */
+        width: 300px;
+        margin-left: 0;
+    }
+
+    #domains-list
+    {
+        /* display: flex;
+        flex-direction: row;
+        color: brown; */
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+    }
+
+    #domains-list .domain-container
+    {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5px;
+        margin-left: 15px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px var(--dark-grey);
+        text-align: center; 
+        width: 300px;
+        height: 100px;
+        /* background-color: lawngreen; */
+        font-size: 14px;
+    }
+
+    #domains-list .domain-container .domain-icon
+    {
+        /* width: 50px; */
+        margin:0 auto;
+        background-size: cover;
+        height: 40px;
+        width: 40px;
+        /* justify-content: left; */
+        margin: 0 0;
+        margin-bottom: 5px;
+    }
+
+    #domains-list .domain-container a
+    {
+        height: 80px;
+    }
+
+    #domains-list .domain-container #web,
+    #domains-list .domain-container #software,
+    #domains-list .domain-container #research,
+    #domains-list .domain-container #problem-solving
+    {
+        height: 80px;
+        /* display: flex;
+        flex-direction: row; */
+        text-align: left;
+        padding-left: 30px;
+    }
 }
