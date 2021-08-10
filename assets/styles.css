@@ -32,8 +32,10 @@ body, html
     display: flex;
     flex-direction: column;
     padding: 10px 0px 10px 0px; 
-    margin-left: 10px; 
-    width: 300px;
+    margin-left: 15%;
+    min-width: 280px;
+    width: 320px;
+    max-width: 320px;
 }
 
 #identity-bar #photo 
@@ -89,4 +91,11 @@ body, html
 .list-items a:hover
 {
     color: lemonchiffon;
+}
+
+#domains-list
+{
+    display: flex;
+    flex-direction: row;
+    color: brown;
 }
