@@ -24,7 +24,6 @@ body, html
     flex-direction: row;
     min-height: 100vh;
     top: 0;
-    padding-left: 300px;
 }
 
 #identity-bar
@@ -32,14 +31,13 @@ body, html
     background-color: var(--darkgrey);
     display: flex;
     flex-direction: column;
-    padding: 10px 60px 10px 60px; 
-    /* height: 100%; */
-    /* width: 200px; */
+    padding: 10px 0px 10px 0px; 
+    margin-left: 10px; 
+    width: 300px;
 }
 
 #identity-bar #photo 
 {
-    /* background-color: indigo; */
     width: 170px;
     height: 170px;
     border-radius: 50%;
@@ -49,6 +47,8 @@ body, html
     border-color: var(--sidebar-link);
     background-size: cover;
     box-shadow: 2px 1px 10px var(--sidebar-photo-shadow);
+    justify-content: center;
+    margin:0 auto;
 }
 
 #identity-bar #name
@@ -56,7 +56,6 @@ body, html
     font-size: 18px;
     font-weight: bold;
     padding: 10px 0px 10px 0px;
-    /* background: lavenderblush; */
     text-align: center;
 }
 
@@ -90,13 +89,4 @@ body, html
 .list-items a:hover
 {
     color: lemonchiffon;
-    /* text-decoration: wavy; */
-    /* background-color: lightblue; */
 }
-
-/* .list-items a
-{
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
-} */
