@@ -12,10 +12,11 @@ body, html
 
 :root
 {
-    --darkgrey: rgb(74, 74, 74);
-    --sidebar-link: lavender;
-    --sidebar-name: rgb(255, 231, 235);
-    --sidebar-photo-shadow: rgb(33, 33, 33);
+    --grey: rgb(74, 74, 74);
+    --light-grey: rgb(204, 204, 204);
+    --light-white: lavender;
+    --red-white: rgb(255, 231, 235);
+    --dark-grey: rgb(33, 33, 33);
 }
 
 #container
@@ -28,7 +29,7 @@ body, html
 
 #identity-bar
 {
-    background-color: var(--darkgrey);
+    background-color: var(--grey);
     display: flex;
     flex-direction: column;
     padding: 10px 0px 10px 0px; 
@@ -46,9 +47,9 @@ body, html
     background: url("../assets/images/profile.jpg");
     border-width: 2px;
     border-style: solid;
-    border-color: var(--sidebar-link);
+    border-color: var(--light-white);
     background-size: cover;
-    box-shadow: 2px 1px 10px var(--sidebar-photo-shadow);
+    box-shadow: 2px 1px 10px var(--dark-grey);
     justify-content: center;
     margin:0 auto;
 }
@@ -59,12 +60,12 @@ body, html
     font-weight: bold;
     padding: 10px 0px 10px 0px;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 40px;
 }
 
 #identity-bar #name a
 {
-    color: var(--sidebar-name);
+    color: var(--red-white);
 }
 
 #identity-bar a:link, #identity-bar a:visited
@@ -85,7 +86,7 @@ body, html
 
 .list-items a
 {
-    color: var(--sidebar-link);
+    color: var(--light-white);
     transition: color 500ms;
 }
 
@@ -97,16 +98,17 @@ body, html
 #content-bar
 {
     margin-right: 3%;
-    margin-top: 220px;
+    margin-top: 230px;
     margin-left: 4%;
     width: 830px;
 }
 
 #content-bar #description
 {
-    background-color: burlywood;
+    /* background-color: burlywood; */
     padding: 10px 15px 10px 15px;
     text-align: justify;
+    margin-bottom: 15px;
 }
 
 #domains-list
@@ -118,13 +120,40 @@ body, html
 
 #domains-list .domain-container
 {
-    /* background-color: coral; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 25%;
     height: 150px;
     text-align: center;
     display: flex;
     flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: var(--grey);
+    box-shadow: 2px 2px 5px var(--dark-grey);
+    transition: background-color 500ms, color 500ms;
+
+    
+}
+
+
+#domains-list .domain-container a
+{
+
+}
+
+#domains-list .domain-container:hover
+{
+    background-color: honeydew;
+    border-radius: 10px;
+}
+
+#domains-list .domain-container a
+{
+    text-decoration: none;
+    color: var(--light-grey);
+    font-weight: bold;
 }
 
 #domains-list .domain-container .domain-icon
@@ -134,7 +163,9 @@ body, html
     height: 60px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     display: block;
+    /* filter: grayscale(1) invert(1); */
 }
 
 #domains-list .domain-container #web,
@@ -142,24 +173,27 @@ body, html
 #domains-list .domain-container #research,
 #domains-list .domain-container #problem-solving
 {
-    padding-top: 10px;
+    padding-top: 20px;
+    height: 130px;
+    border-radius: 10px;
+    color: var(--dark-grey);
 }
 
 #domains-list .domain-container #web
 {
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
 }
 #domains-list .domain-container #software
 {
-    background-color: rgb(237, 100, 210);
+    /* background-color: rgb(237, 100, 210); */
 }
 #domains-list .domain-container #research
 {
-    background-color: rgb(100, 237, 127);
+    /* background-color: rgb(100, 237, 127); */
 }
 #domains-list .domain-container #problem-solving
 {
-    background-color: rgb(237, 194, 100);
+    /* background-color: rgb(237, 194, 100); */
 }
 
 #domains-list .domain-container #web .domain-icon
@@ -182,7 +216,11 @@ body, html
     background-image: url('../assets/images/icons/problem-solving.png');
 }
 
-#domains-list .domain-container #problem-solving .domain-icon
+#domains-list .domain-container #web .domain-footer
 {
-    
+    bottom: 0px;
+    /* background-color: crimson; */
+    /* padding: 10px 10px 10px 10px; */
+    /* height: 100%; */
 }
+
