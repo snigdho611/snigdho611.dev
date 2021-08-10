@@ -15,6 +15,7 @@ body, html
     --grey: rgb(74, 74, 74);
     --light-grey: rgb(204, 204, 204);
     --light-white: lavender;
+    --dim-white: rgb(255, 234, 255);
     --red-white: rgb(255, 231, 235);
     --dark-grey: rgb(33, 33, 33);
 }
@@ -120,7 +121,6 @@ body, html
 
 #domains-list .domain-container
 {
-    /* border: 1px solid black; */
     width: 25%;
     height: 150px;
     text-align: center;
@@ -130,29 +130,19 @@ body, html
     margin-left: 10px;
     margin-top: 10px;
     border-radius: 10px;
-    background-color: var(--grey);
     box-shadow: 2px 2px 5px var(--dark-grey);
-    transition: background-color 500ms, color 500ms;
-
-    
 }
 
 
 #domains-list .domain-container a
 {
 
-}
-
-#domains-list .domain-container:hover
-{
-    background-color: honeydew;
-    border-radius: 10px;
 }
 
 #domains-list .domain-container a
 {
     text-decoration: none;
-    color: var(--light-grey);
+    color: var(--dark-grey);
     font-weight: bold;
 }
 
@@ -175,25 +165,35 @@ body, html
 {
     padding-top: 20px;
     height: 130px;
+    background-color: rgb(213, 213, 213);
     border-radius: 10px;
-    color: var(--dark-grey);
+    transition: background-color 500ms, color 500ms;
 }
 
-#domains-list .domain-container #web
+#domains-list .domain-container #web:hover,
+#domains-list .domain-container #software:hover,
+#domains-list .domain-container #research:hover,
+#domains-list .domain-container #problem-solving:hover
 {
-    /* background-color: cornflowerblue; */
+    /* background-color: var(--grey); */
+    color: var(--light-white);
 }
-#domains-list .domain-container #software
+
+#domains-list .domain-container #web:hover
 {
-    /* background-color: rgb(237, 100, 210); */
+    background-color: rgb(72, 98, 148);
 }
-#domains-list .domain-container #research
+#domains-list .domain-container #software:hover
 {
-    /* background-color: rgb(100, 237, 127); */
+    background-color: rgb(118, 67, 141);
 }
-#domains-list .domain-container #problem-solving
+#domains-list .domain-container #research:hover
 {
-    /* background-color: rgb(237, 194, 100); */
+    background-color: rgb(60, 131, 74);
+}
+#domains-list .domain-container #problem-solving:hover
+{
+    background-color: rgb(58, 120, 143);
 }
 
 #domains-list .domain-container #web .domain-icon
@@ -224,3 +224,60 @@ body, html
     /* height: 100%; */
 }
 
+@media screen and (max-width: 1050px) 
+{
+    #domains-list 
+    {
+        display: flex;
+        flex-direction: column;
+        /* background-color: aqua; */
+    }
+
+    #domains-list .domain-container
+    {
+        width: 80%;
+        height: 130px;
+        /* text-align: center; */
+        display: flex;
+        flex-direction: column;
+        /* margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px var(--dark-grey); */
+        align-self: center;
+    }
+
+    #domains-list .domain-container #web,
+    #domains-list .domain-container #software,
+    #domains-list .domain-container #research,
+    #domains-list .domain-container #problem-solving
+    {
+        /* padding-top: 20px; */
+        height: 110px;
+        /* background-color: rgb(213, 213, 213);
+        border-radius: 10px;
+        transition: background-color 500ms; */
+    }
+}
+
+@media screen and (max-width: 760px) 
+{
+    #container
+    {
+        flex-direction: column;
+    }
+
+    #identity-bar
+    {
+        /* background-color: var(--grey); */
+        /* display: flex; */
+        flex-direction: row;
+        /* padding: 10px 0px 10px 0px; 
+        width: 320px;
+        max-width: 320px; */
+        margin-left: 0%;
+        min-width: 100%;
+        /* margin-right: 0%; */
+    }  
+}
