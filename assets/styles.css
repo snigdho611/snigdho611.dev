@@ -33,7 +33,7 @@ body, html
     flex-direction: column;
     padding: 10px 0px 10px 0px; 
     margin-left: 15%;
-    min-width: 280px;
+    min-width: 230px;
     width: 320px;
     max-width: 320px;
 }
@@ -55,10 +55,11 @@ body, html
 
 #identity-bar #name
 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     padding: 10px 0px 10px 0px;
     text-align: center;
+    margin-top: 25px;
 }
 
 #identity-bar #name a
@@ -79,7 +80,7 @@ body, html
 .list-items
 {
     padding: 5px 0px 5px 0px;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .list-items a
@@ -91,6 +92,21 @@ body, html
 .list-items a:hover
 {
     color: lemonchiffon;
+}
+
+#content-bar
+{
+    margin-right: 5%;
+    margin-top: 220px;
+    margin-left: 5%;
+    width: 800px;
+}
+
+#content-bar #description
+{
+    background-color: burlywood;
+    padding: 5px 10px 5px 10px;
+    text-align: justify;
 }
 
 #domains-list
