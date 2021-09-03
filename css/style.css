@@ -1,5 +1,6 @@
 *
 {
+    font-family: sans-serif;
     font-family: 'Agency FB', arial;
     font-size: 19px;
 }
@@ -63,6 +64,7 @@ body
 {
     font-size: 25px; 
     font-weight: bold;
+    text-align: center;
 }
 
 #navlinks
@@ -78,6 +80,8 @@ body
     font-size: 20px;
     color: var(--bg-info);
     transition: background-color 0.5s, color 0.5s;
+    font-size: 19px;
+
 }
 
 #navlinks a:hover
