@@ -1,0 +1,99 @@
+*
+{
+    font-family: 'Agency FB', arial;
+    font-size: 19px;
+}
+
+html, body
+{
+    height: 100%;
+}
+
+body
+{
+    background-color: var(--bg-dark)
+}
+
+#sidebar{
+    position: sticky;
+    top: 45px;
+    color: var(--bg-info);
+    margin-top: 20px;
+}
+
+#body-container, #body-separator
+{
+    height: 100%;
+}
+
+.bg-black
+{
+    background-color: rgb(28, 28, 28);
+}
+
+@media screen and (max-width: 768px)
+{
+    html, body
+    {
+        height: initial;
+    }
+}
+
+:root
+{
+    --photo-size: 130px;
+    --bg-grey: hsl(0, 0%, 25%);
+    --bg-dark: hsl(210, 11%, 15%);
+    --bg-black: hsl(0, 0%, 11%);
+    --bg-info: hsl(194, 66%, 48%);
+}
+
+#profile-photo
+{
+    background-image: url('../assets/profile.jpg');
+    background-size: cover;
+    min-height: 50px;
+    min-width: 50px;
+    height: var(--photo-size);
+    width: var(--photo-size);
+    border-radius: 70px;
+}
+
+#name-header
+{
+    font-size: 25px; 
+    font-weight: bold;
+}
+
+#navlinks
+{
+    margin: 0 auto; 
+    text-align: center;
+}
+
+#navlinks a
+{
+    padding: 5px 50px;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--bg-info);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+#navlinks a:hover
+{
+    background-color: var(--bg-grey);
+    color: white;
+}
+
+.sect
+{
+    padding: 20px;
+    margin: 10px 0px;
+    background-color: var(--bg-grey);
+}
+
+#main label
+{
+    font-size: 1.5em;
+}
