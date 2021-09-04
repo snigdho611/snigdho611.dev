@@ -1,6 +1,6 @@
 *
 {
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     font-family: 'Agency FB', arial;
     font-size: 19px;
 }
@@ -47,6 +47,7 @@ body
     --bg-dark: hsl(210, 11%, 15%);
     --bg-black: hsl(0, 0%, 11%);
     --bg-info: hsl(194, 66%, 48%);
+    --bg-info-dark: hsl(194, 66%, 29%);
 }
 
 #profile-photo
@@ -62,7 +63,7 @@ body
 
 #name-header
 {
-    font-size: 25px; 
+    font-size: 1.35rem; 
     font-weight: bold;
     text-align: center;
 }
@@ -77,10 +78,9 @@ body
 {
     padding: 5px 50px;
     text-decoration: none;
-    font-size: 20px;
     color: var(--bg-info);
     transition: background-color 0.5s, color 0.5s;
-    font-size: 19px;
+    font-size: 1.1rem;
 
 }
 
@@ -94,10 +94,48 @@ body
 {
     padding: 20px;
     margin: 10px 0px;
-    background-color: var(--bg-grey);
+    /* background-color: var(--bg-grey); */
 }
 
 #main label
 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
+}
+
+.job
+{
+    /* background-color: rgb(46, 42, 84); */
+    background-color: var(--bg-info-dark);
+    padding: 15px 25px;
+    text-align: left;
+    width: 300px;
+    max-width: 600px;
+    /* margin-right: 30px; */
+    margin-bottom: 20px;
+}
+
+.job-name
+{
+    font-size: 0.9rem;
+    font-family: sans-serif;
+}
+
+.job-period, .job-position
+{
+    font-size: 0.7rem;
+    font-family: sans-serif;
+}
+
+.job-year
+{
+    font-size: 0.7rem;
+    font-family: sans-serif;
+    padding: 15.5px 10px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.tech-container
+{
+    
 }
