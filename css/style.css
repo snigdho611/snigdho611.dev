@@ -1,141 +1,71 @@
-*
-{
-    /* font-family: sans-serif; */
-    font-family: 'Agency FB', arial;
-    font-size: 19px;
+html, body{
+    height: 100%;
+    /* overflow-x: hidden; */
+    margin: 0;
+    padding: 0;
+    color: var(--color6);
 }
 
-html, body
-{
+:root{
+    --color0: #12151d;
+    --color1: #1D2333;
+    --color2: #27496D;
+    --color3: #0C7B93;
+    --color4: #00A8CC;
+    --color5: #92DCE5;
+    --color6: #F1F2EB;
+    background-color: var(--color1);
+}
+
+.total{
+    display: flex;
+    flex-direction: row;
     height: 100%;
 }
 
-body
-{
-    background-color: var(--bg-dark)
-}
-
-#sidebar{
-    position: sticky;
-    top: 45px;
-    color: var(--bg-info);
-    margin-top: 20px;
-}
-
-#body-container, #body-separator
-{
+.navbar{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color0);
+    width: 22%;
     height: 100%;
+    align-items: center;
+    margin-left: 5%;
 }
 
-.bg-black
-{
-    background-color: rgb(28, 28, 28);
+.pagebody{
+    display: flex;
+    width: 78%;
+    flex-direction: column;
 }
 
-@media screen and (max-width: 768px)
-{
-    html, body
-    {
-        height: initial;
-    }
-}
-
-:root
-{
-    --photo-size: 130px;
-    --bg-grey: hsl(0, 0%, 25%);
-    --bg-dark: hsl(210, 11%, 15%);
-    --bg-black: hsl(0, 0%, 11%);
-    --bg-info: hsl(194, 66%, 48%);
-    --bg-info-dark: hsl(194, 66%, 29%);
-}
-
-#profile-photo
-{
+#profilepic{
+    margin: 1.25rem auto;
+    border-radius: 60%;
     background-image: url('../assets/profile.jpg');
+    height: 200px;
+    width: 200px;
     background-size: cover;
-    min-height: 50px;
-    min-width: 50px;
-    height: var(--photo-size);
-    width: var(--photo-size);
-    border-radius: 70px;
 }
 
-#name-header
-{
-    font-size: 1.35rem; 
-    font-weight: bold;
-    text-align: center;
-}
-
-#navlinks
-{
-    margin: 0 auto; 
-    text-align: center;
-}
-
-#navlinks a
-{
-    padding: 5px 50px;
+a{
+    color: var(--color6);
     text-decoration: none;
-    color: var(--bg-info);
-    transition: background-color 0.5s, color 0.5s;
-    font-size: 1.1rem;
-
 }
 
-#navlinks a:hover
-{
-    background-color: var(--bg-grey);
-    color: white;
+.links{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
-.sect
-{
-    padding: 20px;
-    margin: 10px 0px;
-    /* background-color: var(--bg-grey); */
+.links a{
+    /* color: var(--color4); */
+    transition: color 0.5s ;
+    margin-top: 0.75rem;
 }
 
-#main label
-{
-    font-size: 1.5rem;
-}
-
-.job
-{
-    /* background-color: rgb(46, 42, 84); */
-    background-color: var(--bg-info-dark);
-    padding: 15px 25px;
-    text-align: left;
-    width: 300px;
-    max-width: 600px;
-    /* margin-right: 30px; */
-    margin-bottom: 20px;
-}
-
-.job-name
-{
-    font-size: 0.9rem;
-    font-family: sans-serif;
-}
-
-.job-period, .job-position
-{
-    font-size: 0.7rem;
-    font-family: sans-serif;
-}
-
-.job-year
-{
-    font-size: 0.7rem;
-    font-family: sans-serif;
-    padding: 15.5px 10px;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.tech-container
-{
-    
+.links a:hover{
+    color: var(--color4);
 }
