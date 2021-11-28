@@ -28,15 +28,19 @@ html, body{
     flex-direction: column;
     background-color: var(--color0);
     width: 22%;
+    max-width: 22%;
     height: 100%;
     align-items: center;
-    margin-left: 5%;
+    margin-left: 3%;
+    z-index: 1;
+    position: fixed;
 }
 
 .pagebody{
     display: flex;
     width: 78%;
     flex-direction: column;
+    margin-left: 27%;
 }
 
 #profilepic{
@@ -56,16 +60,78 @@ a{
 .links{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
 }
 
 .links a{
-    /* color: var(--color4); */
     transition: color 0.5s ;
     margin-top: 0.75rem;
 }
 
 .links a:hover{
     color: var(--color4);
+}
+
+.head-1{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.head-2{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0.6rem auto;
+}
+
+.job-card-parent{
+    display: flex;
+    flex-direction: row;
+}
+
+.job-card{
+    width: 60%;
+    max-width: 60%;
+}
+
+.design{
+    
+}
+
+.tree{
+    width: 10px;
+    min-width: 10px;
+    background-color: #F1F2EB;
+    margin: 0 40px;
+}
+
+.circular{
+    background-color: #0C7B93;
+    min-width: 40px;
+    min-height: 40px;
+    margin: auto auto;
+}
+
+.top{
+    border: 1px solid rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+}
+
+.company{
+    border: 1px solid rgb(255, 255, 255);
+    width: 50%;
+}
+
+.time{
+    border: 1px solid rgb(255, 255, 255);
+    width: 50%;
+    text-align: right;
+}
+
+.position{
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.desc{
+    border: 1px solid rgb(255, 255, 255);
 }
