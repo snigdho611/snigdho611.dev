@@ -1,137 +1,164 @@
-html, body{
-    height: 100%;
-    /* overflow-x: hidden; */
-    margin: 0;
-    padding: 0;
-    color: var(--color6);
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--color6);
 }
 
-:root{
-    --color0: #12151d;
-    --color1: #1D2333;
-    --color2: #27496D;
-    --color3: #0C7B93;
-    --color4: #00A8CC;
-    --color5: #92DCE5;
-    --color6: #F1F2EB;
-    background-color: var(--color1);
+:root {
+  --color0: #12151d;
+  --color1: #1d2333;
+  --color2: #27496d;
+  --color3: #0c7b93;
+  --color4: #00a8cc;
+  --color5: #92dce5;
+  --color6: #f1f2eb;
+  background-color: var(--color1);
+  font-family: Agency -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* overflow-x: hidden; */
 }
 
-.total{
-    display: flex;
-    flex-direction: row;
-    height: 100%;
+.total {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 
-.navbar{
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color0);
-    width: 22%;
-    max-width: 22%;
-    height: 100%;
-    align-items: center;
-    margin-left: 3%;
-    z-index: 1;
-    position: fixed;
+.navbar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color0);
+  min-width: 16rem;
+  max-width: 18rem;
+  /* width: 22%; */
+  height: 100%;
+  align-items: center;
+  margin-left: 2rem;
+  z-index: 1;
+  position: fixed;
 }
 
-.pagebody{
-    display: flex;
-    width: 78%;
-    flex-direction: column;
-    margin-left: 27%;
+.pagebody {
+  display: flex;
+  /* width: 70%; */
+  width: 50rem;
+  flex-direction: column;
+  margin-left: 21rem;
 }
 
-#profilepic{
-    margin: 1.25rem auto;
-    border-radius: 60%;
-    background-image: url('../assets/profile.jpg');
-    height: 200px;
-    width: 200px;
-    background-size: cover;
+#profilepic {
+  margin: 1.5rem auto;
+  border-radius: 60%;
+  background-image: url("../assets/profile.jpg");
+  height: 12rem;
+  width: 12rem;
+  background-size: cover;
 }
 
-a{
-    color: var(--color6);
-    text-decoration: none;
+a {
+  color: var(--color6);
+  text-decoration: none;
 }
 
-.links{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.links a{
-    transition: color 0.5s ;
-    margin-top: 0.75rem;
+.links a {
+  transition: color 0.5s;
+  margin-top: 0.5rem;
 }
 
-.links a:hover{
-    color: var(--color4);
+.links a:hover {
+  color: var(--color4);
 }
 
-.head-1{
-    font-size: 22px;
-    font-weight: bold;
+.head-1 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color4);
 }
 
-.head-2{
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0.6rem auto;
+.head-2 {
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin: 0.6rem auto;
 }
 
-.job-card-parent{
-    display: flex;
-    flex-direction: row;
+.job-card-parent {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1.5rem;
+  width: 60rem;
 }
 
-.job-card{
-    width: 60%;
-    max-width: 60%;
+.job-card {
+  width: 60%;
+  /* max-width: 60%; */
+  border: 0.12rem solid var(--color3);
+  border-radius: 0.65rem;
+  padding: 0.85rem;
 }
 
-.design{
-    
+.design {
+  width: 1.5rem;
+  min-width: 0.75rem;
+  background-color: var(--color3);
+  margin: 0 1.5rem;
 }
 
-.tree{
-    width: 10px;
-    min-width: 10px;
-    background-color: #F1F2EB;
-    margin: 0 40px;
+.circular {
+  background-color: #0c7b93;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  margin: auto auto;
+}
+/* 
+.top,
+.company,
+.time,
+.position,
+.desc {
+  /* border: 0.01rem solid rgb(255, 255, 255); */
+} */
+
+.top {
+  display: flex;
+  flex-direction: row;
 }
 
-.circular{
-    background-color: #0C7B93;
-    min-width: 40px;
-    min-height: 40px;
-    margin: auto auto;
+.company {
+  width: 50%;
+  padding: 0.5rem 0.25rem;
 }
 
-.top{
-    border: 1px solid rgb(255, 255, 255);
-    display: flex;
-    flex-direction: row;
+.time {
+  width: 50%;
+  text-align: right;
+  padding: 0.5rem 0.25rem;
 }
 
-.company{
-    border: 1px solid rgb(255, 255, 255);
-    width: 50%;
+.position {
+  padding: 0.25rem;
 }
 
-.time{
-    border: 1px solid rgb(255, 255, 255);
-    width: 50%;
-    text-align: right;
+.desc {
+  padding: 0.25rem;
 }
 
-.position{
-    border: 1px solid rgb(255, 255, 255);
+.skillbox {
+  width: 6rem;
+  height: 4rem;
+  text-align: center;
+  padding: 0.9rem 0.85rem;
 }
-
-.desc{
-    border: 1px solid rgb(255, 255, 255);
+.skillboxrow {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid white;
+  margin-bottom: 1rem;
+  width: 42rem;
 }
