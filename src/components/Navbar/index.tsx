@@ -29,6 +29,7 @@ const index: React.FC<NavbarProps> = ({ children }) => {
             paddingTop: "26px",
             color: "#5BC0DE",
             whiteSpace: "nowrap",
+            width: "15%",
           }}
         >
           {children}
