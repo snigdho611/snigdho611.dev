@@ -25,20 +25,20 @@ const index: React.FC<NavbarProps> = ({ children }) => {
             fontSize: "32px",
             fontFamily: "Agency FB",
             fontWeight: "bold",
-            // paddingLeft: "120px",
+            paddingLeft: "50px",
             paddingTop: "26px",
             color: "#5BC0DE",
             whiteSpace: "nowrap",
           }}
         >
-          Snigdho Dip Howlader
+          {children}
         </div>
         <div
           style={{
             paddingTop: "30px",
             display: "flex",
             flexDirection: "row",
-            fontSize: "25px",
+            fontSize: "24px",
             fontFamily: "Agency FB",
             fontWeight: "bold",
             marginLeft: "265px",

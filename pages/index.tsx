@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <Navbar></Navbar>
+      <Navbar>Snigdho Dip Howlader</Navbar>
     </div>
   );
 };
