@@ -33,10 +33,16 @@ body {
 }
 
 .Navbar .links-container {
-  margin-left: 30px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 265px;
 }
 
 .Navbar .links-container .link {
+  margin-left: 30px;
   text-decoration: none;
   color: #2e93b0;
   transition: color 0.35s, text-decoration 0.35s;
@@ -61,7 +67,7 @@ body {
   width: 210px;
   min-width: 210px;
   height: 210px;
-  background-image: url(/profilepic.jpg);
+  background-image: url(/images/profilepic.jpg);
   background-size: cover;
 }
 
@@ -75,7 +81,7 @@ body {
 .Header {
   color: #5bc0de;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 40px;
   text-align: center;
   margin-bottom: 10px;
 }
