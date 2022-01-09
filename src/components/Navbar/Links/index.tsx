@@ -13,12 +13,36 @@ const index = () => {
         marginLeft: "265px",
       }}
     >
-      <div style={{ marginLeft: "30px", color: "#2E93B0" }}>About</div>
-      <div style={{ marginLeft: "30px", color: "#2E93B0" }}>Skills</div>
-      <div style={{ marginLeft: "30px", color: "#2E93B0" }}>Experience</div>
-      <div style={{ marginLeft: "30px", color: "#2E93B0" }}>Projects</div>
-      <div style={{ marginLeft: "30px", color: "#2E93B0" }}>Education</div>
-      <div style={{ marginLeft: "30px", color: "#2E93B0" }}>Contact</div>
+      <div style={{ marginLeft: "30px" }}>
+        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+          About
+        </a>
+      </div>
+      <div style={{ marginLeft: "30px" }}>
+        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+          Skills
+        </a>
+      </div>
+      <div style={{ marginLeft: "30px" }}>
+        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+          Experience
+        </a>
+      </div>
+      <div style={{ marginLeft: "30px" }}>
+        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+          Projects
+        </a>
+      </div>
+      <div style={{ marginLeft: "30px" }}>
+        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+          Education
+        </a>
+      </div>
+      <div style={{ marginLeft: "30px" }}>
+        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+          Contact
+        </a>
+      </div>
     </div>
   );
 };

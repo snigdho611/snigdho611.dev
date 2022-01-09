@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import styles from "styles/main.module.css";
 import Navbar from "components/Navbar";
 import About from "components/About";
 

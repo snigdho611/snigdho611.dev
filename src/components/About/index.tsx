@@ -5,10 +5,11 @@ const index = () => {
     <div>
       <div
         style={{
-          padding: "120px",
+          marginTop: "120px",
+          marginLeft: "14%",
           display: "flex",
           flexDirection: "row",
-          //   border: "1px solid white",
+          width: "74%",
         }}
       >
         <div
@@ -18,18 +19,33 @@ const index = () => {
             width: "210px",
             minWidth: "210px",
             height: "210px",
+            backgroundImage: "url('/profilepic.jpg')",
+            backgroundSize: "cover",
           }}
         ></div>
         <div
           style={{
             backgroundColor: "#5BC0DE",
-            height: "500px",
-            width: "15px",
+            height: "470px",
+            width: "25px",
+            margin: "0 90px",
           }}
         ></div>
         <div>
-          <div style={{ color: "#5BC0DE", fontWeight: "bold" }}>ABOUT</div>
-          <div style={{ color: "#BEEBF9" }}>
+          <div
+            style={{
+              color: "#5BC0DE",
+              fontWeight: "bold",
+              fontSize: "32px",
+              textAlign: "center",
+              marginBottom: "10px",
+            }}
+          >
+            ABOUT
+          </div>
+          <div
+            style={{ color: "#BEEBF9", fontSize: "22px", textAlign: "justify" }}
+          >
             An efficient Professional Software Developer with experience in the
             industry. Avid in both frontend and backend development
             technologies, aspiring for contribution to the world of computer

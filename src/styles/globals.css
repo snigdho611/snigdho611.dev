@@ -5,3 +5,28 @@ body {
   font-family: "Agency FB";
   background-color: #252329;
 }
+
+.Navbar {
+  background-color: #181818;
+  color: white;
+  height: 83px;
+  position: sticky;
+  top: 0;
+}
+
+.Navbar .flexBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Navbar .name {
+  font-size: 32px;
+  font-family: Agency FB;
+  font-weight: bold;
+  padding-left: 50px;
+  padding-top: 26px;
+  color: #5bc0de;
+  white-space: nowrap;
+  width: 15%;
+}
