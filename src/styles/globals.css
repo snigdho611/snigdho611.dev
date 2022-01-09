@@ -13,6 +13,7 @@ body {
   height: 83px;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .Navbar .FlexBox {

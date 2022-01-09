@@ -6,7 +6,7 @@ const index = () => {
     <div style={{ margin: "120px auto 0 auto" }}>
       <div className="Header">SKILLS</div>
       <SkillSet group="Languages" />
-      <div style={{ marginTop: "40px" }}></div>
+      <div style={{ marginTop: "25px" }}></div>
       <SkillSet group="Frameworks" />
     </div>
   );

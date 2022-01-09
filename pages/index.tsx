@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "components/Navbar";
 import About from "components/About";
 import Skills from "components/Skills";
+import Experience from "components/Experience";
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       <Navbar>Snigdho Dip Howlader</Navbar>
       <About />
       <Skills />
+      <Experience />
     </>
   );
 };

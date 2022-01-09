@@ -105,7 +105,13 @@ const index: React.FC<SkillSetProps> = ({ group }) => {
             >
               <div style={{ marginLeft: "10px" }} />
               <div style={{ color: "#00D8FF", fontSize: "25px" }}>
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    marginTop: "35px",
+                  }}
+                >
                   <SkillBox name="Mongo DB" url="/images/skills/mongo.svg" />
                   <SkillBox name="MySQL" url="/images/skills/mysql.svg" />
                   <SkillBox name="Oracle" url="/images/skills/oracle.svg" />
