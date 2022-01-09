@@ -14,7 +14,12 @@ const index: React.FC<SkillBox> = ({ url, name }) => {
           <Image src={url} alt="JavaScript Image" height={80} width={70} />
         </div>
         <div
-          style={{ color: "#5BC0DE", fontWeight: "bold", textAlign: "center" }}
+          style={{
+            color: "#5BC0DE",
+            fontWeight: "bold",
+            textAlign: "center",
+            fontSize: "17px",
+          }}
         >
           {name}
         </div>
