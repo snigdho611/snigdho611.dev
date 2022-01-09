@@ -13,33 +13,33 @@ const index = () => {
         marginLeft: "265px",
       }}
     >
-      <div style={{ marginLeft: "30px" }}>
-        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+      <div className="links-container">
+        <a href="#" className="link">
           About
         </a>
       </div>
-      <div style={{ marginLeft: "30px" }}>
-        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+      <div className="links-container">
+        <a href="#" className="link">
           Skills
         </a>
       </div>
-      <div style={{ marginLeft: "30px" }}>
-        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+      <div className="links-container">
+        <a href="#" className="link">
           Experience
         </a>
       </div>
-      <div style={{ marginLeft: "30px" }}>
-        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+      <div className="links-container">
+        <a href="#" className="link">
           Projects
         </a>
       </div>
-      <div style={{ marginLeft: "30px" }}>
-        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+      <div className="links-container">
+        <a href="#" className="link">
           Education
         </a>
       </div>
-      <div style={{ marginLeft: "30px" }}>
-        <a href="#" style={{ textDecoration: "none", color: "#2E93B0" }}>
+      <div className="links-container">
+        <a href="#" className="link">
           Contact
         </a>
       </div>

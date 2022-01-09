@@ -14,13 +14,13 @@ body {
   top: 0;
 }
 
-.Navbar .flexBox {
+.Navbar .FlexBox {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.Navbar .name {
+.Navbar .Name {
   font-size: 32px;
   font-family: Agency FB;
   font-weight: bold;
@@ -29,4 +29,18 @@ body {
   color: #5bc0de;
   white-space: nowrap;
   width: 15%;
+}
+
+.Navbar .links-container {
+  margin-left: 30px;
+}
+
+.Navbar .links-container .link {
+  text-decoration: none;
+  color: #2e93b0;
+  transition: color 0.35s, text-decoration 0.35s;
+}
+
+.Navbar .links-container .link:hover {
+  color: #beebf9;
 }

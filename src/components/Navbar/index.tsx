@@ -8,8 +8,8 @@ interface NavbarProps {
 const index: React.FC<NavbarProps> = ({ children }) => {
   return (
     <div className="Navbar">
-      <div className="flexBox">
-        <div className="name">{children}</div>
+      <div className="FlexBox">
+        <div className="Name">{children}</div>
         <Links />
       </div>
     </div>
