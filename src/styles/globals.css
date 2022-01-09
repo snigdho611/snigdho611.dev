@@ -6,6 +6,7 @@ body {
   background-color: #252329;
 }
 
+/*-------------------NAVBAR----------------*/
 .Navbar {
   background-color: #181818;
   color: white;
@@ -43,4 +44,44 @@ body {
 
 .Navbar .links-container .link:hover {
   color: #beebf9;
+}
+
+/*-------------------ABOUT----------------*/
+.About-container {
+  margin-top: 120px;
+  margin-left: 14%;
+  display: flex;
+  flex-direction: row;
+  width: 74%;
+}
+
+.Profile-img {
+  border-radius: 100%;
+  background-color: #fff;
+  width: 210px;
+  min-width: 210px;
+  height: 210px;
+  background-image: url(/profilepic.jpg);
+  background-size: cover;
+}
+
+.Bar {
+  background-color: #5bc0de;
+  height: 470px;
+  width: 25px;
+  margin: 0 90px;
+}
+
+.Header {
+  color: #5bc0de;
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.About-text {
+  color: #beebf9;
+  font-size: 22px;
+  text-align: justify;
 }
