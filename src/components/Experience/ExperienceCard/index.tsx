@@ -2,7 +2,6 @@ import React from "react";
 
 interface ExperienceCardProps {
   url: string;
-  name: string;
 }
 
 const index: React.FC<ExperienceCardProps> = ({ url }) => {

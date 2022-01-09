@@ -2,8 +2,10 @@ import React from "react";
 
 const index = () => {
   return (
-    <div>
-      <div>Designed and Developed by: snigdho611</div>
+    <div style={{ backgroundColor: "#181818" }}>
+      <div>
+        Designed and Developed by: <a>snigdho611</a>
+      </div>
       <div>All rights reserved, 2022</div>
     </div>
   );
