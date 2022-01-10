@@ -1,9 +1,17 @@
 import React from "react";
+import gsap from "gsap";
+import { useRef, useEffect } from "react";
 
-const index = () => {
+const About = () => {
+  const photoRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(photoRef.current, { rotation: 360, duration: 1 });
+  });
+
   return (
     <div className="About-container">
-      <div className="Profile-img" />
+      <div className="Profile-img" ref={photoRef} />
       <div className="Bar" />
       <div>
         <div className="Header">ABOUT</div>
@@ -25,4 +33,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default About;

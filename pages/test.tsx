@@ -7,7 +7,7 @@ const Test = () => {
   const boxRef = useRef(null);
 
   useEffect(() => {
-    gsap.to(boxRef.current, { rotation: "+=360" });
+    gsap.to(boxRef.current, { rotation: 360, x: 500, duration: 1 });
   });
   return (
     <div
