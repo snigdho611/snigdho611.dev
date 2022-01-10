@@ -5,10 +5,78 @@ import About from "components/About";
 import Skills from "components/Skills";
 import Experience from "components/Experience";
 import Projects from "components/Projects";
+import Particles from "react-tsparticles";
 
 const Home: NextPage = () => {
   return (
     <>
+      <Particles
+        id="tsparticles"
+        options={{
+          fpsLimit: 60,
+          interactivity: {
+            events: {
+              onClick: {
+                enable: true,
+                mode: "repulse",
+              },
+              onHover: {
+                enable: true,
+                mode: "bubble",
+              },
+              resize: true,
+            },
+            modes: {
+              bubble: {
+                distance: 100,
+                duration: 20,
+                opacity: 0.3,
+                size: 7,
+              },
+              push: {
+                quantity: 4,
+              },
+              repulse: {
+                distance: 100,
+                duration: 0.9,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: "#ffffff",
+            },
+            collisions: {
+              enable: true,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outMode: "bounce",
+              random: false,
+              speed: 0.75,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                area: 800,
+              },
+              value: 100,
+            },
+            opacity: {
+              value: 0.35,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              random: true,
+              value: 3,
+            },
+          },
+        }}
+      />
       <Head>
         <link
           href="https://allfont.net/allfont.css?fonts=agency-fb"

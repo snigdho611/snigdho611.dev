@@ -22,7 +22,7 @@ const index: React.FC<ExperienceRowProps> = ({
         style={{
           display: "flex",
           flexDirection: "row",
-          width: "65%",
+          width: "75%",
           margin: "0 auto",
         }}
       >
@@ -71,7 +71,7 @@ const index: React.FC<ExperienceRowProps> = ({
           <div
             style={{
               backgroundColor: "#155365",
-              width: "300px",
+              width: "350px",
               borderRadius: "5px",
               height: "150px",
             }}
@@ -111,7 +111,7 @@ const index: React.FC<ExperienceRowProps> = ({
         style={{
           display: "flex",
           flexDirection: "row",
-          width: "65%",
+          width: "75%",
           margin: "0 auto",
         }}
       >
@@ -127,7 +127,7 @@ const index: React.FC<ExperienceRowProps> = ({
           <div
             style={{
               backgroundColor: "#155365",
-              width: "300px",
+              width: "350px",
               borderRadius: "5px",
               height: "150px",
             }}

@@ -67,36 +67,6 @@ const index = () => {
               />
             );
           })}
-          {/* {data.map(({ id, title, description, stacks, url }) => {
-            if (id % 3 != 0) {
-              return (
-                <div style={{ display: "flex", flexDirection: "row" }}>
-                  <ProjectCard
-                    key={id}
-                    id={id}
-                    title={title}
-                    description={description}
-                    stacks={stacks}
-                    url={url}
-                  />
-                  );
-                </div>
-              );
-            } else {
-              return (
-                <>
-                  <ProjectCard
-                    key={id}
-                    id={id}
-                    title={title}
-                    description={description}
-                    stacks={stacks}
-                    url={url}
-                  />
-                </>
-              );
-            }
-          })} */}
         </div>
       </div>
     </div>
