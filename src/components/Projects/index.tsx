@@ -43,19 +43,31 @@ const index = () => {
         style={{
           margin: "120px auto 0 auto",
           width: "75%",
-          border: "1px solid white",
         }}
       >
         <div className="Header">PROJECTS</div>
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            border: "2px solid red",
             margin: "0 auto",
+            gap: "15px",
+            flexWrap: "wrap",
+            justifyContent: "flex-end",
           }}
         >
           {data.map(({ id, title, description, stacks, url }) => {
+            return (
+              <ProjectCard
+                key={id}
+                id={id}
+                title={title}
+                description={description}
+                stacks={stacks}
+                url={url}
+              />
+            );
+          })}
+          {/* {data.map(({ id, title, description, stacks, url }) => {
             if (id % 3 != 0) {
               return (
                 <div style={{ display: "flex", flexDirection: "row" }}>
@@ -84,7 +96,7 @@ const index = () => {
                 </>
               );
             }
-          })}
+          })} */}
         </div>
       </div>
     </div>

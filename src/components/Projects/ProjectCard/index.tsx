@@ -22,7 +22,8 @@ const index: React.FC<ProjectCardProps> = ({
         width: "300px",
         height: "200px",
         backgroundColor: "white",
-        margin: "20px auto",
+        margin: "10px auto",
+        flex: 0.33,
       }}
     >
       {title}
