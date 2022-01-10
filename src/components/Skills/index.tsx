@@ -1,7 +1,7 @@
 import React from "react";
 import SkillSet from "./SkillSet";
 
-const index = () => {
+const Skills = () => {
   return (
     <div style={{ margin: "120px auto 0 auto" }}>
       <div className="Header">SKILLS</div>
@@ -12,4 +12,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Skills;

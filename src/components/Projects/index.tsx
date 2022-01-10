@@ -40,7 +40,7 @@ const data = [
   },
 ];
 
-const index = () => {
+const Projects = () => {
   return (
     <div>
       <div
@@ -78,4 +78,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Projects;
