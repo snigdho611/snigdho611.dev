@@ -31,6 +31,7 @@ const Education = () => {
       style={{
         margin: "120px auto 0 auto",
         width: "75%",
+        border: "1px solid white",
       }}
     >
       <div className="Header">EDUCATION</div>
