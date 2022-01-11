@@ -5,7 +5,7 @@ interface NavbarProps {
   children?: React.ReactNode;
 }
 
-const index: React.FC<NavbarProps> = ({ children }) => {
+const Navbar: React.FC<NavbarProps> = ({ children }) => {
   return (
     <div className="Navbar">
       <div className="FlexBox">
@@ -16,4 +16,4 @@ const index: React.FC<NavbarProps> = ({ children }) => {
   );
 };
 
-export default index;
+export default Navbar;

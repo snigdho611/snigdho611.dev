@@ -21,7 +21,7 @@ const data = [
   },
 ];
 
-const index = () => {
+const Experience = () => {
   return (
     <div style={{ margin: "120px auto 0 auto" }}>
       <div className="Header">EXPERIENCE</div>
@@ -54,4 +54,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Experience;

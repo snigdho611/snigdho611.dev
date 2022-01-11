@@ -8,7 +8,8 @@ const data = [
     description:
       "A web application that uses Data Mining to suggest inventory items to the user for better sales and predictive analysis.",
     stacks: "React JS, CSS, SQL, Python, Django",
-    url: "",
+    url: "https://github.com/snigdho611/smart-inventory-using-data-mining",
+    color: "#155365",
   },
   {
     id: 2,
@@ -16,7 +17,8 @@ const data = [
     description:
       "A fullstack ERP system that can handle the entirety of factory management process, from raw materials to finished products.",
     stacks: "React JS, CSS, Laravel, SQL",
-    url: "",
+    url: "https://github.com/fffffatah/Industryal-An-ERP-System",
+    color: "#651515",
   },
   {
     id: 3,
@@ -24,19 +26,21 @@ const data = [
     description:
       "A simple social media website for bookworms who want to share all their opinions and reviews of books.",
     stacks: "HTML, CSS, JavaScript, PHP, SQL",
-    url: "",
+    url: "https://github.com/Atanusaha143/eBookshelf---a-Book-Cataloging-Social-Platform",
+    color: "#156535",
   },
   {
     id: 4,
-    title: "Smart Inventory System",
+    title: "Hospital Management System",
     description:
       "A desktop application that lets the user keep track of patients and employees in a hospital according to different categories.",
     stacks: "C# (.NET), Oracle SQL",
-    url: "",
+    url: "https://github.com/snigdho611/hospital-management-system",
+    color: "#153565",
   },
 ];
 
-const index = () => {
+const Projects = () => {
   return (
     <div>
       <div
@@ -55,7 +59,7 @@ const index = () => {
             justifyContent: "flex-end",
           }}
         >
-          {data.map(({ id, title, description, stacks, url }) => {
+          {data.map(({ id, title, description, stacks, url, color }) => {
             return (
               <ProjectCard
                 key={id}
@@ -64,43 +68,14 @@ const index = () => {
                 description={description}
                 stacks={stacks}
                 url={url}
+                color={color}
               />
             );
           })}
-          {/* {data.map(({ id, title, description, stacks, url }) => {
-            if (id % 3 != 0) {
-              return (
-                <div style={{ display: "flex", flexDirection: "row" }}>
-                  <ProjectCard
-                    key={id}
-                    id={id}
-                    title={title}
-                    description={description}
-                    stacks={stacks}
-                    url={url}
-                  />
-                  );
-                </div>
-              );
-            } else {
-              return (
-                <>
-                  <ProjectCard
-                    key={id}
-                    id={id}
-                    title={title}
-                    description={description}
-                    stacks={stacks}
-                    url={url}
-                  />
-                </>
-              );
-            }
-          })} */}
         </div>
       </div>
     </div>
   );
 };
 
-export default index;
+export default Projects;
