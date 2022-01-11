@@ -1,5 +1,5 @@
 import React from "react";
-import EducationRow from "./EducationRow";
+import EducationRow, { EducationRowProps } from "./EducationRow";
 
 const data = [
   {
@@ -25,7 +25,11 @@ const data = [
   },
 ];
 
-const Education = () => {
+interface EducationProps {
+  education: EducationRowProps[];
+}
+
+const Education: React.FC<EducationProps> = ({ education }) => {
   return (
     <div
       style={{
@@ -35,7 +39,7 @@ const Education = () => {
       }}
     >
       <div className="Header">EDUCATION</div>
-      {data.map(({ id, name, imageURL, degree, time }) => {
+      {education.map(({ id, name, imageURL, degree, time }) => {
         return (
           <EducationRow
             key={id}

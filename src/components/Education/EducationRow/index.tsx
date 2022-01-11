@@ -1,7 +1,8 @@
 import React from "react";
 import EducationCard from "../EducationCard";
 
-interface EducationRowProps {
+export interface EducationRowProps {
+  id?: number;
   name: string;
   imageURL: string;
   degree: string;
