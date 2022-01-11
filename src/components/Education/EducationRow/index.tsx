@@ -27,7 +27,7 @@ const EducationRow: React.FC<EducationRowProps> = ({
       <div
         style={{
           width: "10%",
-          border: "1px solid blue",
+          // border: "1px solid blue",
         }}
       >
         <div
@@ -56,13 +56,27 @@ const EducationRow: React.FC<EducationRowProps> = ({
       <div
         style={{
           paddingLeft: "20px",
-          width: "25%",
-          border: "1px solid green",
+          width: "38%",
+          // border: "1px solid green",
         }}
       >
-        <div>{name}</div>
-        <div>{degree}</div>
-        <div>{time}</div>
+        <div style={{ color: "#FFF", marginTop: "20px" }}>
+          <div
+            style={{ fontSize: "20px", fontWeight: "bold", margin: "5px 0px" }}
+          >
+            {name}
+          </div>
+          <div style={{ fontSize: "18px", margin: "10px 0px" }}>{degree}</div>
+          <div
+            style={{
+              fontSize: "18px",
+              margin: "10px 0px",
+              fontStyle: "italic",
+            }}
+          >
+            {time}
+          </div>
+        </div>
       </div>
     </div>
   );

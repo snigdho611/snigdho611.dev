@@ -7,6 +7,8 @@ import Experience from "components/Experience";
 import Projects from "components/Projects";
 import Particles from "react-tsparticles";
 import Education from "components/Education";
+// import Contact from "components/Contact";
+import Contact from "components/Contact";
 
 const Home: NextPage = () => {
   return (
@@ -94,6 +96,7 @@ const Home: NextPage = () => {
       <Experience />
       <Projects />
       <Education />
+      <Contact />
     </>
   );
 };
