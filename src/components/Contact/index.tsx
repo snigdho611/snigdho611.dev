@@ -1,7 +1,7 @@
 import React from "react";
 import ContactRow from "./ContactRow";
 
-const indext = () => {
+const index = () => {
   return (
     <div
       style={{
@@ -16,4 +16,4 @@ const indext = () => {
   );
 };
 
-export default indext;
+export default index;

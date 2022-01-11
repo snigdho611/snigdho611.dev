@@ -7,7 +7,7 @@ import Experience from "components/Experience";
 import Projects from "components/Projects";
 import Particles from "react-tsparticles";
 import Education from "components/Education";
-// import Contact from "components/Contact";
+import Footer from "components/Footer";
 import Contact from "components/Contact";
 
 const Home: NextPage = () => {
@@ -97,6 +97,7 @@ const Home: NextPage = () => {
       <Projects />
       <Education />
       <Contact />
+      <Footer />
     </>
   );
 };
