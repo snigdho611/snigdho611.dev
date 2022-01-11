@@ -12,7 +12,7 @@ const index = () => {
         zIndex: "2",
         marginLeft: "auto",
         marginRight: 0,
-        position: "sticky",
+        // position: "sticky",
         bottom: "0",
       }}
     >

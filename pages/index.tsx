@@ -9,6 +9,7 @@ import Particles from "react-tsparticles";
 import Education from "components/Education";
 import Footer from "components/Footer";
 import Contact from "components/Contact";
+import { motion } from "framer-motion";
 
 const Home: NextPage = () => {
   return (
@@ -92,7 +93,9 @@ const Home: NextPage = () => {
       </Head>
       <Navbar>Snigdho Dip Howlader</Navbar>
       <About />
-      <Skills />
+      <motion.div animate={{ opacity: 0.5 }}>
+        <Skills />
+      </motion.div>
       <Experience />
       <Projects />
       <Education />
