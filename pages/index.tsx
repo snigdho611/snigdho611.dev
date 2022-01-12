@@ -113,7 +113,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar>Snigdho Dip Howlader</Navbar>
       <About about={allData.about} />
-      <motion.div animate={{ opacity: 0.5 }}>
+      <motion.div animate={{ opacity: 1 }}>
         <Skills />
       </motion.div>
       <Experience />
