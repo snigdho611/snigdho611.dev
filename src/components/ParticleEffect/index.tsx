@@ -15,7 +15,7 @@ const index = () => {
             },
             onHover: {
               enable: true,
-              mode: "repulse",
+              mode: "bubble",
             },
             resize: true,
           },
@@ -23,7 +23,7 @@ const index = () => {
             bubble: {
               distance: 100,
               duration: 20,
-              opacity: 0.3,
+              opacity: 0.7,
               size: 7,
             },
             push: {

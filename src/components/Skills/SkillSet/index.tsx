@@ -11,7 +11,7 @@ const index: React.FC<SkillSetProps> = ({ group }) => {
       <>
         <div
           style={{
-            border: "3px dotted #0D7998",
+            border: "3px solid #0D7998",
             width: "65%",
             margin: "0 auto",
           }}
@@ -39,7 +39,7 @@ const index: React.FC<SkillSetProps> = ({ group }) => {
       <>
         <div
           style={{
-            // border: "3px dotted #0D7998",
+            // border: "3px solid #0D7998",
             width: "65%",
             maxWidth: "65%",
             minWidth: "65%",
@@ -52,7 +52,7 @@ const index: React.FC<SkillSetProps> = ({ group }) => {
         >
           <div
             style={{
-              border: "3px dotted #0D7998",
+              border: "3px solid #0D7998",
               width: "55%",
               marginLeft: "5px",
             }}
@@ -66,7 +66,7 @@ const index: React.FC<SkillSetProps> = ({ group }) => {
               }}
             >
               <div style={{ marginLeft: "10px" }} />
-              <div style={{ border: "2px solid #0D7998" }}>
+              <div style={{}}>
                 <div style={{ color: "#00D8FF", fontSize: "25px" }}>
                   Frontend
                   <div style={{ display: "flex", flexDirection: "row" }}>
@@ -76,7 +76,7 @@ const index: React.FC<SkillSetProps> = ({ group }) => {
                 </div>
               </div>
               <div style={{ marginLeft: "20px" }} />
-              <div style={{ border: "2px solid #0D7998" }}>
+              <div style={{}}>
                 <div style={{ color: "#C0323A", fontSize: "25px" }}>
                   Backend
                   <div style={{ display: "flex", flexDirection: "row" }}>
@@ -89,7 +89,7 @@ const index: React.FC<SkillSetProps> = ({ group }) => {
           </div>
           <div
             style={{
-              border: "3px dotted #0D7998",
+              border: "3px solid #0D7998",
               width: "42%",
               paddingLeft: "10px",
               marginLeft: "10px",

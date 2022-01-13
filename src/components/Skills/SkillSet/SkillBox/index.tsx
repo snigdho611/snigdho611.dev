@@ -9,7 +9,7 @@ interface SkillBox {
 const index: React.FC<SkillBox> = ({ url, name }) => {
   return (
     <>
-      <div style={{ width: "80px", marginLeft: "20px" }}>
+      <div style={{ width: "80px", margin: "10px 5px" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Image src={url} alt="Image not found" height={80} width={70} />
         </div>

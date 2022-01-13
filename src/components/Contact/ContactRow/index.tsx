@@ -39,30 +39,32 @@ const index = () => {
       >
         <div>snigdho.howlader@gmail.com</div>
         <div>N/A</div>
-        <div>snigdho611</div>
-        <div style={{ display: "flex", flexDirection: "row", gap: "30px" }}>
+        <div style={{ display: "flex", flexDirection: "row", gap: "5px" }}>
           <a href="https://www.github.com/snigdho611">
             <Image
               src={"/images/media/github.png"}
               alt="Image not found"
-              height={50}
-              width={50}
+              height={25}
+              width={25}
             />
           </a>
+          snigdho611
+        </div>
+        <div style={{ display: "flex", flexDirection: "row", gap: "30px" }}>
           <a href="https://www.linkedin.com/in/snigdho-dip-howlader-025b291a5/">
             <Image
               src={"/images/media/linkedin.png"}
               alt="Image not found"
-              height={50}
-              width={50}
+              height={40}
+              width={40}
             />
           </a>
           <a href="https://discordapp.com/users/snigdho611#4850">
             <Image
               src={"/images/media/discord.png"}
               alt="Image not found"
-              height={50}
-              width={50}
+              height={40}
+              width={40}
             />
           </a>
         </div>

@@ -52,6 +52,7 @@ body {
 
 .Navbar .links-container .link:hover {
   color: #beebf9;
+  /* text-decoration: underline; */
 }
 
 /*-------------------ABOUT----------------*/
