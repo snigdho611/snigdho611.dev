@@ -18,33 +18,10 @@ const index: React.FC<ExperienceRowProps> = ({
 }) => {
   if (align == "r") {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          width: "75%",
-          margin: "0 auto",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            width: "44%",
-            justifyContent: "right",
-            padding: "55px 0px 0px 0px",
-          }}
-        ></div>
+      <div className="experience-tree-row">
+        <div className="experience-tree-row-container"></div>
         <div style={{ width: "12%" }}>
-          <div
-            style={{
-              width: "10px",
-              minWidth: "10px",
-              backgroundColor: "#5BC0DE",
-              height: "230px",
-              margin: "0 auto",
-            }}
-          >
+          <div className="experience-tree-row-bar">
             <ExperienceCard url={url} />
           </div>
         </div>
@@ -57,17 +34,7 @@ const index: React.FC<ExperienceRowProps> = ({
             padding: "55px 0px 0px 0px",
           }}
         >
-          <div
-            style={{
-              marginTop: "20px",
-              backgroundColor: "transparent",
-              borderRight: "50px solid #155365",
-              borderTop: "20px solid transparent",
-              borderBottom: "20px solid transparent",
-              width: "0",
-              height: "0",
-            }}
-          ></div>
+          <div className="experience-dialogue-arrow-left" />
           <div
             style={{
               backgroundColor: "#155365",
@@ -107,23 +74,8 @@ const index: React.FC<ExperienceRowProps> = ({
     );
   } else {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          width: "75%",
-          margin: "0 auto",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            width: "44%",
-            justifyContent: "right",
-            padding: "55px 0px 0px 0px",
-          }}
-        >
+      <div className="experience-tree-row">
+        <div className="experience-tree-row-container">
           <div
             style={{
               backgroundColor: "#155365",
@@ -158,28 +110,10 @@ const index: React.FC<ExperienceRowProps> = ({
               </div>
             </div>
           </div>
-          <div
-            style={{
-              marginTop: "20px",
-              backgroundColor: "transparent",
-              borderLeft: "50px solid #155365",
-              borderTop: "20px solid transparent",
-              borderBottom: "20px solid transparent",
-              width: "0",
-              height: "0",
-            }}
-          ></div>
+          <div className="experience-dialogue-arrow-right" />
         </div>
         <div style={{ width: "12%" }}>
-          <div
-            style={{
-              width: "10px",
-              minWidth: "10px",
-              backgroundColor: "#5BC0DE",
-              height: "230px",
-              margin: "0 auto",
-            }}
-          >
+          <div className="experience-tree-row-bar">
             <ExperienceCard url={url} />
           </div>
         </div>
@@ -191,7 +125,7 @@ const index: React.FC<ExperienceRowProps> = ({
             justifyContent: "left",
             padding: "55px 0px 0px 0px",
           }}
-        ></div>
+        />
       </div>
     );
   }
