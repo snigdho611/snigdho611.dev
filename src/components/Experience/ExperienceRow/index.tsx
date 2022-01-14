@@ -35,14 +35,7 @@ const index: React.FC<ExperienceRowProps> = ({
           }}
         >
           <div className="experience-dialogue-arrow-left" />
-          <div
-            style={{
-              backgroundColor: "#155365",
-              width: "350px",
-              borderRadius: "5px",
-              height: "150px",
-            }}
-          >
+          <div className="experience-dialogue">
             <div style={{ padding: "10px" }}>
               <div
                 style={{
@@ -76,14 +69,7 @@ const index: React.FC<ExperienceRowProps> = ({
     return (
       <div className="experience-tree-row">
         <div className="experience-tree-row-container">
-          <div
-            style={{
-              backgroundColor: "#155365",
-              width: "350px",
-              borderRadius: "5px",
-              height: "150px",
-            }}
-          >
+          <div className="experience-dialogue" style={{}}>
             <div style={{ padding: "10px" }}>
               <div
                 style={{

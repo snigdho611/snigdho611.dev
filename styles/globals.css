@@ -220,6 +220,12 @@ body {
   width: 0;
   height: 0;
 }
+.experience-dialogue {
+  background-color: #155365;
+  width: 350px;
+  border-radius: 5px;
+  height: 150px;
+}
 
 .experience-dialogue-arrow-right {
   margin-top: 20px;
@@ -237,6 +243,18 @@ body {
   background-color: #5bc0de;
   height: 230px;
   margin: 0 auto;
+}
+
+.experience-card {
+  border-radius: 100%;
+  width: 90px;
+  height: 90px;
+  background-color: #beebf9;
+  margin: 50px -40px;
+  position: absolute;
+  border: 2px solid white;
+  /* background-image: `url(${url})`; */
+  background-size: cover;
 }
 
 @media only screen and (max-width: 825px) {
@@ -337,5 +355,32 @@ body {
     width: 90%;
     padding-left: 0px;
     margin: 20px auto;
+  }
+
+  .experience-card {
+    width: 40px;
+    height: 40px;
+    margin: 70px -17px;
+  }
+
+  .experience-dialogue-arrow-left {
+    margin-top: 20px;
+    margin-left: 10px;
+    border-right: 30px solid #155365;
+  }
+
+  .experience-dialogue-arrow-right {
+    margin-top: 20px;
+    margin-right: 10px;
+    border-left: 30px solid #155365;
+  }
+
+  .experience-tree-row {
+    width: 100%;
+    /* height: 400px; */
+  }
+
+  .experience-dialogue {
+    height: fit-content;
   }
 }

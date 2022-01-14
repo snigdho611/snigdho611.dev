@@ -45,16 +45,14 @@ const allData = {
     {
       id: 1,
       url: "/images/experience/mainframelabs.png",
-      description:
-        "Worked with React JS, Next JS and Mongo DB for extensive work on the frontend and database maangement for a robust Ed-Tech project.",
+      description: "React JS, Next JS and Mongo DB",
       org: "Mainframe Labs Ltd.",
       position: "Junior Software Engineer",
     },
     {
       id: 2,
       url: "/images/experience/deepchainlabs.png",
-      description:
-        "Worked with Laravel and Laravel Livewire for creating robust, interactive websites for clients for satisfactory outputs.",
+      description: "Laravel, Laravel Livewire, MySQL",
       position: "Research and Development Intern",
       org: "DeepChain Labs",
     },
