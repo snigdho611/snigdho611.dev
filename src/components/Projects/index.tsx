@@ -1,46 +1,20 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 
-const data = [
-  {
-    id: 1,
-    title: "Smart Inventory System",
-    description:
-      "A web application that uses Data Mining to suggest inventory items to the user for better sales and predictive analysis.",
-    stacks: "React JS, CSS, SQL, Python, Django",
-    url: "https://github.com/snigdho611/smart-inventory-using-data-mining",
-    color: "#155365",
-  },
-  {
-    id: 2,
-    title: "Industryal",
-    description:
-      "A fullstack ERP system that can handle the entirety of factory management process, from raw materials to finished products.",
-    stacks: "React JS, CSS, Laravel, SQL",
-    url: "https://github.com/fffffatah/Industryal-An-ERP-System",
-    color: "#651515",
-  },
-  {
-    id: 3,
-    title: "e-Bookshelf",
-    description:
-      "A simple social media website for bookworms who want to share all their opinions and reviews of books.",
-    stacks: "HTML, CSS, JavaScript, PHP, SQL",
-    url: "https://github.com/Atanusaha143/eBookshelf---a-Book-Cataloging-Social-Platform",
-    color: "#156535",
-  },
-  {
-    id: 4,
-    title: "Hospital Management System",
-    description:
-      "A desktop application that lets the user keep track of patients and employees in a hospital according to different categories.",
-    stacks: "C# (.NET), Oracle SQL",
-    url: "https://github.com/snigdho611/hospital-management-system",
-    color: "#153565",
-  },
-];
+interface ProjectsProps {
+  projects: ProjectsArr[];
+}
 
-const Projects = () => {
+interface ProjectsArr {
+  id: number;
+  title: string;
+  description: string;
+  stacks: string;
+  url: string;
+  color: string;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <div>
       <div
@@ -59,7 +33,7 @@ const Projects = () => {
             justifyContent: "flex-end",
           }}
         >
-          {data.map(({ id, title, description, stacks, url, color }) => {
+          {projects.map(({ id, title, description, stacks, url, color }) => {
             return (
               <ProjectCard
                 key={id}
