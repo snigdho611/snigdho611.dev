@@ -21,10 +21,10 @@ const index = () => {
           gap: "15px",
         }}
       >
-        <div style={{}}>Email:</div>
-        <div style={{}}>Phone:</div>
-        <div style={{}}>Github:</div>
-        <div style={{}}>Others:</div>
+        <div>Email:</div>
+        <div>Phone:</div>
+        <div>Github:</div>
+        <div>Others:</div>
       </div>
       <div
         style={{
