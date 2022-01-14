@@ -9,21 +9,9 @@ const index: React.FC<SkillSetProps> = ({ group }) => {
   if (group == "Languages") {
     return (
       <>
-        <div
-          style={{
-            border: "3px solid #0D7998",
-            width: "65%",
-            margin: "0 auto",
-          }}
-        >
-          <div style={{ color: "#FFD83A", fontSize: "30px" }}>Languages</div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              padding: "15px ",
-            }}
-          >
+        <div className="skills-languages-container">
+          <div className="languages-head">Languages</div>
+          <div className="languages-icon-box">
             <SkillBox name="JavaScript" url="/images/skills/javascript.svg" />
             <SkillBox name="TypeScript" url="/images/skills/typescript.svg" />
             <SkillBox name="Python" url="/images/skills/python.svg" />
@@ -37,34 +25,10 @@ const index: React.FC<SkillSetProps> = ({ group }) => {
   } else if ((group = "FrameWorks")) {
     return (
       <>
-        <div
-          style={{
-            // border: "3px solid #0D7998",
-            width: "65%",
-            maxWidth: "65%",
-            minWidth: "65%",
-            margin: "0 auto",
-            display: "flex",
-            flexDirection: "row",
-            paddingTop: "20px",
-            paddingBottom: "20px",
-          }}
-        >
-          <div
-            style={{
-              border: "3px solid #0D7998",
-              width: "55%",
-              marginLeft: "5px",
-            }}
-          >
-            <div style={{ color: "#B152EB", fontSize: "30px" }}>Frameworks</div>
-            <div
-              style={{
-                margin: "0 auto",
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
+        <div className="parent-box">
+          <div className="child-box">
+            <div className="frameworks-head">Frameworks</div>
+            <div className="frontend-backend-box" style={{}}>
               <div style={{ marginLeft: "10px" }} />
               <div style={{}}>
                 <div style={{ color: "#00D8FF", fontSize: "25px" }}>
@@ -87,14 +51,7 @@ const index: React.FC<SkillSetProps> = ({ group }) => {
               </div>
             </div>
           </div>
-          <div
-            style={{
-              border: "3px solid #0D7998",
-              width: "42%",
-              paddingLeft: "10px",
-              marginLeft: "10px",
-            }}
-          >
+          <div className="databases-box">
             <div style={{ color: "#50B660", fontSize: "30px" }}>Databases</div>
             <div
               style={{
