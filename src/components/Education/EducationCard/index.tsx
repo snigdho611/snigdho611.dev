@@ -7,14 +7,7 @@ interface EducationCardProps {
 
 const EducationCard: React.FC<EducationCardProps> = ({ imageURL }) => {
   return (
-    <div
-      style={{
-        width: "113px",
-        height: "113px",
-        backgroundColor: "white",
-        borderRadius: "100%",
-      }}
-    >
+    <div className="education-card" style={{}}>
       <Image src={imageURL} alt="Image not found" height={113} width={113} />
     </div>
   );

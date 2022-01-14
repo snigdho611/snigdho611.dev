@@ -17,12 +17,7 @@ interface ProjectsArr {
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <div>
-      <div
-        style={{
-          margin: "120px auto 0 auto",
-          width: "75%",
-        }}
-      >
+      <div className="project-container" style={{}}>
         <div className="Header">PROJECTS</div>
         <div
           style={{

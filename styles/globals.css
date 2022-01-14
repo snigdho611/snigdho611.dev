@@ -151,11 +151,15 @@ body {
 .education-card {
   width: 113px;
   height: 113px;
-  background-color: white;
+  background-color: #252329;
   border-radius: 100%;
 }
 
 .div-margin {
+  margin: 120px auto 170px auto;
+  width: 75%;
+}
+.div-margin-education {
   margin: 120px auto 170px auto;
   width: 75%;
 }
@@ -255,6 +259,19 @@ body {
   border: 2px solid white;
   /* background-image: `url(${url})`; */
   background-size: cover;
+}
+
+.project-container {
+  margin: 120px auto 0 auto;
+  width: 75%;
+}
+
+.education-row {
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  justify-content: center;
+  width: 100%;
 }
 
 @media only screen and (max-width: 825px) {
@@ -382,5 +399,31 @@ body {
 
   .experience-dialogue {
     height: fit-content;
+  }
+
+  .project-container {
+    width: 100%;
+    /* padding: 10px; */
+  }
+
+  .contact-margin {
+    font-size: 20px;
+  }
+
+  .education-card {
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
+  }
+  .div-margin-education {
+    width: 100%;
+  }
+
+  .education-row {
+    /* display: flex;
+    flex-direction: row; */
+    height: 250px;
+    /* justify-content: center;
+    width: 100%; */
   }
 }

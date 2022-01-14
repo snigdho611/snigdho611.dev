@@ -25,7 +25,6 @@ const index: React.FC<ProjectCardProps> = ({
         height: "200px",
         backgroundColor: color,
         margin: "10px auto",
-        // flex: 0.33,
         zIndex: 2,
         padding: "10px 10px",
         borderRadius: "15px",
@@ -33,7 +32,6 @@ const index: React.FC<ProjectCardProps> = ({
     >
       <div
         style={{
-          // fontWeight: "bold",
           fontSize: "25px",
           textAlign: "center",
           color: "white",
@@ -43,7 +41,6 @@ const index: React.FC<ProjectCardProps> = ({
       </div>
       <div
         style={{
-          // fontWeight: "bold",
           fontSize: "20px",
           textAlign: "justify",
           color: "#BEEBF9",
@@ -54,7 +51,6 @@ const index: React.FC<ProjectCardProps> = ({
       </div>
       <div
         style={{
-          // fontWeight: "bold",
           fontSize: "17px",
           textAlign: "center",
           color: "#FFF",
@@ -65,7 +61,6 @@ const index: React.FC<ProjectCardProps> = ({
       </div>
       <div
         style={{
-          // fontWeight: "bold",
           fontSize: "17px",
           textAlign: "center",
           color: "#FFF",

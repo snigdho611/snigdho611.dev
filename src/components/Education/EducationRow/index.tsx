@@ -16,15 +16,7 @@ const EducationRow: React.FC<EducationRowProps> = ({
   time,
 }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        height: "150px",
-        justifyContent: "center",
-        width: "100%",
-      }}
-    >
+    <div className="education-row" style={{}}>
       <div
         style={{
           width: "10%",
