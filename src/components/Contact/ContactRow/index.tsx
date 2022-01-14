@@ -3,43 +3,17 @@ import Image from "next/image";
 
 const index = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        margin: "50px 100px 80px 100px",
-        fontSize: "25px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          textAlign: "right",
-          color: "#2E93B0",
-          padding: "10px",
-          gap: "15px",
-        }}
-      >
+    <div style={{}} className="contact-margin">
+      <div className="contact-labels">
         <div>Email:</div>
         <div>Phone:</div>
         <div>Github:</div>
         <div>Others:</div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          textAlign: "left",
-          //   fontSize: "18px",
-          color: "#BEEBF9",
-          padding: "10px",
-          gap: "15px",
-        }}
-      >
+      <div className="contact-info">
         <div>snigdho.howlader@gmail.com</div>
         <div>N/A</div>
-        <div style={{ display: "flex", flexDirection: "row", gap: "5px" }}>
+        <div className="contact-row">
           <a href="https://www.github.com/snigdho611">
             <Image
               src={"/images/media/github.png"}
@@ -50,7 +24,7 @@ const index = () => {
           </a>
           snigdho611
         </div>
-        <div style={{ display: "flex", flexDirection: "row", gap: "30px" }}>
+        <div className="contact-row">
           <a href="https://www.linkedin.com/in/snigdho-dip-howlader-025b291a5/">
             <Image
               src={"/images/media/linkedin.png"}

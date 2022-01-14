@@ -15,17 +15,17 @@ body {
   top: 0;
   z-index: 3;
   box-shadow: 0px 1px 15px #5bc0de;
-}
-
-.Navbar .FlexBox {
+  width: 100%;
+  min-width: 100%;
   display: flex;
   flex-direction: row;
+  margin: 0 auto;
   justify-content: center;
 }
 
-.Navbar .Name {
+.Name {
   font-size: 32px;
-  font-family: Agency FB;
+  font-family: "Agency FB";
   font-weight: bold;
   padding-left: 50px;
   padding-top: 26px;
@@ -34,7 +34,7 @@ body {
   width: 15%;
 }
 
-.Navbar .links-container {
+.links-container {
   padding-top: 30px;
   display: flex;
   flex-direction: row;
@@ -43,16 +43,15 @@ body {
   margin-left: 265px;
 }
 
-.Navbar .links-container .link {
+.links-container .link {
   margin-left: 30px;
   text-decoration: none;
   color: #2e93b0;
   transition: color 0.35s, text-decoration 0.35s;
 }
 
-.Navbar .links-container .link:hover {
+.links-container .link:hover {
   color: #beebf9;
-  /* text-decoration: underline; */
 }
 
 /*-------------------ABOUT----------------*/
@@ -62,6 +61,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 74%;
+  margin: 120px auto 0px auto;
 }
 
 .Profile-img {
@@ -96,13 +96,127 @@ body {
   text-align: justify;
 }
 
+.education-card {
+  width: 113px;
+  height: 113px;
+  background-color: white;
+  border-radius: 100%;
+}
+
 .div-margin {
   margin: 120px auto 170px auto;
   width: 75%;
 }
 
+.contact-margin {
+  display: flex;
+  flex-direction: row;
+  margin: 50px 100px 80px 100px;
+  font-size: 25px;
+}
+
+.contact-labels {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  color: #2e93b0;
+  padding: 10px;
+  gap: 15px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: #beebf9;
+  padding: 10px;
+  gap: 15px;
+}
+
+.contact-row {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
 @media only screen and (max-width: 825px) {
-  * {
-    background-color: blue;
+  .Navbar {
+    width: fit-content;
+    min-width: 100%;
+    height: 120px;
+    flex-direction: column;
+    all: unset;
+  }
+
+  .Navbar .Name {
+    font-size: 40px;
+    padding-left: 0px;
+    padding-top: 5px;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+    all: unset;
+  }
+
+  .Navbar .links-container {
+    padding-top: 10px;
+    font-size: 25px;
+    margin: 0 auto;
+    flex-direction: row;
+    all: unset;
+  }
+
+  .Navbar .links-container .link {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #2e93b0;
+    transition: color 0.35s, text-decoration 0.35s;
+    all: unset;
+  }
+
+  .About-container {
+    /* margin-top: 120px; */
+    flex-direction: column;
+    /* width: fit-content; */
+    min-width: 100%;
+    width: 100%;
+    /* border: 1px solid white; */
+    margin: 120px auto 0px auto;
+    /* padding: 0 auto; */
+  }
+
+  .Profile-img {
+    margin: 0 auto;
+    border-radius: 100%;
+    background-color: #fff;
+    width: 210px;
+    min-width: 210px;
+    height: 210px;
+    background-image: url(/images/profilepic.jpg);
+    background-size: cover;
+    z-index: 1;
+  }
+
+  .Bar {
+    background-color: #5bc0de;
+    height: 15px;
+    width: 300px;
+    margin: 50px auto;
+  }
+
+  .Header {
+    color: #5bc0de;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .About-text {
+    color: #beebf9;
+    font-size: 22px;
+    text-align: justify;
+    padding: 10px 20px;
   }
 }

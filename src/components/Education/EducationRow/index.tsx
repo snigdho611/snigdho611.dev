@@ -28,7 +28,6 @@ const EducationRow: React.FC<EducationRowProps> = ({
       <div
         style={{
           width: "10%",
-          // border: "1px solid blue",
         }}
       >
         <div
@@ -58,7 +57,6 @@ const EducationRow: React.FC<EducationRowProps> = ({
         style={{
           paddingLeft: "20px",
           width: "38%",
-          // border: "1px solid green",
         }}
       >
         <div style={{ color: "#FFF", marginTop: "20px" }}>
