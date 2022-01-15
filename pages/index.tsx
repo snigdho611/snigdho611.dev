@@ -178,10 +178,17 @@ const Home: NextPage = () => {
         />
         <title>{allData.name}</title>
         <meta
-          name="description"
+          name="og:description"
           content="Snigdho Dip Howlader | Software Engineer"
         />
-        <meta property="og:image" content="/images/profilepic.jpg" />
+        <meta
+          property="og:title"
+          content="Snigdho Dip Howlader | Software Engineer"
+        />
+        <meta
+          property="og:image"
+          content="https://raw.githubusercontent.com/snigdho611/snigdho611.portfolio/main/public/images/profilepic.jpg?token=GHSAT0AAAAAABQDTPW24XEKEZWYK2VSLJTGYPLKGUA"
+        />
         {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
         <link rel="icon" href="/images/favicon.png" />
       </Head>
