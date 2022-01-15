@@ -181,7 +181,7 @@ const Home: NextPage = () => {
           name="description"
           content="Snigdho Dip Howlader | Software Engineer"
         />
-        <meta property="og:image" content="/public/images/profilepic.jpg" />
+        <meta property="og:image" content="/images/profilepic.jpg" />
         {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
         <link rel="icon" href="/images/favicon.png" />
       </Head>
