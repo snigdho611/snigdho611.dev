@@ -178,11 +178,11 @@ const Home: NextPage = () => {
         />
         <title>{allData.name}</title>
         <meta
-          name="og:description"
+          property="og:title"
           content="Snigdho Dip Howlader | Software Engineer"
         />
         <meta
-          property="og:title"
+          name="og:description"
           content="Snigdho Dip Howlader | Software Engineer"
         />
         <meta
