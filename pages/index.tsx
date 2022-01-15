@@ -183,7 +183,7 @@ const Home: NextPage = () => {
         />
         <meta
           name="og:description"
-          content="Snigdho Dip Howlader | Software Engineer"
+          content="This is the personal portfolio of Snigdho Dip Howlader. Frontend Developer, Software Engineer and Computer Science enthusiast. Please find the contact details below if youa re willing to get in touch."
         />
         <meta
           property="og:image"
