@@ -5,14 +5,16 @@ import ExperienceRow from "./ExperienceRow";
 const data = [
   {
     id: 1,
-    url: "/images/experience/mainframelabs.png",
+    imageURL: "/images/experience/mainframelabs.png",
+    siteURL: "https://mainframelabs.ltd/",
     description: "React JS, Next JS and Mongo DB - EdTech platform",
     org: "Mainframe Labs Ltd.",
     position: "Junior Software Engineer",
   },
   {
     id: 2,
-    url: "/images/experience/deepchainlabs.png",
+    imageURL: "/images/experience/deepchainlabs.png",
+    siteURL: "https://deepchainlabs.com/",
     description: "Laravel and Laravel Livewire - client websites",
     position: "Research and Development Intern",
     org: "DeepChain Labs",
@@ -23,7 +25,7 @@ const Experience = () => {
   return (
     <div style={{ margin: "120px auto 0 auto" }}>
       <div className="Header">EXPERIENCE</div>
-      {data.map(({ id, url, description, org, position }) => {
+      {data.map(({ id, siteURL, imageURL, description, org, position }) => {
         if (id % 2 == 0) {
           return (
             <ExperienceRow
@@ -31,7 +33,8 @@ const Experience = () => {
               org={org}
               position={position}
               description={description}
-              url={url}
+              siteURL={siteURL}
+              imageURL={imageURL}
               align={"r"}
             />
           );
@@ -42,7 +45,8 @@ const Experience = () => {
               org={org}
               position={position}
               description={description}
-              url={url}
+              siteURL={siteURL}
+              imageURL={imageURL}
               align={"l"}
             />
           );

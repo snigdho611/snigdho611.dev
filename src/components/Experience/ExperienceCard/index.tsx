@@ -1,15 +1,18 @@
 import React from "react";
 
 interface ExperienceCardProps {
-  url: string;
+  imageURL: string;
+  siteURL: string;
 }
 
-const index: React.FC<ExperienceCardProps> = ({ url }) => {
+const index: React.FC<ExperienceCardProps> = ({ imageURL, siteURL }) => {
   return (
-    <div
-      style={{ backgroundImage: `url(${url})` }}
-      className="experience-card"
-    ></div>
+    <a href={siteURL}>
+      <div
+        style={{ backgroundImage: `url(${imageURL})` }}
+        className="experience-card"
+      ></div>
+    </a>
   );
 };
 

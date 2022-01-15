@@ -394,7 +394,15 @@ body {
 
   .experience-tree-row {
     width: 100%;
-    /* height: 400px; */
+    height: 250px;
+  }
+
+  .experience-tree-row-bar {
+    /* width: 10px;
+    min-width: 10px;
+    background-color: #5bc0de; */
+    height: 250px;
+    /* margin: 0 auto; */
   }
 
   .experience-dialogue {

@@ -45,6 +45,7 @@ const allData = {
     {
       id: 1,
       url: "/images/experience/mainframelabs.png",
+      site: "https://deepchainlabs.com/",
       description: "React JS, Next JS and Mongo DB",
       org: "Mainframe Labs Ltd.",
       position: "Junior Software Engineer",
@@ -52,6 +53,7 @@ const allData = {
     {
       id: 2,
       url: "/images/experience/deepchainlabs.png",
+      site: "https://mainframelabs.ltd/",
       description: "Laravel, Laravel Livewire, MySQL",
       position: "Research and Development Intern",
       org: "DeepChain Labs",
@@ -107,7 +109,7 @@ const Home: NextPage = () => {
     if (windowWidth > 825) {
       setscrollDist(-100);
     } else {
-      setscrollDist(-130);
+      setscrollDist(-150);
     }
   }, [windowWidth]);
 
@@ -203,10 +205,19 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className="aboutClass">
-        <About about={allData.about} />
+        <motion.div
+          initial={{ x: 200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          // exit={{ opacity: 0 }}
+        >
+          <About about={allData.about} />
+        </motion.div>
       </div>
       <div className="skillsClass">
-        <motion.div animate={{ opacity: 1 }}>
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+        >
           <Skills />
         </motion.div>
       </div>

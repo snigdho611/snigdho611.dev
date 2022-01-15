@@ -2,7 +2,8 @@ import React from "react";
 import ExperienceCard from "../ExperienceCard";
 
 interface ExperienceRowProps {
-  url: string;
+  imageURL: string;
+  siteURL: string;
   description: string;
   org: string;
   position: string;
@@ -10,7 +11,8 @@ interface ExperienceRowProps {
 }
 
 const index: React.FC<ExperienceRowProps> = ({
-  url,
+  imageURL,
+  siteURL,
   description,
   org,
   position,
@@ -22,7 +24,7 @@ const index: React.FC<ExperienceRowProps> = ({
         <div className="experience-tree-row-container"></div>
         <div style={{ width: "12%" }}>
           <div className="experience-tree-row-bar">
-            <ExperienceCard url={url} />
+            <ExperienceCard imageURL={imageURL} siteURL={siteURL} />
           </div>
         </div>
         <div
@@ -100,7 +102,7 @@ const index: React.FC<ExperienceRowProps> = ({
         </div>
         <div style={{ width: "12%" }}>
           <div className="experience-tree-row-bar">
-            <ExperienceCard url={url} />
+            <ExperienceCard imageURL={imageURL} siteURL={siteURL} />
           </div>
         </div>
         <div
