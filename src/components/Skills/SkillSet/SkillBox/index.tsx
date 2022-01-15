@@ -18,7 +18,7 @@ const index: React.FC<SkillBox> = ({ url, name }) => {
             color: "#5BC0DE",
             fontWeight: "bold",
             textAlign: "center",
-            fontSize: "17px",
+            fontSize: "15px",
           }}
         >
           {name}

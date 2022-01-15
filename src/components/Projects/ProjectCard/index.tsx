@@ -22,7 +22,7 @@ const index: React.FC<ProjectCardProps> = ({
       style={{
         minWidth: "280px",
         width: "280px",
-        height: "200px",
+        height: "240px",
         backgroundColor: color,
         margin: "10px auto",
         zIndex: 2,
