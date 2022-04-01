@@ -1,8 +1,13 @@
 import gsap from "gsap";
-import type { NextPage } from "next";
+// import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+// import Image from "next/image";
+import React, {
+  useEffect,
+  // useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 // import About from "components/About";
 // import Skills from "components/Skills";
 // import Experience from "components/Experience";
@@ -20,13 +25,47 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ val }) => {
+  const [windowWidth, setWindowWidth] = useState<Number>(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+  const [nameAnimation, setNameAnimation] = useState<boolean>(false);
   const textRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setWindowWidth(window.innerWidth);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
+    if (windowWidth < 1400) {
+      setNameAnimation(false);
+    } else {
+      setNameAnimation(true);
+    }
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [windowWidth]);
 
   const onLoad = (currentTarget: React.RefObject<HTMLDivElement>) => {
     gsap.fromTo(
       currentTarget.current,
-      { scale: 15, delay: 0.7, x: 800, y: 350 },
-      { scale: 1, x: 0, y: 0, delay: 1, duration: 1 }
+      {
+        scale: 1,
+        delay: 0.7,
+        x: 0,
+        y: 0,
+      },
+      {
+        // translate: "-45% -45%",
+        scale: 0.075,
+        // scale: 0.075,
+        delay: 1,
+        duration: 1,
+        x: "-45%",
+        y: "-45%",
+      }
     );
   };
 
@@ -35,8 +74,20 @@ const Home: React.FC<HomeProps> = ({ val }) => {
   // };
 
   useEffect(() => {
-    onLoad(textRef);
-  }, []);
+    if (textRef.current) {
+      if (windowWidth > 1400) {
+        if (!nameAnimation) {
+          textRef.current.style.display = "block";
+          onLoad(textRef);
+        } else if (nameAnimation) {
+          textRef.current.style.display = "block";
+        }
+      } else {
+        textRef.current.style.display = "none";
+      }
+    }
+    // windowWidth >= 1500 ? onLoad(textRef) : null;
+  }, [windowWidth, nameAnimation]);
 
   return (
     <>
@@ -59,72 +110,23 @@ const Home: React.FC<HomeProps> = ({ val }) => {
       {/* <div>{val}</div> */}
       <div
         style={{
-          // backgroundColor: "gray",
-          // backgroundImage: ".public/images/favicon.png",
+          backgroundColor: "black",
           minWidth: "100px",
-          width: "100px",
-          minHeight: "50px",
-          height: "50px",
-          // margin: "20px auto",
+          width: "100%",
+          height: "100vh",
         }}
-        ref={textRef}
-        // onMouseEnter={onLoad}
-        // onMouseLeave={onUnload}
       >
-        {/* <img alt="empty" src="../" /> */}
-        <Image
-          src={"/images/favicon2.svg"}
-          width={100}
-          height={50}
-          alt="Image not found"
-        />
+        <div
+          style={{
+            backgroundImage: "url(/images/favicon2.svg)",
+            backgroundSize: "100% 100%",
+            backgroundRepeat: "no-repeat",
+            height: "100%",
+            // transform: "translate(-45%,-45%) scale(0.075)",
+          }}
+          ref={textRef}
+        ></div>
       </div>
-      {/* <div className="Navbar">
-        <div className="Name">{allData.name}</div>
-        <div className="links-container">
-          <div className="link-row">
-            <a href="#" className="link">
-              About
-            </a>
-            <a href="#" className="link">
-              Skills
-            </a>
-            <a href="#" className="link">
-              Experience
-            </a>
-          </div>
-          <div className="link-row">
-            <a href="#" className="link">
-              Projects
-            </a>
-            <a href="#" className="link">
-              Education
-            </a>
-            <a href="#" className="link">
-              Contact
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="aboutClass">
-        <About about={allData.about} />
-      </div>
-      <div className="skillsClass">
-        <Skills />
-      </div>
-      <div className="experienceClass">
-        <Experience />
-      </div>
-      <div className="projectsClass">
-        <Projects projects={allData.projects} />
-      </div>
-      <div className="educationClass">
-        <Education education={allData.education} />
-      </div>
-      <div className="contactClass">
-        <Contact />
-        <Footer />
-      </div> */}
     </>
   );
 };
