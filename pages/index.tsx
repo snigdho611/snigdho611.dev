@@ -41,11 +41,11 @@ const Home: React.FC<HomeProps> = ({ val }) => {
         y: 0,
       },
       {
-        scale: 0.075,
+        scale: 0.065,
         delay: 1,
         duration: 1,
         x: "-45%",
-        yPercent: -45,
+        y: "-48%",
       }
     );
     // currentTarget.current?.style.display = "none";
@@ -57,7 +57,7 @@ const Home: React.FC<HomeProps> = ({ val }) => {
           textRef.current.style.display = "fixed";
           onLoad(textRef);
         } else if (nameAnimation) {
-          textRef.current.style.display = "fixed";
+          textRef.current.style.display = "initial";
         }
       } else {
         textRef.current.style.display = "none";
@@ -83,26 +83,8 @@ const Home: React.FC<HomeProps> = ({ val }) => {
         <link rel="icon" href="/images/favicon.png" />
         <title>Snigdho Dip Howlader</title>
       </Head>
-
-      {/* <div
-        className="bg-gray-900"
-        style={{
-          minWidth: "100px",
-          width: "100%",
-          height: "100vh",
-        }}
-      >
-        <div
-          style={{
-            backgroundImage: "url(/images/favicon2.svg)",
-            backgroundSize: "100% 100%",
-            backgroundRepeat: "no-repeat",
-            height: "100%",
-          }}
-          ref={textRef}
-        ></div>
-      </div> */}
       <div
+        // className="bg-slate-500"
         style={{
           backgroundImage: "url(/images/favicon2.svg)",
           backgroundSize: "100% 100%",
@@ -114,15 +96,16 @@ const Home: React.FC<HomeProps> = ({ val }) => {
           position: "fixed",
         }}
         ref={textRef}
-      ></div>
+      />
       <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
+      {/* <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          color: "white",
+          gap: "35px",
+        }}
+      ></div> */}
     </>
   );
 };

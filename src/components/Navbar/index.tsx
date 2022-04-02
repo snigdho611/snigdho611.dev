@@ -5,17 +5,27 @@ interface NavbarProps {
 }
 
 const Navbar = () => {
+  const linkClass = "text-cyan-100 m-10";
   return (
-    <div>
-      <div>{/* {allData.name} */}</div>
-      <div>
-        <a href="#">About</a>
-        <a href="#">Skills</a>
-        <a href="#">Experience</a>
-        <a href="#">Projects</a>
-        <a href="#">Education</a>
-        <a href="#">Contact</a>
-      </div>
+    <div className="flex-row flex-auto text-2xl my-7">
+      <a href="#" className={linkClass}>
+        About
+      </a>
+      <a href="#" className={linkClass}>
+        Skills
+      </a>
+      <a href="#" className={linkClass}>
+        Experience
+      </a>
+      <a href="#" className={linkClass}>
+        Projects
+      </a>
+      <a href="#" className={linkClass}>
+        Education
+      </a>
+      <a href="#" className={linkClass}>
+        Contact
+      </a>
     </div>
   );
 };
