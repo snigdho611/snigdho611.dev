@@ -8,17 +8,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-// import About from "components/About";
-// import Skills from "components/Skills";
-// import Experience from "components/Experience";
-// import Projects from "components/Projects";
-// import Education from "components/Education";
-// import ParticleEffect from "components/ParticleEffect";
-// import Footer from "components/Footer";
-// import Contact from "components/Contact";
-// import { motion } from "framer-motion";
-// import { scroller } from "react-scroll";
-// import { useEffect, useState } from "react";
 
 interface HomeProps {
   val: string;
