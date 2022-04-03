@@ -42,11 +42,10 @@ const Navbar = () => {
         x: "100vh",
         y: "45vh",
       },
-      { scale: 1, x: 0, y: 0, duration: 2.5, delay: 1 }
+      { scale: 1, x: 0, y: 0, duration: 2, delay: 1 }
     );
   };
   useEffect(() => {
-    // console.log(router.pathname);
     if (textRef.current) {
       if (windowWidth > 1400) {
         if (!nameAnimation) {
@@ -55,9 +54,6 @@ const Navbar = () => {
             onLoad(textRef);
           } else {
           }
-          // setTimeout(() => {
-          //   textRef.current?.style.display = "none";
-          // }, 2000);
         } else if (nameAnimation) {
           textRef.current.style.display = "initial";
         }
@@ -69,11 +65,7 @@ const Navbar = () => {
 
   const linkClass = "text-cyan-600 mx-10 font-semibold hover:text-cyan-100";
   return (
-    <div
-      // style={{ backgroundColor: "#111827" }}
-      // className="flex-row flex text-2xl py-7"
-      className="navbar-container"
-    >
+    <div className="navbar-container">
       <div className="w-1/4">
         <div
           style={{
@@ -82,7 +74,7 @@ const Navbar = () => {
             backgroundRepeat: "no-repeat",
             minWidth: "100px",
             width: "10%",
-            height: "3.25%",
+            height: "3%",
             position: "fixed",
             cursor: "pointer",
           }}
@@ -95,27 +87,27 @@ const Navbar = () => {
             About
           </a>
         </Link>
-        <Link href={"/about"}>
+        <Link href={"/skills"}>
           <a href="#" className={linkClass}>
             Skills
           </a>
         </Link>
-        <Link href={"/about"}>
+        <Link href={"/experience"}>
           <a href="#" className={linkClass}>
             Experience
           </a>
         </Link>
-        <Link href={"/about"}>
+        <Link href={"/projects"}>
           <a href="#" className={linkClass}>
             Projects
           </a>
         </Link>
-        <Link href={"/about"}>
+        {/* <Link href={"/about"}>
           <a href="#" className={linkClass}>
             Education
           </a>
-        </Link>
-        <Link href={"/about"}>
+        </Link> */}
+        <Link href={"/contact"}>
           <a href="#" className={linkClass}>
             Contact
           </a>
