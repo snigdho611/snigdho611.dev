@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .navbar-container {
+    @apply flex-row flex text-2xl py-7;
+    background-color: #111827;
+  }
+}

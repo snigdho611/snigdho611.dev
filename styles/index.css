@@ -4,5 +4,9 @@
 }
 
 body {
-  background-color: #111827;
+  background-color: #1f1f2b;
+}
+
+.transit {
+  transition: color 0.25s, background-color 0.25s;
 }

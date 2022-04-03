@@ -1,31 +1,126 @@
-import React from "react";
+import gsap from "gsap";
+import Image from "next/image";
+import Link from "next/link";
+import { Router, useRouter } from "next/router";
+import React, { useEffect, useRef, useState } from "react";
 
 interface NavbarProps {
   children: React.ReactNode;
 }
 
 const Navbar = () => {
-  const linkClass = "text-cyan-100 m-10";
+  const router = useRouter();
+
+  const [windowWidth, setWindowWidth] = useState<Number>(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+  const [nameAnimation, setNameAnimation] = useState<boolean>(false);
+  const textRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setWindowWidth(window.innerWidth);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
+    if (windowWidth < 1400) {
+      setNameAnimation(false);
+    } else {
+      setNameAnimation(true);
+    }
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [windowWidth]);
+
+  const onLoad = (currentTarget: React.RefObject<HTMLDivElement>) => {
+    gsap.fromTo(
+      currentTarget.current,
+      {
+        scale: 15,
+        x: "100vh",
+        y: "45vh",
+      },
+      { scale: 1, x: 0, y: 0, duration: 2.5, delay: 1 }
+    );
+  };
+  useEffect(() => {
+    // console.log(router.pathname);
+    if (textRef.current) {
+      if (windowWidth > 1400) {
+        if (!nameAnimation) {
+          if (router.pathname == "/") {
+            textRef.current.style.display = "fixed";
+            onLoad(textRef);
+          } else {
+          }
+          // setTimeout(() => {
+          //   textRef.current?.style.display = "none";
+          // }, 2000);
+        } else if (nameAnimation) {
+          textRef.current.style.display = "initial";
+        }
+      } else {
+        textRef.current.style.display = "none";
+      }
+    }
+  }, [windowWidth, nameAnimation, router]);
+
+  const linkClass = "text-cyan-600 mx-10 font-semibold hover:text-cyan-100";
   return (
-    <div className="flex-row flex-auto text-2xl my-7">
-      <a href="#" className={linkClass}>
-        About
-      </a>
-      <a href="#" className={linkClass}>
-        Skills
-      </a>
-      <a href="#" className={linkClass}>
-        Experience
-      </a>
-      <a href="#" className={linkClass}>
-        Projects
-      </a>
-      <a href="#" className={linkClass}>
-        Education
-      </a>
-      <a href="#" className={linkClass}>
-        Contact
-      </a>
+    <div
+      // style={{ backgroundColor: "#111827" }}
+      // className="flex-row flex text-2xl py-7"
+      className="navbar-container"
+    >
+      <div className="w-1/4">
+        <div
+          style={{
+            backgroundImage: "url(/images/favicon2.svg)",
+            backgroundSize: "100% 100%",
+            backgroundRepeat: "no-repeat",
+            minWidth: "100px",
+            width: "10%",
+            height: "3.25%",
+            position: "fixed",
+            cursor: "pointer",
+          }}
+          ref={textRef}
+        />
+      </div>
+      <div className="w-3/4">
+        <Link href={"/about"}>
+          <a href="#" className={linkClass}>
+            About
+          </a>
+        </Link>
+        <Link href={"/about"}>
+          <a href="#" className={linkClass}>
+            Skills
+          </a>
+        </Link>
+        <Link href={"/about"}>
+          <a href="#" className={linkClass}>
+            Experience
+          </a>
+        </Link>
+        <Link href={"/about"}>
+          <a href="#" className={linkClass}>
+            Projects
+          </a>
+        </Link>
+        <Link href={"/about"}>
+          <a href="#" className={linkClass}>
+            Education
+          </a>
+        </Link>
+        <Link href={"/about"}>
+          <a href="#" className={linkClass}>
+            Contact
+          </a>
+        </Link>
+      </div>
     </div>
   );
 };
