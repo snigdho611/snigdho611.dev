@@ -1,13 +1,14 @@
 import Navbar from "components/Navbar";
+import Base from "components/Base";
 import gsap from "gsap";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 
-interface HomeProps {
+interface indexProps {
   val: string;
 }
 
-const Home: React.FC<HomeProps> = ({ val }) => {
+const Index: React.FC<indexProps> = ({ val }) => {
   // const [windowWidth, setWindowWidth] = useState<Number>(
   //   typeof window !== "undefined" ? window.innerWidth : 0
   // );
@@ -94,14 +95,7 @@ const Home: React.FC<HomeProps> = ({ val }) => {
       </Head>
 
       <Navbar />
-      {/* <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          color: "white",
-          gap: "35px",
-        }}
-      ></div> */}
+      <Base />
     </>
   );
 };
@@ -111,4 +105,4 @@ export async function getServerSideProps() {
   return { props: { val: value } };
 }
 
-export default Home;
+export default Index;
