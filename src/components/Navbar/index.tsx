@@ -16,6 +16,7 @@ const Navbar = () => {
   );
   const [nameAnimation, setNameAnimation] = useState<boolean>(false);
   const textRef = useRef<HTMLDivElement>(null);
+  const windowLimit = 1350;
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,7 +26,7 @@ const Navbar = () => {
     };
     window.addEventListener("resize", handleResize);
 
-    if (windowWidth < 1400) {
+    if (windowWidth < windowLimit) {
       setNameAnimation(false);
     } else {
       setNameAnimation(true);
@@ -47,7 +48,7 @@ const Navbar = () => {
   };
   useEffect(() => {
     if (textRef.current) {
-      if (windowWidth > 1400) {
+      if (windowWidth > windowLimit) {
         if (!nameAnimation) {
           if (router.pathname == "/") {
             textRef.current.style.display = "fixed";
