@@ -1,5 +1,19 @@
 import React from "react";
 
+const About = () => {
+  return (
+    <div>
+      <div
+        className="bg-cover w-60 h-60 rounded-full"
+        style={{
+          backgroundImage: "url(/images/profilepic.jpg)",
+        }}
+      ></div>
+      {/* <p>Abc</p> */}
+    </div>
+  );
+};
+
 // interface AboutProps {
 //   about: string[];
 // }
@@ -27,4 +41,4 @@ import React from "react";
 //   );
 // };
 
-// export default About;
+export default About;
