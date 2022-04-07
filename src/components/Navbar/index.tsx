@@ -15,7 +15,7 @@ const Navbar = () => {
     typeof window !== "undefined" ? window.innerWidth : 0
   );
   const [nameAnimation, setNameAnimation] = useState<boolean>(false);
-  const textRef = useRef<HTMLDivElement>(null);
+  const initialsRef = useRef<HTMLDivElement>(null);
   const windowLimit = 1350;
 
   useEffect(() => {
@@ -35,31 +35,29 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [windowWidth]);
 
-  const onLoad = (currentTarget: React.RefObject<HTMLDivElement>) => {
-    gsap.fromTo(
-      currentTarget.current,
-      {
-        scale: 15,
-        x: "100vh",
-        y: "45vh",
-      },
-      { scale: 1, x: 0, y: 0, duration: 2, delay: 1 }
-    );
-  };
   useEffect(() => {
-    if (textRef.current) {
+    if (initialsRef.current) {
       if (windowWidth > windowLimit) {
         if (!nameAnimation) {
           if (router.pathname == "/") {
-            textRef.current.style.display = "fixed";
-            onLoad(textRef);
+            initialsRef.current.style.display = "fixed";
+            // onLoad(initialsRef);
+            gsap.fromTo(
+              initialsRef.current,
+              {
+                scale: 15,
+                x: "100vh",
+                y: "45vh",
+              },
+              { scale: 1, x: 0, y: 0, duration: 2, delay: 1 }
+            );
           } else {
           }
         } else if (nameAnimation) {
-          textRef.current.style.display = "initial";
+          initialsRef.current.style.display = "initial";
         }
       } else {
-        textRef.current.style.display = "none";
+        initialsRef.current.style.display = "none";
       }
     }
   }, [windowWidth, nameAnimation, router]);
@@ -79,7 +77,7 @@ const Navbar = () => {
             position: "fixed",
             cursor: "pointer",
           }}
-          ref={textRef}
+          ref={initialsRef}
         />
       </div>
       <div className="w-3/4">
