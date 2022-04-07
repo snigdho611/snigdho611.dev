@@ -41,7 +41,6 @@ const Navbar = () => {
         if (!nameAnimation) {
           if (router.pathname == "/") {
             initialsRef.current.style.display = "fixed";
-            // onLoad(initialsRef);
             gsap.fromTo(
               initialsRef.current,
               {

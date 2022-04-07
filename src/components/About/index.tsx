@@ -15,25 +15,31 @@ const About = () => {
   }, []);
 
   return (
-    <div className="mx-auto w-3/4 flex flex-row" ref={baseRef}>
-      <div>
+    <div className="mx-auto w-10/12 flex flex-row" ref={baseRef}>
+      <div className="w-5/12">
         <div
-          className="bg-cover w-60 h-60 min-w-60 min-h-60 rounded-full"
+          className="bg-cover w-56 h-56 rounded-full mx-auto my-5"
           style={{
             backgroundImage: "url(/images/profilepic.jpg)",
           }}
         />
       </div>
-      <div>
-        <div>Overview</div>
-        <div>
-          A Professional Software Developer with experience in the industry.
-          Avid in both frontend and backend development technologies, the main
-          domain of expertise are web development, databases, problem solving,
-          desktop development and responsive designing. Additionally,
-          academically learned with Machine Learning, Data Mining and Algorithms
-          that contribute to problem solving skills. Can easily adapt to
-          technologies of all kinds and good at thinking on the go.
+      <div className="w-7/12 mx-auto">
+        <div className="text-4xl text-cyan-600 text-center my-4">Overview</div>
+        <div className="text-justify w-11/12 text-cyan-100">
+          <p>
+            A Professional Software Developer with experience in the industry.
+            Avid in both frontend and backend development technologies, the main
+            domain of expertise are web development, databases, problem solving,
+            desktop development and responsive designing.
+          </p>
+          <br />
+          <p>
+            Additionally, academically learned with Machine Learning, Data
+            Mining and Algorithms that contribute to problem solving skills. Can
+            easily adapt to technologies of all kinds and good at thinking on
+            the go.
+          </p>
         </div>
       </div>
     </div>
