@@ -15,7 +15,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="mx-auto w-10/12 flex flex-row" ref={baseRef}>
+    <div className="mx-auto w-10/12 flex flex-row mt-40" ref={baseRef}>
       <div className="w-5/12">
         <div
           className="bg-cover w-56 h-56 rounded-full mx-auto my-5"
@@ -25,7 +25,7 @@ const About = () => {
         />
       </div>
       <div className="w-7/12 mx-auto">
-        <div className="text-4xl text-cyan-600 text-center my-4">Overview</div>
+        <div className="text-4xl text-cyan-400 text-center my-4">Overview</div>
         <div className="text-justify w-11/12 text-cyan-100">
           <p>
             A Professional Software Developer with experience in the industry.

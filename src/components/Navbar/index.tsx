@@ -45,12 +45,11 @@ const Navbar = () => {
               initialsRef.current,
               {
                 scale: 15,
-                x: "55rem",
-                y: "30rem",
+                x: "100vh",
+                y: "50vh",
               },
               { scale: 1, x: 0, y: 0, duration: 2, delay: 1 }
             );
-          } else {
           }
         } else if (nameAnimation) {
           initialsRef.current.style.display = "initial";
@@ -65,9 +64,11 @@ const Navbar = () => {
     "transition duration-300 text-cyan-600 mx-10 font-semibold hover:text-cyan-100 text-xl";
   return (
     <div
-      className="flex-row flex text-xl py-7 w-screen"
+      className="flex-row flex text-xl py-7 w-screen z-10"
       style={{
         backgroundColor: "#111827",
+        position: "fixed",
+        top: 0,
       }}
     >
       <div
@@ -76,6 +77,11 @@ const Navbar = () => {
           // console.log("ok");
           router.push("/");
         }}
+        style={{
+          justifyContent: "center",
+          overflow: "auto",
+          padding: "0 50px",
+        }}
       >
         {windowWidth > windowLimit ? (
           <div
@@ -83,11 +89,11 @@ const Navbar = () => {
               backgroundImage: "url(/images/favicon2.svg)",
               backgroundSize: "100% 100%",
               backgroundRepeat: "no-repeat",
-              minWidth: "100px",
-              width: "10%",
-              height: "3%",
+              width: "100px",
+              height: "25px",
               position: "fixed",
               cursor: "pointer",
+              // alignSelf: "center",
             }}
             ref={initialsRef}
           />
@@ -97,9 +103,8 @@ const Navbar = () => {
               backgroundImage: "url(/images/favicon2.svg)",
               backgroundSize: "100% 100%",
               backgroundRepeat: "no-repeat",
-              minWidth: "100px",
-              width: "10%",
-              height: "3%",
+              width: "100px",
+              height: "25px",
               position: "fixed",
               cursor: "pointer",
             }}
@@ -113,22 +118,22 @@ const Navbar = () => {
             About
           </a>
         </Link>
-        <Link href={"/about"}>
+        <Link href={"/skills"}>
           <a href="#" className={linkClass}>
             Skills
           </a>
         </Link>
-        <Link href={"/about"}>
+        <Link href={"/experience"}>
           <a href="#" className={linkClass}>
             Experience
           </a>
         </Link>
-        <Link href={"/about"}>
+        <Link href={"/projects"}>
           <a href="#" className={linkClass}>
             Projects
           </a>
         </Link>
-        <Link href={"/about"}>
+        <Link href={"/contact"}>
           <a href="#" className={linkClass}>
             Contact
           </a>

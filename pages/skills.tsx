@@ -1,13 +1,11 @@
-import About from "components/About";
+import Base from "components/Base";
 import Navbar from "components/Navbar";
-import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-// import styles from "../styles/Home.module.css";
+import React from "react";
 
-const Home: NextPage = () => {
+const skills = () => {
   return (
-    <div>
+    <>
       <Head>
         <meta
           property="og:title"
@@ -26,16 +24,9 @@ const Home: NextPage = () => {
       </Head>
 
       <Navbar />
-
-      <About />
-      <About />
-    </div>
+      <Base />
+    </>
   );
 };
 
-export async function getServerSideProps() {
-  const value = process.env.BASE_VAL;
-  return { props: { val: value } };
-}
-
-export default Home;
+export default skills;
