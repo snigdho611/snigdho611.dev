@@ -32,4 +32,9 @@ const Home: NextPage = () => {
   );
 };
 
+export async function getServerSideProps() {
+  const value = process.env.BASE_VAL;
+  return { props: { val: value } };
+}
+
 export default Home;

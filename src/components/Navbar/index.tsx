@@ -45,8 +45,8 @@ const Navbar = () => {
               initialsRef.current,
               {
                 scale: 15,
-                x: "100vh",
-                y: "45vh",
+                x: "55rem",
+                y: "30rem",
               },
               { scale: 1, x: 0, y: 0, duration: 2, delay: 1 }
             );
@@ -61,51 +61,74 @@ const Navbar = () => {
     }
   }, [windowWidth, nameAnimation, router]);
 
-  const linkClass = "text-cyan-600 mx-10 font-semibold hover:text-cyan-100";
+  const linkClass =
+    "transition duration-300 text-cyan-600 mx-10 font-semibold hover:text-cyan-100 text-xl";
   return (
-    <div className="navbar-container">
-      <div className="w-1/4">
-        <div
-          style={{
-            backgroundImage: "url(/images/favicon2.svg)",
-            backgroundSize: "100% 100%",
-            backgroundRepeat: "no-repeat",
-            minWidth: "100px",
-            width: "10%",
-            height: "3%",
-            position: "fixed",
-            cursor: "pointer",
-          }}
-          ref={initialsRef}
-        />
+    <div
+      className="flex-row flex text-xl py-7 w-screen"
+      style={{
+        backgroundColor: "#111827",
+      }}
+    >
+      <div
+        className="w-1/4"
+        onClick={() => {
+          // console.log("ok");
+          router.push("/");
+        }}
+      >
+        {windowWidth > windowLimit ? (
+          <div
+            style={{
+              backgroundImage: "url(/images/favicon2.svg)",
+              backgroundSize: "100% 100%",
+              backgroundRepeat: "no-repeat",
+              minWidth: "100px",
+              width: "10%",
+              height: "3%",
+              position: "fixed",
+              cursor: "pointer",
+            }}
+            ref={initialsRef}
+          />
+        ) : (
+          <div
+            style={{
+              backgroundImage: "url(/images/favicon2.svg)",
+              backgroundSize: "100% 100%",
+              backgroundRepeat: "no-repeat",
+              minWidth: "100px",
+              width: "10%",
+              height: "3%",
+              position: "fixed",
+              cursor: "pointer",
+            }}
+            // ref={initialsRef}
+          />
+        )}
       </div>
-      <div className="w-3/4">
+      <div className="mx-auto">
         <Link href={"/about"}>
           <a href="#" className={linkClass}>
             About
           </a>
         </Link>
-        <Link href={"/skills"}>
+        <Link href={"/about"}>
           <a href="#" className={linkClass}>
             Skills
           </a>
         </Link>
-        <Link href={"/experience"}>
+        <Link href={"/about"}>
           <a href="#" className={linkClass}>
             Experience
           </a>
         </Link>
-        <Link href={"/projects"}>
+        <Link href={"/about"}>
           <a href="#" className={linkClass}>
             Projects
           </a>
         </Link>
-        {/* <Link href={"/about"}>
-          <a href="#" className={linkClass}>
-            Education
-          </a>
-        </Link> */}
-        <Link href={"/contact"}>
+        <Link href={"/about"}>
           <a href="#" className={linkClass}>
             Contact
           </a>

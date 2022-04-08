@@ -5,6 +5,7 @@
 
 body {
   background-color: #1f1f2b;
+  overflow-x: hidden;
 }
 
 .transit {

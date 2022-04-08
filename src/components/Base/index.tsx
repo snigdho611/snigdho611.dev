@@ -13,15 +13,14 @@ const Base = () => {
   // }, []);
 
   return (
-    <div className="text-cyan-200 my-auto mx-auto my-5 w-3/4" ref={baseRef}>
+    <div className="text-cyan-200 my-auto mx-auto my-60 w-3/4" ref={baseRef}>
       <div className="text-6xl font-medium text-center my-5">
         Snigdho Dip Howlader
       </div>
-      <div className="text-4xl italic text-center my-5">Software Engineer</div>
-      <div className="text-2xl font-bold text-center my-5 underline">
-        Fullstack
+      <div className="text-4xl text-cyan-500 italic text-center my-5">
+        Fullstack Software Engineer
       </div>
-      <div className="flex flex-row gap-x-14 mx-auto justify-center my-8">
+      <div className="text-2xl flex flex-row gap-x-14 mx-auto justify-center my-8">
         <div className="cursor-pointer text-cyan-400 hover:text-cyan-100 duration-300 transition">
           Frontend
         </div>
