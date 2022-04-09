@@ -1,7 +1,8 @@
-import Base from "components/Base";
+import Base from "components/Skills";
 import Navbar from "components/Navbar";
 import Head from "next/head";
 import React from "react";
+import Skills from "components/Skills";
 
 const skills = () => {
   return (
@@ -24,7 +25,7 @@ const skills = () => {
       </Head>
 
       <Navbar />
-      <Base />
+      <Skills />
     </>
   );
 };

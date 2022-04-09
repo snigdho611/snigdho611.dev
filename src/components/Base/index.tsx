@@ -8,7 +8,7 @@ const Base = () => {
     gsap.fromTo(
       baseRef.current,
       { x: "60%", opacity: 0 },
-      { x: 0, y: 0, opacity: 1, duration: 2, delay: 3 }
+      { x: 0, y: 0, opacity: 1, duration: 1.75, delay: 3 }
     );
   }, []);
 
