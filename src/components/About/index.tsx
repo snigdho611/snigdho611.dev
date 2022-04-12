@@ -24,9 +24,9 @@ const About = () => {
           }}
         />
       </div>
-      <div className="w-7/12 mx-auto">
-        <div className="text-4xl text-cyan-400 text-center my-4">Overview</div>
-        <div className="text-justify w-11/12 text-cyan-100">
+      <div className="w-1/2 mx-auto">
+        <h1 className="text-4xl text-cyan-400 text-center my-4">Overview</h1>
+        <div className="text-justify  text-cyan-100">
           <p>
             A Professional Software Developer with experience in the industry.
             Avid in both frontend and backend development technologies, the main

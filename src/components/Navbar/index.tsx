@@ -114,29 +114,19 @@ const Navbar = () => {
       </div>
       <div className="mx-auto">
         <Link href={"/about"}>
-          <a href="#" className={linkClass}>
-            About
-          </a>
+          <a className={linkClass}>About</a>
         </Link>
         <Link href={"/skills"}>
-          <a href="#" className={linkClass}>
-            Skills
-          </a>
+          <a className={linkClass}>Skills</a>
         </Link>
         <Link href={"/experience"}>
-          <a href="#" className={linkClass}>
-            Experience
-          </a>
+          <a className={linkClass}>Experience</a>
         </Link>
         <Link href={"/projects"}>
-          <a href="#" className={linkClass}>
-            Projects
-          </a>
+          <a className={linkClass}>Projects</a>
         </Link>
         <Link href={"/contact"}>
-          <a href="#" className={linkClass}>
-            Contact
-          </a>
+          <a className={linkClass}>Contact</a>
         </Link>
       </div>
     </div>

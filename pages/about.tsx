@@ -28,7 +28,7 @@ const Home: NextPage = () => {
       <Navbar />
 
       <About />
-      <About />
+      {/* <About /> */}
     </div>
   );
 };

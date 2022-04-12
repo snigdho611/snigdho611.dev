@@ -15,7 +15,13 @@ const Skills = () => {
         alignSelf: "center",
       }}
     >
-      <div className="flex flex-row justify-center">
+      <div>
+        <h1>Frontend</h1>
+        <div>
+          <div>React JS</div>
+        </div>
+      </div>
+      {/* <div className="flex flex-row justify-center">
         <div style={{ minWidth: "100px" }} className="text-center">
           Laravel
         </div>
@@ -47,7 +53,7 @@ const Skills = () => {
         <div style={{ minWidth: "100px" }} className="text-center">
           Vue JS
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
