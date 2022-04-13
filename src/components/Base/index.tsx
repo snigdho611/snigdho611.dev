@@ -5,11 +5,11 @@ const Base = () => {
   const baseRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // gsap.fromTo(
-    //   baseRef.current,
-    //   { x: "60%", opacity: 0 },
-    //   { x: 0, y: 0, opacity: 1, duration: 1.75, delay: 3 }
-    // );
+    gsap.fromTo(
+      baseRef.current,
+      { x: "60%", opacity: 0 },
+      { x: 0, y: 0, opacity: 1, duration: 1.75, delay: 3 }
+    );
   }, []);
 
   return (

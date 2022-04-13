@@ -4,14 +4,20 @@ import React, { useEffect, useRef } from "react";
 
 const Skills = () => {
   const reactRef = useRef<HTMLDivElement>(null);
+  const vueRef = useRef<HTMLDivElement>(null);
+
   const laravelRef = useRef<HTMLDivElement>(null);
+  const nodeRef = useRef<HTMLDivElement>(null);
+
+  const sqlRef = useRef<HTMLDivElement>(null);
+  const mongoRef = useRef<HTMLDivElement>(null);
 
   const rotateObjects = (objects: React.RefObject<HTMLDivElement>[]) => {
     objects.map((object) => {
       gsap.to(object.current, {
         transformPerspective: 800,
         transformOrigin: "center",
-        duration: 1,
+        duration: 1.25,
         rotationY: 360,
       });
     });
@@ -19,88 +25,116 @@ const Skills = () => {
 
   useEffect(() => {
     const allRefs = [];
-    allRefs.push(reactRef, laravelRef);
+    allRefs.push(reactRef, vueRef, laravelRef, nodeRef, sqlRef, mongoRef);
     rotateObjects(allRefs);
   }, []);
 
   return (
-    <div className="w-2/4 my-48 mx-auto">
-      <div className="flex flex-col text-cyan-300">
-        <div>
-          <h1 className="text-3xl">Frontend</h1>
-          <div className="flex flex-row">
+    <div className="w-fit my-48 mx-auto">
+      <div className="flex flex-row">
+        <div className="text-cyan-300">
+          <h1 className="text-3xl text-center">Frontend</h1>
+          <div className="flex flex-row my-5">
             <div
               className="min-w-24 w-24 min-h-24 h-24 mx-5"
               style={{
                 backgroundImage: `url('images/icons/reactjs.png')`,
-                backgroundSize: "100%",
+                backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
               }}
               ref={reactRef}
-            >
-              {/* React JS */}
-            </div>
-            <div className="w-24 h-24 mx-5">Vue JS</div>
+            ></div>
+            <div
+              className="w-24 h-24 mx-5"
+              style={{
+                backgroundImage: `url('images/icons/vue.png')`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+              ref={vueRef}
+            />
           </div>
         </div>
-        <div>
-          <h1 className="text-3xl">Backend</h1>
-          <div className="flex flex-row">
+        <div className="text-cyan-300">
+          <h1 className="text-3xl text-center">Backend</h1>
+          <div className="flex flex-row  my-5">
             <div
               className="min-w-24 w-24 min-h-24 h-24 mx-5"
               style={{
                 backgroundImage: `url('images/icons/laravel.png')`,
-                backgroundSize: "100%",
+                backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
               }}
               ref={laravelRef}
             />
-            <div className="w-24 h-24 mx-5">Node JS</div>
-            <div className="w-24 h-24 mx-5">ASP.NET</div>
+            <div
+              className="w-24 h-24 mx-5"
+              style={{
+                backgroundImage: `url('images/icons/nodejs.png')`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+              ref={nodeRef}
+            />
           </div>
         </div>
-        <div>
-          <h1 className="text-3xl">Database</h1>
-          <div className="flex flex-row">
-            <div className="w-24 h-24 mx-5">Oracle</div>
-            <div className="w-24 h-24 mx-5">PostgreSQL</div>
-            <div className="w-24 h-24 mx-5">MongoDB</div>
+        <div className="text-cyan-300">
+          <h1 className="text-3xl text-center">Database</h1>
+          <div className="flex flex-row  my-5">
+            <div
+              className="w-24 h-24 mx-5"
+              style={{
+                backgroundImage: `url('images/icons/postgresql.png')`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+              ref={sqlRef}
+            />
+            <div
+              className="w-24 h-24 mx-5"
+              style={{
+                backgroundImage: `url('images/icons/mongo.png')`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+              ref={mongoRef}
+            />
           </div>
         </div>
       </div>
-      {/* <div className="flex flex-row justify-center">
-        <div style={{ minWidth: "100px" }} className="text-center">
-          Laravel
-        </div>
-        <div style={{ minWidth: "100px" }} className="text-center">
-          Node
-        </div>
-        <div style={{ minWidth: "100px" }} className="text-center">
-          React
+      <div>
+        <h1 className="text-3xl text-center text-cyan-300">
+          Additional Skills
+        </h1>
+        <div className="flex flex-row my-5 justify-center">
+          <div
+            className="w-24 h-24 mx-5"
+            style={{
+              backgroundImage: `url('images/icons/postgresql.png')`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+            ref={sqlRef}
+          />
+          <div
+            className="w-24 h-24 mx-5"
+            style={{
+              backgroundImage: `url('images/icons/mongo.png')`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+            ref={mongoRef}
+          />
         </div>
       </div>
-      <div className="flex flex-row justify-center">
-        <div style={{ minWidth: "100px" }} className="text-center">
-          Tailwind
-        </div>
-        <div style={{ minWidth: "100px" }} className="text-center">
-          Next JS
-        </div>
-        <div style={{ minWidth: "100px" }} className="text-center">
-          SQL
-        </div>
-      </div>
-      <div className="flex flex-row justify-center">
-        <div style={{ minWidth: "100px" }} className="text-center">
-          Django
-        </div>
-        <div style={{ minWidth: "100px" }} className="text-center">
-          Mongo DB
-        </div>
-        <div style={{ minWidth: "100px" }} className="text-center">
-          Vue JS
-        </div>
-      </div> */}
     </div>
   );
 };
