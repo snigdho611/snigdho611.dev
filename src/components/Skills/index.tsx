@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 // import reactlogo from "../../../public/images/icons/react.svg";
 
 const Skills = () => {
@@ -12,25 +12,53 @@ const Skills = () => {
   const sqlRef = useRef<HTMLDivElement>(null);
   const mongoRef = useRef<HTMLDivElement>(null);
 
+  const typeScriptRef = useRef<HTMLDivElement>(null);
+  const javascriptRef = useRef<HTMLDivElement>(null);
+  const pythonRef = useRef<HTMLDivElement>(null);
+  const csharpRef = useRef<HTMLDivElement>(null);
+
+  const baseRef = useRef<HTMLDivElement>(null);
+
   const rotateObjects = (objects: React.RefObject<HTMLDivElement>[]) => {
     objects.map((object) => {
       gsap.to(object.current, {
         transformPerspective: 800,
         transformOrigin: "center",
+        // delay: 0.75,
         duration: 1.25,
         rotationY: 360,
       });
     });
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const allRefs = [];
-    allRefs.push(reactRef, vueRef, laravelRef, nodeRef, sqlRef, mongoRef);
+
+    gsap.fromTo(
+      baseRef.current,
+      {
+        opacity: 0,
+      },
+      { opacity: 1, duration: 1 }
+    );
+
+    allRefs.push(
+      reactRef,
+      vueRef,
+      laravelRef,
+      nodeRef,
+      sqlRef,
+      mongoRef,
+      javascriptRef,
+      typeScriptRef,
+      pythonRef,
+      csharpRef
+    );
     rotateObjects(allRefs);
   }, []);
 
   return (
-    <div className="w-fit my-48 mx-auto">
+    <div className="w-fit my-48 mx-auto" ref={baseRef}>
       <div className="flex flex-row">
         <div className="text-cyan-300">
           <h1 className="text-3xl text-center">Frontend</h1>
@@ -116,22 +144,42 @@ const Skills = () => {
           <div
             className="w-24 h-24 mx-5"
             style={{
-              backgroundImage: `url('images/icons/postgresql.png')`,
+              backgroundImage: `url('images/icons/javascript.png')`,
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
             }}
-            ref={sqlRef}
+            ref={javascriptRef}
           />
           <div
             className="w-24 h-24 mx-5"
             style={{
-              backgroundImage: `url('images/icons/mongo.png')`,
+              backgroundImage: `url('images/icons/typescript.png')`,
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
             }}
-            ref={mongoRef}
+            ref={typeScriptRef}
+          />
+          <div
+            className="w-24 h-24 mx-5"
+            style={{
+              backgroundImage: `url('images/icons/python.png')`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+            ref={pythonRef}
+          />
+          <div
+            className="w-24 h-24 mx-5"
+            style={{
+              backgroundImage: `url('images/icons/csharp.png')`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+            ref={csharpRef}
           />
         </div>
       </div>
