@@ -2,29 +2,93 @@ import gsap from "gsap";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 // import reactlogo from "../../../public/images/icons/react.svg";
 
+const data = [
+  {
+    id: 1,
+    name: "Frontend",
+    tech: [
+      {
+        name: "React JS",
+        logo: "images/icons/reactjs.png",
+        count: 0,
+      },
+      {
+        name: "Next JS",
+        logo: "images/icons/nextjs.png",
+        count: 1,
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Backend",
+    tech: [
+      {
+        name: "Laravel",
+        logo: "images/icons/laravel.png",
+        count: 2,
+      },
+      {
+        name: "Node JS",
+        logo: "images/icons/nodejs.png",
+        count: 3,
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Database",
+    tech: [
+      {
+        name: "PostGreSQL",
+        logo: "images/icons/postgresql.png",
+        count: 4,
+      },
+      {
+        name: "Mongo DB",
+        logo: "images/icons/mongo.png",
+        count: 5,
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Additional Skills",
+    tech: [
+      {
+        name: "JavaScript",
+        logo: "images/icons/javascript.png",
+        count: 6,
+      },
+      {
+        name: "TypeScript",
+        logo: "images/icons/typescript.png",
+        count: 7,
+      },
+      {
+        name: "Python",
+        logo: "images/icons/python.png",
+        count: 8,
+      },
+      {
+        name: "C#",
+        logo: "images/icons/csharp.png",
+        count: 9,
+      },
+    ],
+  },
+];
+
 const Skills = () => {
-  const reactRef = useRef<HTMLDivElement>(null);
-  const vueRef = useRef<HTMLDivElement>(null);
-
-  const laravelRef = useRef<HTMLDivElement>(null);
-  const nodeRef = useRef<HTMLDivElement>(null);
-
-  const sqlRef = useRef<HTMLDivElement>(null);
-  const mongoRef = useRef<HTMLDivElement>(null);
-
-  const typeScriptRef = useRef<HTMLDivElement>(null);
-  const javascriptRef = useRef<HTMLDivElement>(null);
-  const pythonRef = useRef<HTMLDivElement>(null);
-  const csharpRef = useRef<HTMLDivElement>(null);
-
   const baseRef = useRef<HTMLDivElement>(null);
 
-  const rotateObjects = (objects: React.RefObject<HTMLDivElement>[]) => {
-    objects.map((object) => {
-      gsap.to(object.current, {
+  const totalRefs = useRef<HTMLDivElement[]>([]);
+
+  const rotateObjects = (objects: React.MutableRefObject<HTMLDivElement[]>) => {
+    objects.current.map((object) => {
+      gsap.to(object, {
         transformPerspective: 800,
         transformOrigin: "center",
-        // delay: 0.75,
         duration: 1.25,
         rotationY: 360,
       });
@@ -32,8 +96,6 @@ const Skills = () => {
   };
 
   useLayoutEffect(() => {
-    const allRefs = [];
-
     gsap.fromTo(
       baseRef.current,
       {
@@ -42,146 +104,71 @@ const Skills = () => {
       { opacity: 1, duration: 1 }
     );
 
-    allRefs.push(
-      reactRef,
-      vueRef,
-      laravelRef,
-      nodeRef,
-      sqlRef,
-      mongoRef,
-      javascriptRef,
-      typeScriptRef,
-      pythonRef,
-      csharpRef
-    );
-    rotateObjects(allRefs);
+    totalRefs.current = totalRefs.current.slice(0, 10);
+    rotateObjects(totalRefs);
   }, []);
 
   return (
-    <div className="w-fit my-48 mx-auto" ref={baseRef}>
+    <div className="w-fit my-48 mx-auto flex flex-col" ref={baseRef}>
       <div className="flex flex-row">
-        <div className="text-cyan-300">
-          <h1 className="text-3xl text-center">Frontend</h1>
-          <div className="flex flex-row my-5">
-            <div
-              className="min-w-24 w-24 min-h-24 h-24 mx-5"
-              style={{
-                backgroundImage: `url('images/icons/reactjs.png')`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-              }}
-              ref={reactRef}
-            ></div>
-            <div
-              className="w-24 h-24 mx-5"
-              style={{
-                backgroundImage: `url('images/icons/vue.png')`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-              }}
-              ref={vueRef}
-            />
-          </div>
-        </div>
-        <div className="text-cyan-300">
-          <h1 className="text-3xl text-center">Backend</h1>
-          <div className="flex flex-row  my-5">
-            <div
-              className="min-w-24 w-24 min-h-24 h-24 mx-5"
-              style={{
-                backgroundImage: `url('images/icons/laravel.png')`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-              }}
-              ref={laravelRef}
-            />
-            <div
-              className="w-24 h-24 mx-5"
-              style={{
-                backgroundImage: `url('images/icons/nodejs.png')`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-              }}
-              ref={nodeRef}
-            />
-          </div>
-        </div>
-        <div className="text-cyan-300">
-          <h1 className="text-3xl text-center">Database</h1>
-          <div className="flex flex-row  my-5">
-            <div
-              className="w-24 h-24 mx-5"
-              style={{
-                backgroundImage: `url('images/icons/postgresql.png')`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-              }}
-              ref={sqlRef}
-            />
-            <div
-              className="w-24 h-24 mx-5"
-              style={{
-                backgroundImage: `url('images/icons/mongo.png')`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-              }}
-              ref={mongoRef}
-            />
-          </div>
-        </div>
+        {data.map((stack, i) => {
+          if (stack.id !== 4) {
+            return (
+              <div className="text-cyan-300" key={i}>
+                <h1 className="text-3xl text-center">{stack.name}</h1>
+                <div className="flex flex-row my-5 justify-center">
+                  {stack.tech.map((elem, i) => {
+                    return (
+                      <div
+                        key={i}
+                        className="min-w-24 w-24 min-h-24 h-24 mx-7"
+                        style={{
+                          backgroundImage: `url(${elem.logo})`,
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "center",
+                        }}
+                        ref={(el) => {
+                          totalRefs.current[elem.count] = el as HTMLDivElement;
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          }
+        })}
       </div>
       <div>
-        <h1 className="text-3xl text-center text-cyan-300">
-          Additional Skills
-        </h1>
-        <div className="flex flex-row my-5 justify-center">
-          <div
-            className="w-24 h-24 mx-5"
-            style={{
-              backgroundImage: `url('images/icons/javascript.png')`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            ref={javascriptRef}
-          />
-          <div
-            className="w-24 h-24 mx-5"
-            style={{
-              backgroundImage: `url('images/icons/typescript.png')`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            ref={typeScriptRef}
-          />
-          <div
-            className="w-24 h-24 mx-5"
-            style={{
-              backgroundImage: `url('images/icons/python.png')`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            ref={pythonRef}
-          />
-          <div
-            className="w-24 h-24 mx-5"
-            style={{
-              backgroundImage: `url('images/icons/csharp.png')`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            ref={csharpRef}
-          />
-        </div>
+        {data.map((stack, i) => {
+          if (stack.id === 4) {
+            return (
+              <div className="text-cyan-300" key={i}>
+                <h1 className="text-3xl text-center">{stack.name}</h1>
+                <div className="flex flex-row my-5 justify-center">
+                  {stack.tech.map((elem, i) => {
+                    return (
+                      <div
+                        key={i}
+                        className="min-w-24 w-24 min-h-24 h-24 mx-7"
+                        style={{
+                          backgroundImage: `url(${elem.logo})`,
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "center",
+                        }}
+                        ref={(el) => {
+                          totalRefs.current[elem.count] = el as HTMLDivElement;
+                        }}
+                      ></div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          }
+        })}
       </div>
     </div>
   );
