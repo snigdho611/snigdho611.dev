@@ -86,12 +86,21 @@ const Skills = () => {
 
   const rotateObjects = (objects: React.MutableRefObject<HTMLDivElement[]>) => {
     objects.current.map((object) => {
-      gsap.to(object, {
-        transformPerspective: 800,
-        transformOrigin: "center",
-        duration: 1.25,
-        rotationY: 360,
-      });
+      gsap.fromTo(
+        object,
+        {
+          transformPerspective: 800,
+          transformOrigin: "center",
+          // duration: 1.25,
+          rotationY: 360,
+        },
+        {
+          transformPerspective: 800,
+          transformOrigin: "center",
+          duration: 1.25,
+          rotationY: 0,
+        }
+      );
     });
   };
 
@@ -127,6 +136,26 @@ const Skills = () => {
                           backgroundSize: "contain",
                           backgroundRepeat: "no-repeat",
                           backgroundPosition: "center",
+                          cursor: "pointer",
+                        }}
+                        onMouseEnter={(el) => {
+                          gsap.to(el.target, {
+                            transformPerspective: 800,
+                            transformOrigin: "center",
+                            rotationY: 360,
+                            scale: 1.25,
+                          });
+                        }}
+                        onMouseLeave={(el) => {
+                          gsap.to(el.target, {
+                            scale: 1,
+                          });
+                          gsap.to(el.target, {
+                            transformPerspective: 800,
+                            transformOrigin: "center",
+                            rotationY: 0,
+                            duration: 0,
+                          });
                         }}
                         ref={(el) => {
                           totalRefs.current[elem.count] = el as HTMLDivElement;
@@ -157,6 +186,7 @@ const Skills = () => {
                           backgroundSize: "contain",
                           backgroundRepeat: "no-repeat",
                           backgroundPosition: "center",
+                          cursor: "pointer",
                         }}
                         ref={(el) => {
                           totalRefs.current[elem.count] = el as HTMLDivElement;
