@@ -1,22 +1,18 @@
 import React, { useRef } from "react";
 
-const index = () => {
+interface SkillSetProps {
+  keyVal: number;
+  stackName: string;
+  children: React.ReactNode;
+}
+
+const SkillSet: React.FC<SkillSetProps> = ({ stackName, children, keyVal }) => {
   return (
-    // <div className="text-cyan-300">
-    //   <h1 className="text-3xl text-center">Frontend</h1>
-    <div className="flex flex-row my-5">
-      <div
-        className="min-w-24 w-24 min-h-24 h-24 mx-5"
-        style={{
-          backgroundImage: `url('images/icons/reactjs.png')`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-      />
+    <div className="text-cyan-300" key={keyVal}>
+      <h1 className="text-3xl text-center">{stackName}</h1>
+      <div className="flex flex-row my-5 justify-center">{children}</div>
     </div>
-    // </div>
   );
 };
 
-export default index;
+export default SkillSet;

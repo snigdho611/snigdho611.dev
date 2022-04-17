@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 
-const About = () => {
+const Overview = () => {
   const baseRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -9,8 +9,9 @@ const About = () => {
       baseRef.current,
       {
         opacity: 0,
+        x: 500,
       },
-      { opacity: 1, duration: 1 }
+      { opacity: 1, x: 0, duration: 1 }
     );
   }, []);
 
@@ -46,31 +47,4 @@ const About = () => {
   );
 };
 
-// interface AboutProps {
-//   about: string[];
-// }
-
-// const About: React.FC<AboutProps> = ({ about }) => {
-//   return (
-//     <div className="About-container">
-//       <div className="Profile-img" />
-//       <div className="Bar" />
-//       <div>
-//         <div className="Header">ABOUT</div>
-//         <div className="About-text">
-//           {about.map((element) => {
-//             return (
-//               <>
-//                 {element}
-//                 <br />
-//                 <br />
-//               </>
-//             );
-//           })}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-export default About;
+export default Overview;

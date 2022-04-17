@@ -1,9 +1,35 @@
-import About from "components/About";
+// import About from "components/About";
+import Overview from "components/About/Overview";
+import Education from "components/Education";
 import Navbar from "components/Navbar";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 // import styles from "../styles/Home.module.css";
+
+const edu = [
+  {
+    id: 1,
+    name: "American International University-Bangladesh",
+    imageURL: "/images/education/AIUB.png",
+    degree: "Bachelor’s in Computer Science and Software Engineering",
+    time: "January, 2018 - January, 2022",
+  },
+  {
+    id: 2,
+    name: "Maple Leaf International School",
+    imageURL: "/images/education/MLIS.png",
+    degree: "A ‘ Levels",
+    time: "June, 2013 - January, 2017",
+  },
+  {
+    id: 3,
+    name: "Maple Leaf International School",
+    imageURL: "/images/education/MLIS.png",
+    degree: "O ‘ Levels",
+    time: "June, 2012 - June, 2013",
+  },
+];
 
 const Home: NextPage = () => {
   return (
@@ -27,7 +53,8 @@ const Home: NextPage = () => {
 
       <Navbar />
 
-      <About />
+      <Overview />
+      {/* <Education education={edu} /> */}
       {/* <About /> */}
     </div>
   );

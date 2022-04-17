@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
-// import reactlogo from "../../../public/images/icons/react.svg";
+import SkillSet from "./SkillSet";
 
 const data = [
   {
@@ -117,20 +117,44 @@ const Skills = () => {
     rotateObjects(totalRefs);
   }, []);
 
+  const eventOnMouseEnter = (
+    element: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    gsap.to(element.target, {
+      transformOrigin: "center",
+      scale: 1.25,
+      rotationY: 360,
+      // duration: 0.25,
+      // backgroundColor: "green",
+    });
+  };
+
+  const eventOnMouseLeave = (
+    element: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    gsap.to(element.target, {
+      rotationY: 0,
+      duration: 0,
+    });
+    gsap.to(element.target, {
+      scale: 1,
+      duration: 0.5,
+      // backgroundColor: "transparent",
+    });
+  };
+
   return (
     <div className="w-fit my-48 mx-auto flex flex-col" ref={baseRef}>
       <div className="flex flex-row">
         {data.map((stack, i) => {
           if (stack.id !== 4) {
             return (
-              <div className="text-cyan-300" key={i}>
-                <h1 className="text-3xl text-center">{stack.name}</h1>
-                <div className="flex flex-row my-5 justify-center">
-                  {stack.tech.map((elem, i) => {
-                    return (
+              <SkillSet keyVal={i} stackName={stack.name}>
+                {stack.tech.map((elem, i) => {
+                  return (
+                    <div key={i} className="px-7">
                       <div
-                        key={i}
-                        className="min-w-24 w-24 min-h-24 h-24 mx-7"
+                        className="min-w-24 w-24 min-h-24 h-24"
                         style={{
                           backgroundImage: `url(${elem.logo})`,
                           backgroundSize: "contain",
@@ -139,32 +163,19 @@ const Skills = () => {
                           cursor: "pointer",
                         }}
                         onMouseEnter={(el) => {
-                          gsap.to(el.target, {
-                            transformPerspective: 800,
-                            transformOrigin: "center",
-                            rotationY: 360,
-                            scale: 1.25,
-                          });
+                          eventOnMouseEnter(el);
                         }}
                         onMouseLeave={(el) => {
-                          gsap.to(el.target, {
-                            scale: 1,
-                          });
-                          gsap.to(el.target, {
-                            transformPerspective: 800,
-                            transformOrigin: "center",
-                            rotationY: 0,
-                            duration: 0,
-                          });
+                          eventOnMouseLeave(el);
                         }}
                         ref={(el) => {
                           totalRefs.current[elem.count] = el as HTMLDivElement;
                         }}
                       />
-                    );
-                  })}
-                </div>
-              </div>
+                    </div>
+                  );
+                })}
+              </SkillSet>
             );
           }
         })}
@@ -173,14 +184,12 @@ const Skills = () => {
         {data.map((stack, i) => {
           if (stack.id === 4) {
             return (
-              <div className="text-cyan-300" key={i}>
-                <h1 className="text-3xl text-center">{stack.name}</h1>
-                <div className="flex flex-row my-5 justify-center">
-                  {stack.tech.map((elem, i) => {
-                    return (
+              <SkillSet keyVal={i} stackName={stack.name}>
+                {stack.tech.map((elem, i) => {
+                  return (
+                    <div key={i} className="px-7">
                       <div
-                        key={i}
-                        className="min-w-24 w-24 min-h-24 h-24 mx-7"
+                        className="min-w-24 w-24 min-h-24 h-24"
                         style={{
                           backgroundImage: `url(${elem.logo})`,
                           backgroundSize: "contain",
@@ -188,14 +197,20 @@ const Skills = () => {
                           backgroundPosition: "center",
                           cursor: "pointer",
                         }}
+                        onMouseEnter={(el) => {
+                          eventOnMouseEnter(el);
+                        }}
+                        onMouseLeave={(el) => {
+                          eventOnMouseLeave(el);
+                        }}
                         ref={(el) => {
                           totalRefs.current[elem.count] = el as HTMLDivElement;
                         }}
-                      ></div>
-                    );
-                  })}
-                </div>
-              </div>
+                      />
+                    </div>
+                  );
+                })}
+              </SkillSet>
             );
           }
         })}
