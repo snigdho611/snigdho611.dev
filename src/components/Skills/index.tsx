@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import SkillSet from "./SkillSet";
+import classes from "./index.module.css";
 
 const data = [
   {
@@ -145,14 +146,14 @@ const Skills = () => {
 
   return (
     <div className="w-fit my-48 mx-auto flex flex-col" ref={baseRef}>
-      <div className="flex flex-row">
+      <div className={`flex flex-row ${classes.responsive}`}>
         {data.map((stack, i) => {
           if (stack.id !== 4) {
             return (
               <SkillSet keyVal={i} stackName={stack.name}>
                 {stack.tech.map((elem, i) => {
                   return (
-                    <div key={i} className="px-7">
+                    <div key={i} className="px-7 mx-auto">
                       <div
                         className="min-w-24 w-24 min-h-24 h-24"
                         style={{
@@ -187,7 +188,7 @@ const Skills = () => {
               <SkillSet keyVal={i} stackName={stack.name}>
                 {stack.tech.map((elem, i) => {
                   return (
-                    <div key={i} className="px-7">
+                    <div key={i} className="px-7 mx-auto">
                       <div
                         className="min-w-24 w-24 min-h-24 h-24"
                         style={{
