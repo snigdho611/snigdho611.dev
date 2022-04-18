@@ -16,29 +16,13 @@ const EducationRow: React.FC<EducationRowProps> = ({
   time,
 }) => {
   return (
-    <div>
+    <div className="flex flex-row mx-auto my-10">
       <EducationCard imageURL={imageURL || ""} />
-      <div
-        style={{
-          paddingLeft: "20px",
-          width: "38%",
-        }}
-      >
-        <div style={{ color: "#FFF", marginTop: "20px" }}>
-          <div
-            style={{ fontSize: "20px", fontWeight: "bold", margin: "5px 0px" }}
-          >
-            {name || "American"}
-          </div>
-          <div
-            style={{
-              fontSize: "18px",
-              margin: "10px 0px",
-              fontStyle: "italic",
-            }}
-          >
-            {time || "March 22"}
-          </div>
+      <div className="pl-5">
+        <div className="text-white ">
+          <div className="text-xl font-bold">{name || "American"}</div>
+          <div className="text-medium font-bold my-2">{degree || "BSc"}</div>
+          <div className="text-small italic my-2">{time || "March 22"}</div>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import Education from "components/Education";
 import EducationRow from "components/Education/EducationRow";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
@@ -27,34 +28,28 @@ const edu = [
 ];
 
 const Background = () => {
-  const baseRef = useRef<HTMLDivElement>(null);
+  const backgroundRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.fromTo(
-      baseRef.current,
+      backgroundRef.current,
       {
         opacity: 0,
-        x: -500,
+        x: -700,
       },
       { opacity: 1, x: 0, duration: 1 }
     );
   }, []);
   return (
-    <div className="mx-auto w-8/12 flex flex-row mt-40" ref={baseRef}>
+    <div
+      className="mx-auto 
+    w-8/12
+     flex flex-row mt-32"
+      ref={backgroundRef}
+    >
       <div className="w-full">
-        <h1
-          className="text-4xl text-center text-cyan-400 
-         my-4"
-        >
-          Education
-        </h1>
         <div className="text-justify text-cyan-100">
-          {/* <div
-          // className="text-center"
-          >
-            {edu[0].name}
-          </div> */}
-          <EducationRow />
+          <Education education={edu} />
         </div>
       </div>
     </div>

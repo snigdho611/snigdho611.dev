@@ -7,8 +7,13 @@ interface EducationProps {
 
 const Education: React.FC<EducationProps> = ({ education }) => {
   return (
-    <div className="div-margin-education">
-      <div className="Header">EDUCATION</div>
+    <div className="mx-auto w-3/4">
+      <h1
+        className="text-4xl text-center text-cyan-400 
+         my-4"
+      >
+        Education
+      </h1>
       {education.map(({ id, name, imageURL, degree, time }) => {
         return (
           <EducationRow

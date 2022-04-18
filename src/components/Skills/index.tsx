@@ -155,7 +155,7 @@ const Skills = () => {
                   return (
                     <div key={i} className="px-7 mx-auto">
                       <div
-                        className="min-w-24 w-24 min-h-24 h-24"
+                        className="min-w-24 w-24 min-h-24 h-24 my-4"
                         style={{
                           backgroundImage: `url(${elem.logo})`,
                           backgroundSize: "contain",
@@ -188,9 +188,9 @@ const Skills = () => {
               <SkillSet keyVal={i} stackName={stack.name}>
                 {stack.tech.map((elem, i) => {
                   return (
-                    <div key={i} className="px-7 mx-auto">
+                    <div key={i} className={`px-7 ${classes.mx_auto}`}>
                       <div
-                        className="min-w-24 w-24 min-h-24 h-24"
+                        className="min-w-24 w-24 min-h-24 h-24 my-4"
                         style={{
                           backgroundImage: `url(${elem.logo})`,
                           backgroundSize: "contain",

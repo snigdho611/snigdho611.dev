@@ -9,7 +9,7 @@ const Overview = () => {
       baseRef.current,
       {
         opacity: 0,
-        x: 500,
+        x: 700,
       },
       { opacity: 1, x: 0, duration: 1 }
     );

@@ -7,12 +7,12 @@ interface EducationCardProps {
 
 const EducationCard: React.FC<EducationCardProps> = ({ imageURL }) => {
   return (
-    <div className="education-card">
+    <div className="align-self">
       <Image
         src={imageURL || "/images/education/AIUB.png"}
         alt="Image not found"
-        height={113}
-        width={113}
+        height={100}
+        width={100}
       />
     </div>
   );
