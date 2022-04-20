@@ -7,24 +7,29 @@ interface EducationProps {
 
 const Education: React.FC<EducationProps> = ({ education }) => {
   return (
-    <div className="mx-auto w-3/4">
+    <div>
       <h1
         className="text-4xl text-center text-cyan-400 
          my-4"
       >
         Education
       </h1>
-      {education.map(({ id, name, imageURL, degree, time }) => {
-        return (
-          <EducationRow
-            key={id}
-            name={name}
-            imageURL={imageURL}
-            degree={degree}
-            time={time}
-          />
-        );
-      })}
+      <div className="flex flex-row">
+        <div className="bg-cyan-800 w-4" />
+        <div className="px-3">
+          {education.map(({ id, name, imageURL, degree, time }) => {
+            return (
+              <EducationRow
+                key={id}
+                name={name}
+                imageURL={imageURL}
+                degree={degree}
+                time={time}
+              />
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

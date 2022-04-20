@@ -16,7 +16,7 @@ const EducationRow: React.FC<EducationRowProps> = ({
   time,
 }) => {
   return (
-    <div className="flex flex-row mx-auto my-10">
+    <div className="flex flex-row mx-auto my-10 ">
       <EducationCard imageURL={imageURL || ""} />
       <div className="pl-5">
         <div className="text-white ">
