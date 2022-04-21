@@ -86,23 +86,22 @@ const Skills = () => {
   const totalRefs = useRef<HTMLDivElement[]>([]);
 
   const rotateObjects = (objects: React.MutableRefObject<HTMLDivElement[]>) => {
-    objects.current.map((object) => {
-      gsap.fromTo(
-        object,
-        {
-          transformPerspective: 800,
-          transformOrigin: "center",
-          // duration: 1.25,
-          rotationY: 360,
-        },
-        {
-          transformPerspective: 800,
-          transformOrigin: "center",
-          duration: 1.25,
-          rotationY: 0,
-        }
-      );
-    });
+    gsap.fromTo(
+      objects.current,
+      {
+        transformPerspective: 800,
+        transformOrigin: "center",
+        // duration: 1.25,
+        rotationY: 360,
+      },
+      {
+        transformPerspective: 800,
+        transformOrigin: "center",
+        duration: 1.25,
+        rotationY: 0,
+        stagger: 0.1,
+      }
+    );
   };
 
   useLayoutEffect(() => {
@@ -155,13 +154,9 @@ const Skills = () => {
                   return (
                     <div key={i} className="px-7 mx-auto">
                       <div
-                        className="min-w-24 w-24 min-h-24 h-24 my-4"
+                        className="min-w-24 w-24 min-h-24 h-24 my-4 bg-center bg-no-repeat bg-contain cursor-pointer"
                         style={{
                           backgroundImage: `url(${elem.logo})`,
-                          backgroundSize: "contain",
-                          backgroundRepeat: "no-repeat",
-                          backgroundPosition: "center",
-                          cursor: "pointer",
                         }}
                         onMouseEnter={(el) => {
                           eventOnMouseEnter(el);
@@ -172,7 +167,9 @@ const Skills = () => {
                         ref={(el) => {
                           totalRefs.current[elem.count] = el as HTMLDivElement;
                         }}
-                      />
+                      >
+                        React JS
+                      </div>
                     </div>
                   );
                 })}
