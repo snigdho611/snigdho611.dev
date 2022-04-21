@@ -1,7 +1,7 @@
 // import About from "components/About";
 import Background from "components/About/Background";
 import Overview from "components/About/Overview";
-import Education from "components/Education";
+import Education from "components/About/Background/Education";
 import Navbar from "components/Navbar";
 import type { NextPage } from "next";
 import Head from "next/head";

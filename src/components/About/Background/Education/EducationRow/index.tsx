@@ -1,4 +1,5 @@
-import React from "react";
+import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
 import EducationCard from "./EducationCard";
 
 export interface EducationRowProps {
@@ -15,8 +16,20 @@ const EducationRow: React.FC<EducationRowProps> = ({
   degree,
   time,
 }) => {
+  // const edBox = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // const asyncFunc = async () => {
+    //   await gsap.to(edBox.current, { x: 100, duration: 10 });
+    // };
+    // asyncFunc();
+  }, []);
+
   return (
-    <div className="flex flex-row mx-auto my-10 ">
+    <div
+      className="flex flex-row mx-auto my-10"
+      // ref={edBox}
+    >
       <EducationCard imageURL={imageURL || ""} />
       <div className="pl-5">
         <div className="text-white ">

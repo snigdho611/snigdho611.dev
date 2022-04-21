@@ -1,5 +1,5 @@
-import Education from "components/Education";
-import EducationRow from "components/Education/EducationRow";
+import Education from "components/About/Background/Education";
+import EducationRow from "components/About/Background/Education/EducationRow";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 
