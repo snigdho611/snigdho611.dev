@@ -2,6 +2,7 @@ import gsap from "gsap";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import SkillSet from "./SkillSet";
 import classes from "./index.module.css";
+import SkillBox from "./SkillSet/SkillBox";
 
 const data = [
   {
@@ -85,24 +86,23 @@ const Skills = () => {
 
   const totalRefs = useRef<HTMLDivElement[]>([]);
 
-  const rotateObjects = (objects: React.MutableRefObject<HTMLDivElement[]>) => {
-    gsap.fromTo(
-      objects.current,
-      {
-        transformPerspective: 800,
-        transformOrigin: "center",
-        // duration: 1.25,
-        rotationY: 360,
-      },
-      {
-        transformPerspective: 800,
-        transformOrigin: "center",
-        duration: 1.25,
-        rotationY: 0,
-        stagger: 0.1,
-      }
-    );
-  };
+  // const rotateObjects = (objects: React.MutableRefObject<HTMLDivElement[]>) => {
+  //   gsap.fromTo(
+  //     objects.current,
+  //     {
+  //       transformPerspective: 800,
+  //       transformOrigin: "center",
+  //       rotationY: 360,
+  //     },
+  //     {
+  //       transformPerspective: 800,
+  //       transformOrigin: "center",
+  //       duration: 1.25,
+  //       rotationY: 0,
+  //       stagger: 0.1,
+  //     }
+  //   );
+  // };
 
   useLayoutEffect(() => {
     gsap.fromTo(
@@ -113,103 +113,23 @@ const Skills = () => {
       { opacity: 1, duration: 1 }
     );
 
-    totalRefs.current = totalRefs.current.slice(0, 10);
-    rotateObjects(totalRefs);
+    // totalRefs.current = totalRefs.current.slice(0, 10);
+    // rotateObjects(totalRefs);
   }, []);
-
-  const eventOnMouseEnter = (
-    element: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
-    gsap.to(element.target, {
-      transformOrigin: "center",
-      scale: 1.25,
-      rotationY: 360,
-      // duration: 0.25,
-      // backgroundColor: "green",
-    });
-  };
-
-  const eventOnMouseLeave = (
-    element: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
-    gsap.to(element.target, {
-      rotationY: 0,
-      duration: 0,
-    });
-    gsap.to(element.target, {
-      scale: 1,
-      duration: 0.5,
-      // backgroundColor: "transparent",
-    });
-  };
 
   return (
     <div className="w-fit my-48 mx-auto flex flex-col" ref={baseRef}>
       <div className={`flex flex-row ${classes.responsive}`}>
         {data.map((stack, i) => {
           if (stack.id !== 4) {
-            return (
-              <SkillSet keyVal={i} stackName={stack.name}>
-                {stack.tech.map((elem, i) => {
-                  return (
-                    <div key={i} className="px-7 mx-auto">
-                      <div
-                        className="min-w-24 w-24 min-h-24 h-24 my-4 bg-center bg-no-repeat bg-contain cursor-pointer"
-                        style={{
-                          backgroundImage: `url(${elem.logo})`,
-                        }}
-                        onMouseEnter={(el) => {
-                          eventOnMouseEnter(el);
-                        }}
-                        onMouseLeave={(el) => {
-                          eventOnMouseLeave(el);
-                        }}
-                        ref={(el) => {
-                          totalRefs.current[elem.count] = el as HTMLDivElement;
-                        }}
-                      >
-                        React JS
-                      </div>
-                    </div>
-                  );
-                })}
-              </SkillSet>
-            );
+            return <SkillSet keyVal={i} stackName={stack.name} stack={stack} />;
           }
         })}
       </div>
       <div>
         {data.map((stack, i) => {
           if (stack.id === 4) {
-            return (
-              <SkillSet keyVal={i} stackName={stack.name}>
-                {stack.tech.map((elem, i) => {
-                  return (
-                    <div key={i} className={`px-7 ${classes.mx_auto}`}>
-                      <div
-                        className="min-w-24 w-24 min-h-24 h-24 my-4"
-                        style={{
-                          backgroundImage: `url(${elem.logo})`,
-                          backgroundSize: "contain",
-                          backgroundRepeat: "no-repeat",
-                          backgroundPosition: "center",
-                          cursor: "pointer",
-                        }}
-                        onMouseEnter={(el) => {
-                          eventOnMouseEnter(el);
-                        }}
-                        onMouseLeave={(el) => {
-                          eventOnMouseLeave(el);
-                        }}
-                        ref={(el) => {
-                          totalRefs.current[elem.count] = el as HTMLDivElement;
-                        }}
-                      />
-                    </div>
-                  );
-                })}
-              </SkillSet>
-            );
+            return <SkillSet keyVal={i} stackName={stack.name} stack={stack} />;
           }
         })}
       </div>

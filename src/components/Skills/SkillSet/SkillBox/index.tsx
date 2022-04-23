@@ -1,31 +1,83 @@
-import React from "react";
-// import Image from "next/image";
+import React, { useLayoutEffect, useRef } from "react";
+import Image from "next/image";
+import gsap from "gsap";
 
-// interface SkillBox {
-//   name: string;
-//   url: string;
-// }
+interface SkillBox {
+  tech: {
+    name: string;
+    logo: string;
+    count: number;
+  };
+  key: number;
+}
 
-// const index: React.FC<SkillBox> = ({ url, name }) => {
-//   return (
-//     <>
-//       <div style={{ width: "80px", margin: "10px 5px" }}>
-//         <div style={{ display: "flex", justifyContent: "center" }}>
-//           <Image src={url} alt="Image not found" height={80} width={70} />
-//         </div>
-//         <div
-//           style={{
-//             color: "#5BC0DE",
-//             fontWeight: "bold",
-//             textAlign: "center",
-//             fontSize: "15px",
-//           }}
-//         >
-//           {name}
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
+const SkillBox: React.FC<SkillBox> = ({ key, tech }) => {
+  //   const totalRefs = useRef<HTMLDivElement[]>([]);
+  const skillBoxRef = useRef<HTMLDivElement>(null);
+  const rotateObjects = (objects: React.RefObject<HTMLDivElement>) => {
+    gsap.fromTo(
+      objects.current,
+      {
+        transformPerspective: 800,
+        transformOrigin: "center",
+        rotationY: 360,
+      },
+      {
+        transformPerspective: 800,
+        transformOrigin: "center",
+        duration: 1.25,
+        rotationY: 0,
+      }
+    );
+  };
 
-// export default index;
+  useLayoutEffect(() => {
+    rotateObjects(skillBoxRef);
+  }, []);
+
+  const eventOnMouseEnter = () => {
+    gsap.to(skillBoxRef.current, {
+      transformOrigin: "center",
+      scale: 1.25,
+      rotationY: 360,
+    });
+  };
+
+  const eventOnMouseLeave = () => {
+    gsap.to(skillBoxRef.current, {
+      rotationY: 360,
+      duration: 0,
+    });
+    gsap.to(skillBoxRef.current, {
+      scale: 1,
+      duration: 0.5,
+    });
+  };
+
+  return (
+    <div
+      key={key}
+      className="px-7 mx-auto"
+      style={{ border: "1px solid white" }}
+      onMouseEnter={(el) => {
+        eventOnMouseEnter();
+      }}
+      onMouseLeave={(el) => {
+        eventOnMouseLeave();
+      }}
+    >
+      <div
+        className="min-w-24 w-24 min-h-24 h-24 my-4 bg-center bg-no-repeat bg-contain cursor-pointer"
+        style={{
+          backgroundImage: `url(${tech.logo})`,
+        }}
+        // ref={(el) => {
+        //   totalRefs.current[elem.count] = el as HTMLDivElement;
+        // }}
+        ref={skillBoxRef}
+      />
+    </div>
+  );
+};
+
+export default SkillBox;
