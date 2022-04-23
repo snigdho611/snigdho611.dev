@@ -27,7 +27,7 @@ const Index: React.FC<indexProps> = ({ val }) => {
         <link rel="icon" href="/images/favicon.png" />
         <title>Snigdho Dip Howlader</title>
       </Head>
-      <div>Website Status: Under Construction</div>
+      <div className="text-cyan-300">Website Status: Under Construction</div>
     </>
   );
 };
