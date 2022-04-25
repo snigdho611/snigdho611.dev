@@ -16,7 +16,7 @@ const Education: React.FC<EducationProps> = ({ education }) => {
       </h1>
       <div className="flex flex-row">
         <div className="bg-cyan-800 w-4" />
-        <div className="px-3">
+        <div className="px-8">
           {education.map(({ id, name, imageURL, degree, time }) => {
             return (
               <EducationRow

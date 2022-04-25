@@ -74,7 +74,6 @@ const Navbar = () => {
       <div
         className="w-1/4"
         onClick={() => {
-          // console.log("ok");
           router.push("/");
         }}
         style={{
@@ -114,19 +113,49 @@ const Navbar = () => {
       </div>
       <div className="mx-auto">
         <Link href={"/about"}>
-          <a className={linkClass}>About</a>
+          <a
+            className={`${linkClass} ${
+              router.pathname === "/about" ? "text-cyan-100" : null
+            }`}
+          >
+            About
+          </a>
         </Link>
         <Link href={"/skills"}>
-          <a className={linkClass}>Skills</a>
+          <a
+            className={`${linkClass} ${
+              router.pathname === "/skills" ? "text-cyan-100" : null
+            }`}
+          >
+            Skills
+          </a>
         </Link>
         <Link href={"/experience"}>
-          <a className={linkClass}>Experience</a>
+          <a
+            className={`${linkClass} ${
+              router.pathname === "/experience" ? "text-cyan-100" : null
+            }`}
+          >
+            Experience
+          </a>
         </Link>
         <Link href={"/projects"}>
-          <a className={linkClass}>Projects</a>
+          <a
+            className={`${linkClass} ${
+              router.pathname === "/projects" ? "text-cyan-100" : null
+            }`}
+          >
+            Projects
+          </a>
         </Link>
         <Link href={"/contact"}>
-          <a className={linkClass}>Contact</a>
+          <a
+            className={`${linkClass} ${
+              router.pathname === "/contact" ? "text-cyan-100" : null
+            }`}
+          >
+            Contact
+          </a>
         </Link>
       </div>
     </div>

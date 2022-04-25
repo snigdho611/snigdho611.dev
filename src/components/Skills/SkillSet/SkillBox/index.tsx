@@ -12,7 +12,6 @@ interface SkillBox {
 }
 
 const SkillBox: React.FC<SkillBox> = ({ key, tech }) => {
-  //   const totalRefs = useRef<HTMLDivElement[]>([]);
   const skillBoxRef = useRef<HTMLDivElement>(null);
   const rotateObjects = (objects: React.RefObject<HTMLDivElement>) => {
     gsap.fromTo(
@@ -40,12 +39,13 @@ const SkillBox: React.FC<SkillBox> = ({ key, tech }) => {
       transformOrigin: "center",
       scale: 1.25,
       rotationY: 360,
+      duration: 0.5,
     });
   };
 
   const eventOnMouseLeave = () => {
     gsap.to(skillBoxRef.current, {
-      rotationY: 360,
+      rotationY: 0,
       duration: 0,
     });
     gsap.to(skillBoxRef.current, {
@@ -71,9 +71,6 @@ const SkillBox: React.FC<SkillBox> = ({ key, tech }) => {
         style={{
           backgroundImage: `url(${tech.logo})`,
         }}
-        // ref={(el) => {
-        //   totalRefs.current[elem.count] = el as HTMLDivElement;
-        // }}
         ref={skillBoxRef}
       />
     </div>
