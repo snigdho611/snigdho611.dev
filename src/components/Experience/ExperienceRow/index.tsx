@@ -28,9 +28,9 @@ const ExperienceRow: React.FC<ExperienceRowProps> = ({
         </div>
         <div className="pl-5 w-9/12">
           <div className="text-white ">
-            <div className="text-xl font-bold">{name || "American"}</div>
-            <div className="text-medium font-bold my-2">{degree || "BSc"}</div>
-            <div className="text-small italic my-2">{time || "March 22"}</div>
+            <div className="text-xl font-bold">{name || "N/A"}</div>
+            <div className="text-medium font-bold my-2">{degree || "N/A"}</div>
+            <div className="text-small italic my-2">{time || "N/A"}</div>
           </div>
         </div>
       </div>
@@ -40,9 +40,9 @@ const ExperienceRow: React.FC<ExperienceRowProps> = ({
       <div className="flex flex-row my-5" style={{ width: "49%" }}>
         <div className="pl-5 w-9/12">
           <div className="text-white ">
-            <div className="text-xl font-bold">{name || "American"}</div>
-            <div className="text-medium font-bold my-2">{degree || "BSc"}</div>
-            <div className="text-small italic my-2">{time || "March 22"}</div>
+            <div className="text-xl font-bold">{name || "N/A"}</div>
+            <div className="text-medium font-bold my-2">{degree || "N/A"}</div>
+            <div className="text-small italic my-2">{time || "N/A"}</div>
           </div>
         </div>
         <div className="w-3/12">
@@ -56,26 +56,3 @@ const ExperienceRow: React.FC<ExperienceRowProps> = ({
 };
 
 export default ExperienceRow;
-
-{
-  /* <div
-  style={{
-    minWidth: "10px",
-    width: "10px",
-    minHeight: "100%",
-    backgroundColor: "#5BC0DE",
-    float: "right",
-  }}
-/> */
-}
-{
-  /* <div
-  style={{
-    height: "10px",
-    minHeight: "10px",
-    minWidth: "60px",
-    width: "60px",
-    backgroundColor: "#5BC0DE",
-  }}
-></div> */
-}

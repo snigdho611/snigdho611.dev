@@ -58,7 +58,6 @@ const SkillBox: React.FC<SkillBox> = ({ key, tech }) => {
     <div
       key={key}
       className="px-7 mx-auto"
-      style={{ border: "1px solid white" }}
       onMouseEnter={(el) => {
         eventOnMouseEnter();
       }}
