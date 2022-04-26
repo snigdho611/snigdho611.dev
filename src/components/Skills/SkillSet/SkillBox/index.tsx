@@ -8,10 +8,11 @@ interface SkillBox {
     logo: string;
     count: number;
   };
-  key: number;
+  id: number;
 }
 
-const SkillBox: React.FC<SkillBox> = ({ key, tech }) => {
+const SkillBox: React.FC<SkillBox> = ({ id, tech }) => {
+  React.useLayoutEffect = React.useEffect;
   const skillBoxRef = useRef<HTMLDivElement>(null);
   const rotateObjects = (objects: React.RefObject<HTMLDivElement>) => {
     gsap.fromTo(
@@ -24,7 +25,7 @@ const SkillBox: React.FC<SkillBox> = ({ key, tech }) => {
       {
         transformPerspective: 800,
         transformOrigin: "center",
-        duration: 1.25,
+        duration: 1,
         rotationY: 0,
       }
     );
@@ -56,7 +57,7 @@ const SkillBox: React.FC<SkillBox> = ({ key, tech }) => {
 
   return (
     <div
-      key={key}
+      key={id}
       className="px-7 mx-auto"
       onMouseEnter={(el) => {
         eventOnMouseEnter();

@@ -10,16 +10,16 @@ interface ExperienceProps {
 const Experience: React.FC<ExperienceProps> = ({ title, experience }) => {
   const educationRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    gsap.fromTo(
-      educationRef.current,
-      {
-        opacity: 0,
-        x: -700,
-      },
-      { opacity: 1, x: 0, duration: 1 }
-    );
-  }, []);
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     educationRef.current,
+  //     {
+  //       opacity: 0,
+  //       y: -100,
+  //     },
+  //     { opacity: 1, y: 0, duration: 1 }
+  //   );
+  // }, []);
   return (
     <div
       className="mx-auto 

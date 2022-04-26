@@ -1,10 +1,9 @@
-import Base from "components/Skills";
 import Navbar from "components/Navbar";
 import Head from "next/head";
 import React from "react";
-import Skills from "components/Skills";
+import Skills, { SkillsProps } from "components/Skills";
 
-const skills = () => {
+const skills = (skills: SkillsProps) => {
   return (
     <>
       <Head>
@@ -25,9 +24,27 @@ const skills = () => {
       </Head>
 
       <Navbar />
-      <Skills />
+      <Skills skills={skills.skills} />
     </>
   );
 };
+
+export async function getServerSideProps() {
+  try {
+    var response = await fetch("http://localhost:3000/api/skills");
+    const data = await response.json();
+    console.log(data);
+    return {
+      props: { skills: data },
+    };
+  } catch (e) {
+    console.log("Error");
+    return {
+      props: {
+        skills: null,
+      },
+    };
+  }
+}
 
 export default skills;

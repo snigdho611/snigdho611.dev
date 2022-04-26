@@ -2,86 +2,20 @@ import gsap from "gsap";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import SkillSet from "./SkillSet";
 import classes from "./index.module.css";
-import SkillBox from "./SkillSet/SkillBox";
 
-const data = [
-  {
-    id: 1,
-    name: "Frontend",
-    tech: [
-      {
-        name: "React JS",
-        logo: "images/icons/reactjs.png",
-        count: 0,
-      },
-      {
-        name: "Next JS",
-        logo: "images/icons/nextjs.png",
-        count: 1,
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: "Backend",
-    tech: [
-      {
-        name: "Laravel",
-        logo: "images/icons/laravel.png",
-        count: 2,
-      },
-      {
-        name: "Node JS",
-        logo: "images/icons/nodejs.png",
-        count: 3,
-      },
-    ],
-  },
-  {
-    id: 3,
-    name: "Database",
-    tech: [
-      {
-        name: "PostGreSQL",
-        logo: "images/icons/postgresql.png",
-        count: 4,
-      },
-      {
-        name: "Mongo DB",
-        logo: "images/icons/mongo.png",
-        count: 5,
-      },
-    ],
-  },
-  {
-    id: 4,
-    name: "Additional Skills",
-    tech: [
-      {
-        name: "JavaScript",
-        logo: "images/icons/javascript.png",
-        count: 6,
-      },
-      {
-        name: "TypeScript",
-        logo: "images/icons/typescript.png",
-        count: 7,
-      },
-      {
-        name: "Python",
-        logo: "images/icons/python.png",
-        count: 8,
-      },
-      {
-        name: "C#",
-        logo: "images/icons/csharp.png",
-        count: 9,
-      },
-    ],
-  },
-];
+export interface SkillsProps {
+  skills: {
+    id: number;
+    name: string;
+    tech: {
+      name: string;
+      logo: string;
+      count: number;
+    }[];
+  }[];
+}
 
-const Skills = () => {
+const Skills: React.FC<SkillsProps> = ({ skills }) => {
   const baseRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -97,16 +31,20 @@ const Skills = () => {
   return (
     <div className="w-fit my-48 mx-auto flex flex-col" ref={baseRef}>
       <div className={`flex flex-row ${classes.responsive}`}>
-        {data.map((stack, i) => {
+        {skills.map((stack, i) => {
           if (stack.id !== 4) {
-            return <SkillSet keyVal={i} stackName={stack.name} stack={stack} />;
+            return (
+              <SkillSet key={i} id={i} stackName={stack.name} stack={stack} />
+            );
           }
         })}
       </div>
       <div>
-        {data.map((stack, i) => {
+        {skills.map((stack, i) => {
           if (stack.id === 4) {
-            return <SkillSet keyVal={i} stackName={stack.name} stack={stack} />;
+            return (
+              <SkillSet key={i} id={i} stackName={stack.name} stack={stack} />
+            );
           }
         })}
       </div>

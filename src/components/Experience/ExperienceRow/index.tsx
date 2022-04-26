@@ -20,11 +20,37 @@ const ExperienceRow: React.FC<ExperienceRowProps> = ({
   id,
   siteURL,
 }) => {
+  const rightElRef = useRef<any>();
+  const leftElRef = useRef<any>();
+  const barRef = useRef<any>();
+
+  useEffect(() => {
+    gsap.fromTo(
+      rightElRef.current,
+      { opacity: 0, x: 200 },
+      { opacity: 1, x: 0, duration: 1 }
+    );
+    gsap.fromTo(
+      leftElRef.current,
+      { opacity: 0, x: -200 },
+      { opacity: 1, x: 0, duration: 1 }
+    );
+    gsap.fromTo(
+      barRef.current,
+      { opacity: 0, y: 200 },
+      { opacity: 1, y: 0, duration: 1 }
+    );
+  }, []);
+
   return id && id % 2 == 0 ? (
     <div className="flex flex-row mx-auto">
       <div className="" style={{ width: "49%" }} />
-      <div className="bg-cyan-800 mx-3" style={{ width: "2%" }} />
-      <div className="flex flex-row my-5" style={{ width: "49%" }}>
+      <div className="bg-cyan-800 mx-3" style={{ width: "2%" }} ref={barRef} />
+      <div
+        className="flex flex-row my-5"
+        style={{ width: "49%" }}
+        ref={rightElRef}
+      >
         <Link href={siteURL || "#"} passHref>
           <div className="w-3/12 cursor-pointer">
             <ExperienceCard imageURL={imageURL || ""} />
@@ -41,7 +67,11 @@ const ExperienceRow: React.FC<ExperienceRowProps> = ({
     </div>
   ) : (
     <div className="flex flex-row mx-auto">
-      <div className="flex flex-row my-5" style={{ width: "49%" }}>
+      <div
+        className="flex flex-row my-5"
+        style={{ width: "49%" }}
+        ref={leftElRef}
+      >
         <div className="pl-5 w-9/12">
           <div className="text-white ">
             <div className="text-xl font-bold">{name || "N/A"}</div>
@@ -55,7 +85,7 @@ const ExperienceRow: React.FC<ExperienceRowProps> = ({
           </div>
         </Link>
       </div>
-      <div className="bg-cyan-800 mx-3" style={{ width: "2%" }} />
+      <div className="bg-cyan-800 mx-3" style={{ width: "2%" }} ref={barRef} />
       <div className="" style={{ width: "49%" }} />
     </div>
   );

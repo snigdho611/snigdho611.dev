@@ -5,12 +5,12 @@
     "tech": [
       {
         "name": "React JS",
-        "logo": "images/icons/reactjs.png",
+        "logo": "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/reactjs_jbjf5g.png",
         "count": 0
       },
       {
         "name": "Next JS",
-        "logo": "images/icons/nextjs.png",
+        "logo": "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/nextjs_kd4aif.png",
         "count": 1
       }
     ]
@@ -21,12 +21,12 @@
     "tech": [
       {
         "name": "Laravel",
-        "logo": "images/icons/laravel.png",
+        "logo": "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/laravel_tnohfi.png",
         "count": 2
       },
       {
         "name": "Node JS",
-        "logo": "images/icons/nodejs.png",
+        "logo": "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/nodejs_fbzhmo.png",
         "count": 3
       }
     ]
@@ -37,12 +37,12 @@
     "tech": [
       {
         "name": "PostGreSQL",
-        "logo": "images/icons/postgresql.png",
+        "logo": "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/postgresql_ieatla.png",
         "count": 4
       },
       {
         "name": "Mongo DB",
-        "logo": "images/icons/mongo.png",
+        "logo": "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/mongo_g54ff3.png",
         "count": 5
       }
     ]
@@ -53,22 +53,22 @@
     "tech": [
       {
         "name": "JavaScript",
-        "logo": "images/icons/javascript.png",
+        "logo": "https://res.cloudinary.com/drnym8nne/image/upload/v1650978407/portfolio/skills/javascript_es9136.png",
         "count": 6
       },
       {
         "name": "TypeScript",
-        "logo": "images/icons/typescript.png",
+        "logo": "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/typescript_fu7pku.png",
         "count": 7
       },
       {
         "name": "Python",
-        "logo": "images/icons/python.png",
+        "logo": "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/python_otulaq.png",
         "count": 8
       },
       {
         "name": "C#",
-        "logo": "images/icons/csharp.png",
+        "logo": "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/csharp_g6ad9k.png",
         "count": 9
       }
     ]
