@@ -1,71 +1,59 @@
-import Image from "next/image";
-import React from "react";
-// import ExperienceCard from "./ExperienceCard";
-// import ExperienceRow from "./ExperienceRow";
+import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
+import ExperienceRow, { ExperienceRowProps } from "./ExperienceRow";
 
-const data = [
-  {
-    id: 3,
-    imageURL: "/images/experience/deepchainlabs.png",
-    siteURL: "https://bjitgroup.com/",
-    description: "Laravel and Laravel Livewire - client websites",
-    position: "Research and Development Intern",
-    org: "DeepChain Labs",
-  },
-  {
-    id: 2,
-    imageURL: "/images/experience/deepchainlabs.png",
-    siteURL: "https://deepchainlabs.com/",
-    description: "Laravel and Laravel Livewire - client websites",
-    position: "Research and Development Intern",
-    org: "DeepChain Labs",
-  },
-  {
-    id: 1,
-    imageURL: "/images/experience/mainframelabs.png",
-    siteURL: "https://mainframelabs.ltd/",
-    description: "React JS, Next JS and Mongo DB - EdTech platform",
-    org: "Mainframe Labs Ltd.",
-    position: "Junior Software Engineer",
-  },
-];
+interface ExperienceProps {
+  title: string;
+  experience: ExperienceRowProps[];
+}
 
-const Experience = () => {
+const Experience: React.FC<ExperienceProps> = ({ title, experience }) => {
+  const educationRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      educationRef.current,
+      {
+        opacity: 0,
+        x: -700,
+      },
+      { opacity: 1, x: 0, duration: 1 }
+    );
+  }, []);
   return (
-    <div className="mt-24">
-      {/* <div>ABC</div> */}
-      <Image src={data[0].imageURL} width={100} height={100} />
+    <div
+      className="mx-auto 
+    w-8/12
+     flex flex-row mt-32"
+      ref={educationRef}
+    >
+      <div className="w-full">
+        <div>
+          <h1
+            className="text-4xl text-center text-cyan-400 
+         my-4"
+          >
+            {title}
+          </h1>
+          <div className="flex flex-row">
+            <div className="px-8 w-full">
+              {experience.map(({ id, name, imageURL, degree, time }) => {
+                return (
+                  <ExperienceRow
+                    key={id}
+                    name={name}
+                    imageURL={imageURL}
+                    degree={degree}
+                    time={time}
+                    id={id}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    // <div style={{ margin: "120px auto 0 auto" }}>
-    //   <div className="Header">EXPERIENCE</div>
-    //   {data.map(({ id, siteURL, imageURL, description, org, position }) => {
-    //     if (id % 2 == 0) {
-    //       return (
-    //         <ExperienceRow
-    //           key={id}
-    //           org={org}
-    //           position={position}
-    //           description={description}
-    //           siteURL={siteURL}
-    //           imageURL={imageURL}
-    //           align={"r"}
-    //         />
-    //       );
-    //     } else {
-    //       return (
-    //         <ExperienceRow
-    //           key={id}
-    //           org={org}
-    //           position={position}
-    //           description={description}
-    //           siteURL={siteURL}
-    //           imageURL={imageURL}
-    //           align={"l"}
-    //         />
-    //       );
-    //     }
-    //   })}
-    // </div>
   );
 };
 

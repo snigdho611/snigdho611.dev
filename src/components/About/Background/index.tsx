@@ -1,31 +1,8 @@
-import Education from "components/About/Background/Education";
-import EducationRow from "components/About/Background/Education/EducationRow";
+// import Education from "components/About/Background/Education";
+// import EducationRow from "components/About/Background/Education/EducationRow";
+import Education from "components/Education";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
-
-const edu = [
-  {
-    id: 1,
-    name: "American International University-Bangladesh",
-    imageURL: "/images/education/AIUB.png",
-    degree: "Bachelor’s in Computer Science and Software Engineering",
-    time: "January, 2018 - January, 2022",
-  },
-  {
-    id: 2,
-    name: "Maple Leaf International School",
-    imageURL: "/images/education/MLIS.png",
-    degree: "A ‘ Levels",
-    time: "June, 2013 - January, 2017",
-  },
-  {
-    id: 3,
-    name: "Maple Leaf International School",
-    imageURL: "/images/education/MLIS.png",
-    degree: "O ‘ Levels",
-    time: "June, 2012 - June, 2013",
-  },
-];
 
 const Background = () => {
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -48,9 +25,7 @@ const Background = () => {
       ref={backgroundRef}
     >
       <div className="w-full">
-        <div>
-          <Education education={edu} />
-        </div>
+        <div></div>
       </div>
     </div>
   );

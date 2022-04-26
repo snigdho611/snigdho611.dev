@@ -1,10 +1,38 @@
 // import About from "components/About";
 import Experience from "components/Experience";
+// import Experience from "components/Experience";
 import Navbar from "components/Navbar";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 // import styles from "../styles/Home.module.css";
+
+const data = [
+  {
+    id: 3,
+    imageURL: "/images/experience/bjit.png",
+    siteURL: "https://bjitgroup.com/",
+    degree: "Laravel and Laravel Livewire - client websites",
+    position: "Software Engineer - Web",
+    name: "BJIT",
+  },
+  {
+    id: 2,
+    imageURL: "/images/experience/deepchainlabs.png",
+    siteURL: "https://deepchainlabs.com/",
+    degree: "Laravel and Laravel Livewire - client websites",
+    position: "Research and Development Intern",
+    name: "DeepChain Labs",
+  },
+  {
+    id: 1,
+    imageURL: "/images/experience/mainframelabs.png",
+    siteURL: "https://mainframelabs.ltd/",
+    degree: "React JS, Next JS and Mongo DB - EdTech platform",
+    name: "Mainframe Labs Ltd.",
+    position: "Junior Software Engineer",
+  },
+];
 
 const Home: NextPage = () => {
   return (
@@ -25,9 +53,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/images/favicon.png" />
         <title>Snigdho Dip Howlader</title>
       </Head>
-
       <Navbar />
-      <Experience />
+      <Experience title="Experience" experience={data} />
     </div>
   );
 };

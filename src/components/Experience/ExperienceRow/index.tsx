@@ -1,122 +1,81 @@
-import React from "react";
-// import ExperienceCard from "../ExperienceCard";
+import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
+import ExperienceCard from "./ExperienceCard";
 
-// interface ExperienceRowProps {
-//   imageURL: string;
-//   siteURL: string;
-//   description: string;
-//   org: string;
-//   position: string;
-//   align: string;
-// }
+export interface ExperienceRowProps {
+  id?: number;
+  name?: string;
+  imageURL?: string;
+  degree?: string;
+  time?: string;
+  website?: string;
+}
 
-// const index: React.FC<ExperienceRowProps> = ({
-//   imageURL,
-//   siteURL,
-//   description,
-//   org,
-//   position,
-//   align,
-// }) => {
-//   if (align == "r") {
-//     return (
-//       <div className="experience-tree-row">
-//         <div className="experience-tree-row-container"></div>
-//         <div style={{ width: "12%" }}>
-//           <div className="experience-tree-row-bar">
-//             <ExperienceCard imageURL={imageURL} siteURL={siteURL} />
-//           </div>
-//         </div>
-//         <div
-//           style={{
-//             display: "flex",
-//             flexDirection: "row",
-//             width: "44%",
-//             justifyContent: "left",
-//             padding: "55px 0px 0px 0px",
-//           }}
-//         >
-//           <div className="experience-dialogue-arrow-left" />
-//           <div className="experience-dialogue">
-//             <div style={{ padding: "10px" }}>
-//               <div
-//                 style={{
-//                   fontWeight: "bold",
-//                   fontSize: "20px",
-//                   color: "#FFFFFF",
-//                 }}
-//               >
-//                 {org}
-//               </div>
-//               <div
-//                 style={{ color: "#BEEBF9", padding: "5px 0", fontSize: "17px" }}
-//               >
-//                 {position}
-//               </div>
-//               <div
-//                 style={{
-//                   fontSize: "17px",
-//                   color: "#FFFFFF",
-//                   textAlign: "justify",
-//                 }}
-//               >
-//                 {description}
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   } else {
-//     return (
-//       <div className="experience-tree-row">
-//         <div className="experience-tree-row-container">
-//           <div className="experience-dialogue" style={{}}>
-//             <div style={{ padding: "10px" }}>
-//               <div
-//                 style={{
-//                   fontWeight: "bold",
-//                   fontSize: "20px",
-//                   color: "#FFFFFF",
-//                 }}
-//               >
-//                 {org}
-//               </div>
-//               <div
-//                 style={{ color: "#BEEBF9", padding: "5px 0", fontSize: "17px" }}
-//               >
-//                 {position}
-//               </div>
-//               <div
-//                 style={{
-//                   fontSize: "17px",
-//                   color: "#FFFFFF",
-//                   textAlign: "justify",
-//                 }}
-//               >
-//                 {description}
-//               </div>
-//             </div>
-//           </div>
-//           <div className="experience-dialogue-arrow-right" />
-//         </div>
-//         <div style={{ width: "12%" }}>
-//           <div className="experience-tree-row-bar">
-//             <ExperienceCard imageURL={imageURL} siteURL={siteURL} />
-//           </div>
-//         </div>
-//         <div
-//           style={{
-//             display: "flex",
-//             flexDirection: "row",
-//             width: "44%",
-//             justifyContent: "left",
-//             padding: "55px 0px 0px 0px",
-//           }}
-//         />
-//       </div>
-//     );
-//   }
-// };
+const ExperienceRow: React.FC<ExperienceRowProps> = ({
+  name,
+  imageURL,
+  degree,
+  time,
+  id,
+}) => {
+  return id && id % 2 == 0 ? (
+    <div className="flex flex-row mx-auto">
+      <div className="" style={{ width: "49%" }} />
+      <div className="bg-cyan-800 mx-3" style={{ width: "2%" }} />
+      <div className="flex flex-row my-5" style={{ width: "49%" }}>
+        <div className="w-3/12">
+          <ExperienceCard imageURL={imageURL || ""} />
+        </div>
+        <div className="pl-5 w-9/12">
+          <div className="text-white ">
+            <div className="text-xl font-bold">{name || "American"}</div>
+            <div className="text-medium font-bold my-2">{degree || "BSc"}</div>
+            <div className="text-small italic my-2">{time || "March 22"}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div className="flex flex-row mx-auto">
+      <div className="flex flex-row my-5" style={{ width: "49%" }}>
+        <div className="pl-5 w-9/12">
+          <div className="text-white ">
+            <div className="text-xl font-bold">{name || "American"}</div>
+            <div className="text-medium font-bold my-2">{degree || "BSc"}</div>
+            <div className="text-small italic my-2">{time || "March 22"}</div>
+          </div>
+        </div>
+        <div className="w-3/12">
+          <ExperienceCard imageURL={imageURL || ""} />
+        </div>
+      </div>
+      <div className="bg-cyan-800 mx-3" style={{ width: "2%" }} />
+      <div className="" style={{ width: "49%" }} />
+    </div>
+  );
+};
 
-// export default index;
+export default ExperienceRow;
+
+{
+  /* <div
+  style={{
+    minWidth: "10px",
+    width: "10px",
+    minHeight: "100%",
+    backgroundColor: "#5BC0DE",
+    float: "right",
+  }}
+/> */
+}
+{
+  /* <div
+  style={{
+    height: "10px",
+    minHeight: "10px",
+    minWidth: "60px",
+    width: "60px",
+    backgroundColor: "#5BC0DE",
+  }}
+></div> */
+}
