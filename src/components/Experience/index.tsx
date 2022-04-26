@@ -37,18 +37,21 @@ const Experience: React.FC<ExperienceProps> = ({ title, experience }) => {
           </h1>
           <div className="flex flex-row">
             <div className="px-8 w-full">
-              {experience.map(({ id, name, imageURL, degree, time }) => {
-                return (
-                  <ExperienceRow
-                    key={id}
-                    name={name}
-                    imageURL={imageURL}
-                    degree={degree}
-                    time={time}
-                    id={id}
-                  />
-                );
-              })}
+              {experience.map(
+                ({ id, name, imageURL, degree, time, siteURL }) => {
+                  return (
+                    <ExperienceRow
+                      key={id}
+                      name={name}
+                      imageURL={imageURL}
+                      degree={degree}
+                      time={time}
+                      siteURL={siteURL}
+                      id={id}
+                    />
+                  );
+                }
+              )}
             </div>
           </div>
         </div>

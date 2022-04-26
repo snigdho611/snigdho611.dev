@@ -9,8 +9,12 @@ body {
 }
 
 body {
-  background-color: #1f1f2b;
+  background-color: rgba(31, 31, 43, 0.918);
   overflow-x: hidden;
+  background-image: url('/images/background.webp');
+  background-size: contain;
+  background-blend-mode: multiply;
+  opacity: 5;
 }
 
 .transit {

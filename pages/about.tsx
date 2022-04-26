@@ -14,7 +14,7 @@ const edu = [
   {
     id: 1,
     name: "American International University-Bangladesh",
-    siteURL: "",
+    siteURL: "https://www.aiub.edu/",
     imageURL: "/images/education/AIUB.png",
     degree: "Bachelor’s in Computer Science and Software Engineering",
     time: "January, 2018 - January, 2022",
@@ -22,7 +22,7 @@ const edu = [
   {
     id: 2,
     name: "Maple Leaf International School",
-    siteURL: "",
+    siteURL: "https://mlis.edu.bd/",
     imageURL: "/images/education/MLIS.png",
     degree: "A ‘ Levels",
     time: "June, 2013 - January, 2017",
@@ -30,7 +30,7 @@ const edu = [
   {
     id: 3,
     name: "Maple Leaf International School",
-    siteURL: "",
+    siteURL: "https://mlis.edu.bd/",
     imageURL: "/images/education/MLIS.png",
     degree: "O ‘ Levels",
     time: "June, 2012 - June, 2013",
