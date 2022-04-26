@@ -84,26 +84,6 @@ const data = [
 const Skills = () => {
   const baseRef = useRef<HTMLDivElement>(null);
 
-  const totalRefs = useRef<HTMLDivElement[]>([]);
-
-  // const rotateObjects = (objects: React.MutableRefObject<HTMLDivElement[]>) => {
-  //   gsap.fromTo(
-  //     objects.current,
-  //     {
-  //       transformPerspective: 800,
-  //       transformOrigin: "center",
-  //       rotationY: 360,
-  //     },
-  //     {
-  //       transformPerspective: 800,
-  //       transformOrigin: "center",
-  //       duration: 1.25,
-  //       rotationY: 0,
-  //       stagger: 0.1,
-  //     }
-  //   );
-  // };
-
   useLayoutEffect(() => {
     gsap.fromTo(
       baseRef.current,
@@ -112,9 +92,6 @@ const Skills = () => {
       },
       { opacity: 1, duration: 1 }
     );
-
-    // totalRefs.current = totalRefs.current.slice(0, 10);
-    // rotateObjects(totalRefs);
   }, []);
 
   return (

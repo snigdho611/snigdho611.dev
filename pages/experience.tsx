@@ -1,4 +1,5 @@
 // import About from "components/About";
+import Experience from "components/Experience";
 import Navbar from "components/Navbar";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Navbar />
+      <Experience />
     </div>
   );
 };

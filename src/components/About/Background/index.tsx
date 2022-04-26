@@ -48,7 +48,7 @@ const Background = () => {
       ref={backgroundRef}
     >
       <div className="w-full">
-        <div className="text-justify text-cyan-100">
+        <div>
           <Education education={edu} />
         </div>
       </div>
