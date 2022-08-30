@@ -1,6 +1,3 @@
-// import Education from "components/About/Background/Education";
-// import EducationRow from "components/About/Background/Education/EducationRow";
-import Education from "components/Education";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 
