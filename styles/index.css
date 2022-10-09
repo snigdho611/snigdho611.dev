@@ -11,9 +11,10 @@ body {
 body {
   background-color: rgba(0, 49, 68, 0.904);
   overflow-x: hidden;
-  background-image: url('/images/background.webp');
+  background-image: url("/images/background.webp");
   background-size: contain;
   background-blend-mode: multiply;
+  background-size: cover;
   opacity: 5;
 }
 
