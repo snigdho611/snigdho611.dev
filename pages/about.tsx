@@ -4,11 +4,9 @@ import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 import Hero from "components/Hero";
 
-interface indexProps {
-  val: string;
-}
+interface indexProps {}
 
-const Index: React.FC<indexProps> = ({ val }) => {
+const About: React.FC<indexProps> = () => {
   return (
     <>
       <Head>
@@ -24,17 +22,10 @@ const Index: React.FC<indexProps> = ({ val }) => {
         <link rel="icon" href="/images/favicon.png" />
         <title>Snigdho Dip Howlader</title>
       </Head>
-
       <Navbar />
       <Hero />
     </>
   );
 };
 
-export async function getServerSideProps() {
-  const value = process.env.BASE_VAL;
-  // const var = api(abc)
-  return { props: { val: value } };
-}
-
-export default Index;
+export default About;
