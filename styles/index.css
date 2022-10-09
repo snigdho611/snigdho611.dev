@@ -16,6 +16,33 @@ body {
   background-blend-mode: multiply;
   background-size: cover;
   opacity: 5;
+  animation: bg-animate 5s infinite;
+}
+
+@keyframes bg-animate {
+  0%,
+  100% {
+    /* opacity: 0.5; */
+    /* background-image: unset; */
+    /* background-color: rgba(173, 232, 255, 0.904); */
+    background-color: rgba(0, 66, 92, 0.9);
+  }
+  /* 25% {
+    background-color: rgba(0, 49, 68, 0.25);
+  }*/
+  50% {
+    background-color: rgba(34, 170, 224, 0.9);
+  }
+  /*
+  75% {
+    background-color: rgba(0, 49, 68, 0.75);
+  } */
+  /* 100% {
+    background-color: rgba(0, 49, 68, 0.904);
+  }
+  0% {
+    background-color: rgba(0, 49, 68, 0);
+  } */
 }
 
 .transit {
