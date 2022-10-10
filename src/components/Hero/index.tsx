@@ -12,7 +12,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="my-40">
+    <div className="mt-40">
       <div className="text-cyan-200 mx-auto w-3/4" ref={baseRef}>
         <div className="flex flex-col px-28">
           <label className="text-5xl font-medium">Snigdho Dip Howlader</label>

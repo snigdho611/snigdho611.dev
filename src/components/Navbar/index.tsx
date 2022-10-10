@@ -27,35 +27,35 @@ const Navbar = () => {
         <Link href={"/about"}>
           <a
             className={`duration-300 w-8 h-8 bg-about hover:bg-aboutHover transition-all bg-contain bg-center mx-auto bg-no-repeat ${
-              router.pathname === "/about" ? "text-cyan-100" : null
+              router.pathname === "/about" ? "bg-aboutHover" : null
             }`}
           />
         </Link>
         <Link href={"/skills"}>
           <a
             className={`duration-300 w-8 h-8 bg-skills hover:bg-skillsHover transition-all bg-contain bg-center mx-auto bg-no-repeat ${
-              router.pathname === "/skills" ? "text-cyan-100" : null
+              router.pathname === "/skills" ? "bg-skillsHover" : null
             }`}
           />
         </Link>
         <Link href={"/experience"}>
           <a
             className={`duration-300 w-8 h-8 bg-experience hover:bg-experienceHover transition-all bg-contain bg-center mx-auto bg-no-repeat ${
-              router.pathname === "/experience" ? "text-cyan-100" : null
+              router.pathname === "/experience" ? "bg-experienceHover" : null
             }`}
           />
         </Link>
         <Link href={"/projects"}>
           <a
             className={`duration-300 w-8 h-8 bg-project hover:bg-projectHover transition-all bg-contain bg-center mx-auto bg-no-repeat ${
-              router.pathname === "/projects" ? "text-cyan-100" : null
+              router.pathname === "/projects" ? "bg-projectHover" : null
             }`}
           />
         </Link>
         <Link href={"/contact"}>
           <a
             className={`duration-300 w-8 h-8 bg-contact hover:bg-contactHover transition-all bg-contain bg-center mx-auto bg-no-repeat ${
-              router.pathname === "/contact" ? "text-cyan-100" : null
+              router.pathname === "/contact" ? "bg-contactHover" : null
             }`}
           />
         </Link>
