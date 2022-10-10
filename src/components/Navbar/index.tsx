@@ -23,52 +23,41 @@ const Navbar = () => {
           router.push("/");
         }}
       />
-      <div className="mx-auto flex flex-col">
+      <div className="mx-auto flex flex-col gap-7">
         <Link href={"/about"}>
           <a
-            className={`duration-300 w-8 h-8 bg-about hover:bg-aboutHover transition-all bg-contain font-semibold hover:text-cyan-100 mx-auto ${
+            className={`duration-300 w-8 h-8 bg-about hover:bg-aboutHover transition-all bg-contain bg-center mx-auto bg-no-repeat ${
               router.pathname === "/about" ? "text-cyan-100" : null
             }`}
-            // style={{ backgroundImage: "url('/images/nav/about.png')" }}
-          >
-            {/* About */}
-          </a>
+          />
         </Link>
         <Link href={"/skills"}>
           <a
-            className={`transition duration-300 text-cyan-600 mx-10 font-semibold hover:text-cyan-100 text-xl ${
+            className={`duration-300 w-8 h-8 bg-skills hover:bg-skillsHover transition-all bg-contain bg-center mx-auto bg-no-repeat ${
               router.pathname === "/skills" ? "text-cyan-100" : null
             }`}
-          >
-            Skills
-          </a>
+          />
         </Link>
         <Link href={"/experience"}>
           <a
-            className={`transition duration-300 text-cyan-600 mx-10 font-semibold hover:text-cyan-100 text-xl ${
+            className={`duration-300 w-8 h-8 bg-experience hover:bg-experienceHover transition-all bg-contain bg-center mx-auto bg-no-repeat ${
               router.pathname === "/experience" ? "text-cyan-100" : null
             }`}
-          >
-            Experience
-          </a>
+          />
         </Link>
         <Link href={"/projects"}>
           <a
-            className={`transition duration-300 text-cyan-600 mx-10 font-semibold hover:text-cyan-100 text-xl ${
+            className={`duration-300 w-8 h-8 bg-project hover:bg-projectHover transition-all bg-contain bg-center mx-auto bg-no-repeat ${
               router.pathname === "/projects" ? "text-cyan-100" : null
             }`}
-          >
-            Projects
-          </a>
+          />
         </Link>
         <Link href={"/contact"}>
           <a
-            className={`transition duration-300 text-cyan-600 mx-10 font-semibold hover:text-cyan-100 text-xl ${
+            className={`duration-300 w-8 h-8 bg-contact hover:bg-contactHover transition-all bg-contain bg-center mx-auto bg-no-repeat ${
               router.pathname === "/contact" ? "text-cyan-100" : null
             }`}
-          >
-            Contact
-          </a>
+          />
         </Link>
       </div>
     </div>
