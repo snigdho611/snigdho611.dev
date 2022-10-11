@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
-import gsap from "gsap";
+import { motion } from "framer-motion";
 
 interface SkillBox {
   tech: {
@@ -14,57 +14,21 @@ interface SkillBox {
 const SkillBox: React.FC<SkillBox> = ({ id, tech }) => {
   React.useLayoutEffect = React.useEffect;
   const skillBoxRef = useRef<HTMLDivElement>(null);
-  const rotateObjects = (objects: React.RefObject<HTMLDivElement>) => {
-    gsap.fromTo(
-      objects.current,
-      {
-        transformPerspective: 800,
-        transformOrigin: "center",
-        rotationY: 360,
-      },
-      {
-        transformPerspective: 800,
-        transformOrigin: "center",
-        duration: 1,
-        rotationY: 0,
-      }
-    );
-  };
 
-  useLayoutEffect(() => {
-    rotateObjects(skillBoxRef);
-  }, []);
-
-  const eventOnMouseEnter = () => {
-    gsap.to(skillBoxRef.current, {
-      transformOrigin: "center",
-      scale: 1.25,
-      rotationY: 360,
-      duration: 0.5,
-    });
-  };
-
-  const eventOnMouseLeave = () => {
-    gsap.to(skillBoxRef.current, {
-      rotationY: 0,
-      duration: 0,
-    });
-    gsap.to(skillBoxRef.current, {
-      scale: 1,
-      duration: 0.5,
-    });
+  const motionVariant = {
+    visible: { rotateY: 360, delay: 2 },
+    start: {},
+    // hover: { type: "spring", width: "80%", color: "white", opacity: 1 },
   };
 
   return (
-    <div
+    <motion.div
       key={id}
       className="px-7 mx-auto"
-      onMouseEnter={(el) => {
-        eventOnMouseEnter();
-      }}
-      onMouseLeave={(el) => {
-        eventOnMouseLeave();
-      }}
+      variants={motionVariant}
+      initial="start"
+      animate="visible"
+      transition={{ duration: 3, repeat: Infinity }}
     >
       <div
         className="min-w-24 w-24 min-h-24 h-24 my-4 bg-center bg-no-repeat bg-contain cursor-pointer"
@@ -73,7 +37,7 @@ const SkillBox: React.FC<SkillBox> = ({ id, tech }) => {
         }}
         ref={skillBoxRef}
       />
-    </div>
+    </motion.div>
   );
 };
 

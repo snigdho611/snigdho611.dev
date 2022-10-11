@@ -46,7 +46,7 @@ const Hero = () => {
           </label> */}
         </div>
       </div>
-      <div className="text-2xl flex flex-row gap-x-5 mx-auto h-80 text-cyan-500 justify-center w-5/6">
+      <div className="text-2xl flex flex-row gap-x-5 mt-16 mx-auto h-80 text-cyan-500 justify-center w-5/6">
         <motion.div
           variants={motionVariant}
           initial="start"
