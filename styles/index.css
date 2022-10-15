@@ -11,12 +11,12 @@ body {
 body {
   background-color: rgba(0, 49, 68, 0.904);
   overflow-x: hidden;
-  background-image: url("/images/background.webp");
+  /* background-image: url("/images/background.webp");
   background-size: contain;
   background-blend-mode: multiply;
   background-size: cover;
   opacity: 5;
-  animation: bg-animate 5s infinite;
+  animation: bg-animate 5s infinite; */
 }
 
 @keyframes bg-animate {
@@ -47,4 +47,24 @@ body {
 
 .transit {
   transition: color 0.25s, background-color 0.25s;
+}
+
+.bg-about {
+  background-image: url("https://res.cloudinary.com/drnym8nne/image/upload/v1665422898/portfolio/nav/about_sncnfl.png");
+}
+.bg-skills {
+  background-image: url("https://res.cloudinary.com/drnym8nne/image/upload/v1665422899/portfolio/nav/skill_cxvdes.png");
+}
+.bg-experience {
+  background-image: url("https://res.cloudinary.com/drnym8nne/image/upload/v1665422898/portfolio/nav/experience_s1htfv.png");
+}
+.bg-project {
+  background-image: url("https://res.cloudinary.com/drnym8nne/image/upload/v1665422898/portfolio/nav/project_pacmkb.png");
+}
+.bg-contact {
+  background-image: url("https://res.cloudinary.com/drnym8nne/image/upload/v1665422898/portfolio/nav/contact_rhfckw.png");
+}
+
+.nav-icon:hover {
+  box-shadow: 5px 5px 5px white;
 }

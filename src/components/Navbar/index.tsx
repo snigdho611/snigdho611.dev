@@ -8,42 +8,15 @@ interface NavbarProps {
 }
 
 const Navbar = () => {
-  const router = useRouter();
-
   return (
-    <div className="flex-col flex text-xl py-7 w-[15%] z-10 fixed right-0 top-0 bg-[#2b354b52]">
-      {/* <div
-        className="w-1/4 justify-center py-0 px-12"
-        onClick={() => {
-          router.push("/");
-        }}
-      /> */}
-      <div className="mx-auto flex flex-col gap-7">
-        <div
-          className={`duration-300 w-8 h-8 bg-about hover:bg-aboutHover transition-all bg-contain bg-center mx-auto bg-no-repeat cursor-pointer ${
-            router.pathname === "/about" ? "bg-aboutHover" : null
-          }`}
-        />
-        <div
-          className={`duration-300 w-8 h-8 bg-skills hover:bg-skillsHover transition-all bg-contain bg-center mx-auto bg-no-repeat cursor-pointer ${
-            router.pathname === "/skills" ? "bg-skillsHover" : null
-          }`}
-        />
-        <div
-          className={`duration-300 w-8 h-8 bg-experience hover:bg-experienceHover transition-all bg-contain bg-center mx-auto bg-no-repeat cursor-pointer ${
-            router.pathname === "/experience" ? "bg-experienceHover" : null
-          }`}
-        />
-        <div
-          className={`duration-300 w-8 h-8 bg-project hover:bg-projectHover transition-all bg-contain bg-center mx-auto bg-no-repeat cursor-pointer ${
-            router.pathname === "/projects" ? "bg-projectHover" : null
-          }`}
-        />
-        <div
-          className={`duration-300 w-8 h-8 bg-contact hover:bg-contactHover transition-all bg-contain bg-center mx-auto bg-no-repeat cursor-pointer ${
-            router.pathname === "/contact" ? "bg-contactHover" : null
-          }`}
-        />
+    <div className="flex text-xl py-7 w-full z-10 fixed right-0 top-0 bg-[#2b354b52]">
+      <div className="w-1/2">1</div>
+      <div className="flex w-1/2 gap-7 mx-16 justify-end">
+        <div className="text-sm text-cyan-300 flex items-center">About</div>
+        <div className="text-sm text-cyan-300 flex items-center">Skills</div>
+        <div className="text-sm text-cyan-300 flex items-center">Experience</div>
+        <div className="text-sm text-cyan-300 flex items-center">Project</div>
+        <div className="text-sm text-cyan-300 flex items-center">Contact</div>
       </div>
     </div>
   );
