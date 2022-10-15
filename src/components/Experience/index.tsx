@@ -1,4 +1,3 @@
-import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import ExperienceRow, { ExperienceRowProps } from "./ExperienceRow";
 
@@ -10,16 +9,6 @@ interface ExperienceProps {
 const Experience: React.FC<ExperienceProps> = ({ title, experience }) => {
   const educationRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     educationRef.current,
-  //     {
-  //       opacity: 0,
-  //       y: -100,
-  //     },
-  //     { opacity: 1, y: 0, duration: 1 }
-  //   );
-  // }, []);
   return (
     <div
       className="mx-auto 
@@ -37,21 +26,19 @@ const Experience: React.FC<ExperienceProps> = ({ title, experience }) => {
           </h1>
           <div className="flex flex-row">
             <div className="px-8 w-full">
-              {experience.map(
-                ({ id, name, imageURL, degree, time, siteURL }) => {
-                  return (
-                    <ExperienceRow
-                      key={id}
-                      name={name}
-                      imageURL={imageURL}
-                      degree={degree}
-                      time={time}
-                      siteURL={siteURL}
-                      id={id}
-                    />
-                  );
-                }
-              )}
+              {experience.map(({ id, name, imageURL, degree, time, siteURL }) => {
+                return (
+                  <ExperienceRow
+                    key={id}
+                    name={name}
+                    imageURL={imageURL}
+                    degree={degree}
+                    time={time}
+                    siteURL={siteURL}
+                    id={id}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

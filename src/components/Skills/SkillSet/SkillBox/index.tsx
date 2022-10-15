@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface SkillBox {
   tech: {
@@ -12,24 +12,23 @@ interface SkillBox {
 }
 
 const SkillBox: React.FC<SkillBox> = ({ id, tech }) => {
-  React.useLayoutEffect = React.useEffect;
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
   const skillBoxRef = useRef<HTMLDivElement>(null);
 
   const motionVariant = {
     visible: { rotateY: 360, delay: 2 },
-    start: {},
-    // hover: { type: "spring", width: "80%", color: "white", opacity: 1 },
+    start: { scale: 1 },
+    hover: { scale: 1.2, duration: 1 },
   };
 
+  useEffect(() => {
+    console.log(inView);
+  }, [inView]);
+
   return (
-    <motion.div
-      key={id}
-      className="px-7 mx-auto"
-      variants={motionVariant}
-      initial="start"
-      animate="visible"
-      transition={{ duration: 3, repeat: Infinity }}
-    >
+    <div ref={ref} key={id} className="px-7 mx-auto">
       <div
         className="min-w-24 w-24 min-h-24 h-24 my-4 bg-center bg-no-repeat bg-contain cursor-pointer"
         style={{
@@ -37,7 +36,7 @@ const SkillBox: React.FC<SkillBox> = ({ id, tech }) => {
         }}
         ref={skillBoxRef}
       />
-    </motion.div>
+    </div>
   );
 };
 

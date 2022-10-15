@@ -1,15 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
   const baseRef = useRef<HTMLDivElement>(null);
-
-  const motionVariant = {
-    visible: { opacity: 0.8, duration: 1, transform: "rotateX(360deg)" },
-    start: { opacity: 0.15 },
-    hover: { type: "spring", width: "80%", color: "white", opacity: 1 },
-  };
 
   return (
     <div className="mt-40">
@@ -47,36 +40,15 @@ const Hero = () => {
         </div>
       </div>
       <div className="text-2xl flex flex-row gap-x-5 mt-16 mx-auto h-80 text-cyan-500 justify-center w-5/6">
-        <motion.div
-          variants={motionVariant}
-          initial="start"
-          animate="visible"
-          whileHover="hover"
-          transition={{ duration: 1, transform: { duration: 1, delay: 1 } }}
-          className="cursor-pointer min-w-[200px] flex justify-center items-center bg-frontend bg-cover bg-center bg-no-repeat"
-        >
+        <div className="cursor-pointer min-w-[200px] flex justify-center items-center bg-frontend bg-cover bg-center bg-no-repeat">
           Frontend
-        </motion.div>
-        <motion.div
-          variants={motionVariant}
-          whileHover="hover"
-          initial="start"
-          animate="visible"
-          transition={{ duration: 1, transform: { duration: 1, delay: 1 } }}
-          className="cursor-pointer min-w-[200px] flex justify-center items-center bg-backend bg-cover bg-center bg-no-repeat"
-        >
+        </div>
+        <div className="cursor-pointer min-w-[200px] flex justify-center items-center bg-backend bg-cover bg-center bg-no-repeat">
           Backend
-        </motion.div>
-        <motion.div
-          variants={motionVariant}
-          whileHover="hover"
-          initial="start"
-          animate="visible"
-          transition={{ duration: 1, transform: { duration: 1, delay: 1 } }}
-          className="cursor-pointer min-w-[200px] flex justify-center items-center bg-database bg-cover bg-center bg-no-repeat"
-        >
+        </div>
+        <div className="cursor-pointer min-w-[200px] flex justify-center items-center bg-database bg-cover bg-center bg-no-repeat">
           Databases
-        </motion.div>
+        </div>
       </div>
     </div>
   );

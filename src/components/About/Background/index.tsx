@@ -1,19 +1,8 @@
-import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 
 const Background = () => {
   const backgroundRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    gsap.fromTo(
-      backgroundRef.current,
-      {
-        opacity: 0,
-        x: -700,
-      },
-      { opacity: 1, x: 0, duration: 1 }
-    );
-  }, []);
   return (
     <div
       className="mx-auto 
