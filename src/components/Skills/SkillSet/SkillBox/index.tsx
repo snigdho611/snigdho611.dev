@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
-import gsap from "gsap";
+import { useInView } from "react-intersection-observer";
 
 interface SkillBox {
   tech: {
@@ -8,72 +8,32 @@ interface SkillBox {
     logo: string;
     count: number;
   };
-  key: number;
+  id: number;
 }
 
-const SkillBox: React.FC<SkillBox> = ({ key, tech }) => {
-  //   const totalRefs = useRef<HTMLDivElement[]>([]);
+const SkillBox: React.FC<SkillBox> = ({ id, tech }) => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
   const skillBoxRef = useRef<HTMLDivElement>(null);
-  const rotateObjects = (objects: React.RefObject<HTMLDivElement>) => {
-    gsap.fromTo(
-      objects.current,
-      {
-        transformPerspective: 800,
-        transformOrigin: "center",
-        rotationY: 360,
-      },
-      {
-        transformPerspective: 800,
-        transformOrigin: "center",
-        duration: 1.25,
-        rotationY: 0,
-      }
-    );
+
+  const motionVariant = {
+    visible: { rotateY: 360, delay: 2 },
+    start: { scale: 1 },
+    hover: { scale: 1.2, duration: 1 },
   };
 
-  useLayoutEffect(() => {
-    rotateObjects(skillBoxRef);
-  }, []);
-
-  const eventOnMouseEnter = () => {
-    gsap.to(skillBoxRef.current, {
-      transformOrigin: "center",
-      scale: 1.25,
-      rotationY: 360,
-    });
-  };
-
-  const eventOnMouseLeave = () => {
-    gsap.to(skillBoxRef.current, {
-      rotationY: 360,
-      duration: 0,
-    });
-    gsap.to(skillBoxRef.current, {
-      scale: 1,
-      duration: 0.5,
-    });
-  };
+  useEffect(() => {
+    console.log(inView);
+  }, [inView]);
 
   return (
-    <div
-      key={key}
-      className="px-7 mx-auto"
-      style={{ border: "1px solid white" }}
-      onMouseEnter={(el) => {
-        eventOnMouseEnter();
-      }}
-      onMouseLeave={(el) => {
-        eventOnMouseLeave();
-      }}
-    >
+    <div ref={ref} key={id} className="px-7 mx-auto">
       <div
         className="min-w-24 w-24 min-h-24 h-24 my-4 bg-center bg-no-repeat bg-contain cursor-pointer"
         style={{
           backgroundImage: `url(${tech.logo})`,
         }}
-        // ref={(el) => {
-        //   totalRefs.current[elem.count] = el as HTMLDivElement;
-        // }}
         ref={skillBoxRef}
       />
     </div>

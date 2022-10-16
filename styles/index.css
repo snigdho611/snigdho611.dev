@@ -9,10 +9,46 @@ body {
 }
 
 body {
-  background-color: #1f1f2b;
+  background-color: rgb(15, 47, 58);
   overflow-x: hidden;
+  /* background-image: url("/images/background.webp");
+  background-size: contain;
+  background-blend-mode: multiply;
+  background-size: cover;
+  opacity: 5;
+  animation: bg-animate 5s infinite; */
+}
+
+@keyframes bg-animate {
+  0%,
+  100% {
+    background-color: rgba(0, 66, 92, 0.9);
+  }
+  50% {
+    background-color: rgba(34, 170, 224, 0.9);
+  }
 }
 
 .transit {
   transition: color 0.25s, background-color 0.25s;
+}
+
+.bg-about {
+  background-image: url("https://res.cloudinary.com/drnym8nne/image/upload/v1665422898/portfolio/nav/about_sncnfl.png");
+}
+.bg-skills {
+  background-image: url("https://res.cloudinary.com/drnym8nne/image/upload/v1665422899/portfolio/nav/skill_cxvdes.png");
+}
+.bg-experience {
+  background-image: url("https://res.cloudinary.com/drnym8nne/image/upload/v1665422898/portfolio/nav/experience_s1htfv.png");
+}
+.bg-project {
+  background-image: url("https://res.cloudinary.com/drnym8nne/image/upload/v1665422898/portfolio/nav/project_pacmkb.png");
+}
+.bg-contact {
+  background-image: url("https://res.cloudinary.com/drnym8nne/image/upload/v1665422898/portfolio/nav/contact_rhfckw.png");
+}
+
+.nav-icon:hover {
+  box-shadow: 5px 5px 5px white;
 }

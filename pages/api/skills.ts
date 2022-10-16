@@ -2,16 +2,16 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import skills from "../../server/skills.json";
 
-type Tech = {
-  name: string;
-  logo: string;
-  count: number;
-};
+// type Tech = {
+//   name: string;
+//   logo: string;
+//   count: number;
+// };
 
 type Data = {
-  id: number;
-  name: string;
-  tech: Tech[];
+  // id: number;
+  // name: string;
+  // tech: Tech[];
 }[];
 
 export default function handler(
