@@ -56,7 +56,7 @@ const Experience: React.FC = () => {
         <span className="w-1/3 text-2xl text-slate-50">Experience</span>
         <hr className="w-2/3" />
       </div>
-      <div className="flex">
+      <div className="flex sm:flex-row flex-col sm:gap-0 gap-10">
         <div className="w-1/3 flex flex-col">
           {data.map(({ company }, i) => {
             return (
@@ -72,7 +72,7 @@ const Experience: React.FC = () => {
             );
           })}
         </div>
-        <div className="w-2/3 flex flex-col gap-3">
+        <div className="sm:w-2/3 w-full flex flex-col gap-3">
           <span className="text-cyan-300 text-xl">
             <span className="text-slate-50">{data[activeExperience].title}</span>
             <span>
