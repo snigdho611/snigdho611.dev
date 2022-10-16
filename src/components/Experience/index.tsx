@@ -63,8 +63,8 @@ const Experience: React.FC = () => {
               <div
                 key={i}
                 onClick={() => setActiveExperience(i)}
-                className={`border-l-2 border-white font-mono py-3 px-3 cursor-pointer hover:bg-emerald-900 transition-colors ${
-                  activeExperience === i ? "text-emerald-300 border-emerald-300" : "text-slate-500"
+                className={`border-l-2 border-white font-mono py-3 px-3 cursor-pointer hover:bg-cyan-900 transition-colors ${
+                  activeExperience === i ? "text-cyan-300 border-cyan-300" : "text-slate-500"
                 }`}
               >
                 {company}
@@ -73,7 +73,7 @@ const Experience: React.FC = () => {
           })}
         </div>
         <div className="w-2/3 flex flex-col gap-3">
-          <span className="text-emerald-300 text-xl">
+          <span className="text-cyan-300 text-xl">
             <span className="text-slate-50">{data[activeExperience].title}</span>
             <span>
               {" "}
