@@ -9,24 +9,8 @@ body {
 }
 
 body {
-  background-color: rgb(15, 47, 58);
+  background-color: #111827;
   overflow-x: hidden;
-  /* background-image: url("/images/background.webp");
-  background-size: contain;
-  background-blend-mode: multiply;
-  background-size: cover;
-  opacity: 5;
-  animation: bg-animate 5s infinite; */
-}
-
-@keyframes bg-animate {
-  0%,
-  100% {
-    background-color: rgba(0, 66, 92, 0.9);
-  }
-  50% {
-    background-color: rgba(34, 170, 224, 0.9);
-  }
 }
 
 .transit {

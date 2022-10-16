@@ -57,7 +57,7 @@ const Experience: React.FC = () => {
         <hr className="w-2/3" />
       </div>
       <div className="flex sm:flex-row flex-col sm:gap-0 gap-10">
-        <div className="w-1/3 flex flex-col">
+        <div className="w-full sm:w-1/3 flex flex-col">
           {data.map(({ company }, i) => {
             return (
               <div

@@ -31,7 +31,7 @@ const About = () => {
           <div className="flex flex-col gap-3">
             <span>
               I am Snigdho Dip Howlader, and I enjoy adding my work to the internet. My interest in
-              web development was formed 2020 when I started creating projects for fun. I am now
+              web development was formed in 2020 when I started creating projects for fun. I am now
               dedicated to creating, fixing and maintaining all things related to the web for my
               career.
             </span>
