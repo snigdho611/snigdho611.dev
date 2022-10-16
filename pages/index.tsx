@@ -27,45 +27,50 @@ const Index: React.FC<indexProps> = ({ val }) => {
 
   return (
     <>
-      {loading ? (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, rotateY: 360, scale: 0.2 }}
-          transition={{ duration: 1 }}
-          className="flex justify-center pt-20"
-        >
-          <div className="absolute sm:w-[40vw] sm:h-[70vh] h-60 w-60">
-            <Image
-              src={
-                "https://res.cloudinary.com/drnym8nne/image/upload/v1665939449/portfolio/nav/favicon_z1vmcu.png"
-              }
-              alt="Not found"
-              layout="fill"
-            />
-          </div>
-        </motion.div>
-      ) : (
-        <>
-          <Head>
-            <meta property="og:title" content="Snigdho Dip Howlader | Software Engineer" />
-            <meta
-              name="og:description"
-              content="This is the personal portfolio of Snigdho Dip Howlader. Frontend Developer, Software Engineer and Computer Science enthusiast. Please find the contact details below if youa re willing to get in touch."
-            />
-            <meta
-              property="og:image"
-              content="https://raw.githubusercontent.com/snigdho611/snigdho611.portfolio/main/public/images/profilepic.jpg"
-            />
-            <link rel="icon" href="/images/favicon.png" />
-            <title>Snigdho Dip Howlader</title>
-          </Head>
-          <Navbar />
-          <Hero />
-          <About />
-          <Experience />
-          <Projects />
-        </>
-      )}
+      <>
+        <Head>
+          <meta property="og:title" content="Snigdho Dip Howlader | Software Engineer" />
+          <meta
+            name="og:description"
+            content="This is the personal portfolio of Snigdho Dip Howlader. Frontend Developer, Software Engineer and Computer Science enthusiast. Please find the contact details below if youa re willing to get in touch."
+          />
+          <meta
+            property="og:image"
+            content="https://raw.githubusercontent.com/snigdho611/snigdho611.portfolio/main/public/images/profilepic.jpg"
+          />
+          <link
+            rel="icon"
+            href="https://res.cloudinary.com/drnym8nne/image/upload/v1665939449/portfolio/nav/favicon_z1vmcu.png"
+          />
+          <title>Snigdho Dip Howlader</title>
+        </Head>
+        {loading ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, rotateY: 360, scale: 0.2 }}
+            transition={{ duration: 1 }}
+            className="flex justify-center pt-20"
+          >
+            <div className="absolute sm:w-[40vw] sm:h-[70vh] h-60 w-60">
+              <Image
+                src={
+                  "https://res.cloudinary.com/drnym8nne/image/upload/v1665939449/portfolio/nav/favicon_z1vmcu.png"
+                }
+                alt="Not found"
+                layout="fill"
+              />
+            </div>
+          </motion.div>
+        ) : (
+          <>
+            <Navbar />
+            <Hero />
+            <About />
+            <Experience />
+            <Projects />
+          </>
+        )}
+      </>
     </>
   );
 };
