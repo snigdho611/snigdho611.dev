@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const data = [
   "JavaScript",
@@ -14,8 +15,13 @@ const data = [
 
 const About = () => {
   return (
-    <div className="flex my-72 w-3/4 mx-auto font-sans">
-      <div className="flex flex-col w-1/2 items-center text-slate-400">
+    <motion.div
+      whileInView={{ y: 0, opacity: 1 }}
+      initial={{ y: -100, opacity: 0 }}
+      transition={{ duration: 1 }}
+      className="flex flex-col lg:flex-row my-72 w-3/4 mx-auto font-sans"
+    >
+      <div className="flex flex-col w-full lg:w-1/2 items-center text-slate-400">
         <div className="flex flex-col gap-5">
           <div className="flex items-center justify-between w-full">
             <span className="w-1/3 text-2xl text-slate-50">About Me</span>
@@ -56,7 +62,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/2 flex justify-center mt-10">
+      <div className="w-full lg:w-1/2 flex justify-center mt-10">
         <div className="flex h-72 justify-center">
           <div className="absolute w-60 h-60 hover:w-54 cursor-pointer">
             <Image
@@ -70,7 +76,7 @@ const About = () => {
           <div className="w-60 h-60 border-4 border-emrald-100 ml-10 mt-6 cursor-pointer">123</div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

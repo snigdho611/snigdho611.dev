@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Router, useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -10,13 +11,58 @@ interface NavbarProps {
 const Navbar = () => {
   return (
     <div className="flex text-xl py-7 w-full z-10 fixed right-0 top-0 bg-[#283c6769] backdrop-blur-md">
-      <div className="w-1/2 ">1</div>
+      <div className="w-1/2 flex h-10 ml-24">
+        <div className="absolute hidden sm:flex w-10 h-10">
+          <Image
+            src={
+              "https://res.cloudinary.com/drnym8nne/image/upload/v1665939449/portfolio/nav/favicon_z1vmcu.png"
+            }
+            alt="Not found"
+            layout="fill"
+          />
+        </div>
+      </div>
       <div className="flex w-1/2 gap-7 mx-16 justify-end">
-        <div className="text-sm text-cyan-300 flex items-center">About</div>
-        <div className="text-sm text-cyan-300 flex items-center">Skills</div>
-        <div className="text-sm text-cyan-300 flex items-center">Experience</div>
-        <div className="text-sm text-cyan-300 flex items-center">Project</div>
-        <div className="text-sm text-cyan-300 flex items-center">Contact</div>
+        <motion.div
+          animate={{ y: 0, opacity: 1 }}
+          initial={{ y: -100, opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="text-sm text-cyan-300 flex items-center cursor-pointer"
+        >
+          About
+        </motion.div>
+        <motion.div
+          animate={{ y: 0, opacity: 1 }}
+          initial={{ y: -100, opacity: 0 }}
+          transition={{ delay: 0.25, duration: 1 }}
+          className="text-sm text-cyan-300 flex items-center cursor-pointer"
+        >
+          Skills
+        </motion.div>
+        <motion.div
+          animate={{ y: 0, opacity: 1 }}
+          initial={{ y: -100, opacity: 0 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="text-sm text-cyan-300 flex items-center cursor-pointer"
+        >
+          Experience
+        </motion.div>
+        <motion.div
+          animate={{ y: 0, opacity: 1 }}
+          initial={{ y: -100, opacity: 0 }}
+          transition={{ delay: 0.75, duration: 1 }}
+          className="text-sm text-cyan-300 flex items-center cursor-pointer"
+        >
+          Project
+        </motion.div>
+        <motion.div
+          animate={{ y: 0, opacity: 1 }}
+          initial={{ y: -100, opacity: 0 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="text-sm text-cyan-300 flex items-center cursor-pointer"
+        >
+          Contact
+        </motion.div>
       </div>
     </div>
   );
