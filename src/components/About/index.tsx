@@ -14,7 +14,7 @@ const data = [
 
 const About = () => {
   return (
-    <div className="flex my-16 w-3/4 mx-auto font-sans">
+    <div className="flex my-72 w-3/4 mx-auto font-sans">
       <div className="flex flex-col w-1/2 items-center text-slate-400">
         <div className="flex flex-col gap-5">
           <div className="flex items-center justify-between w-full">
@@ -56,7 +56,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/2 flex justify-center">
+      <div className="w-1/2 flex justify-center mt-10">
         <div className="flex h-72 justify-center">
           <div className="absolute w-60 h-60 hover:w-54 cursor-pointer">
             <Image
@@ -67,7 +67,7 @@ const About = () => {
               alt="Not found"
             />
           </div>
-          <div className="w-60 h-60 border-4 border-cyan-100 ml-10 mt-6 cursor-pointer">123</div>
+          <div className="w-60 h-60 border-4 border-emrald-100 ml-10 mt-6 cursor-pointer">123</div>
         </div>
       </div>
     </div>

@@ -7,6 +7,8 @@ import SkillSet from "components/Skills/SkillSet";
 import Skills from "components/Skills";
 import skills from "../server/skills.json";
 import About from "components/About";
+import Experience from "components/Experience";
+import Projects from "components/Projects";
 interface indexProps {
   val: string;
 }
@@ -30,6 +32,8 @@ const Index: React.FC<indexProps> = ({ val }) => {
       <Navbar />
       <Hero />
       <About />
+      <Experience />
+      <Projects />
       {/* <Skills skills={skills} />
       <div className="flex w-1/3 gap-20 justify-center mx-auto">
         <div
