@@ -36,7 +36,7 @@ const Index: React.FC<indexProps> = ({ val }) => {
           />
           <meta
             property="og:image"
-            content="https://raw.githubusercontent.com/snigdho611/snigdho611.portfolio/main/public/images/profilepic.jpg"
+            content="https://res.cloudinary.com/drnym8nne/image/upload/v1665871812/portfolio/profilepic_xrxbld.jpg"
           />
           <link
             rel="icon"
