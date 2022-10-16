@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const data = [
   "JavaScript",
@@ -35,10 +36,15 @@ const About = () => {
               career.
             </span>
             <span>
-              Today I work at <a href="https://bjitgroup.com/">BJIT, Bangladesh</a> as a Web
-              Engineer. I have a degree in Computer Science & Software Engineering from
-              <a href="https://www.aiub.edu/"></a>. I believe my knowledge is a drop in an ocean and
-              my learning will never truly end.
+              Today I work at{" "}
+              <a href="https://bjitgroup.com/" className="text-emerald-500">
+                BJIT, Bangladesh
+              </a>{" "}
+              as a Web Engineer. I have a degree in Computer Science & Software Engineering from{" "}
+              <a href="https://www.aiub.edu/" className="text-emerald-500">
+                American International University - Bangladesh
+              </a>
+              . I believe my knowledge is a drop in an ocean and my learning will never truly end.
             </span>
             <span>
               Additionally, I also venture into Machine Learning and Computer Vision in my offtime
@@ -73,7 +79,7 @@ const About = () => {
               alt="Not found"
             />
           </div>
-          <div className="w-60 h-60 border-4 border-emrald-100 ml-10 mt-6 cursor-pointer">123</div>
+          <div className="w-60 h-60 border-4 border-emerald-100 ml-10 mt-6 cursor-pointer"></div>
         </div>
       </div>
     </motion.div>

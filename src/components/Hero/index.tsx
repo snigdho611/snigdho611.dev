@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Hero = () => {
   const baseRef = useRef<HTMLDivElement>(null);
@@ -48,22 +49,13 @@ const Hero = () => {
             technologies. Additionally, academically learned with Machine Learning, Data Mining and
             Algorithms that contribute to problem solving skills.
           </label>
-          <button className="border-2 bg-cyan-700 text-cyan-50 hover:bg-cyan-50 hover:text-cyan-700 transition-all w-3/4 sm:w-1/3 py-3 text-sm">
-            Check Out My Work
-          </button>
+          <Link href={"https://www.github.com/snigdho611"} passHref>
+            <button className="border-2 bg-cyan-700 text-cyan-50 hover:bg-cyan-50 hover:text-cyan-700 transition-all w-3/4 sm:w-1/3 py-3 text-sm">
+              Check Out My Work
+            </button>
+          </Link>
         </div>
       </div>
-      {/* <div className="text-2xl flex flex-row gap-x-5 mt-16 mx-auto h-80 text-cyan-500 justify-center w-5/6">
-        <div className="cursor-pointer min-w-[200px] flex justify-center items-center bg-frontend bg-cover bg-center bg-no-repeat">
-          Frontend
-        </div>
-        <div className="cursor-pointer min-w-[200px] flex justify-center items-center bg-backend bg-cover bg-center bg-no-repeat">
-          Backend
-        </div>
-        <div className="cursor-pointer min-w-[200px] flex justify-center items-center bg-database bg-cover bg-center bg-no-repeat">
-          Databases
-        </div>
-      </div> */}
     </motion.div>
   );
 };
