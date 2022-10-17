@@ -10,18 +10,18 @@ const Hero = () => {
     <motion.div
       animate={{ y: 0, opacity: 1 }}
       initial={{ y: -100, opacity: 0 }}
-      transition={{ duration: 1 }}
-      className="my-60"
+      transition={{ delay: 2, duration: 1 }}
+      className="my-60 font-sans"
     >
       <div className="mx-auto w-3/4" ref={baseRef}>
         <div className="flex flex-col gap-6">
-          <label className="text-3xl font-bold sm:text-6xl text-cyan-300 font-serif">
+          <label className="text-3xl font-bold sm:text-6xl text-emerald-300">
             Snigdho Dip Howlader.
           </label>
-          <label className="text-2xl sm:text-4xl text-cyan-600 font-medium font-serif">
+          <label className="text-2xl sm:text-4xl text-emerald-600 font-medium">
             I Create things for the Web.
           </label>
-          {/* <label className="text-cyan-500 text-[15px] my-5">
+          {/* <label className="text-emerald-500 text-[15px] my-5">
             <TypeAnimation
               sequence={[
                 "Software Engineer",
@@ -50,7 +50,7 @@ const Hero = () => {
             Algorithms that contribute to problem solving skills.
           </label>
           <Link href={"https://www.github.com/snigdho611"} passHref>
-            <button className="border-2 bg-cyan-700 text-cyan-50 hover:bg-cyan-50 hover:text-cyan-700 transition-all w-3/4 sm:w-1/3 py-3 text-sm">
+            <button className="border-2 bg-emerald-700 text-emerald-50 hover:bg-emerald-50 hover:text-emerald-700 transition-all w-3/4 sm:w-1/3 py-3 text-sm">
               Check Out My Work
             </button>
           </Link>

@@ -1,9 +1,0 @@
-@media (max-width: 500px) {
-  .responsive {
-    flex-direction: column;
-  }
-
-  .mx_auto {
-    margin: 0 auto;
-  }
-}

@@ -50,7 +50,7 @@ const Experience: React.FC = () => {
       whileInView={{ y: 0, opacity: 1 }}
       initial={{ y: -100, opacity: 0 }}
       transition={{ duration: 1 }}
-      className="w-3/4 mx-auto my-72 h-72"
+      className="w-3/4 mx-auto my-72 h-72 font-sans"
     >
       <div className="flex items-center justify-between w-full my-10">
         <span className="w-1/3 text-2xl text-slate-50">Experience</span>
@@ -63,8 +63,8 @@ const Experience: React.FC = () => {
               <div
                 key={i}
                 onClick={() => setActiveExperience(i)}
-                className={`border-l-2 border-white font-mono py-3 px-3 cursor-pointer hover:bg-cyan-900 transition-colors ${
-                  activeExperience === i ? "text-cyan-300 border-cyan-300" : "text-slate-500"
+                className={`border-l-2 border-white font-mono py-3 px-3 cursor-pointer hover:bg-emerald-900 transition-colors ${
+                  activeExperience === i ? "text-emerald-300 border-emerald-300" : "text-slate-500"
                 }`}
               >
                 {company}
@@ -73,7 +73,7 @@ const Experience: React.FC = () => {
           })}
         </div>
         <div className="sm:w-2/3 w-full flex flex-col gap-3">
-          <span className="text-cyan-300 text-xl">
+          <span className="text-emerald-300 text-xl">
             <span className="text-slate-50">{data[activeExperience].title}</span>
             <span>
               {" "}
