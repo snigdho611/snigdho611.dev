@@ -3,14 +3,12 @@ import Base from "components/Hero";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 import Hero from "components/Hero";
-import SkillSet from "components/Skills/SkillSet";
-import Skills from "components/Skills";
-import skills from "../server/skills.json";
 import About from "components/About";
 import Experience from "components/Experience";
 import Projects from "components/Projects";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Contact from "components/Contact";
 
 interface indexProps {
   val: string;
@@ -68,6 +66,7 @@ const Index: React.FC<indexProps> = ({ val }) => {
             <About />
             <Experience />
             <Projects />
+            <Contact />
           </>
         )}
       </>

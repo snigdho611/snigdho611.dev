@@ -39,14 +39,6 @@ const Navbar = () => {
         <motion.div
           animate={{ y: 0, opacity: 1 }}
           initial={{ y: -100, opacity: 0 }}
-          transition={{ delay: 0.25, duration: 1 }}
-          className="text-sm text-emerald-300 flex items-center cursor-pointer hover:text-emerald-50 transition-colors"
-        >
-          Skills
-        </motion.div>
-        <motion.div
-          animate={{ y: 0, opacity: 1 }}
-          initial={{ y: -100, opacity: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
           className="text-sm text-emerald-300 flex items-center cursor-pointer hover:text-emerald-50 transition-colors"
         >

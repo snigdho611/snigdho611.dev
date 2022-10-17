@@ -15,6 +15,11 @@ const data = [
 ];
 
 const About = () => {
+  const vari = {
+    visible: { opacity: 1 },
+    borderMove: { marginLeft: 0, marginTop: 0 },
+  };
+
   return (
     <motion.div
       whileInView={{ y: 0, opacity: 1 }}
@@ -69,7 +74,7 @@ const About = () => {
         </div>
       </div>
       <div className="w-full lg:w-1/2 flex justify-center mt-10">
-        <div className="flex h-72 justify-center">
+        <motion.div whileHover={{ scale: 1.1 }} className="flex h-72 justify-center">
           <div className="absolute w-60 h-60 hover:w-54 cursor-pointer">
             <Image
               src={
@@ -79,8 +84,11 @@ const About = () => {
               alt="Not found"
             />
           </div>
-          <div className="w-60 h-60 border-4 border-emerald-100 ml-10 mt-6 cursor-pointer"></div>
-        </div>
+          <div
+            // whileHover={{ marginLeft: 0, marginTop: 0 }}
+            className="w-60 h-60 border-4 border-emerald-100 ml-10 mt-6 cursor-pointer"
+          ></div>
+        </motion.div>
       </div>
     </motion.div>
   );
