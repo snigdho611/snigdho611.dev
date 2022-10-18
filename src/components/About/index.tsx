@@ -24,7 +24,7 @@ const About = () => {
     <motion.div
       whileInView={{ y: 0, opacity: 1 }}
       initial={{ y: -100, opacity: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1, repeat: 0 }}
       className="flex flex-col lg:flex-row my-72 w-3/4 mx-auto font-sans"
     >
       <div className="flex flex-col w-full lg:w-1/2 items-center text-slate-400">

@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="absolute hidden sm:flex w-10 h-10">
           <Image
             src={
-              "https://res.cloudinary.com/drnym8nne/image/upload/v1665939449/portfolio/nav/favicon_z1vmcu.png"
+              "https://res.cloudinary.com/drnym8nne/image/upload/v1666110360/portfolio/nav/favicon_uw1wog.png"
             }
             alt="Not found"
             layout="fill"

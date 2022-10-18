@@ -9,6 +9,7 @@ import Projects from "components/Projects";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Contact from "components/Contact";
+import Footer from "components/Footer";
 
 interface indexProps {
   val: string;
@@ -38,7 +39,7 @@ const Index: React.FC<indexProps> = ({ val }) => {
           />
           <link
             rel="icon"
-            href="https://res.cloudinary.com/drnym8nne/image/upload/v1665939449/portfolio/nav/favicon_z1vmcu.png"
+            href="https://res.cloudinary.com/drnym8nne/image/upload/v1666110360/portfolio/nav/favicon_uw1wog.png"
           />
           <title>Snigdho Dip Howlader</title>
         </Head>
@@ -49,10 +50,10 @@ const Index: React.FC<indexProps> = ({ val }) => {
             transition={{ duration: 1 }}
             className="flex justify-center pt-20"
           >
-            <div className="absolute sm:w-[40vw] sm:h-[70vh] h-60 w-60">
+            <div className="absolute sm:w-[900px] sm:h-[900px] h-96 w-96">
               <Image
                 src={
-                  "https://res.cloudinary.com/drnym8nne/image/upload/v1665939449/portfolio/nav/favicon_z1vmcu.png"
+                  "https://res.cloudinary.com/drnym8nne/image/upload/v1666110360/portfolio/nav/favicon_uw1wog.png"
                 }
                 alt="Not found"
                 layout="fill"
@@ -67,6 +68,7 @@ const Index: React.FC<indexProps> = ({ val }) => {
             <Experience />
             <Projects />
             <Contact />
+            <Footer />
           </>
         )}
       </>
