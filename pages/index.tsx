@@ -1,15 +1,16 @@
-import Navbar from "components/Navbar";
-import Base from "components/Hero";
+import Navbar from "src/components/Navbar";
+import Base from "src/components/Hero";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
-import Hero from "components/Hero";
-import About from "components/About";
-import Experience from "components/Experience";
-import Projects from "components/Projects";
+import Hero from "src/components/Hero";
+import About from "src/components/About";
+import Experience from "src/components/Experience";
+import Projects from "src/components/Projects";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Contact from "components/Contact";
-import Footer from "components/Footer";
+import Contact from "src/components/Contact";
+import Footer from "src/components/Footer";
+import getSiteData from "./api/site-data";
 
 interface indexProps {
   val: string;
@@ -36,7 +37,7 @@ const Index: React.FC<indexProps> = ({ val }) => {
           <meta property="og:title" content="Snigdho Dip Howlader | Software Engineer" />
           <meta
             name="og:description"
-            content="This is the personal portfolio of Snigdho Dip Howlader. Frontend Developer, Software Engineer and Computer Science enthusiast. Please find the contact details below if youa re willing to get in touch."
+            content="Personal portfolio of Snigdho Dip Howlader. Frontend Developer, Software Engineer and Computer Science enthusiast. Please find the contact details below if youa re willing to get in touch."
           />
           <meta
             property="og:image"
@@ -74,20 +75,20 @@ const Index: React.FC<indexProps> = ({ val }) => {
               projectsRef={projectsRef}
               contactRef={contactRef}
             />
-            <div className="pt-1" ref={heroRef}>
+            <div className="pt-[10px]" ref={heroRef}>
               <Hero />
             </div>
-            <div className="pt-1" ref={aboutRef}>
+            <div className="pt-[10px]" ref={aboutRef}>
               <About />
             </div>
-            <div className="pt-1" ref={expRef}>
-              <Experience />
+            <div className="pt-[10px]" ref={expRef}>
+              <Experience data={experienceData} />
             </div>
-            <div className="pt-1" ref={projectsRef}>
-              <Projects />
+            <div className="pt-[10px]" ref={projectsRef}>
+              <Projects data={projectsData} />
             </div>
-            <div className="pt-1" ref={contactRef}>
-              <Contact />
+            <div className="pt-[10px]" ref={contactRef}>
+              <Contact data={contactData} />
             </div>
             <Footer />
           </>
@@ -98,9 +99,11 @@ const Index: React.FC<indexProps> = ({ val }) => {
 };
 
 export async function getServerSideProps() {
-  const value = process.env.BASE_VAL;
+  // const value = process.env.BASE_VAL;
+  const results = await fetch(`${process.env.PROD_URL}/api/site-data`);
+  console.log(results);
   // const var = api(abc)
-  return { props: { val: value } };
+  // return { props: { val: value } };
 }
 
 export default Index;

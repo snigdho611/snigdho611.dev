@@ -3,54 +3,27 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const data = [
-  {
-    company: "BJIT",
-    title: "Software Engineer",
-    timeStart: "Mar 2022",
-    timeEnd: "Present",
-    url: "https://bjitgroup.com/",
-    description: [
-      "Wrote modern, maintainable code for client and internal projects in frontend development with React and various libraries",
-      "Created modern, robust API with Node JS, Express JS and PostGreSQL for backend development and database management",
-      "Applied containerization with Docker",
-      "Worked with microservices for interservice functionalities between them",
-    ],
-  },
-  {
-    company: "Sohopathi",
-    title: "Frontend Software Engineer",
-    timeStart: "Sep 2021",
-    timeEnd: "Mar 2022",
-    url: "https://sohopathi.io/",
-    description: [
-      "Created maintainable UI with React JS and CSS for frontend development",
-      "Wrote scripts for mongoose for proper complex querying and manipulation of data",
-      "Created API with Node JS, Express JS and MongoDB",
-    ],
-  },
-  {
-    company: "Deepchainlabs",
-    title: "Software Engineer",
-    timeStart: "Jul 2021",
-    timeEnd: "Sep 2022",
-    url: "https://www.deepchainlabs.com/",
-    description: [
-      "Maintained documentation for client projects",
-      "Created system diagrams for client project",
-      "Worked on client project with Laravel and MySQL",
-    ],
-  },
-];
+interface IExperience {
+  company: string;
+  title: string;
+  timeStart: string;
+  timeEnd: string;
+  url: string;
+  description: string[];
+}
 
-const Experience: React.FC = () => {
+interface IExperienceProps {
+  data: IExperience[];
+}
+
+const Experience: React.FC<IExperienceProps> = ({ data }) => {
   const [activeExperience, setActiveExperience] = useState(0);
   return (
     <motion.div
       whileInView={{ y: 0, opacity: 1 }}
       initial={{ y: -100, opacity: 0 }}
       transition={{ duration: 1 }}
-      className="w-3/4 mx-auto my-60 h-72 font-sans"
+      className="w-3/4 mx-auto my-48 font-sans"
     >
       <div className="flex items-center justify-between w-full my-10">
         <span className="w-1/3 text-2xl text-slate-50">Experience</span>
