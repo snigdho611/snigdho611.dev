@@ -26,17 +26,15 @@ interface contact {
     url: string;
 }
 
-interface siteData {
-    data: {
-        projectsData: project[];
-        experienceData: experience[];
-        contactData: contact[];
-    };
+export interface siteData {
+    projectsData: project[];
+    experienceData: experience[];
+    contactData: contact[];
 };
 
 export default function getSiteData(
     req: NextApiRequest,
     res: NextApiResponse<siteData>
 ) {
-    res.status(200).json({ data });
+    res.status(200).json(data);
 }

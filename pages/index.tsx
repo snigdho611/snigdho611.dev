@@ -10,13 +10,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Contact from "src/components/Contact";
 import Footer from "src/components/Footer";
-import getSiteData from "./api/site-data";
-
+// import data from "server/data.json";
+import { siteData } from "./api/site-data";
 interface indexProps {
-  val: string;
+  data: siteData;
 }
 
-const Index: React.FC<indexProps> = ({ val }) => {
+const Index: React.FC<indexProps> = ({ data }) => {
   const [loading, setLoading] = useState(true);
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
@@ -82,13 +82,13 @@ const Index: React.FC<indexProps> = ({ val }) => {
               <About />
             </div>
             <div className="pt-[10px]" ref={expRef}>
-              <Experience data={experienceData} />
+              <Experience data={data.experienceData} />
             </div>
             <div className="pt-[10px]" ref={projectsRef}>
-              <Projects data={projectsData} />
+              <Projects data={data.projectsData} />
             </div>
             <div className="pt-[10px]" ref={contactRef}>
-              <Contact data={contactData} />
+              <Contact data={data.contactData} />
             </div>
             <Footer />
           </>
@@ -100,10 +100,14 @@ const Index: React.FC<indexProps> = ({ val }) => {
 
 export async function getServerSideProps() {
   // const value = process.env.BASE_VAL;
-  const results = await fetch(`${process.env.PROD_URL}/api/site-data`);
-  console.log(results);
-  // const var = api(abc)
-  // return { props: { val: value } };
+  let results;
+  await fetch(`${process.env.PROD_URL}/api/site-data`)
+    .then((res) => res.json())
+    .then((json) => (results = json))
+    .catch((error) => {
+      console.log(error);
+    });
+  return { props: { data: results } };
 }
 
 export default Index;
