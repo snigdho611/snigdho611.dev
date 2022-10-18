@@ -17,6 +17,11 @@ interface indexProps {
 
 const Index: React.FC<indexProps> = ({ val }) => {
   const [loading, setLoading] = useState(true);
+  const heroRef = useRef(null);
+  const aboutRef = useRef(null);
+  const expRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -62,12 +67,28 @@ const Index: React.FC<indexProps> = ({ val }) => {
           </motion.div>
         ) : (
           <>
-            <Navbar />
-            <Hero />
-            <About />
-            <Experience />
-            <Projects />
-            <Contact />
+            <Navbar
+              heroRef={heroRef}
+              aboutRef={aboutRef}
+              expRef={expRef}
+              projectsRef={projectsRef}
+              contactRef={contactRef}
+            />
+            <div className="pt-1" ref={heroRef}>
+              <Hero />
+            </div>
+            <div className="pt-1" ref={aboutRef}>
+              <About />
+            </div>
+            <div className="pt-1" ref={expRef}>
+              <Experience />
+            </div>
+            <div className="pt-1" ref={projectsRef}>
+              <Projects />
+            </div>
+            <div className="pt-1" ref={contactRef}>
+              <Contact />
+            </div>
             <Footer />
           </>
         )}
