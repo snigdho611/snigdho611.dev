@@ -41,7 +41,7 @@ const Index: React.FC<indexProps> = ({ data }) => {
           />
           <meta
             property="og:image"
-            content="https://res.cloudinary.com/drnym8nne/image/upload/v1665871812/portfolio/profilepic_xrxbld.jpg"
+            content="https://res.cloudinary.com/drnym8nne/image/upload/v1666124145/portfolio/Screenshot_from_2022-10-19_02-15-15_euwhgs.png"
           />
           <link
             rel="icon"
