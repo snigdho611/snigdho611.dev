@@ -9,7 +9,7 @@ const Contact = () => {
       whileInView={{ y: 0, opacity: 1 }}
       initial={{ y: -100, opacity: 0 }}
       transition={{ duration: 1 }}
-      className="w-3/4 mx-auto my-72 h-72 font-sans text-slate-300"
+      className="w-3/4 mx-auto my-60 h-72 font-sans text-slate-300"
     >
       <div className="flex items-center justify-between w-full my-10">
         <span className="w-1/3 text-2xl text-slate-50">Contact Me</span>
@@ -20,7 +20,7 @@ const Contact = () => {
           If you would like to get in touch for any types of query, please opt for any of the means
           below:
         </div>
-        <div className="flex w-full flex-col sm:flex-row justify-between">
+        <div className="flex w-full flex-col sm:flex-row justify-between sm:gap-4 gap-10">
           <motion.div whileHover={{ y: -7.5 }}>
             <Link passHref href={"mailto:snigdho.howlader@gmail.com"}>
               <a href="">

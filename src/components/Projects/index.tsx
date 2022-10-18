@@ -43,7 +43,7 @@ const Projects = () => {
       whileInView={{ y: 0, opacity: 1 }}
       initial={{ y: -100, opacity: 0 }}
       transition={{ duration: 1 }}
-      className="w-3/4 mx-auto my-[600px] sm:my-72 h-fit flex flex-wrap gap-5"
+      className="w-3/4 mx-auto my-60 h-fit flex flex-wrap gap-5"
     >
       <div className="flex items-center justify-between w-full my-5">
         <span className="w-1/3 text-2xl text-slate-50">Projects</span>
