@@ -26,8 +26,8 @@ const Navbar: React.FC<NavbarProps> = ({ heroRef, aboutRef, expRef, projectsRef,
       transition={{ duration: 1 }}
       className="flex font-sans text-xl py-7 w-full z-10 fixed right-0 top-0 bg-[#283c6769] backdrop-blur-md"
     >
-      <div className="w-1/2 flex h-10 ml-24">
-        <div className="absolute hidden sm:flex w-10 h-10">
+      <div className="w-1/2 hidden sm:flex  h-10 ml-24">
+        <div className="absolute w-10 h-10">
           <Image
             src={
               "https://res.cloudinary.com/drnym8nne/image/upload/v1666110360/portfolio/nav/favicon_uw1wog.png"
@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ heroRef, aboutRef, expRef, projectsRef,
           />
         </div>
       </div>
-      <div className="flex w-1/2 gap-7 mx-16 justify-end">
+      <div className="flex w-1/2 gap-7 mx-auto sm:mx-16 justify-center sm:justify-end">
         <motion.div
           animate={{ y: 0, opacity: 1 }}
           initial={{ y: -100, opacity: 0 }}

@@ -19,13 +19,14 @@ const Hero = () => {
             Snigdho Dip Howlader.
           </label>
           <label className="text-2xl sm:text-4xl text-emerald-600 font-medium">
-            I Create things for the Web.
+            I Create Things For The Web.
           </label>
           <label className="text-slate-400 text-sm sm:text-base">
-            A <strong>Professional Software Developer</strong> with experience in the industry. Avid
-            in both <strong>Frontend Development</strong> and <strong>Backend Development</strong>{" "}
-            technologies. Additionally, academically learned with Machine Learning, Data Mining and
-            Algorithms that contribute to problem solving skills.
+            A <strong>Professional Software Developer</strong> with experience in the industry.
+            Versatile in both <strong>Frontend Development</strong> and{" "}
+            <strong>Backend Development</strong> technologies. Additionally, academically learned
+            with Machine Learning, Data Mining and Algorithms that contribute to problem solving
+            skills.
           </label>
           <Link href={"https://www.github.com/snigdho611"} passHref>
             <button className="border-2 bg-emerald-700 text-emerald-50 hover:bg-emerald-50 hover:text-emerald-700 transition-all w-3/4 sm:w-1/3 py-3 text-sm">

@@ -34,7 +34,7 @@ const Contact: React.FC<IContactProps> = ({ data }) => {
             return (
               <motion.div key={i} whileHover={{ y: -7.5 }}>
                 <Link passHref href={url}>
-                  <a href="">
+                  <a href="" target={"_blank"}>
                     <Image src={image} alt="Not found" height={50} objectFit="contain" width={50} />
                   </a>
                 </Link>
