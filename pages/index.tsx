@@ -103,7 +103,10 @@ export async function getServerSideProps() {
   let results;
   await fetch(`${process.env.PROD_URL}/api/site-data`)
     .then((res) => res.json())
-    .then((json) => (results = json))
+    .then((json) => {
+      console.log(json);
+      results = json;
+    })
     .catch((error) => {
       console.log(error);
     });

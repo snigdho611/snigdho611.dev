@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import skills from "../../server/skills.json";
+import data from "../../server/data.json";
 
 // type Tech = {
 //   name: string;
@@ -14,12 +14,9 @@ type Data = {
   // tech: Tech[];
 }[];
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
+export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   if (req.method === "GET") {
-    res.status(200).json(skills);
+    res.status(200).json(data.skillsData);
   } else {
     res.status(404);
   }

@@ -34,6 +34,24 @@ const About = () => {
             <hr className="w-2/3" />
           </div>
           <div className="flex flex-col gap-3">
+            {/* 
+            aboutData: [{
+              text: "I am Snigdho Dip Howlader, and I enjoy adding my work to the internet. My interest in
+              web development was formed in 2020 when I started creating projects for fun. I am now
+              dedicated to creating, fixing and maintaining all things related to the web for my
+              career."
+            },{
+              text: "Today I work at",
+            }, {
+              text: "BJIT, Bangladesh",
+              url: "https://bjitgroup.com/"
+            }, {
+              text: "as a Web Engineer. I have a degree in Computer Science & Software Engineering from"
+            }, {
+              text: "American International University - Bangladesh", 
+              url: "https://www.aiub.edu/"
+            }]
+            */}
             <span>
               I am Snigdho Dip Howlader, and I enjoy adding my work to the internet. My interest in
               web development was formed in 2020 when I started creating projects for fun. I am now
@@ -76,11 +94,11 @@ const About = () => {
       <div className="w-full lg:w-1/2 flex justify-center mt-10">
         <motion.div whileHover={{ scale: 1.1 }} className="flex h-72 justify-center">
           <div className="absolute w-60 h-60 hover:w-54 cursor-pointer">
-            <Image
+            <img
               src={
                 "https://res.cloudinary.com/drnym8nne/image/upload/v1665871812/portfolio/profilepic_xrxbld.jpg"
               }
-              layout="fill"
+              // layout="fill"
               alt="Not found"
             />
           </div>
