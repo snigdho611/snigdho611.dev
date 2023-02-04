@@ -79,7 +79,7 @@ const Index: React.FC<indexProps> = ({ data }) => {
               <Hero />
             </div>
             <div className="pt-[10px]" ref={aboutRef}>
-              <About />
+              <About aboutData={data.aboutData} />
             </div>
             <div className="pt-[10px]" ref={expRef}>
               <Experience data={data.experienceData} />

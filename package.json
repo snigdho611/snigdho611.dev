@@ -8,8 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.0.7",
     "framer-motion": "^5.5.7",
+    "mongoose": "^6.9.0",
+    "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-intersection-observer": "^9.4.0",

@@ -168,5 +168,38 @@
         }
       ]
     }
+  ],
+  "aboutData": [
+    [
+      {
+        "text": "I am Snigdho Dip Howlader, and I enjoy adding my work to the internet. My interest in web development was formed in 2020 when I started creating projects for fun. I am now dedicated to creating, fixing and maintaining all things related to the web for my career."
+      }
+    ],
+    [
+      {
+        "text": "Today I work at"
+      },
+      {
+        "text": "BJIT, Bangladesh",
+        "url": "https://bjitgroup.com/"
+      },
+      {
+        "text": "as a Web Engineer. I have a degree in Computer Science & Software Engineering from"
+      },
+      {
+        "text": "American International University - Bangladesh",
+        "url": "https://www.aiub.edu/"
+      },
+      {
+        "text": ". I believe my knowledge is a drop in an ocean and my learning will never truly end."
+      }
+    ],
+    [
+      [
+        {
+          "text": "Additionally, I also venture into Machine Learning and Computer Vision in my offtime research which I conduct in leisure."
+        }
+      ]
+    ]
   ]
 }
