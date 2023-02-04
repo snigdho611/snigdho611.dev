@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { IParagraph } from "interfaces";
 
 const data = [
   "JavaScript",
@@ -15,18 +15,17 @@ const data = [
 ];
 
 interface IAbout {
-  aboutData: {
-    text: string;
-    url?: string;
-  };
+  aboutData: IParagraph[][];
 }
 
-const About: React.FC<IAbout> = ({ aboutData }) => {
+const About: React.FC<IAbout> = (props) => {
   const vari = {
     visible: { opacity: 1 },
     borderMove: { marginLeft: 0, marginTop: 0 },
   };
-
+  {
+    console.log(props.aboutData);
+  }
   return (
     <motion.div
       whileInView={{ y: 0, opacity: 1 }}
@@ -41,28 +40,24 @@ const About: React.FC<IAbout> = ({ aboutData }) => {
             <hr className="w-2/3" />
           </div>
           <div className="flex flex-col gap-3">
-            {aboutData}
-            {/* <span>
-              I am Snigdho Dip Howlader, and I enjoy adding my work to the internet. My interest in
-              web development was formed in 2020 when I started creating projects for fun. I am now
-              dedicated to creating, fixing and maintaining all things related to the web for my
-              career.
-            </span>
-            <span>
-              Today I work at{" "}
-              <a href="https://bjitgroup.com/" className="text-emerald-500">
-                BJIT, Bangladesh
-              </a>{" "}
-              as a Web Engineer. I have a degree in Computer Science & Software Engineering from{" "}
-              <a href="https://www.aiub.edu/" className="text-emerald-500">
-                American International University - Bangladesh
-              </a>
-              . I believe my knowledge is a drop in an ocean and my learning will never truly end.
-            </span>
-            <span>
-              Additionally, I also venture into Machine Learning and Computer Vision in my offtime
-              research which I conduct in leisure.
-            </span> */}
+            {props.aboutData.map((span, i) => {
+              return (
+                <span key={i}>
+                  {span.map(({ text, url }) => {
+                    return !url ? (
+                      text
+                    ) : (
+                      <a
+                        href={url}
+                        className="text-emerald-500 hover:text-emerald-100 transition-colors"
+                      >
+                        {text}
+                      </a>
+                    );
+                  })}
+                </span>
+              );
+            })}
           </div>
           <div>Skills:</div>
           <div className="flex flex-wrap">

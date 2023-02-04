@@ -10,10 +10,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Contact from "src/components/Contact";
 import Footer from "src/components/Footer";
+import { IData } from "interfaces";
 // import data from "server/data.json";
-import { siteData } from "./api/site-data";
+// import { IData } from "./api/site-data";
 interface indexProps {
-  data: siteData;
+  data: IData;
 }
 
 const Index: React.FC<indexProps> = ({ data }) => {
