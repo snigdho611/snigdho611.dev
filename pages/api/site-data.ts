@@ -3,7 +3,6 @@ import { IData, IError } from "interfaces";
 import connect from "middleware/mongo";
 import User from "models/User";
 import type { NextApiRequest, NextApiResponse } from "next";
-import data from "server/data.json";
 // import connect from "middleware/mongo";
 
 export default async function getSiteData(
