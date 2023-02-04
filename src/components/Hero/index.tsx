@@ -21,7 +21,7 @@ const Hero = () => {
           <label className="text-2xl sm:text-4xl text-emerald-600 font-medium">
             I Create Things For The Web.
           </label>
-          <label className="text-slate-400 text-sm sm:text-base">
+          <label className="text-slate-400 text-sm sm:text-base text-justify">
             A <strong>Professional Software Developer</strong> with experience in the industry.
             Versatile in both <strong>Frontend Development</strong> and{" "}
             <strong>Backend Development</strong> technologies. Additionally, academically learned

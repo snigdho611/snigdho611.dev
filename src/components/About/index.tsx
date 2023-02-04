@@ -18,14 +18,11 @@ interface IAbout {
   aboutData: IParagraph[][];
 }
 
-const About: React.FC<IAbout> = (props) => {
+const About: React.FC<IAbout> = ({ aboutData }) => {
   const vari = {
     visible: { opacity: 1 },
     borderMove: { marginLeft: 0, marginTop: 0 },
   };
-  {
-    console.log(props.aboutData);
-  }
   return (
     <motion.div
       whileInView={{ y: 0, opacity: 1 }}
@@ -40,7 +37,7 @@ const About: React.FC<IAbout> = (props) => {
             <hr className="w-2/3" />
           </div>
           <div className="flex flex-col gap-3">
-            {props.aboutData.map((span, i) => {
+            {aboutData.map((span, i) => {
               return (
                 <span key={i}>
                   {span.map(({ text, url }) => {

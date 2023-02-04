@@ -43,7 +43,7 @@ const Projects: React.FC<IProjectProps> = ({ data }) => {
             </div>
             <div className="text-xl">{title}</div>
             <div className="text-slate-500">{description}</div>
-            <div className="text-slate-500 flex gap-4 text-sm">
+            <div className="text-slate-400 flex flex-wrap justify-center gap-4 text-sm">
               {stacks.map((element, i) => {
                 return <div key={i}>{element}</div>;
               })}

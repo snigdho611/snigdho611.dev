@@ -31,7 +31,7 @@ export interface IData {
   projectsData: IProject[];
   experienceData: IExperience[];
   contactData: IContact[];
-  aboutData: IParagraph[];
+  aboutData: IParagraph[][];
 }
 
 export interface IError {
