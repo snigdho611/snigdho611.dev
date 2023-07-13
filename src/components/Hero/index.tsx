@@ -4,7 +4,7 @@ const Hero = () => {
   const baseRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="my-48 font-sans">
+    <div className="hero">
       <div className="mx-auto w-3/4 font-mono" ref={baseRef}>
         <div className="flex flex-col gap-6">
           <label className="text-3xl font-bold sm:text-5xl text-emerald-300">

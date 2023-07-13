@@ -18,14 +18,13 @@ const Navbar: React.FC<NavbarProps> = ({ heroRef, aboutRef, expRef, projectsRef,
   return (
     <div className="navbar">
       <div className="navbar_left">
-        <div className="absolute w-10 h-10">
-          <img
-            src={
-              "https://res.cloudinary.com/drnym8nne/image/upload/v1666110360/portfolio/nav/favicon_uw1wog.png"
-            }
-            alt="Not found"
-          />
-        </div>
+        <img
+          src={
+            "https://res.cloudinary.com/drnym8nne/image/upload/v1666110360/portfolio/nav/favicon_uw1wog.png"
+          }
+          alt="Not found"
+          className="navbar_left_img"
+        />
       </div>
       <div className="navbar_right">
         <div className="navbar_right_link" onClick={() => heroScroll()}>

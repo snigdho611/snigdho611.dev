@@ -1,7 +1,4 @@
-import { useRef, useState } from "react";
-// import "./index.scss";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import { MutableRefObject, useRef, useState } from "react";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
@@ -10,11 +7,17 @@ import Footer from "./components/Footer";
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const heroRef = useRef(null);
-  const aboutRef = useRef(null);
-  const expRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
+  const heroRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+  const aboutRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+  const expRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+  const projectsRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+  const contactRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+
+  const heroScroll = () => heroRef.current?.scrollIntoView({ behavior: "smooth" });
+  const aboutScroll = () => aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+  const expScroll = () => expRef.current?.scrollIntoView({ behavior: "smooth" });
+  const projectsScroll = () => projectsRef.current?.scrollIntoView({ behavior: "smooth" });
+  const contactScroll = () => contactRef.current?.scrollIntoView({ behavior: "smooth" });
   const data = {
     projectsData: [
       {
@@ -248,16 +251,53 @@ const App: React.FC = () => {
         </div>
       ) : (
         <>
-          <Navbar
-            heroRef={heroRef}
-            aboutRef={aboutRef}
-            expRef={expRef}
-            projectsRef={projectsRef}
-            contactRef={contactRef}
-          />
-          <text className="bg-blue">123</text>
-          <div className="pt-[10px]" ref={heroRef}>
-            <Hero />
+          <div className="navbar">
+            <div className="navbar_left">
+              <img
+                src={
+                  "https://res.cloudinary.com/drnym8nne/image/upload/v1666110360/portfolio/nav/favicon_uw1wog.png"
+                }
+                alt="Not found"
+                className="navbar_left_img"
+              />
+            </div>
+            <div className="navbar_right">
+              <div className="navbar_right_link" onClick={() => heroScroll()}>
+                Home
+              </div>
+              <div className="navbar_right_link" onClick={() => aboutScroll()}>
+                About
+              </div>
+              <div className="navbar_right_link" onClick={() => expScroll()}>
+                Experience
+              </div>
+              <div className="navbar_right_link" onClick={() => projectsScroll()}>
+                Project
+              </div>
+              <div className="navbar_right_link" onClick={() => contactScroll()}>
+                Contact
+              </div>
+            </div>
+          </div>
+          {/* HERO */}
+          <div className="hero" ref={heroRef}>
+            <div className="hero_container" ref={aboutRef}>
+              <label className="hero_container_name">Snigdho Dip Howlader.</label>
+              <label className="hero_container_tagline">I Create Things For The Web.</label>
+              <label className="hero_container_content">
+                A <strong>Professional Software Developer</strong> with experience in the industry.
+                Versatile in both <strong>Frontend Development</strong> and{" "}
+                <strong>Backend Development</strong> technologies. Additionally, academically
+                learned with Machine Learning, Data Mining and Algorithms that contribute to problem
+                solving skills.
+              </label>
+              <a
+                href={"https://www.github.com/snigdho611"}
+                className="border-2 bg-emerald-700 text-emerald-50 transition-all w-3/4 sm:w-1/3 py-3 text-sm text-center hover:bg-emerald-50 hover:text-emerald-700 hover:top-[-10px] relative"
+              >
+                Check Out My Work
+              </a>
+            </div>
           </div>
           <div className="pt-[10px]" ref={aboutRef}>
             <About aboutData={data.aboutData} />
