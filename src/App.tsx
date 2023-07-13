@@ -291,10 +291,7 @@ const App: React.FC = () => {
                 learned with Machine Learning, Data Mining and Algorithms that contribute to problem
                 solving skills.
               </label>
-              <a
-                href={"https://www.github.com/snigdho611"}
-                className="border-2 bg-emerald-700 text-emerald-50 transition-all w-3/4 sm:w-1/3 py-3 text-sm text-center hover:bg-emerald-50 hover:text-emerald-700 hover:top-[-10px] relative"
-              >
+              <a href={"https://www.github.com/snigdho611"} className="hero_container_checkout">
                 Check Out My Work
               </a>
             </div>
