@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import React, { MutableRefObject } from "react";
 
 interface NavbarProps {
   heroRef: MutableRefObject<any>;
@@ -16,8 +16,8 @@ const Navbar: React.FC<NavbarProps> = ({ heroRef, aboutRef, expRef, projectsRef,
   const contactScroll = () => contactRef.current.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <div className="flex font-sans text-xl py-7 w-full z-10 fixed right-0 top-0 bg-[#283c6769] backdrop-blur-md">
-      <div className="w-1/2 hidden sm:flex  h-10 ml-24">
+    <div className="navbar">
+      <div className="navbar_left">
         <div className="absolute w-10 h-10">
           <img
             src={
@@ -27,35 +27,20 @@ const Navbar: React.FC<NavbarProps> = ({ heroRef, aboutRef, expRef, projectsRef,
           />
         </div>
       </div>
-      <div className="flex w-1/2 gap-7 mx-auto sm:mx-16 justify-center sm:justify-end">
-        <div
-          className="text-sm text-emerald-300 flex items-center cursor-pointer hover:text-emerald-50 transition-colors"
-          onClick={() => heroScroll()}
-        >
+      <div className="navbar_right">
+        <div className="navbar_right_link" onClick={() => heroScroll()}>
           Home
         </div>
-        <div
-          className="text-sm text-emerald-300 flex items-center cursor-pointer hover:text-emerald-50 transition-colors"
-          onClick={() => aboutScroll()}
-        >
+        <div className="navbar_right_link" onClick={() => aboutScroll()}>
           About
         </div>
-        <div
-          className="text-sm text-emerald-300 flex items-center cursor-pointer hover:text-emerald-50 transition-colors"
-          onClick={() => expScroll()}
-        >
+        <div className="navbar_right_link" onClick={() => expScroll()}>
           Experience
         </div>
-        <div
-          className="text-sm text-emerald-300 flex items-center cursor-pointer hover:text-emerald-50 transition-colors"
-          onClick={() => projectsScroll()}
-        >
+        <div className="navbar_right_link" onClick={() => projectsScroll()}>
           Project
         </div>
-        <div
-          className="text-sm text-emerald-300 flex items-center cursor-pointer hover:text-emerald-50 transition-colors"
-          onClick={() => contactScroll()}
-        >
+        <div className="navbar_right_link" onClick={() => contactScroll()}>
           Contact
         </div>
       </div>
