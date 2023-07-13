@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import "./App.css";
+import "./index.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 const App: React.FC = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
   const expRef = useRef(null);
@@ -255,6 +255,7 @@ const App: React.FC = () => {
             projectsRef={projectsRef}
             contactRef={contactRef}
           />
+          <text className="bg-blue">123</text>
           <div className="pt-[10px]" ref={heroRef}>
             <Hero />
           </div>

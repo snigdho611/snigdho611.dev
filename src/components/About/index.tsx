@@ -13,14 +13,10 @@ const data = [
 ];
 
 interface IAbout {
-  aboutData: IParagraph[][];
+  aboutData: any;
 }
 
 const About: React.FC<IAbout> = ({ aboutData }) => {
-  const vari = {
-    visible: { opacity: 1 },
-    borderMove: { marginLeft: 0, marginTop: 0 },
-  };
   return (
     <div className="flex flex-col lg:flex-row my-48 w-3/4 mx-auto font-sans">
       <div className="flex flex-col w-full lg:w-1/2 items-center text-slate-400">
@@ -30,10 +26,10 @@ const About: React.FC<IAbout> = ({ aboutData }) => {
             <hr className="w-2/3" />
           </div>
           <div className="flex flex-col gap-3">
-            {aboutData.map((span, i) => {
+            {aboutData.map((span: any, i: any) => {
               return (
                 <span key={i}>
-                  {span.map(({ text, url }) => {
+                  {span.map(({ text, url }: any) => {
                     return !url ? (
                       text
                     ) : (
