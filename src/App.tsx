@@ -282,15 +282,15 @@ const App: React.FC = () => {
           {/* HERO */}
           <div className="hero" ref={heroRef}>
             <div className="hero_container" ref={aboutRef}>
-              <label className="hero_container_name">Snigdho Dip Howlader.</label>
-              <label className="hero_container_tagline">I Create Things For The Web.</label>
-              <label className="hero_container_content">
-                A <strong>Professional Software Developer</strong> with experience in the industry.
-                Versatile in both <strong>Frontend Development</strong> and{" "}
-                <strong>Backend Development</strong> technologies. Additionally, academically
-                learned with Machine Learning, Data Mining and Algorithms that contribute to problem
-                solving skills.
-              </label>
+              <span className="hero_container_name">Snigdho Dip Howlader.</span>
+              <span className="hero_container_tagline">I Create Things For The Web.</span>
+              <span className="hero_container_content">
+                A Full Stack <strong>Software Engineer</strong> with 2+ years experience. Versatile
+                in both <strong>Frontend </strong> and <strong>Backend </strong> technologies.
+              </span>
+              <span className="hero_container_content">
+                My set of skills is versatile and is continuously expanding.
+              </span>
               <a href={"https://www.github.com/snigdho611"} className="hero_container_checkout">
                 Check Out My Work
               </a>
