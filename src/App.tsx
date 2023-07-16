@@ -18,6 +18,9 @@ const App: React.FC = () => {
   const expScroll = () => expRef.current?.scrollIntoView({ behavior: "smooth" });
   const projectsScroll = () => projectsRef.current?.scrollIntoView({ behavior: "smooth" });
   const contactScroll = () => contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  const imageRef = useRef<HTMLImageElement | null>(null);
+  const shadowRef = useRef<HTMLDivElement | null>(null);
+
   const data = {
     projectsData: [
       {
@@ -127,78 +130,54 @@ const App: React.FC = () => {
     ],
     skillsData: [
       {
-        id: 1,
-        name: "Frontend",
-        tech: [
-          {
-            name: "React JS",
-            logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/reactjs_jbjf5g.png",
-            count: 0,
-          },
-          {
-            name: "Next JS",
-            logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/nextjs_kd4aif.png",
-            count: 1,
-          },
-        ],
+        name: "React JS",
+        logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/reactjs_jbjf5g.png",
+        count: 0,
       },
       {
-        id: 2,
-        name: "Backend",
-        tech: [
-          {
-            name: "Laravel",
-            logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/laravel_tnohfi.png",
-            count: 2,
-          },
-          {
-            name: "Node JS",
-            logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/nodejs_fbzhmo.png",
-            count: 3,
-          },
-        ],
+        name: "Next JS",
+        logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/nextjs_kd4aif.png",
+        count: 1,
       },
       {
-        id: 3,
-        name: "Database",
-        tech: [
-          {
-            name: "PostGreSQL",
-            logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/postgresql_ieatla.png",
-            count: 4,
-          },
-          {
-            name: "Mongo DB",
-            logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/mongo_g54ff3.png",
-            count: 5,
-          },
-        ],
+        name: "Laravel",
+        logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/laravel_tnohfi.png",
+        count: 2,
       },
       {
-        id: 4,
-        name: "Additional Skills",
-        tech: [
-          {
-            name: "JavaScript",
-            logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978407/portfolio/skills/javascript_es9136.png",
-            count: 6,
-          },
-          {
-            name: "TypeScript",
-            logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/typescript_fu7pku.png",
-            count: 7,
-          },
-          {
-            name: "Python",
-            logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/python_otulaq.png",
-            count: 8,
-          },
-          {
-            name: "C#",
-            logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/csharp_g6ad9k.png",
-            count: 9,
-          },
-        ],
+        name: "Node JS",
+        logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/nodejs_fbzhmo.png",
+        count: 3,
+      },
+      {
+        name: "PostGreSQL",
+        logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/postgresql_ieatla.png",
+        count: 4,
+      },
+      {
+        name: "Mongo DB",
+        logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/mongo_g54ff3.png",
+        count: 5,
+      },
+      {
+        name: "JavaScript",
+        logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978407/portfolio/skills/javascript_es9136.png",
+        count: 6,
+      },
+      {
+        name: "TypeScript",
+        logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/typescript_fu7pku.png",
+        count: 7,
+      },
+      {
+        name: "Python",
+        logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/python_otulaq.png",
+        count: 8,
+      },
+      {
+        name: "C#",
+        logo: "https://res.cloudinary.com/drnym8nne/image/upload/v1650978408/portfolio/skills/csharp_g6ad9k.png",
+        count: 9,
       },
     ],
     aboutData: [
@@ -234,6 +213,28 @@ const App: React.FC = () => {
         ],
       ],
     ],
+  };
+
+  const handleImageEnter = () => {
+    if (imageRef.current) {
+      imageRef.current.style.marginTop = "-0.5rem";
+      imageRef.current.style.marginLeft = "-1rem";
+    }
+    if (shadowRef.current) {
+      shadowRef.current.style.marginTop = "1rem";
+      shadowRef.current.style.marginLeft = "2rem";
+    }
+  };
+
+  const handleImageLeave = () => {
+    if (imageRef.current) {
+      imageRef.current.style.marginTop = "0px";
+      imageRef.current.style.marginLeft = "0px";
+    }
+    if (shadowRef.current) {
+      shadowRef.current.style.marginTop = "0.5rem";
+      shadowRef.current.style.marginLeft = "1rem";
+    }
   };
 
   return (
@@ -296,8 +297,71 @@ const App: React.FC = () => {
               </a>
             </div>
           </div>
-          <div className="pt-[10px]" ref={aboutRef}>
-            <About aboutData={data.aboutData} />
+          {/* ABOUT */}
+          <div className="about" ref={aboutRef}>
+            <div className="about_container">
+              <div className="about_container_main">
+                <div className="about_container_main_header">
+                  <span className="about_container_main_header_title">About Me</span>
+                  <div className="about_container_main_header_bar" />
+                </div>
+                <div className="about_container_main_text">
+                  {data.aboutData.map((span: any, i: any) => {
+                    return (
+                      <span key={i}>
+                        {span.map(({ text, url }: any) => {
+                          return !url ? (
+                            text
+                          ) : (
+                            <a
+                              href={url}
+                              className="text-emerald-500 hover:text-emerald-100 transition-colors"
+                            >
+                              {text}
+                            </a>
+                          );
+                        })}
+                      </span>
+                    );
+                  })}
+                </div>
+                <div className="about_container_main_skills">
+                  <div className="about_container_main_skills_header">Skills:</div>
+                  <div className="about_container_main_skills_content">
+                    {data.skillsData.map((element, i) => {
+                      return (
+                        <span key={i} className="flex items-center my-1 gap-x-2">
+                          <img src="/images/arrow.svg" alt="Not found" height={10} width={10} />
+                          {element.name}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+              <div
+                className="about_container_image"
+                onMouseEnter={() => {
+                  handleImageEnter();
+                }}
+                onMouseLeave={() => {
+                  handleImageLeave();
+                }}
+              >
+                <img
+                  ref={imageRef}
+                  className="about_container_image_img"
+                  src={
+                    "https://res.cloudinary.com/drnym8nne/image/upload/v1665871812/portfolio/profilepic_xrxbld.jpg"
+                  }
+                  alt="Not found"
+                  onMouseEnter={(e) => {
+                    console.log(e);
+                  }}
+                />
+                <div ref={shadowRef} className="about_container_image_border" />
+              </div>
+            </div>
           </div>
           <div className="pt-[10px]" ref={expRef}>
             <Experience data={data.experienceData} />
