@@ -25,6 +25,7 @@ const App: React.FC = () => {
     contactRef.current?.scrollIntoView({ behavior: "smooth" });
   const imageRef = useRef<HTMLImageElement | null>(null);
   const shadowRef = useRef<HTMLDivElement | null>(null);
+  const [activeExperience, setActiveExperience] = useState(0);
 
   const data = {
     projectsData: [
@@ -218,11 +219,9 @@ const App: React.FC = () => {
         },
       ],
       [
-        [
-          {
-            text: "Additionally, I also venture into Machine Learning and Computer Vision in my offtime research which I conduct in leisure.",
-          },
-        ],
+        {
+          text: "Additionally, I also venture into Machine Learning and Computer Vision in my offtime research which I conduct in leisure.",
+        },
       ],
     ],
   };
@@ -330,10 +329,7 @@ const App: React.FC = () => {
                           return !url ? (
                             text
                           ) : (
-                            <a
-                              href={url}
-                              className="text-emerald-500 hover:text-emerald-100 transition-colors"
-                            >
+                            <a href={url} target="_blank" rel="noreferrer">
                               {text}
                             </a>
                           );
@@ -342,28 +338,24 @@ const App: React.FC = () => {
                     );
                   })}
                 </div>
-                <div className="main_about_container_main_skills">
-                  <div className="main_about_container_main_skills_header">
-                    Skills:
-                  </div>
-                  <div className="main_about_container_main_skills_content">
-                    {data.skillsData.map((element, i) => {
-                      return (
-                        <span
-                          key={i}
-                          className="main_about_container_main_skills_content_skill"
-                        >
-                          <img
-                            src="/images/arrow.svg"
-                            alt="Not found"
-                            height={10}
-                            width={10}
-                          />
-                          {element.name}
-                        </span>
-                      );
-                    })}
-                  </div>
+                <div className="main_about_container_main_header">Skills:</div>
+                <div className="main_about_container_main_content">
+                  {data.skillsData.map((element, i) => {
+                    return (
+                      <span
+                        key={i}
+                        className="main_about_container_main_content_skill"
+                      >
+                        <img
+                          src="/images/arrow.svg"
+                          alt="Not found"
+                          height={10}
+                          width={10}
+                        />
+                        {element.name}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
               <div className="main_about_container_image">
@@ -383,7 +375,68 @@ const App: React.FC = () => {
             </div>
           </div>
           <div className="pt-[10px]" ref={expRef}>
-            <Experience data={data.experienceData} />
+            <div className="w-3/4 mx-auto my-48 font-sans">
+              <div className="flex items-center justify-between w-full my-10">
+                <span className="w-1/3 text-2xl text-slate-50">Experience</span>
+                <hr className="w-2/3" />
+              </div>
+              <div className="flex sm:flex-row flex-col sm:gap-0 gap-10">
+                <div className="w-full sm:w-1/3 flex flex-col">
+                  {data.experienceData.map(({ company }, i) => {
+                    return (
+                      <div
+                        key={i}
+                        onClick={() => setActiveExperience(i)}
+                        className={`border-l-2 border-white font-mono py-3 px-3 cursor-pointer hover:bg-emerald-900 transition-colors ${
+                          activeExperience === i
+                            ? "text-emerald-300 border-emerald-300"
+                            : "text-slate-500"
+                        }`}
+                      >
+                        {company}
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="sm:w-2/3 w-full flex flex-col gap-3">
+                  <span className="text-emerald-300 text-xl">
+                    <span className="text-slate-50">
+                      {data.experienceData[activeExperience].title}
+                    </span>
+                    <span>
+                      {` @ `}
+                      <a href={data.experienceData[activeExperience].url}>
+                        {data.experienceData[activeExperience].company}
+                      </a>
+                    </span>
+                  </span>
+                  <span className="text-slate-300">
+                    {data.experienceData[activeExperience].timeStart} -{" "}
+                    {data.experienceData[activeExperience].timeEnd}
+                  </span>
+                  <div className="text-slate-500 flex flex-col gap-4">
+                    {data.experienceData[activeExperience].description.map(
+                      (element, i) => {
+                        return (
+                          <div className="flex gap-2" key={i}>
+                            <span className="flex w-1/12">
+                              <img
+                                src="/images/arrow.svg"
+                                alt="Not found"
+                                height={15}
+                                width={15}
+                              />
+                            </span>
+                            <span className="w-11/12">{element}</span>
+                          </div>
+                        );
+                      }
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <Experience data={data.experienceData} /> */}
           </div>
           <div className="pt-[10px]" ref={projectsRef}>
             <Projects data={data.projectsData} />
