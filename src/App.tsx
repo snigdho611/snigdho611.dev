@@ -13,11 +13,16 @@ const App: React.FC = () => {
   const projectsRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const contactRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
-  const heroScroll = () => heroRef.current?.scrollIntoView({ behavior: "smooth" });
-  const aboutScroll = () => aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-  const expScroll = () => expRef.current?.scrollIntoView({ behavior: "smooth" });
-  const projectsScroll = () => projectsRef.current?.scrollIntoView({ behavior: "smooth" });
-  const contactScroll = () => contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  const heroScroll = () =>
+    heroRef.current?.scrollIntoView({ behavior: "smooth" });
+  const aboutScroll = () =>
+    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+  const expScroll = () =>
+    expRef.current?.scrollIntoView({ behavior: "smooth" });
+  const projectsScroll = () =>
+    projectsRef.current?.scrollIntoView({ behavior: "smooth" });
+  const contactScroll = () =>
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
   const imageRef = useRef<HTMLImageElement | null>(null);
   const shadowRef = useRef<HTMLDivElement | null>(null);
 
@@ -60,7 +65,14 @@ const App: React.FC = () => {
         title: "MERN Super Store",
         description:
           "A simple superstore project. Originally done with React JS, Express and MongoDB. Now updated the project with things like SCSS, TypeScript and a cloud database instance for data storage.",
-        stacks: ["MongoDB", "React JS", "Node JS", "Express JS", "SCSS", "TypeScript"],
+        stacks: [
+          "MongoDB",
+          "React JS",
+          "Node JS",
+          "Express JS",
+          "SCSS",
+          "TypeScript",
+        ],
         url: "https://github.com/snigdho611/mern-superstore",
       },
     ],
@@ -215,30 +227,6 @@ const App: React.FC = () => {
     ],
   };
 
-  const handleImageEnter = () => {
-    if (imageRef.current) {
-      imageRef.current.style.marginTop = "-0.5rem";
-      imageRef.current.style.marginLeft = "-1rem";
-      imageRef.current.style.filter= "saturate(100%)";
-    }
-    if (shadowRef.current) {
-      shadowRef.current.style.marginTop = "1rem";
-      shadowRef.current.style.marginLeft = "2rem";
-    }
-  };
-
-  const handleImageLeave = () => {
-    if (imageRef.current) {
-      imageRef.current.style.marginTop = "0px";
-      imageRef.current.style.marginLeft = "0px";
-      imageRef.current.style.filter= "saturate(75%)";
-    }
-    if (shadowRef.current) {
-      shadowRef.current.style.marginTop = "0.5rem";
-      shadowRef.current.style.marginLeft = "1rem";
-    }
-  };
-
   return (
     <>
       {loading ? (
@@ -253,63 +241,88 @@ const App: React.FC = () => {
           </div>
         </div>
       ) : (
-        <>
-          <div className="navbar">
-            <div className="navbar_container">
-              <div className="navbar_container_left">
+        <div>
+          <div className="main_navbar">
+            <div className="main_navbar_container">
+              <div className="main_navbar_container_left">
                 <img
                   src={
                     "https://res.cloudinary.com/drnym8nne/image/upload/v1666110360/portfolio/nav/favicon_uw1wog.png"
                   }
                   alt="Not found"
-                  className="navbar_container_left_img"
+                  className="main_navbar_container_left_img"
                 />
               </div>
-              <div className="navbar_container_right">
-                <div className="navbar_container_right_link" onClick={() => heroScroll()}>
+              <div className="main_navbar_container_right">
+                <div
+                  className="main_navbar_container_right_link"
+                  onClick={() => heroScroll()}
+                >
                   Home
                 </div>
-                <div className="navbar_container_right_link" onClick={() => aboutScroll()}>
+                <div
+                  className="main_navbar_container_right_link"
+                  onClick={() => aboutScroll()}
+                >
                   About
                 </div>
-                <div className="navbar_container_right_link" onClick={() => expScroll()}>
+                <div
+                  className="main_navbar_container_right_link"
+                  onClick={() => expScroll()}
+                >
                   Experience
                 </div>
-                <div className="navbar_container_right_link" onClick={() => projectsScroll()}>
+                <div
+                  className="main_navbar_container_right_link"
+                  onClick={() => projectsScroll()}
+                >
                   Project
                 </div>
-                <div className="navbar_container_right_link" onClick={() => contactScroll()}>
+                <div
+                  className="main_navbar_container_right_link"
+                  onClick={() => contactScroll()}
+                >
                   Contact
                 </div>
               </div>
             </div>
           </div>
           {/* HERO */}
-          <div className="hero" ref={heroRef}>
-            <div className="hero_container" ref={aboutRef}>
-              <span className="hero_container_name">Snigdho Dip Howlader.</span>
-              <span className="hero_container_tagline">I Create Things For The Web.</span>
-              <span className="hero_container_content">
-                A Full Stack <strong>Software Engineer</strong> with 2+ years experience. Versatile
-                in both <strong>Frontend </strong> and <strong>Backend </strong> technologies.
+          <div className="main_hero" ref={heroRef}>
+            <div className="main_hero_container" ref={aboutRef}>
+              <span className="main_hero_container_name">
+                Snigdho Dip Howlader.
               </span>
-              <span className="hero_container_content">
+              <span className="main_hero_container_tagline">
+                I Create Things For The Web.
+              </span>
+              <span className="main_hero_container_content">
+                A Full Stack <strong>Software Engineer</strong> with 2+ years
+                experience. Versatile in both <strong>Frontend </strong> and{" "}
+                <strong>Backend </strong> technologies.
+              </span>
+              <span className="main_hero_container_content">
                 My set of skills is versatile and is continuously expanding.
               </span>
-              <a href={"https://www.github.com/snigdho611"} className="hero_container_checkout">
+              <a
+                href={"https://www.github.com/snigdho611"}
+                className="main_hero_container_checkout"
+              >
                 Check Out My Work
               </a>
             </div>
           </div>
           {/* ABOUT */}
-          <div className="about" ref={aboutRef}>
-            <div className="about_container">
-              <div className="about_container_main">
-                <div className="about_container_main_header">
-                  <span className="about_container_main_header_title">About Me</span>
-                  <div className="about_container_main_header_bar" />
+          <div className="main_about" ref={aboutRef}>
+            <div className="main_about_container">
+              <div className="main_about_container_main">
+                <div className="main_about_container_main_header">
+                  <span className="main_about_container_main_header_title">
+                    About Me
+                  </span>
+                  <div className="main_about_container_main_header_bar" />
                 </div>
-                <div className="about_container_main_text">
+                <div className="main_about_container_main_text">
                   {data.aboutData.map((span: any, i: any) => {
                     return (
                       <span key={i}>
@@ -329,13 +342,23 @@ const App: React.FC = () => {
                     );
                   })}
                 </div>
-                <div className="about_container_main_skills">
-                  <div className="about_container_main_skills_header">Skills:</div>
-                  <div className="about_container_main_skills_content">
+                <div className="main_about_container_main_skills">
+                  <div className="main_about_container_main_skills_header">
+                    Skills:
+                  </div>
+                  <div className="main_about_container_main_skills_content">
                     {data.skillsData.map((element, i) => {
                       return (
-                        <span key={i} className="about_container_main_skills_content_skill">
-                          <img src="/images/arrow.svg" alt="Not found" height={10} width={10} />
+                        <span
+                          key={i}
+                          className="main_about_container_main_skills_content_skill"
+                        >
+                          <img
+                            src="/images/arrow.svg"
+                            alt="Not found"
+                            height={10}
+                            width={10}
+                          />
                           {element.name}
                         </span>
                       );
@@ -343,27 +366,19 @@ const App: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div
-                className="about_container_image"
-                onMouseEnter={() => {
-                  handleImageEnter();
-                }}
-                onMouseLeave={() => {
-                  handleImageLeave();
-                }}
-              >
+              <div className="main_about_container_image">
                 <img
                   ref={imageRef}
-                  className="about_container_image_img"
+                  className="main_about_container_image_img"
                   src={
                     "https://res.cloudinary.com/drnym8nne/image/upload/v1665871812/portfolio/profilepic_xrxbld.jpg"
                   }
                   alt="Not found"
-                  onMouseEnter={(e) => {
-                    console.log(e);
-                  }}
                 />
-                <div ref={shadowRef} className="about_container_image_border" />
+                <div
+                  ref={shadowRef}
+                  className="main_about_container_image_border"
+                />
               </div>
             </div>
           </div>
@@ -377,7 +392,7 @@ const App: React.FC = () => {
             <Contact data={data.contactData} />
           </div>
           <Footer />
-        </>
+        </div>
       )}
     </>
   );
