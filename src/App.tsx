@@ -105,19 +105,6 @@ const App: React.FC = () => {
           "Created API with Node JS, Express JS and MongoDB",
         ],
       },
-      {
-        id: 3,
-        company: "Deepchainlabs",
-        title: "Software Engineer",
-        timeStart: "Jul 2021",
-        timeEnd: "Sep 2022",
-        url: "https://www.deepchainlabs.com/",
-        description: [
-          "Maintained documentation for client projects",
-          "Created system diagrams for client project",
-          "Worked on client project with Laravel and MySQL",
-        ],
-      },
     ],
     contactData: [
       {
@@ -242,47 +229,45 @@ const App: React.FC = () => {
       ) : (
         <div>
           <div className="main_navbar">
-            <div className="main_navbar_container">
-              <div className="main_navbar_container_left">
-                <img
-                  src={
-                    "https://res.cloudinary.com/drnym8nne/image/upload/v1666110360/portfolio/nav/favicon_uw1wog.png"
-                  }
-                  alt="Not found"
-                  className="main_navbar_container_left_img"
-                />
+            <div className="main_navbar_left">
+              <img
+                src={
+                  "https://res.cloudinary.com/drnym8nne/image/upload/v1689936405/portfolio/nav/logo_pvu06n.svg"
+                }
+                alt="Not found"
+                className="main_navbar_left_img"
+              />
+            </div>
+            <div className="main_navbar_right">
+              <div
+                className="main_navbar_right_link"
+                onClick={() => heroScroll()}
+              >
+                Home
               </div>
-              <div className="main_navbar_container_right">
-                <div
-                  className="main_navbar_container_right_link"
-                  onClick={() => heroScroll()}
-                >
-                  Home
-                </div>
-                <div
-                  className="main_navbar_container_right_link"
-                  onClick={() => aboutScroll()}
-                >
-                  About
-                </div>
-                <div
-                  className="main_navbar_container_right_link"
-                  onClick={() => expScroll()}
-                >
-                  Experience
-                </div>
-                <div
-                  className="main_navbar_container_right_link"
-                  onClick={() => projectsScroll()}
-                >
-                  Project
-                </div>
-                <div
-                  className="main_navbar_container_right_link"
-                  onClick={() => contactScroll()}
-                >
-                  Contact
-                </div>
+              <div
+                className="main_navbar_right_link"
+                onClick={() => aboutScroll()}
+              >
+                About
+              </div>
+              <div
+                className="main_navbar_right_link"
+                onClick={() => expScroll()}
+              >
+                Experience
+              </div>
+              <div
+                className="main_navbar_right_link"
+                onClick={() => projectsScroll()}
+              >
+                Project
+              </div>
+              <div
+                className="main_navbar_right_link"
+                onClick={() => contactScroll()}
+              >
+                Contact
               </div>
             </div>
           </div>
@@ -313,126 +298,115 @@ const App: React.FC = () => {
           </div>
           {/* ABOUT */}
           <div className="main_about" ref={aboutRef}>
-            <div className="main_about_container">
-              <div className="main_about_container_main">
-                <div className="main_about_container_main_header">
-                  <span className="main_about_container_main_header_title">
-                    About Me
-                  </span>
-                  <div className="main_about_container_main_header_bar" />
-                </div>
-                <div className="main_about_container_main_text">
-                  {data.aboutData.map((span: any, i: any) => {
-                    return (
-                      <span key={i}>
-                        {span.map(({ text, url }: any) => {
-                          return !url ? (
-                            text
-                          ) : (
-                            <a href={url} target="_blank" rel="noreferrer">
-                              {text}
-                            </a>
-                          );
-                        })}
-                      </span>
-                    );
-                  })}
-                </div>
-                <div className="main_about_container_main_header">Skills:</div>
-                <div className="main_about_container_main_content">
-                  {data.skillsData.map((element, i) => {
-                    return (
-                      <span
-                        key={i}
-                        className="main_about_container_main_content_skill"
-                      >
-                        <img
-                          src="/images/arrow.svg"
-                          alt="Not found"
-                          height={10}
-                          width={10}
-                        />
-                        {element.name}
-                      </span>
-                    );
-                  })}
-                </div>
+            <div className="main_about_main">
+              <div className="main_about_main_header">
+                <span className="main_about_main_header_title">About Me</span>
+                <div className="main_about_main_header_bar" />
               </div>
-              <div className="main_about_container_image">
-                <img
-                  ref={imageRef}
-                  className="main_about_container_image_img"
-                  src={
-                    "https://res.cloudinary.com/drnym8nne/image/upload/v1665871812/portfolio/profilepic_xrxbld.jpg"
-                  }
-                  alt="Not found"
-                />
-                <div
-                  ref={shadowRef}
-                  className="main_about_container_image_border"
-                />
+              <div className="main_about_main_text">
+                {data.aboutData.map((span: any, i: any) => {
+                  return (
+                    <span key={i}>
+                      {span.map(({ text, url }: any) => {
+                        return !url ? (
+                          text
+                        ) : (
+                          <a href={url} target="_blank" rel="noreferrer">
+                            {text}
+                          </a>
+                        );
+                      })}
+                    </span>
+                  );
+                })}
+              </div>
+              <div className="main_about_main_header">Skills:</div>
+              <div className="main_about_main_content">
+                {data.skillsData.map((element, i) => {
+                  return (
+                    <span key={i} className="main_about_main_content_skill">
+                      <img
+                        src="/images/arrow.svg"
+                        alt="Not found"
+                        height={10}
+                        width={10}
+                      />
+                      {element.name}
+                    </span>
+                  );
+                })}
               </div>
             </div>
+            <div className="main_about_image">
+              <img
+                ref={imageRef}
+                className="main_about_image_img"
+                src={
+                  "https://res.cloudinary.com/drnym8nne/image/upload/v1665871812/portfolio/profilepic_xrxbld.jpg"
+                }
+                alt="Not found"
+              />
+              <div ref={shadowRef} className="main_about_image_border" />
+            </div>
           </div>
-          <div className="pt-[10px]" ref={expRef}>
-            <div className="w-3/4 mx-auto my-48 font-sans">
-              <div className="flex items-center justify-between w-full my-10">
-                <span className="w-1/3 text-2xl text-slate-50">Experience</span>
-                <hr className="w-2/3" />
+          {/* EXPERIENCE */}
+          <div className="main_experience" ref={expRef}>
+            <div className="main_experience_header">
+              <span className="main_experience_header_title">Experience</span>
+              <div className="main_experience_header_bar" />
+            </div>
+            <div className="main_experience_body">
+              <div className="main_experience_body_companies">
+                {data.experienceData.map(({ company }, i) => {
+                  return (
+                    <div
+                      key={i}
+                      onClick={() => setActiveExperience(i)}
+                      className={`main_experience_body_companies_company ${
+                        activeExperience === i
+                          ? "main_experience_body_companies_company-active"
+                          : ""
+                      }`}
+                    >
+                      {company}
+                    </div>
+                  );
+                })}
               </div>
-              <div className="flex sm:flex-row flex-col sm:gap-0 gap-10">
-                <div className="w-full sm:w-1/3 flex flex-col">
-                  {data.experienceData.map(({ company }, i) => {
-                    return (
-                      <div
-                        key={i}
-                        onClick={() => setActiveExperience(i)}
-                        className={`border-l-2 border-white font-mono py-3 px-3 cursor-pointer hover:bg-emerald-900 transition-colors ${
-                          activeExperience === i
-                            ? "text-emerald-300 border-emerald-300"
-                            : "text-slate-500"
-                        }`}
-                      >
-                        {company}
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className="sm:w-2/3 w-full flex flex-col gap-3">
-                  <span className="text-emerald-300 text-xl">
-                    <span className="text-slate-50">
-                      {data.experienceData[activeExperience].title}
-                    </span>
-                    <span>
-                      {` @ `}
-                      <a href={data.experienceData[activeExperience].url}>
-                        {data.experienceData[activeExperience].company}
-                      </a>
-                    </span>
+              <div className="sm:w-2/3 w-full flex flex-col gap-3">
+                <span className="text-emerald-300 text-xl">
+                  <span className="text-slate-50">
+                    {data.experienceData[activeExperience].title}
                   </span>
-                  <span className="text-slate-300">
-                    {data.experienceData[activeExperience].timeStart} -{" "}
-                    {data.experienceData[activeExperience].timeEnd}
+                  <span>
+                    {` @ `}
+                    <a href={data.experienceData[activeExperience].url}>
+                      {data.experienceData[activeExperience].company}
+                    </a>
                   </span>
-                  <div className="text-slate-500 flex flex-col gap-4">
-                    {data.experienceData[activeExperience].description.map(
-                      (element, i) => {
-                        return (
-                          <div className="flex gap-2" key={i}>
-                            <span className="flex w-1/12">
-                              <img
-                                src="/images/arrow.svg"
-                                alt="Not found"
-                                height={15}
-                                width={15}
-                              />
-                            </span>
-                            <span className="w-11/12">{element}</span>
-                          </div>
-                        );
-                      }
-                    )}
-                  </div>
+                </span>
+                <span className="text-slate-300">
+                  {data.experienceData[activeExperience].timeStart} -{" "}
+                  {data.experienceData[activeExperience].timeEnd}
+                </span>
+                <div className="text-slate-500 flex flex-col gap-4">
+                  {data.experienceData[activeExperience].description.map(
+                    (element, i) => {
+                      return (
+                        <div className="flex gap-2" key={i}>
+                          <span className="flex w-1/12">
+                            <img
+                              src="/images/arrow.svg"
+                              alt="Not found"
+                              height={15}
+                              width={15}
+                            />
+                          </span>
+                          <span className="w-11/12">{element}</span>
+                        </div>
+                      );
+                    }
+                  )}
                 </div>
               </div>
             </div>
