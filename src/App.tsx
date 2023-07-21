@@ -105,6 +105,19 @@ const App: React.FC = () => {
           "Created API with Node JS, Express JS and MongoDB",
         ],
       },
+      {
+        id: 3,
+        company: "Deepchainlabs",
+        title: "Software Engineer",
+        timeStart: "Jul 2021",
+        timeEnd: "Sep 2022",
+        url: "https://www.deepchainlabs.com/",
+        description: [
+          "Maintained documentation for client projects",
+          "Created system diagrams for client project",
+          "Worked on client project with Laravel and MySQL",
+        ],
+      },
     ],
     contactData: [
       {
