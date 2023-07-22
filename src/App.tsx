@@ -13,16 +13,11 @@ const App: React.FC = () => {
   const projectsRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const contactRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
-  const heroScroll = () =>
-    heroRef.current?.scrollIntoView({ behavior: "smooth" });
-  const aboutScroll = () =>
-    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-  const expScroll = () =>
-    expRef.current?.scrollIntoView({ behavior: "smooth" });
-  const projectsScroll = () =>
-    projectsRef.current?.scrollIntoView({ behavior: "smooth" });
-  const contactScroll = () =>
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  const heroScroll = () => heroRef.current?.scrollIntoView({ behavior: "smooth" });
+  const aboutScroll = () => aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+  const expScroll = () => expRef.current?.scrollIntoView({ behavior: "smooth" });
+  const projectsScroll = () => projectsRef.current?.scrollIntoView({ behavior: "smooth" });
+  const contactScroll = () => contactRef.current?.scrollIntoView({ behavior: "smooth" });
   const imageRef = useRef<HTMLImageElement | null>(null);
   const shadowRef = useRef<HTMLDivElement | null>(null);
   const [activeExperience, setActiveExperience] = useState(0);
@@ -66,14 +61,7 @@ const App: React.FC = () => {
         title: "MERN Super Store",
         description:
           "A simple superstore project. Originally done with React JS, Express and MongoDB. Now updated the project with things like SCSS, TypeScript and a cloud database instance for data storage.",
-        stacks: [
-          "MongoDB",
-          "React JS",
-          "Node JS",
-          "Express JS",
-          "SCSS",
-          "TypeScript",
-        ],
+        stacks: ["MongoDB", "React JS", "Node JS", "Express JS", "SCSS", "TypeScript"],
         url: "https://github.com/snigdho611/mern-superstore",
       },
     ],
@@ -241,6 +229,7 @@ const App: React.FC = () => {
         </div>
       ) : (
         <div>
+          {/* NAVBAR */}
           <div className="main_navbar">
             <div className="main_navbar_left">
               <img
@@ -252,34 +241,19 @@ const App: React.FC = () => {
               />
             </div>
             <div className="main_navbar_right">
-              <div
-                className="main_navbar_right_link"
-                onClick={() => heroScroll()}
-              >
+              <div className="main_navbar_right_link" onClick={() => heroScroll()}>
                 Home
               </div>
-              <div
-                className="main_navbar_right_link"
-                onClick={() => aboutScroll()}
-              >
+              <div className="main_navbar_right_link" onClick={() => aboutScroll()}>
                 About
               </div>
-              <div
-                className="main_navbar_right_link"
-                onClick={() => expScroll()}
-              >
+              <div className="main_navbar_right_link" onClick={() => expScroll()}>
                 Experience
               </div>
-              <div
-                className="main_navbar_right_link"
-                onClick={() => projectsScroll()}
-              >
+              <div className="main_navbar_right_link" onClick={() => projectsScroll()}>
                 Project
               </div>
-              <div
-                className="main_navbar_right_link"
-                onClick={() => contactScroll()}
-              >
+              <div className="main_navbar_right_link" onClick={() => contactScroll()}>
                 Contact
               </div>
             </div>
@@ -287,16 +261,11 @@ const App: React.FC = () => {
           {/* HERO */}
           <div className="main_hero" ref={heroRef}>
             <div className="main_hero_container" ref={aboutRef}>
-              <span className="main_hero_container_name">
-                Snigdho Dip Howlader.
-              </span>
-              <span className="main_hero_container_tagline">
-                I Create Things For The Web.
-              </span>
+              <span className="main_hero_container_name">Snigdho Dip Howlader.</span>
+              <span className="main_hero_container_tagline">I Create Things For The Web.</span>
               <span className="main_hero_container_content">
-                A Full Stack <strong>Software Engineer</strong> with 2+ years
-                experience. Versatile in both <strong>Frontend </strong> and{" "}
-                <strong>Backend </strong> technologies.
+                A Full Stack <strong>Software Engineer</strong> with 2+ years experience. Versatile
+                in both <strong>Frontend </strong> and <strong>Backend </strong> technologies.
               </span>
               <span className="main_hero_container_content">
                 My set of skills is versatile and is continuously expanding.
@@ -338,12 +307,7 @@ const App: React.FC = () => {
                 {data.skillsData.map((element, i) => {
                   return (
                     <span key={i} className="main_about_main_content_skill">
-                      <img
-                        src="/images/arrow.svg"
-                        alt="Not found"
-                        height={10}
-                        width={10}
-                      />
+                      <img src="/images/arrow.svg" alt="Not found" height={10} width={10} />
                       {element.name}
                     </span>
                   );
@@ -386,44 +350,25 @@ const App: React.FC = () => {
                   );
                 })}
               </div>
-              <div className="sm:w-2/3 w-full flex flex-col gap-3">
-                <span className="text-emerald-300 text-xl">
-                  <span className="text-slate-50">
-                    {data.experienceData[activeExperience].title}
-                  </span>
-                  <span>
-                    {` @ `}
-                    <a href={data.experienceData[activeExperience].url}>
-                      {data.experienceData[activeExperience].company}
-                    </a>
-                  </span>
+              <div className="main_experience_body_description">
+                <span className="main_experience_body_description_header">
+                  {data.experienceData[activeExperience].title}
+                  {` @ `}
+                  <a href={data.experienceData[activeExperience].url}>
+                    {data.experienceData[activeExperience].company}
+                  </a>
+                  {/* </span> */}
                 </span>
-                <span className="text-slate-300">
-                  {data.experienceData[activeExperience].timeStart} -{" "}
-                  {data.experienceData[activeExperience].timeEnd}
+                <span className="main_experience_body_description_period">
+                  {`${data.experienceData[activeExperience].timeStart} - ${data.experienceData[activeExperience].timeEnd}`}
                 </span>
-                <div className="text-slate-500 flex flex-col gap-4">
-                  {data.experienceData[activeExperience].description.map(
-                    (element, i) => {
-                      return (
-                        <div className="flex gap-2" key={i}>
-                          <span className="flex w-1/12">
-                            <img
-                              src="/images/arrow.svg"
-                              alt="Not found"
-                              height={15}
-                              width={15}
-                            />
-                          </span>
-                          <span className="w-11/12">{element}</span>
-                        </div>
-                      );
-                    }
-                  )}
+                <div className="text-slate-500 flex flex-col gap-4 main_experience_body_description_list">
+                  {data.experienceData[activeExperience].description.map((element, i) => {
+                    return <span key={i}>{`- ${element}`}</span>;
+                  })}
                 </div>
               </div>
             </div>
-            {/* <Experience data={data.experienceData} /> */}
           </div>
           <div className="pt-[10px]" ref={projectsRef}>
             <Projects data={data.projectsData} />

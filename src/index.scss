@@ -1,6 +1,7 @@
 $emrald-primary: #6ee7b7;
 $emrald-secondary: #059669;
 $slate-primary: #cbd5e1;
+$slate-secondary: #64748b;
 $black-primary: #111827;
 $image-width: 17rem;
 $image-height: 17rem;
@@ -239,7 +240,7 @@ body {
           font-size: 1.15rem;
           padding: 0.75rem;
           cursor: pointer;
-          transition: background-color 0.25s;
+          transition: background-color 0.25s, border 0.25s;
           &:hover {
             background-color: $emrald-secondary;
           }
@@ -251,6 +252,41 @@ body {
             border-bottom-width: 0px;
             border-right-width: 0px;
             border-style: solid;
+          }
+        }
+      }
+      &_description {
+        width: 66%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        &_header {
+          color: $emrald-primary;
+          // font-size: 1.25rem;
+          color: $emrald-secondary;
+          // font-weight: bold;
+          & a {
+            color: $emrald-primary;
+            text-decoration: none;
+            transition: color 0.25s;
+            &:hover {
+              color: $slate-primary;
+            }
+          }
+        }
+        &_period {
+          font-size: 0.95rem;
+          color: $slate-secondary;
+        }
+        &_list {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+          & span {
+            display: flex;
+            justify-content: flex-start;
+
+            // align-items: ;
           }
         }
       }
