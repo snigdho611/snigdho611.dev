@@ -14,8 +14,6 @@ $image-height: 17rem;
 body {
   margin: 0;
   background-color: $black-primary;
-
-  // overflow-y: ;
 }
 
 .loader {
@@ -34,7 +32,6 @@ body {
   animation-iteration-count: 1;
   animation-direction: linear;
   animation-fill-mode: forwards;
-  // overflow-y: hidden;
   &_img {
     animation: spin 1s linear infinite;
   }
@@ -55,22 +52,15 @@ body {
   0% {
     transform: rotate(0deg);
   }
-  // 25% {
-  //   transform: rotate(0deg);
-  // }
   50% {
     transform: rotate(0deg);
   }
-  // 75% {
-  //   transform: rotate(0deg);
-  // }
   100% {
     transform: rotate(360deg);
   }
 }
 
 .main {
-  // overflow-y: auto;
   &_navbar {
     z-index: 2;
     font-size: 1.25rem;
@@ -82,7 +72,6 @@ body {
     margin: 0 auto;
     z-index: 10;
     display: flex;
-    // max-width: 1533px;
     &_left {
       width: 25%;
       display: flex;
@@ -105,13 +94,13 @@ body {
       justify-content: flex-end;
       &_link {
         font-size: 1.2rem;
-        color: $emrald-primary;
+        color: $emrald-secondary;
         display: flex;
         align-items: center;
         cursor: pointer;
         transition: color 0.25s, transform 0.15s;
         &:hover {
-          color: #ecfdf5;
+          color: $emrald-primary;
           transform: translate(0rem, -0.25rem);
         }
       }
@@ -156,8 +145,6 @@ body {
         &:hover {
           background-color: $emrald-primary;
           transform: translate(0rem, -0.25rem);
-          // margin-top: -0.25rem;
-          // margin-bottom: 0.25rem;
           color: $slate-secondary;
         }
       }
@@ -206,8 +193,6 @@ body {
         }
       }
       &_header {
-        // padding-top: 1rem;
-        // padding-bottom: 1rem;
         font-weight: bold;
       }
       &_content {
@@ -257,7 +242,6 @@ body {
         transition: transform 0.25s, filter 0.25s;
       }
     }
-    // }
   }
   &_experience {
     @extend .section;
@@ -306,7 +290,6 @@ body {
           color: $emrald-primary;
           font-size: 1.25rem;
           color: $emrald-secondary;
-          // font-weight: bold;
           & a {
             color: $emrald-primary;
             text-decoration: none;
@@ -328,8 +311,6 @@ body {
           & span {
             display: flex;
             justify-content: flex-start;
-
-            // align-items: ;
           }
         }
       }
@@ -351,11 +332,9 @@ body {
       display: grid;
       grid-template-columns: 2fr 2fr 2fr;
       gap: 1rem;
-      // flex-direction: column;
       &_card {
         display: flex;
         flex-direction: column;
-        // justify-content: center;
         align-items: center;
         gap: 0.75rem;
         text-decoration: none;
@@ -368,15 +347,16 @@ body {
         text-align: justify;
         transition: transform 0.25s, border-color 0.25s;
         &_svg {
-          stroke: $emrald-secondary;
-          transition: stroke 0.25s;
+          &_path {
+            stroke: $emrald-secondary;
+            transition: stroke 0.25s;
+          }
         }
         &_title {
           font-weight: bold;
           font-size: 1.15rem;
         }
         &_description {
-          // color: $slate-secondary;
         }
         &_stacks {
           display: flex;
@@ -385,14 +365,12 @@ body {
           flex-wrap: wrap;
         }
         &:hover {
-          // margin-top: -0.25rem;
-          .main_projects_cards_card_svg {
+          .main_projects_cards_card_svg_path {
             stroke: $emrald-primary;
           }
           transform: translate(0rem, -0.5rem);
           border-color: $emrald-primary;
         }
-        // max-width: 33%;
       }
     }
   }
@@ -417,12 +395,17 @@ body {
         &_link {
           width: auto;
           transition: transform 0.25s;
+          &_svg {
+            &_path {
+              fill: $emrald-secondary;
+              transition: fill 0.25s;
+            }
+          }
           &:hover {
             transform: translate(0rem, -0.5rem);
-          }
-          &_svg {
-            stroke: $emrald-secondary;
-            transition: stroke 0.25s;
+            .main_contact_content_links_link_svg_path {
+              fill: $emrald-primary;
+            }
           }
         }
       }
@@ -461,8 +444,6 @@ body {
 
 .footer {
   position: absolute;
-  // bottom: 0;
-  // right: 0;
   width: 100%;
   display: flex;
   justify-content: flex-end;
