@@ -67,7 +67,7 @@ body {
     padding-top: 1.75rem;
     padding-bottom: 1.75rem;
     position: fixed;
-    background-color: #283c67e4;
+    background-color: #283c67;
     width: 100%;
     margin: 0 auto;
     z-index: 10;
@@ -170,12 +170,13 @@ body {
         &_title {
           width: max-content;
           font-size: 1.75rem;
+          width: 35%;
         }
         &_bar {
-          width: 70%;
           border-top: 1px solid $slate-primary;
           height: 1px;
           margin: 0 auto;
+          width: 65%;
         }
       }
       &_text {
@@ -427,7 +428,6 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-
     &_title {
       width: max-content;
       font-size: 1.75rem;
@@ -461,4 +461,13 @@ body {
       color: $emrald-primary;
     }
   }
+}
+
+@media screen and (min-width: 500px) {
+  // body {
+  //   background-color: white !important;
+  // }
+  // .main_hero_container_checkout {
+  //   width: 100%;
+  // }
 }
