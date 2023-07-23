@@ -420,6 +420,10 @@ body {
           &:hover {
             transform: translate(0rem, -0.5rem);
           }
+          &_svg {
+            stroke: $emrald-secondary;
+            transition: stroke 0.25s;
+          }
         }
       }
     }
