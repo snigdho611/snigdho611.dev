@@ -1,7 +1,17 @@
 import React from "react";
+import Navbar from "../Navbar";
 
-const Layout = () => {
-    return <div>Layout</div>;
+interface ILayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<ILayoutProps> = ({ children }) => {
+  return (
+    <div>
+      <Navbar />
+      {children}
+    </div>
+  );
 };
 
 export default Layout;
