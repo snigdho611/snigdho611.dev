@@ -1,0 +1,19 @@
+@use "../../styles/colors";
+
+.hero {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    row-gap: 0.5rem;
+    margin: 0 auto;
+    width: 70%;
+
+    &_name {
+        font-size: 2.25rem;
+        font-weight: bold;
+        color: colors.$emrald-primary;
+    }
+
+    &_tagline {
+        font-size: 1.35rem;
+    }
+}

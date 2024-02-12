@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.scss";
+import { delay, motion } from "framer-motion";
 
 // interface NavbarProps {
 //   heroRef: MutableRefObject<any>;
@@ -8,6 +9,24 @@ import "./index.scss";
 //   projectsRef: MutableRefObject<any>;
 //   contactRef: MutableRefObject<any>;
 // }
+
+const navLinks = [
+  {
+    title: "Home"
+  },
+  {
+    title: "About",
+  },
+  {
+    title: "Experience",
+  },
+  {
+    title: "Project",
+  },
+  {
+    title: "Contact",
+  }
+];
 
 const Navbar: React.FC = (
   // { heroRef, aboutRef, expRef, projectsRef, contactRef }
@@ -21,20 +40,47 @@ const Navbar: React.FC = (
   return (
     <div className="navbar">
       <div className="navbar_left">
-        <img
+        <motion.img
+          transition={{ duration: 0.5 }}
+          animate={{
+            rotate: "180deg"
+          }}
           src={
-            "https://res.cloudinary.com/drnym8nne/image/upload/v1666110360/portfolio/nav/favicon_uw1wog.png"
+            "	https://res.cloudinary.com/drnym8nne/image/upload/v1689936405/portfolio/nav/logo_pvu06n.svg"
           }
           alt="Not found"
           className="navbar_left_img"
         />
       </div>
       <div className="navbar_right">
-        <div className="navbar_right_link" onClick={() => {
-          // heroScroll()
-        }}>
+        {
+          navLinks.map((element, i) => {
+            return (
+              <motion.div
+                animate={{
+                  opacity: 1
+                }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 1 + (i * 0.25), delay: 0.5 + (i * 0.75) }}
+                className="navbar_right_link" onClick={() => {
+                  // heroScroll()
+                }}>
+                {element.title}
+              </motion.div>
+            );
+          })
+        }
+        {/* <motion.div
+          animate={{
+            opacity: 1
+          }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.75 }}
+          className="navbar_right_link" onClick={() => {
+            // heroScroll()
+          }}>
           Home
-        </div>
+        </motion.div>
         <div className="navbar_right_link" onClick={() => {
           // aboutScroll()
         }}>
@@ -54,7 +100,7 @@ const Navbar: React.FC = (
           // contactScroll()
         }}>
           Contact
-        </div>
+        </div> */}
       </div>
     </div>
   );
