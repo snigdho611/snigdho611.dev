@@ -1,15 +1,17 @@
 @use "../../styles/colors";
 
+
 .hero {
     display: grid;
     grid-template-rows: auto auto auto;
+    grid-template-columns: 60% 40%;
     row-gap: 0.5rem;
     margin: 0 auto;
     width: 70%;
 
     &_name {
         font-size: 2.25rem;
-        font-weight: bold;
+        font-weight: 600;
         color: colors.$emrald-primary;
     }
 

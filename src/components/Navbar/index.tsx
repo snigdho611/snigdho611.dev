@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.scss";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 // interface NavbarProps {
 //   heroRef: MutableRefObject<any>;
@@ -61,7 +61,7 @@ const Navbar: React.FC = (
                   opacity: 1
                 }}
                 initial={{ opacity: 0 }}
-                transition={{ duration: 1 + (i * 0.25), delay: 0.5 + (i * 0.75) }}
+                transition={{ duration: 1 + (i * 0.25), delay: 0.5 + (i * 0.35) }}
                 className="navbar_right_link" onClick={() => {
                   // heroScroll()
                 }}>

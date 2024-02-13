@@ -1,5 +1,4 @@
 import React from "react";
-import { IParagraph } from "../../interfaces";
 
 const data = [
   "JavaScript",
