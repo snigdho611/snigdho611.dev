@@ -13,22 +13,17 @@ const Hero = () => {
         Snigdho Dip Howlader
       </span>
       <div className="hero_image">
-        {/* <div className="flex h-72 justify-center"> */}
-          <div className="hero_image_main">
-            <img 
-              className="hero_image_main_img"
-              src={
-                "https://dummyimage.com/600x600/000/fff"
-                // "https://res.cloudinary.com/drnym8nne/image/upload/v1665871812/portfolio/profilepic_xrxbld.jpg"
-              }
-              alt="Not found"
-            />
-          </div>
-          <div
-            // whileHover={{ marginLeft: 0, marginTop: 0 }}
-            className="hero_image_silhouette"
-          />
-        {/* </div> */}
+        <motion.img
+          animate={{ boxShadow: "0px 0px 25px #2ce083" }}
+          initial={{ boxShadow: "0px 0px 0px #2ce083" }}
+          transition={{ delay: 3.5, duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
+          className="hero_image_main"
+          src={
+            // "https://dummyimage.com/600x600/000/fff"
+            "https://res.cloudinary.com/drnym8nne/image/upload/v1707937295/portfolio/profile_pic_gxvprf.jpg"
+          }
+          alt="Not found"
+        />
       </div>
       <span className="hero_tagline">
         I Create Things For The Web.
