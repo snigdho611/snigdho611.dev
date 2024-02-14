@@ -1,6 +1,5 @@
 @use "../../styles/colors";
 
-
 .hero {
     display: grid;
     grid-template-rows: auto auto auto;
@@ -10,12 +9,55 @@
     width: 70%;
 
     &_name {
+        padding: 0.75rem;
         font-size: 2.25rem;
         font-weight: 600;
         color: colors.$emrald-primary;
+    }
+
+    &_image {
+        display: flex;
+        // margin-top: 2.5rem;
+        justify-content: center;
+        // width: 100%;
+        position: relative;
+        height: 18rem; 
+        // width: 18rem;
+        grid-row: span 4;
+        padding: 1.75rem;
+        &_main {
+            z-index: 1;
+            // width: 15rem;
+            position: absolute; 
+            cursor: pointer; 
+            &_img{
+                height: 18rem;
+            }
+        }
+        &_silhouette{
+            height: 18rem; 
+            width: 18rem;   
+            position: absolute; 
+            margin-top: 0.5rem; 
+            margin-left: 1.5rem; 
+            border-width: 4px; 
+            cursor: pointer; 
+            background-color: #d1fae5;
+        }
+
+    }
+
+    &_name, &_tagline, &_description, &_link{
+        padding: 0.75rem;
     }
 
     &_tagline {
         font-size: 1.35rem;
     }
 }
+
+// @media (min-width: 1024px) {
+//     .hero_image {
+//         width: 50%;
+//     }
+// }

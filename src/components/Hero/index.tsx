@@ -12,21 +12,23 @@ const Hero = () => {
       <span className="hero_name">
         Snigdho Dip Howlader
       </span>
-      <div className="w-full lg:w-1/2 flex justify-center mt-10">
-        <div className="flex h-72 justify-center">
-          <div className="absolute w-60 h-60 hover:w-54 cursor-pointer">
-            <img
+      <div className="hero_image">
+        {/* <div className="flex h-72 justify-center"> */}
+          <div className="hero_image_main">
+            <img 
+              className="hero_image_main_img"
               src={
-                "https://res.cloudinary.com/drnym8nne/image/upload/v1665871812/portfolio/profilepic_xrxbld.jpg"
+                "https://dummyimage.com/600x600/000/fff"
+                // "https://res.cloudinary.com/drnym8nne/image/upload/v1665871812/portfolio/profilepic_xrxbld.jpg"
               }
               alt="Not found"
             />
           </div>
           <div
             // whileHover={{ marginLeft: 0, marginTop: 0 }}
-            className="w-60 h-60 border-4 border-emerald-100 ml-10 mt-6 cursor-pointer"
-          ></div>
-        </div>
+            className="hero_image_silhouette"
+          />
+        {/* </div> */}
       </div>
       <span className="hero_tagline">
         I Create Things For The Web.
