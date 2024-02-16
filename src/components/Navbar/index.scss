@@ -8,7 +8,7 @@
     position: sticky;
     width: 100%;
     top: 0;
-    background-color: #283c67;
+    background-color: colors.$purple1;
     margin: 0 auto;
     z-index: 10;
     display: flex;
@@ -39,7 +39,7 @@
 
         &_link {
             font-size: 1.2rem;
-            color: colors.$emrald-primary;
+            color: colors.$purple4;
             display: flex;
             align-items: center;
             cursor: pointer;

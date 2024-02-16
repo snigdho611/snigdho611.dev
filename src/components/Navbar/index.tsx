@@ -38,7 +38,12 @@ const Navbar: React.FC = (
   // const contactScroll = () => contactRef.current.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <div className="navbar">
+    <motion.div 
+      className="navbar" 
+      animate={{translateY: "0px", opacity: 1}}
+      initial={{translateY: "-200px", opacity: 0}}
+      transition={{duration: 1}}
+    >
       <div className="navbar_left">
         <motion.img
           transition={{ duration: 0.5 }}
@@ -61,7 +66,7 @@ const Navbar: React.FC = (
                   opacity: 1
                 }}
                 initial={{ opacity: 0 }}
-                transition={{ duration: 1 + (i * 0.25), delay: 0.5 + (i * 0.35) }}
+                transition={{ duration: 0.05 + (i * 0.25), delay: 0.5 + (i * 0.05) }}
                 className="navbar_right_link" onClick={() => {
                   // heroScroll()
                 }}>
@@ -102,7 +107,7 @@ const Navbar: React.FC = (
           Contact
         </div> */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
