@@ -19,10 +19,10 @@ const Hero = () => {
         Snigdho Dip Howlader
       </span>
       <div className="hero_image">
-        <motion.img
-          animate={{ boxShadow: [`0px 0px 25px ${$purple3}`, `0px 0px 25px ${$purple4}`] }}
+        <img
+          // animate={{ boxShadow: [`0px 0px 25px ${$purple3}`, `0px 0px 25px ${$purple4}`] }}
           // initial={{ boxShadow: "0px 0px 0px #2ce083" }}
-          transition={{ delay: 0.75, duration: 1.25, repeat: Infinity, repeatType: "reverse" }}
+          // transition={{ delay: 0.75, duration: 1.25, repeat: Infinity, repeatType: "reverse" }}
           className="hero_image_main"
           src={
             // "https://dummyimage.com/600x600/000/fff"
@@ -31,22 +31,25 @@ const Hero = () => {
           alt="Not found"
         />
       </div>
-      <span className="hero_tagline">
-        I Create Things For The Web.
-      </span>
-      <span className="hero_description">
-        A Professional Software Developer with experience in the industry.
-        Versatile in both Frontend Development and 
-        Backend Development technologies. Additionally, academically learned
-        with Machine Learning, Data Mining and Algorithms that contribute to problem solving
-        skills.
-      </span>
-      <a
-        href={"https://www.github.com/snigdho611"}
-        className="hero_link"
+      <motion.span 
+        animate={{opacity: 1}} 
+        initial={{opacity: 0}} 
+        transition={{ duration: 0.5, delay: 1}} 
+        className="hero_tagline"
       >
-        Check Out My Work
-      </a>
+        Software Engineer
+      </motion.span>
+      {/* <span className="hero_description">
+        A Professional Software Developer with experience in the industry. Although experitisng on web applications and services, worked with DevOps regularly. Versatile in both Frontend Development and Backend Development technologies. Keen to quickly adapt and learn as needed.  Additionally, academically learned with Machine Learning, Data Mining and Algorithms that contribute to problem solving skills.
+      </span> */}
+      <div className="hero_link">
+        <a
+          href={"https://www.github.com/snigdho611"}
+          className="hero_link_a"
+        >
+          Check Out My Work
+        </a>
+      </div>
     </motion.div>
   );
 };

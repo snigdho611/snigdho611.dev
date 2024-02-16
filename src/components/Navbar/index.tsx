@@ -62,6 +62,7 @@ const Navbar: React.FC = (
           navLinks.map((element, i) => {
             return (
               <motion.div
+                key={i}
                 animate={{
                   opacity: 1
                 }}

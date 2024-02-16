@@ -3,39 +3,73 @@
 .hero {
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 70% 30%;
     row-gap: 0.5rem;
-    margin: 0 auto;
-    width: 70%;
+    // margin: 0 auto;
+    // width: 70%;
 
     &_name {
-        padding: 0.75rem;
-        font-size: 2.25rem;
+        // padding: 0.75rem;
+        font-size: 2.5rem;
         font-weight: 600;
         color: colors.$purple3;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_tagline{
+        font-size: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
     }
 
     &_image {
         display: flex;
         justify-content: center;
-        height: 18rem;
-        grid-row: span 4;
-        padding: 1.75rem;
+        align-items: center;
+        // height: 18rem;
+        grid-row: span 3;
+        // padding: 1.75rem;
 
         &_main {
             height: 18rem;
             border-radius: 50%;
+            filter: sepia(100%) saturate(300%) brightness(65%) hue-rotate(250deg);
+            transition: 0.25s filter;
+            &:hover{
+                filter: sepia(0%) saturate(100%) brightness(100%) hue-rotate(360deg);
+            }
+        }
+    }
+
+    &_description{
+        text-align: justify;
+    }
+
+    &_link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        &_a{
+            text-decoration: none;
+            color: colors.$purple3;
+            transition: 0.25s color;
+            &:hover{
+                color: colors.$purple4;
+            }
         }
     }
 
     &_name,
-    &_tagline,
+    // &_tagline,
     &_description,
     &_link {
-        padding: 0.75rem;
+        // padding: 0.75rem;
     }
 
-    &_tagline {
-        font-size: 1.35rem;
-    }
 }
