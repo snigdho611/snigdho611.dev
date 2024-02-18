@@ -19,7 +19,7 @@
         align-items: center;
     }
 
-    &_tagline{
+    &_tagline {
         font-size: 4rem;
         display: flex;
         justify-content: center;
@@ -36,17 +36,19 @@
         // padding: 1.75rem;
 
         &_main {
+            clip-path: polygon(25% 0%, 0% 25%, 1% 100%, 75% 100%, 100% 75%, 100% 0%);
             height: 18rem;
-            border-radius: 50%;
+            // border-radius: 50%;
             filter: sepia(100%) saturate(300%) brightness(65%) hue-rotate(250deg);
             transition: 0.25s filter;
-            &:hover{
+
+            &:hover {
                 filter: sepia(0%) saturate(100%) brightness(100%) hue-rotate(360deg);
             }
         }
     }
 
-    &_description{
+    &_description {
         text-align: justify;
     }
 
@@ -55,11 +57,13 @@
         justify-content: center;
         align-items: center;
         font-weight: bold;
-        &_a{
+
+        &_a {
             text-decoration: none;
             color: colors.$purple3;
             transition: 0.25s color;
-            &:hover{
+
+            &:hover {
                 color: colors.$purple4;
             }
         }

@@ -2,16 +2,16 @@ import "./index.scss";
 import data from "../../data";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion"
+import { useInView } from "framer-motion";
 
 const Experience = () => {
   const [currentExp, setCurrentExp] = useState<number>(0);
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    console.log(isInView)
-  }, [isInView])
+    console.log(isInView);
+  }, [isInView]);
 
   return (
     <div className="experience" ref={ref} style={{ opacity: isInView ? 1 : 0, transition: "opacity 0.9s" }}>
@@ -23,12 +23,12 @@ const Experience = () => {
               <div
                 key={i}
                 onClick={() => {
-                  setCurrentExp(i)
+                  setCurrentExp(i);
                 }}
                 className={currentExp === i ? "experience_company_item-active" : "experience_company_item"}
               >
                 {company}
-              </div>)
+              </div>);
           })
         }
       </div>
@@ -47,7 +47,7 @@ const Experience = () => {
       </motion.div>
       {/* </AnimatePresence> */}
     </div>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;
