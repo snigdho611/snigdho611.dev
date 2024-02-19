@@ -1,20 +1,35 @@
 import "./index.scss";
 import data from "../../data";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "framer-motion";
 
 const Experience = () => {
   const [currentExp, setCurrentExp] = useState<number>(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const controls = useAnimation();
+  const variants = {
+    visible: { opacity: 1, transition: { duration: 0.5, delay: 1 } },
+    hidden: { opacity: 0 }
+  };
 
   useEffect(() => {
-    console.log(isInView);
+    // console.log(isInView);
+    if (isInView) {
+      controls.start("visible");
+    }
   }, [isInView]);
 
   return (
-    <div className="experience" ref={ref} style={{ opacity: isInView ? 1 : 0, transition: "opacity 0.9s" }}>
+    <motion.div
+      className="experience"
+      ref={ref}
+      variants={variants}
+      animate={controls}
+      initial="hidden"
+    // style={{ opacity: isInView ? 1 : 0, transition: "opacity 1.5s" }}
+    >
       <span className="experience_header">Experience</span>
       <div className="experience_company">
         {
@@ -46,7 +61,7 @@ const Experience = () => {
         {data.experience[currentExp].description}
       </motion.div>
       {/* </AnimatePresence> */}
-    </div>
+    </motion.div>
   );
 };
 
