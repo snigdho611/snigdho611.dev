@@ -10,7 +10,7 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
   const variants = {
-    visible: { opacity: 1, transition: { duration: 0.5, delay: 1 } },
+    visible: { opacity: 1, transition: { duration: 1.5 } },
     hidden: { opacity: 0 }
   };
 
@@ -19,7 +19,7 @@ const Experience = () => {
     if (isInView) {
       controls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, controls]);
 
   return (
     <motion.div
