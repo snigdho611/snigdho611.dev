@@ -10,7 +10,7 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
   const variants = {
-    visible: { opacity: 1, transition: { duration: 1.5 } },
+    visible: { opacity: 1, transition: { duration: 1.5, delay: !isInView ? 1.5 : 0 } },
     hidden: { opacity: 0 }
   };
 
@@ -52,13 +52,16 @@ const Experience = () => {
         key={currentExp}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
         // exit={{opacity: 0, y:-20}}
         // ref={scope}
         // initial={{ opacity: 0 }}
         // variants={variants} animate="show" initial="hide" 
         className="experience_display"
       >
-        {data.experience[currentExp].description}
+        {data.experience[currentExp].description.map((element) => {
+          return <span>- {element}</span>;
+        })}
       </motion.div>
       {/* </AnimatePresence> */}
     </motion.div>
