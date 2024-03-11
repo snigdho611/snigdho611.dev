@@ -48,7 +48,7 @@ const Experience = () => {
         }
       </div>
       {/* <AnimatePresence> */}
-      <motion.div
+      <motion.ol
         key={currentExp}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -60,9 +60,9 @@ const Experience = () => {
         className="experience_display"
       >
         {data.experience[currentExp].description.map((element) => {
-          return <span>- {element}</span>;
+          return <li dangerouslySetInnerHTML={{ __html: ` ${element}` }} />;
         })}
-      </motion.div>
+      </motion.ol>
       {/* </AnimatePresence> */}
     </motion.div>
   );

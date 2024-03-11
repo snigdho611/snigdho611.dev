@@ -50,10 +50,10 @@ const data = {
       timeEnd: "Present",
       url: "https://bjitgroup.com/",
       description: [
-        "Worked on an admin panel for a client project that worked with user management, product tracking and history management. Developed with React JS, Material UI, Redux Toolkit and Google Authentication",
-        "Worked in BJIT Academy as a trainer for the MERN stack. Taught a group of trainees on how to implement efficient and scalable code for projects with database connectivity and caching.",
+        "Worked on an <b> Admin Panel System </b> for a client project that worked with user management, product tracking and history management. Developed with React JS, Material UI, Redux Toolkit and Google Authentication",
         "Worked on a gaming system with microservices for a client project. Needed to work with various modules including user management, transactions, score management, payment gateways and pub/sub notification system. Developed with React JS, Node JS, Express JS, PostgreSQL, RabbitMQ and Docker.",
         "Worked with microservices for interservice functionalities between them",
+        "Worked in BJIT Academy as a <b> Trainer for Full-Stack Engineering </b>. Taught a group of trainees on how to implement efficient and scalable code for projects with database connectivity and caching. Taught and explained client side development, server side development and database maintenance with NoSQL.",
       ],
     },
     {
