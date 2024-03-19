@@ -1,11 +1,5 @@
 import "./index.scss";
 import { motion } from "framer-motion";
-import colors from "../../styles/_colors.scss";
-
-const $purple1 = "#32004E";
-const $purple2 = "#7600A1";
-const $purple3 = "#AE00CB";
-const $purple4 = "#EF94F4";
 
 const Hero = () => {
   const delay = 1;
@@ -52,15 +46,12 @@ const Hero = () => {
         transition={{ duration: duration, delay: delay }}
         className="hero_link"
       >
-        <motion.a
-          animate={{ textShadow: [`0px 0px 15px ${$purple2}`, `0px 0px 15px ${$purple4}`] }}
-          initial={{ textShadow: "0px 0px 0px #2ce083" }}
-          transition={{ delay: delay + 1, duration: 1.25, repeat: Infinity, repeatType: "reverse" }}
+        <a
           href={"https://www.github.com/snigdho611"}
           className="hero_link_a"
         >
           Check Out My Work
-        </motion.a>
+        </a>
       </motion.div>
     </motion.div>
   );
