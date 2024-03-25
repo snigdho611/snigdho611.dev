@@ -45,41 +45,61 @@ const data = {
     {
       id: 1,
       company: "BJIT",
-      title: "Software Engineer",
+      title: "Software Engineer (Web)",
       timeStart: "Mar 2022",
-      timeEnd: "Present",
+      timeEnd: null,
       url: "https://bjitgroup.com/",
-      description: [
-        "Worked on an admin panel for a client project that worked with user management, product tracking and history management. Developed with React JS, Material UI, Redux Toolkit and Google Authentication",
-        "Worked in BJIT Academy as a trainer for the MERN stack. Taught a group of trainees on how to implement efficient and scalable code for projects with database connectivity and caching.",
-        "Worked on a gaming system with microservices for a client project. Needed to work with various modules including user management, transactions, score management, payment gateways and pub/sub notification system. Developed with React JS, Node JS, Express JS, PostgreSQL, RabbitMQ and Docker.",
-        "Worked with microservices for interservice functionalities between them",
-      ],
+      projects: [
+        {
+          title: "Administrative Panel",
+          description: "The project focused on user management and notification management for another product or service of the same client.",
+          stack: ["React JS", "TypeScript", "Material UI", "Redux Toolkit", "RTK Query", "Google Auth"],
+          role : "Front End Developer"
+        },
+        {
+          title: "Product Management Panel",
+          description: "The project focused on device management, transaction management, history management and notification management for certain services and functionality of the client.",
+          stack: ["React JS", "TypeScript", "Material UI", "Redux Toolkit"],
+          role: "Front End Developer"
+        },
+        {
+          title: "Online Gaming System" ,
+          description: "Needed to work with various modules including user management, transactions, score management, payment gateways and pub/sub notification system. The enter system was a group of microservices that were interconnected to one another",
+          stack: ["React JS", "TypeScript", "Node JS", "Express JS", "PostgreSQL", "RabbitMQ", "Docker"],
+          role: "Full Stack Developer",
+        },
+      ]
     },
     {
       id: 2,
       company: "Sohopathi",
-      title: "Frontend Software Engineer",
+      title: "Software Engineer (Full Stack)",
       timeStart: "Sep 2021",
       timeEnd: "Mar 2022",
       url: "https://sohopathi.io/",
-      description: [
-        "Created maintainable UI with React JS and CSS for frontend development",
-        "Wrote scripts for mongoose for proper complex querying and manipulation of data",
-        "Created API with Node JS, Express JS and MongoDB",
-      ],
+      projects: [
+        {
+          title: "E-learning Platform",
+          description: "Created maintainable UI for the company web application with various designs and functionality, including payment gateway. Additionally, also created robust REST API in order to allow users to complete transactions with the web and the mobile applications.",
+          stack: ["React JS", "TypeScript", "SCSS", "Node JS", "Express JS", "MongoDB",],
+          role : "Full Stack Developer"
+        },
+      ]
     },
     {
       id: 3,
       company: "Deepchainlabs",
-      title: "Software Engineer",
+      title: "Software Engineer Intern",
       timeStart: "Jul 2021",
       timeEnd: "Sep 2022",
       url: "https://www.deepchainlabs.com/",
-      description: [
-        "Maintained documentation for client projects",
-        "Created system diagrams for client project",
-        "Worked on client project with Laravel and MySQL",
+      projects: [
+        {
+          title: "E-learning Platform",
+          description: "Created maintainable UI for the company web application with various designs and functionality, including payment gateway. Additionally, also created robust REST API in order to allow users to complete transactions with the web and the mobile applications.",
+          stack: ["React JS", "TypeScript", "SCSS", "Node JS", "Express JS", "MongoDB"],
+          role : "Full Stack Developer"
+        },
       ],
     },
   ],
