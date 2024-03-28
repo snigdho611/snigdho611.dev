@@ -46,8 +46,10 @@
             transition: color 0.25s, margin-top 0.15s;
 
             &:hover {
-                color: #ecfdf5;
+                color: colors.$white;
                 margin-top: -0.25rem;
+                // color: colors.$purple3;
+                text-shadow: 0px 0px 5px colors.$purple4;
             }
         }
     }

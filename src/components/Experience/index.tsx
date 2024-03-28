@@ -59,8 +59,44 @@ const Experience = () => {
         // variants={variants} animate="show" initial="hide" 
         className="experience_display"
       >
-        {data.experience[currentExp].description.map((element) => {
-          return <li dangerouslySetInnerHTML={{ __html: ` ${element}` }} />;
+        {data.experience[currentExp].projects.map((element, i) => {
+          return (
+            <motion.div
+              key={i}
+              className="experience_display_card"
+              // variants={expCardVariants}
+              initial="hidden"
+              // animate="visible"
+              whileHover="visible"
+            >
+              <motion.span className="experience_display_card_title">{element.title}</motion.span>
+              <motion.span className="experience_display_card_description">{element.description}</motion.span>
+              <motion.span
+                variants={{
+                  visible: { opacity: 1, x: 0, },
+                  hidden: {
+                    opacity: 0, x: "-50%"
+                  }
+                }}
+                transition={{ duration: 0.5 }}
+                className="experience_display_card_role"
+              >
+                {element.role}
+              </motion.span>
+              <motion.span
+                variants={{
+                  visible: { opacity: 1, x: 0 },
+                  hidden: {
+                    opacity: 0, x: "50%"
+                  }
+                }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="experience_display_card_stack"
+              >
+                {element.stack.map((tech) => (<span>{tech}</span>))}
+              </motion.span>
+            </motion.div>
+          );
         })}
       </motion.ol>
       {/* </AnimatePresence> */}
