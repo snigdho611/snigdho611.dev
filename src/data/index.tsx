@@ -56,6 +56,9 @@ const data = {
         "Worked on the front end for a Product Management Platform for a client. Modules such as product management, transaction management, history management and translations were implemented.",
         "Worked with AWS for estimation for the DevOps configuration of a recruitment system."
       ],
+      stack: [
+        "React JS", "TypeScript", "Material UI", "Redux Toolkit", "Node JS", "Express JS", "PostgreSQL", "Python", "RabbitMQ", "Docker",
+      ],
       projects: [
         {
           title: "Administrative Panel",
@@ -84,6 +87,7 @@ const data = {
       timeStart: "Sep 2021",
       timeEnd: "Mar 2022",
       url: "https://sohopathi.io/",
+      stack: ["React JS", "TypeScript", "SCSS", "Node JS", "Express JS", "MongoDB",],
       works: [
         "Created E-Learning Platform for the company web application with various designs and functionality, including payment gateway. Additionally, also created robust REST API in order to allow users to complete transactions with the web and the mobile applications."
       ],

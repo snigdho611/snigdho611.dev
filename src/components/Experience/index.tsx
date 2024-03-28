@@ -28,7 +28,6 @@ const Experience = () => {
       variants={variants}
       animate={controls}
       initial="hidden"
-    // style={{ opacity: isInView ? 1 : 0, transition: "opacity 1.5s" }}
     >
       <span className="experience_header">Experience</span>
       <div className="experience_company">
@@ -42,29 +41,28 @@ const Experience = () => {
                 }}
                 className={currentExp === i ? "experience_company_item-active" : "experience_company_item"}
               >
-                {company} - {timeStart} - {timeEnd ?? "Present"}
+                {company}{" "}-<span className="experience_company_item_date">&nbsp; {timeStart} - {timeEnd ?? "Present"}</span>
               </div>);
           })
         }
       </div>
-      {/* <AnimatePresence> */}
       <motion.div
         key={currentExp}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        // exit={{opacity: 0, y:-20}}
-        // ref={scope}
-        // initial={{ opacity: 0 }}
-        // variants={variants} animate="show" initial="hide" 
         className="experience_display"
       >
-        <ul>
+        <ul className="experience_display_list">
           {data.experience[currentExp].works?.map((element) => {
             return <li>{element}</li>;
           })}
-
         </ul>
+        <div className="experience_display_stacks">
+          {data.experience[currentExp].stack?.map((element) => {
+            return <span className="experience_display_stacks_stack">{element}</span>;
+          })}
+        </div>
         {/* {data.experience[currentExp].projects.map((element, i) => {
           return (
             <motion.div
@@ -105,7 +103,6 @@ const Experience = () => {
           );
         })} */}
       </motion.div>
-      {/* </AnimatePresence> */}
     </motion.div>
   );
 };
