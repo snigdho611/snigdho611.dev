@@ -1,0 +1,11 @@
+@use "../../styles/colors";
+
+.projects {
+    &_header {
+        grid-column: span 2;
+        color: colors.$purple3;
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+}

@@ -21,7 +21,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
 
     &_image {
@@ -35,7 +34,7 @@
             height: 18rem;
             filter: sepia(100%) saturate(300%) brightness(65%) hue-rotate(250deg);
             transition: 0.25s filter;
-            
+
             &:hover {
                 filter: sepia(0%) saturate(100%) brightness(100%) hue-rotate(360deg);
             }
@@ -66,11 +65,12 @@
 }
 
 @keyframes glowingLink {
-    0%, 100%{
+    0%,
+    100% {
         // color: blue;
         text-shadow: 0px 0px 15px colors.$purple2;
     }
-    50%{
+    50% {
         // color: white;
         text-shadow: 0px 0px 15px colors.$purple4;
     }

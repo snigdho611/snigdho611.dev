@@ -49,6 +49,7 @@ const Hero = () => {
         <a
           href={"https://www.github.com/snigdho611"}
           className="hero_link_a"
+          target="_blank"
         >
           Check Out My Work
         </a>

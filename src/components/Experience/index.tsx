@@ -13,6 +13,7 @@ const Experience = () => {
     visible: { opacity: 1, transition: { duration: 1.5, delay: !isInView ? 1.5 : 0 } },
     hidden: { opacity: 0 }
   };
+  const textEffect = { duration: 0.25, delay: 0.4 }
 
   useEffect(() => {
     // console.log(isInView);
@@ -47,16 +48,11 @@ const Experience = () => {
           })
         }
       </div>
-      {/* <AnimatePresence> */}
       <motion.div
         key={currentExp}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        // exit={{opacity: 0, y:-20}}
-        // ref={scope}
-        // initial={{ opacity: 0 }}
-        // variants={variants} animate="show" initial="hide" 
         className="experience_display"
       >
         {data.experience[currentExp].projects.map((element, i) => {
@@ -64,21 +60,28 @@ const Experience = () => {
             <motion.div
               key={i}
               className="experience_display_card"
-              // variants={expCardVariants}
               initial="hidden"
-              // animate="visible"
               whileHover="visible"
             >
               <motion.span className="experience_display_card_title">{element.title}</motion.span>
-              <motion.span className="experience_display_card_description">{element.description}</motion.span>
+              <motion.span
+                className="experience_display_card_description"
+                variants={{
+                  visible: { opacity: 1, x: 0, },
+                  hidden: {
+                    opacity: 0.7
+                  }
+                }}
+                transition={{ duration: textEffect.duration }}
+              >{element.description}</motion.span>
               <motion.span
                 variants={{
                   visible: { opacity: 1, x: 0, },
                   hidden: {
-                    opacity: 0, x: "-50%"
+                    opacity: 0.7
                   }
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: textEffect.duration, delay: textEffect.delay }}
                 className="experience_display_card_role"
               >
                 {element.role}
@@ -87,10 +90,10 @@ const Experience = () => {
                 variants={{
                   visible: { opacity: 1, x: 0 },
                   hidden: {
-                    opacity: 0, x: "50%"
+                    opacity: 0.5
                   }
                 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+                transition={{ duration: textEffect.duration, delay: textEffect.delay * 2 }}
                 className="experience_display_card_stack"
               >
                 {element.stack.map((tech) => (<span>{tech}</span>))}
@@ -99,7 +102,6 @@ const Experience = () => {
           )
         })}
       </motion.div>
-      {/* </AnimatePresence> */}
     </motion.div>
   );
 };

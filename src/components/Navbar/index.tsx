@@ -38,11 +38,11 @@ const Navbar: React.FC = (
   // const contactScroll = () => contactRef.current.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <motion.div 
-      className="navbar" 
-      animate={{translateY: "0px", opacity: 1}}
-      initial={{translateY: "-200px", opacity: 0}}
-      transition={{duration: 1}}
+    <motion.div
+      className="navbar"
+      animate={{ translateY: "0px", opacity: 1 }}
+      initial={{ translateY: "-200px", opacity: 0 }}
+      transition={{ duration: 1 }}
     >
       <div className="navbar_left">
         <motion.img

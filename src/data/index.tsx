@@ -54,7 +54,7 @@ const data = {
           title: "Administrative Panel",
           description: "The project focused on user management and notification management for another product or service of the same client.",
           stack: ["React JS", "TypeScript", "Material UI", "Redux Toolkit", "RTK Query", "Google Auth"],
-          role : "Front End Developer"
+          role: "Front End Developer"
         },
         {
           title: "Product Management Panel",
@@ -63,8 +63,8 @@ const data = {
           role: "Front End Developer"
         },
         {
-          title: "Online Gaming System" ,
-          description: "Needed to work with various modules including user management, transactions, score management, payment gateways and pub/sub notification system. The enter system was a group of microservices that were interconnected to one another",
+          title: "Online Gaming System",
+          description: "Needed to work with various modules including user management, transactions, score management, payment gateways and pub/sub notification system. The entire system was a group of microservices that were interconnected to one another",
           stack: ["React JS", "TypeScript", "Node JS", "Express JS", "PostgreSQL", "RabbitMQ", "Docker"],
           role: "Full Stack Developer",
         },
@@ -82,7 +82,7 @@ const data = {
           title: "E-learning Platform",
           description: "Created maintainable UI for the company web application with various designs and functionality, including payment gateway. Additionally, also created robust REST API in order to allow users to complete transactions with the web and the mobile applications.",
           stack: ["React JS", "TypeScript", "SCSS", "Node JS", "Express JS", "MongoDB",],
-          role : "Full Stack Developer"
+          role: "Full Stack Developer"
         },
       ]
     },
@@ -95,10 +95,10 @@ const data = {
       url: "https://www.deepchainlabs.com/",
       projects: [
         {
-          title: "E-learning Platform",
-          description: "Created maintainable UI for the company web application with various designs and functionality, including payment gateway. Additionally, also created robust REST API in order to allow users to complete transactions with the web and the mobile applications.",
-          stack: ["React JS", "TypeScript", "SCSS", "Node JS", "Express JS", "MongoDB"],
-          role : "Full Stack Developer"
+          title: "Online Medical Platform",
+          description: "Maintained modules that worked with user, client, transactions and sessions for the system. Wrote API as per requirement for proper integration with UI.",
+          stack: ["Laravel", "MySQL"],
+          role: "Software Engineer Intern"
         },
       ],
     },
