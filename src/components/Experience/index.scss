@@ -43,38 +43,39 @@
     }
 
     &_display {
-        grid-row: span 2;
-        display: grid;
-        grid-template-columns: auto auto;
-        &_card{
-            display: grid;
-            grid-template-columns: auto;
-            // grid-template-rows:  repeat(4, auto);
-            grid-template-rows:  1rem 6.5rem 1.5rem 3rem;
-            row-gap: 20px;
-            width: 70%;
-            margin: 0 auto;
-            padding: 0.25rem 0.5rem;
+        font-size: 0.85rem;
+        // grid-row: span 2;
+        // display: grid;
+        // grid-template-columns: auto auto;
+        // &_card{
+        //     display: grid;
+        //     grid-template-columns: auto;
+        //     // grid-template-rows:  repeat(4, auto);
+        //     grid-template-rows:  1rem 6.5rem 1.5rem 3rem;
+        //     row-gap: 20px;
+        //     width: 70%;
+        //     margin: 0 auto;
+        //     padding: 0.25rem 0.5rem;
 
-            &_title{
-                font-weight: bold;
-            }
-            
-            &_role{
-                font-size: 0.85rem;
-            }   
+        //     &_title{
+        //         font-weight: bold;
+        //     }
 
-            &_description{
-                font-size: 0.85rem;
-            }
+        //     &_role{
+        //         font-size: 0.85rem;
+        //     }   
 
-            &_stack{
-                font-size: 0.7rem;
-                display: grid;
-                grid-template-columns: repeat(4, auto);
-                grid-template-rows: repeat(8, auto);
-            }
-        }
+        //     &_description{
+        //         font-size: 0.85rem;
+        //     }
+
+        //     &_stack{
+        //         font-size: 0.7rem;
+        //         display: grid;
+        //         grid-template-columns: repeat(4, auto);
+        //         grid-template-rows: repeat(8, auto);
+        //     }
+        // }
         // display: flex;
         // flex-direction: column;
         // padding: 1.25rem;

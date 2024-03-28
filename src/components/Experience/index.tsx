@@ -33,7 +33,7 @@ const Experience = () => {
       <span className="experience_header">Experience</span>
       <div className="experience_company">
         {
-          data.experience.map(({ company }, i) => {
+          data.experience.map(({ company, timeStart, timeEnd }, i) => {
             return (
               <div
                 key={i}
@@ -42,13 +42,13 @@ const Experience = () => {
                 }}
                 className={currentExp === i ? "experience_company_item-active" : "experience_company_item"}
               >
-                {company}
+                {company} - {timeStart} - {timeEnd ?? "Present"}
               </div>);
           })
         }
       </div>
       {/* <AnimatePresence> */}
-      <motion.ol
+      <motion.div
         key={currentExp}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,13 @@ const Experience = () => {
         // variants={variants} animate="show" initial="hide" 
         className="experience_display"
       >
-        {data.experience[currentExp].projects.map((element, i) => {
+        <ul>
+          {data.experience[currentExp].works?.map((element) => {
+            return <li>{element}</li>;
+          })}
+
+        </ul>
+        {/* {data.experience[currentExp].projects.map((element, i) => {
           return (
             <motion.div
               key={i}
@@ -97,8 +103,8 @@ const Experience = () => {
               </motion.span>
             </motion.div>
           );
-        })}
-      </motion.ol>
+        })} */}
+      </motion.div>
       {/* </AnimatePresence> */}
     </motion.div>
   );
