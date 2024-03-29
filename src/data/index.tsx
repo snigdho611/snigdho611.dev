@@ -89,7 +89,8 @@ const data = {
       url: "https://sohopathi.io/",
       stack: ["React JS", "TypeScript", "SCSS", "Node JS", "Express JS", "MongoDB",],
       works: [
-        "Created E-Learning Platform for the company web application with various designs and functionality, including payment gateway. Additionally, also created robust REST API in order to allow users to complete transactions with the web and the mobile applications."
+        "Created E-Learning Platform for the company web application with various designs and functionality, including payment gateway.",
+        "Created robust REST API in order to allow users to complete transactions with the web and the mobile applications."
       ],
       projects: [
         {
@@ -107,6 +108,8 @@ const data = {
       timeStart: "Jul 2021",
       timeEnd: "Sep 2022",
       url: "https://www.deepchainlabs.com/",
+      stack: ["Laravel", "MySQL"],
+      works: ["Worked on an Online Medical Platform. Maintained modules that worked with user, client, transactions and sessions for the system. Wrote API as per requirement for proper integration with UI."],
       projects: [
         {
           title: "Online Medical Platform",
