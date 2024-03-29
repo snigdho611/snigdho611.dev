@@ -29,12 +29,11 @@ const Experience = () => {
       variants={variants}
       animate={controls}
       initial="hidden"
-    // style={{ opacity: isInView ? 1 : 0, transition: "opacity 1.5s" }}
     >
       <span className="experience_header">Experience</span>
       <div className="experience_company">
         {
-          data.experience.map(({ company }, i) => {
+          data.experience.map(({ company, timeStart, timeEnd }, i) => {
             return (
               <div
                 key={i}
@@ -43,7 +42,7 @@ const Experience = () => {
                 }}
                 className={currentExp === i ? "experience_company_item-active" : "experience_company_item"}
               >
-                {company}
+                {company}{" "}-<span className="experience_company_item_date">&nbsp; {timeStart} - {timeEnd ?? "Present"}</span>
               </div>);
           })
         }
@@ -55,7 +54,17 @@ const Experience = () => {
         transition={{ duration: 0.5 }}
         className="experience_display"
       >
-        {data.experience[currentExp].projects.map((element, i) => {
+        <ul className="experience_display_list">
+          {data.experience[currentExp].works?.map((element) => {
+            return <li>{element}</li>;
+          })}
+        </ul>
+        <div className="experience_display_stacks">
+          {data.experience[currentExp].stack?.map((element) => {
+            return <span className="experience_display_stacks_stack">{element}</span>;
+          })}
+        </div>
+        {/* {data.experience[currentExp].projects.map((element, i) => {
           return (
             <motion.div
               key={i}
@@ -99,8 +108,8 @@ const Experience = () => {
                 {element.stack.map((tech) => (<span>{tech}</span>))}
               </motion.span>
             </motion.div>
-          )
-        })}
+          );
+        })} */}
       </motion.div>
     </motion.div>
   );

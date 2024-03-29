@@ -49,6 +49,16 @@ const data = {
       timeStart: "Mar 2022",
       timeEnd: null,
       url: "https://bjitgroup.com/",
+      works: [
+        "Worked on the front end and server side for an Online Gaming System. Worked with various modules including user management, transactions, score management, payment gateways and pub/sub notification system. The enter system was a group of microservices that were interconnected to one another.",
+        "Worked on the front end for an Administrative Panel for a client, focusing on modules such as user management, notification management and device management for a separate service of the same client.",
+        "Provided training to new recruits for the MERN Stack as an Instructor. Taught how to implement REST API with optimized database queries and service-repository REST API architecture.",
+        "Worked on the front end for a Product Management Platform for a client. Modules such as product management, transaction management, history management and translations were implemented.",
+        "Worked with AWS for estimation for the DevOps configuration of a recruitment system."
+      ],
+      stack: [
+        "React JS", "TypeScript", "Material UI", "Redux Toolkit", "Node JS", "Express JS", "PostgreSQL", "Python", "RabbitMQ", "Docker",
+      ],
       projects: [
         {
           title: "Administrative Panel",
@@ -64,7 +74,7 @@ const data = {
         },
         {
           title: "Online Gaming System",
-          description: "Needed to work with various modules including user management, transactions, score management, payment gateways and pub/sub notification system. The entire system was a group of microservices that were interconnected to one another",
+          description: "Needed to work with various modules including user management, transactions, score management, payment gateways and pub/sub notification system. The enter system was a group of microservices that were interconnected to one another",
           stack: ["React JS", "TypeScript", "Node JS", "Express JS", "PostgreSQL", "RabbitMQ", "Docker"],
           role: "Full Stack Developer",
         },
@@ -77,6 +87,10 @@ const data = {
       timeStart: "Sep 2021",
       timeEnd: "Mar 2022",
       url: "https://sohopathi.io/",
+      stack: ["React JS", "TypeScript", "SCSS", "Node JS", "Express JS", "MongoDB",],
+      works: [
+        "Created E-Learning Platform for the company web application with various designs and functionality, including payment gateway. Additionally, also created robust REST API in order to allow users to complete transactions with the web and the mobile applications."
+      ],
       projects: [
         {
           title: "E-learning Platform",
