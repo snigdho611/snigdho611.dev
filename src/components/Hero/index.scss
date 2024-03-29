@@ -32,11 +32,11 @@
         &_main {
             clip-path: polygon(25% 0%, 0% 25%, 1% 100%, 75% 100%, 100% 75%, 100% 0%);
             height: 18rem;
-            filter: sepia(100%) saturate(300%) brightness(65%) hue-rotate(250deg);
+            // filter: sepia(100%) saturate(300%) brightness(65%) hue-rotate(250deg);
             transition: 0.25s filter;
 
             &:hover {
-                filter: sepia(0%) saturate(100%) brightness(100%) hue-rotate(360deg);
+                // filter: sepia(0%) saturate(100%) brightness(100%) hue-rotate(360deg);
             }
         }
     }

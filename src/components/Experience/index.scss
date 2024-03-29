@@ -18,7 +18,6 @@
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
-        // text-decoration: underline;
 
         &_item {
             padding: 0.35rem 0.5rem;
@@ -42,7 +41,6 @@
 
             &:hover {
                 color: colors.$purple3;
-                // text-shadow: 0px 0px 5px colors.$purple4;
             }
         }
     }
@@ -51,8 +49,16 @@
         font-size: 0.85rem;
 
         &_list {
-            list-style-type: square;
-            list-style: circle;
+            // list-style-type: square;
+            // list-style: circle;
+            display: grid;
+            grid-template-columns: 2.5% 97.5%;
+            // flex-direction: column;
+            // gap: 0.35rem;
+            margin: 0 0 2rem 0;
+            // list-style-position: outside;
+            width: 90%;
+            // padding-left: -0.5rem;
         }
 
         &_stacks {
@@ -60,59 +66,24 @@
             grid-template-columns: repeat(5, 7rem);
             column-gap: 0.75rem;
             row-gap: 0.5rem;
-            justify-content: center;
+            // justify-content: center;
 
             &_stack {
-                color: colors.$purple4;
+                color: colors.$purple5;
                 background-color: colors.$purple1;
                 border-radius: 0.25rem;
                 padding: 0 0.5rem;
-                border: 1px solid colors.$purple2;
+                border: 1px solid colors.$purple3;
                 text-align: center;
                 transition: 0.2s color, 0.2s background-color;
+                font-size: 0.75rem;
 
                 &:hover {
                     color: colors.$purple5;
                     background-color: colors.$purple2;
-                    cursor: pointer;
+                    cursor: default;
                 }
             }
         }
-
-        // grid-row: span 2;
-        // display: grid;
-        // grid-template-columns: auto auto;
-        // &_card{
-        //     display: grid;
-        //     grid-template-columns: auto;
-        //     // grid-template-rows:  repeat(4, auto);
-        //     grid-template-rows:  1rem 6.5rem 1.5rem 3rem;
-        //     row-gap: 20px;
-        //     width: 70%;
-        //     margin: 0 auto;
-        //     padding: 0.25rem 0.5rem;
-
-        //     &_title{
-        //         font-weight: bold;
-        //     }
-
-        //     &_role{
-        //         font-size: 0.85rem;
-        //     }
-
-        //     &_description{
-        //         font-size: 0.85rem;
-        //     }
-
-        //     &_stack{
-        //         font-size: 0.7rem;
-        //         display: grid;
-        //         grid-template-columns: repeat(4, auto);
-        //         grid-template-rows: repeat(8, auto);
-        //     }
-        // }
-        // display: flex;
-        // flex-direction: column;
-        // padding: 1.25rem;
     }
 }

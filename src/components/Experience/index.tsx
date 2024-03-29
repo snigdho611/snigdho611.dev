@@ -16,7 +16,6 @@ const Experience = () => {
   const textEffect = { duration: 0.25, delay: 0.4 }
 
   useEffect(() => {
-    // console.log(isInView);
     if (isInView) {
       controls.start("visible");
     }
@@ -54,62 +53,16 @@ const Experience = () => {
         transition={{ duration: 0.5 }}
         className="experience_display"
       >
-        <ul className="experience_display_list">
+        <div className="experience_display_list">
           {data.experience[currentExp].works?.map((element) => {
-            return <li>{element}</li>;
+            return <><span>➣</span><span>{element}</span></>;
           })}
-        </ul>
+        </div>
         <div className="experience_display_stacks">
           {data.experience[currentExp].stack?.map((element) => {
             return <span className="experience_display_stacks_stack">{element}</span>;
           })}
         </div>
-        {/* {data.experience[currentExp].projects.map((element, i) => {
-          return (
-            <motion.div
-              key={i}
-              className="experience_display_card"
-              initial="hidden"
-              whileHover="visible"
-            >
-              <motion.span className="experience_display_card_title">{element.title}</motion.span>
-              <motion.span
-                className="experience_display_card_description"
-                variants={{
-                  visible: { opacity: 1, x: 0, },
-                  hidden: {
-                    opacity: 0.7
-                  }
-                }}
-                transition={{ duration: textEffect.duration }}
-              >{element.description}</motion.span>
-              <motion.span
-                variants={{
-                  visible: { opacity: 1, x: 0, },
-                  hidden: {
-                    opacity: 0.7
-                  }
-                }}
-                transition={{ duration: textEffect.duration, delay: textEffect.delay }}
-                className="experience_display_card_role"
-              >
-                {element.role}
-              </motion.span>
-              <motion.span
-                variants={{
-                  visible: { opacity: 1, x: 0 },
-                  hidden: {
-                    opacity: 0.5
-                  }
-                }}
-                transition={{ duration: textEffect.duration, delay: textEffect.delay * 2 }}
-                className="experience_display_card_stack"
-              >
-                {element.stack.map((tech) => (<span>{tech}</span>))}
-              </motion.span>
-            </motion.div>
-          );
-        })} */}
       </motion.div>
     </motion.div>
   );

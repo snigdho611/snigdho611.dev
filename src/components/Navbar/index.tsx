@@ -2,14 +2,6 @@ import React from "react";
 import "./index.scss";
 import { motion } from "framer-motion";
 
-// interface NavbarProps {
-//   heroRef: MutableRefObject<any>;
-//   aboutRef: MutableRefObject<any>;
-//   expRef: MutableRefObject<any>;
-//   projectsRef: MutableRefObject<any>;
-//   contactRef: MutableRefObject<any>;
-// }
-
 const navLinks = [
   {
     title: "Home"
