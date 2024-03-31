@@ -17,6 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* <div className="blob" ref={cursorRef}></div> */}
+      {/* <div className="radial-shade"></div> */}
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>

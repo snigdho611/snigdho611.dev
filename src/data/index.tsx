@@ -5,7 +5,7 @@ const data = {
       title: "Smart Inventory System",
       description:
         "A web application that uses Data Mining to suggest inventory items to the user for better sales and predictive analysis.",
-      stacks: ["React JS", "CSS", "SQL", "Python", "Django"],
+      stack: ["React JS", "CSS", "SQL", "Python", "Django"],
       url: "https://github.com/snigdho611/smart-inventory-using-data-mining",
     },
     {
@@ -13,7 +13,7 @@ const data = {
       title: "Industryal",
       description:
         "A fullstack ERP system that can handle the entirety of factory management process, from raw materials to finished products.",
-      stacks: ["React JS", "CSS", "Laravel", "SQL"],
+      stack: ["React JS", "CSS", "Laravel", "SQL"],
       url: "https://github.com/fffffatah/Industryal-An-ERP-System",
     },
     {
@@ -21,7 +21,7 @@ const data = {
       title: "e-Bookshelf",
       description:
         "A simple social media website for bookworms who want to share all their opinions and reviews of books.",
-      stacks: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
+      stack: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
       url: "https://github.com/Atanusaha143/eBookshelf---a-Book-Cataloging-Social-Platform",
     },
     {
@@ -29,7 +29,7 @@ const data = {
       title: "Hospital Management System",
       description:
         "A desktop application that lets the user keep track of patients and employees in a hospital according to different categories.",
-      stacks: ["C# (.NET)", "Oracle SQL"],
+      stack: ["C# (.NET)", "Oracle SQL"],
       url: "https://github.com/snigdho611/hospital-management-system",
     },
     {
@@ -37,9 +37,16 @@ const data = {
       title: "MERN Super Store",
       description:
         "A simple superstore project. Originally done with React JS, Express and MongoDB. Now updated the project with things like SCSS, TypeScript and a cloud database instance for data storage.",
-      stacks: ["MongoDB", "React JS", "Node JS", "Express JS", "SCSS", "TypeScript"],
+      stack: ["MongoDB", "React JS", "Node JS", "Express JS", "SCSS", "TypeScript"],
       url: "https://github.com/snigdho611/mern-superstore",
     },
+    {
+      id: 6,
+      title: "Custom Date Picker",
+      description: "A simple datepicker that can take in customized inputs depending on the parameters provided.",
+      stack: ["MongoDB", "React JS", "Node JS", "Express JS", "SCSS", "TypeScript"],
+      hosted: 'https://react-drums.vercel.app'
+    }
   ],
   experience: [
     {
@@ -50,11 +57,10 @@ const data = {
       timeEnd: null,
       url: "https://bjitgroup.com/",
       works: [
-        "Worked on the front end and server side for an Online Gaming System. Worked with various modules including user management, transactions, score management, payment gateways and pub/sub notification system. The enter system was a group of microservices that were interconnected to one another.",
+        "Worked on the front end and server side for an Online Gaming System. Worked with various modules including user management, transactions, score management, payment gateways and pub/sub notification system.",
         "Worked on the front end for an Administrative Panel for a client, focusing on modules such as user management, notification management and device management for a separate service of the same client.",
         "Provided training to new recruits for the MERN Stack as an Instructor. Taught how to implement REST API with optimized database queries and service-repository REST API architecture.",
-        "Worked on the front end for a Product Management Platform for a client. Modules such as product management, transaction management, history management and translations were implemented.",
-        "Worked with AWS for estimation for the DevOps configuration of a recruitment system."
+        "Worked on the front end for a Product Management Platform for a client. Modules such as product management, transaction management, history management and translations were implemented."
       ],
       stack: [
         "React JS", "TypeScript", "Material UI", "Redux Toolkit", "Node JS", "Express JS", "PostgreSQL", "Python", "RabbitMQ", "Docker",

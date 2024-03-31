@@ -65,13 +65,36 @@
 }
 
 @keyframes glowingLink {
+
     0%,
     100% {
         // color: blue;
         text-shadow: 0px 0px 15px colors.$purple2;
     }
+
     50% {
         // color: white;
         text-shadow: 0px 0px 15px colors.$purple4;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hero {
+
+        grid-template-columns: 100%;
+
+        &_name {
+            font-size: 1.5rem;
+        }
+
+        &_tagline {
+            font-size: 2rem;
+        }
+
+        &_image {
+            // grid-row: span 1;
+            display: none;
+
+        }
     }
 }
