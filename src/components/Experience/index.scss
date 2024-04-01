@@ -1,0 +1,122 @@
+@use "../../styles/colors";
+
+.experience {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: auto auto;
+    row-gap: 1.25rem;
+
+    &_header {
+        grid-column: span 2;
+        color: colors.$purple3;
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &_company {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        &_item {
+            padding: 0.35rem 0.5rem;
+            cursor: pointer;
+            font-size: 1.15rem;
+            font-weight: 400;
+            transition: 0.25s color, 0.25s text-shadow;
+            display: flex;
+
+            &_date {
+                font-size: 0.8rem;
+                color: colors.$slate-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center
+            }
+
+            &-active {
+                @extend .experience_company_item;
+                color: colors.$purple3;
+                border-left: 5px solid colors.$purple3;
+            }
+
+            &:hover {
+                color: colors.$purple3;
+            }
+        }
+    }
+
+    &_display {
+        font-size: 0.85rem;
+
+        &_list {
+            display: grid;
+            grid-template-columns: 2.5% 97.5%;
+            grid-template-columns: minmax(1rem, 2.5%) 97.5%;
+            margin: 0 0 2rem 0;
+            width: 90%;
+            row-gap: 0.5rem;
+            // align-items: center;
+            // text-align: justify;
+        }
+
+        &_stacks {
+            display: grid;
+            grid-template-columns: repeat(5, 7rem);
+            column-gap: 0.75rem;
+            row-gap: 0.5rem;
+            justify-content: center;
+
+            &_stack {
+                color: colors.$purple5;
+                background-color: colors.$purple1;
+                border-radius: 0.25rem;
+                padding: 0 0.5rem;
+                border: 1px solid colors.$purple3;
+                text-align: center;
+                transition: 0.2s color, 0.2s background-color;
+                font-size: 0.75rem;
+
+                &:hover {
+                    color: colors.$purple5;
+                    background-color: colors.$purple2;
+                    cursor: default;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .experience {
+        grid-template-columns: 100%;
+        // grid-template-rows: auto auto auto;
+
+        &_header {
+            grid-column: span 1;
+        }
+
+        &_company {
+            flex-direction: row;
+            overflow-x: scroll;
+
+            &_item {
+                &-active {
+                    border-top: 5px solid colors.$purple3;
+                    border-left: none;
+                }
+
+                &_date {
+                    display: none;
+                }
+            }
+        }
+
+        &_display {
+            &_stacks {
+                grid-template-columns: repeat(2, 7rem);
+            }
+        }
+    }
+}

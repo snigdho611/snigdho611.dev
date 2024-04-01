@@ -1,0 +1,45 @@
+@use "../../styles/colors";
+
+.contact {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    // justify-content: center;
+    align-items: center;
+
+    &_header {
+        grid-column: span 2;
+        color: colors.$purple3;
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &_tagline {
+        color: colors.$purple4;
+        text-align: center;
+    }
+
+    &_items {
+        display: flex;
+        justify-content: space-evenly;
+        width: 80%;
+
+        &_item {
+            transition: 0.25s transform;
+
+            &:hover {
+                transform: scale(1.15, 1.2);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .contact {
+        &_items {
+            width: 100%;
+        }
+    }
+}

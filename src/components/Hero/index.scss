@@ -1,0 +1,100 @@
+@use "../../styles/colors";
+
+.hero {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 70% 30%;
+    row-gap: 0.5rem;
+
+    &_name {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: colors.$purple3;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_tagline {
+        font-size: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row: span 3;
+
+        &_main {
+            clip-path: polygon(25% 0%, 0% 25%, 1% 100%, 75% 100%, 100% 75%, 100% 0%);
+            height: 18rem;
+            // filter: sepia(100%) saturate(300%) brightness(65%) hue-rotate(250deg);
+            transition: 0.25s filter;
+
+            &:hover {
+                // filter: sepia(0%) saturate(100%) brightness(100%) hue-rotate(360deg);
+            }
+        }
+    }
+
+    &_description {
+        text-align: justify;
+    }
+
+    &_link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+
+        &_a {
+            text-decoration: none;
+            color: colors.$purple3;
+            transition: 0.25s color;
+            animation: glowingLink 1.25s linear infinite reverse;
+
+            &:hover {
+                color: colors.$purple4;
+            }
+        }
+    }
+}
+
+@keyframes glowingLink {
+
+    0%,
+    100% {
+        // color: blue;
+        text-shadow: 0px 0px 15px colors.$purple2;
+    }
+
+    50% {
+        // color: white;
+        text-shadow: 0px 0px 15px colors.$purple4;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hero {
+
+        grid-template-columns: 100%;
+
+        &_name {
+            font-size: 1.5rem;
+        }
+
+        &_tagline {
+            font-size: 2rem;
+        }
+
+        &_image {
+            // grid-row: span 1;
+            display: none;
+
+        }
+    }
+}
