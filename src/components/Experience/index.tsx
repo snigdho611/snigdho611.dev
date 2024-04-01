@@ -42,7 +42,7 @@ const Experience = () => {
                 }}
                 className={currentExp === i ? "experience_company_item-active" : "experience_company_item"}
               >
-                {company}{" "}<span className="experience_company_item_date">-&nbsp; {timeStart} - {timeEnd ?? "Present"}</span>
+                {company}{" "}<span className="experience_company_item_date">&nbsp;-&nbsp; {timeStart} - {timeEnd ?? "Present"}</span>
               </div>);
           })
         }

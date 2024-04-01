@@ -26,11 +26,13 @@
             font-weight: 400;
             transition: 0.25s color, 0.25s text-shadow;
             display: flex;
-            align-items: center;
 
             &_date {
                 font-size: 0.8rem;
                 color: colors.$slate-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center
             }
 
             &-active {
@@ -55,6 +57,8 @@
             margin: 0 0 2rem 0;
             width: 90%;
             row-gap: 0.5rem;
+            // align-items: center;
+            // text-align: justify;
         }
 
         &_stacks {

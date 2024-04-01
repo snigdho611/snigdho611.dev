@@ -43,7 +43,7 @@ const Navbar: React.FC = (
             rotate: "180deg"
           }}
           src={
-            "	https://res.cloudinary.com/drnym8nne/image/upload/v1689936405/portfolio/nav/logo_pvu06n.svg"
+            "/logo.svg"
           }
           alt="Not found"
           className="navbar_left_img"
