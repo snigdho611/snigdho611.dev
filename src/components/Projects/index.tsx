@@ -12,8 +12,30 @@ const index = () => {
               <span className="projects_list_item_title">{element.title}</span>
               <span className="projects_list_item_description">{element.description}</span>
               <span className="projects_list_item_stack">{element.stack.map((stack) => (<span>{stack}</span>))}</span>
-              <span className="projects_list_item_url">Source Code: {element.url ? <a href={element.url}>here</a> : "unavailable"}</span>
-              <span className="projects_list_item_hosted">Deployment: {element.hosted ? <a href={element.hosted}>here</a> : "unavailable"}</span>
+              <span className="projects_list_item_url">
+                Source Code: {element.url ?
+                  <a
+                    className="projects_list_item_url_tag"
+                    href={element.url}
+                  >
+                    here
+                  </a> :
+                  <span style={{ opacity: "0.5" }}>
+                    unavailable
+                  </span>}
+              </span>
+              <span className="projects_list_item_hosted">
+                Deployment: {element.hosted ?
+                  <a
+                    className="projects_list_item_hosted_tag"
+                    href={element.hosted}
+                  >
+                    here
+                  </a> :
+                  <span style={{ opacity: "0.5" }}>
+                    unavailable
+                  </span>}
+              </span>
             </div>);
         })}
       </div>
