@@ -2,32 +2,30 @@ import React from "react";
 import "./index.scss";
 import { motion } from "framer-motion";
 
-const navLinks = [
-  {
-    title: "Home"
-  },
-  {
-    title: "About",
-  },
-  {
-    title: "Experience",
-  },
-  {
-    title: "Project",
-  },
-  {
-    title: "Contact",
-  }
-];
+// const navLinks = [
+//   {
+//     title: "Home",
+//     hash: "#hero"
+//   },
+//   {
+//     title: "About",
+//     hash: "#hero"
+//   },
+//   {
+//     title: "Experience",
+//     hash: "#hero"
+//   },
+//   {
+//     title: "Project",
+//     hash: "#hero"
+//   },
+//   {
+//     title: "Contact",
+//     hash: "#hero"
+//   }
+// ];
 
-const Navbar: React.FC = (
-  // { heroRef, aboutRef, expRef, projectsRef, contactRef }
-) => {
-  // const heroScroll = () => heroRef.current.scrollIntoView({ behavior: "smooth" });
-  // const aboutScroll = () => aboutRef.current.scrollIntoView({ behavior: "smooth" });
-  // const expScroll = () => expRef.current.scrollIntoView({ behavior: "smooth" });
-  // const projectsScroll = () => projectsRef.current.scrollIntoView({ behavior: "smooth" });
-  // const contactScroll = () => contactRef.current.scrollIntoView({ behavior: "smooth" });
+const Navbar: React.FC = () => {
 
   return (
     <motion.div
@@ -47,59 +45,13 @@ const Navbar: React.FC = (
           }
           alt="Not found"
           className="navbar_left_img"
+          onClick={() => {
+            // router("/");
+            window.scrollTo(0, 0);
+          }}
         />
       </div>
-      <div className="navbar_right">
-        {
-          navLinks.map((element, i) => {
-            return (
-              <motion.div
-                key={i}
-                animate={{
-                  opacity: 1
-                }}
-                initial={{ opacity: 0 }}
-                transition={{ duration: 0.05 + (i * 0.25), delay: 0.5 + (i * 0.05) }}
-                className="navbar_right_link" onClick={() => {
-                  // heroScroll()
-                }}>
-                {element.title}
-              </motion.div>
-            );
-          })
-        }
-        {/* <motion.div
-          animate={{
-            opacity: 1
-          }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 0.75 }}
-          className="navbar_right_link" onClick={() => {
-            // heroScroll()
-          }}>
-          Home
-        </motion.div>
-        <div className="navbar_right_link" onClick={() => {
-          // aboutScroll()
-        }}>
-          About
-        </div>
-        <div className="navbar_right_link" onClick={() => {
-          // expScroll()
-        }}>
-          Experience
-        </div>
-        <div className="navbar_right_link" onClick={() => {
-          // projectsScroll()
-        }}>
-          Project
-        </div>
-        <div className="navbar_right_link" onClick={() => {
-          // contactScroll()
-        }}>
-          Contact
-        </div> */}
-      </div>
+
     </motion.div>
   );
 };

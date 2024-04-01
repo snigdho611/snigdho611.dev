@@ -1,13 +1,14 @@
 import "./index.scss";
 import { motion } from "framer-motion";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const delay = 1;
   const duration = 0.85;
 
   return (
     <motion.div
       className="hero"
+      id="#hero"
     >
       <motion.span
         animate={{ opacity: 1, y: 0 }}
