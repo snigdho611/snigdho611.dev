@@ -1,14 +1,15 @@
+import { ForwardedRef, forwardRef } from "react";
 import "./index.scss";
 import { motion } from "framer-motion";
 
-const Hero: React.FC = () => {
+const Hero = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
   const delay = 1;
   const duration = 0.85;
 
   return (
     <motion.div
       className="hero"
-      id="#hero"
+      ref={ref}
     >
       <motion.span
         animate={{ opacity: 1, y: 0 }}
@@ -57,6 +58,6 @@ const Hero: React.FC = () => {
       </motion.div>
     </motion.div>
   );
-};
+});
 
 export default Hero;

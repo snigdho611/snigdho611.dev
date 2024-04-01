@@ -1,9 +1,30 @@
 import "./index.scss";
 import data from "../../data";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { ForwardedRef, RefObject, forwardRef, useEffect } from "react";
 
-const index = () => {
+const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
+  const isInView = useInView(ref as RefObject<Element>, { once: true });
+  const controls = useAnimation();
+  const variants = {
+    visible: { opacity: 1, transition: { duration: 1.5, delay: !isInView ? 1.5 : 0 } },
+    hidden: { opacity: 0 }
+  };
+  // const textEffect = { duration: 0.25, delay: 0.4 };
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
   return (
-    <div className='projects'>
+    <motion.div
+      className='projects'
+      ref={ref} variants={variants}
+      animate={controls}
+      initial="hidden"
+    >
       <span className='projects_header'>Projects</span>
       <div className="projects_list">
         {data.projects.slice(0).reverse().map((element, i) => {
@@ -39,8 +60,8 @@ const index = () => {
             </div>);
         })}
       </div>
-    </div>
+    </motion.div>
   );
-};
+});
 
-export default index;
+export default Projects;

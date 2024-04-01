@@ -1,14 +1,14 @@
 import "./index.scss";
 import data from "../../data";
-import { useEffect, useRef, useState } from "react";
+import { ForwardedRef, RefObject, forwardRef, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "framer-motion";
 import React from "react";
 
-const Experience = () => {
+const Experience = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
   const [currentExp, setCurrentExp] = useState<number>(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  // const ref = useRef(null);
+  const isInView = useInView(ref as RefObject<Element>, { once: true });
   const controls = useAnimation();
   const variants = {
     visible: { opacity: 1, transition: { duration: 1.5, delay: !isInView ? 1.5 : 0 } },
@@ -67,6 +67,6 @@ const Experience = () => {
       </motion.div>
     </motion.div>
   );
-};
+});
 
 export default Experience;
