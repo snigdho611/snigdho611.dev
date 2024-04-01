@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "framer-motion";
 import React from "react";
 
-const Experience = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
+const Experience = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
   const [currentExp, setCurrentExp] = useState<number>(0);
   // const ref = useRef(null);
   const isInView = useInView(ref as RefObject<Element>, { once: true });

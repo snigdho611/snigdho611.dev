@@ -1,7 +1,6 @@
-import React, { MutableRefObject } from "react";
+import React from "react";
 import "./index.scss";
-import { motion, useScroll } from "framer-motion";
-import { useLocation } from "react-router";
+import { motion } from "framer-motion";
 
 const navLinks = [
   {

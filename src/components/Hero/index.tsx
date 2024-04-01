@@ -2,7 +2,7 @@ import { ForwardedRef, forwardRef } from "react";
 import "./index.scss";
 import { motion } from "framer-motion";
 
-const Hero = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
+const Hero = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
   const delay = 1;
   const duration = 0.85;
 

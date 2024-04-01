@@ -3,7 +3,7 @@ import data from "../../data";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { ForwardedRef, RefObject, forwardRef, useEffect } from "react";
 
-const Contact = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
+const Contact = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
   const isInView = useInView(ref as RefObject<Element>, { once: true });
   const controls = useAnimation();
   const variants = {

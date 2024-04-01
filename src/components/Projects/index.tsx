@@ -3,14 +3,13 @@ import data from "../../data";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { ForwardedRef, RefObject, forwardRef, useEffect } from "react";
 
-const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
+const Projects = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
   const isInView = useInView(ref as RefObject<Element>, { once: true });
   const controls = useAnimation();
   const variants = {
     visible: { opacity: 1, transition: { duration: 1.5, delay: !isInView ? 1.5 : 0 } },
     hidden: { opacity: 0 }
   };
-  // const textEffect = { duration: 0.25, delay: 0.4 };
 
   useEffect(() => {
     if (isInView) {
@@ -21,7 +20,8 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
   return (
     <motion.div
       className='projects'
-      ref={ref} variants={variants}
+      ref={ref}
+      variants={variants}
       animate={controls}
       initial="hidden"
     >

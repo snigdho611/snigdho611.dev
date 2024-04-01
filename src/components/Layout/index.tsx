@@ -1,4 +1,4 @@
-import React, { MutableRefObject } from "react";
+import React from "react";
 import Navbar from "../Navbar";
 import "./index.scss";
 
