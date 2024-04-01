@@ -40,6 +40,9 @@
             &_title {
                 font-weight: bold;
                 color: colors.$purple3;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             &_description {
