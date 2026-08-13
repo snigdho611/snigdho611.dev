@@ -1,20 +1,33 @@
-$emrald-primary: #6ee7b7;
-$emrald-secondary: #059669;
-$slate-primary: #cbd5e1;
-$black-primary: #111827;
-$image-width: 17rem;
-$image-height: 17rem;
+// ---------------------------------------------------------------------------
+// Manga print palette
+// Cream newsprint stock, black ink linework, shonen cover spot-colours.
+// ---------------------------------------------------------------------------
 
-// $purple1: #32004e;
-// $purple2: #7600a1;
-// $purple3: #ae00cb;
-// $purple4: #ef94f4;
-// $purple5: #fee1ff;
-$purple0: #161023;
-$purple1: #2e1065;
-$purple2: #5b21b6;
-$purple3: #7c3aed;
-$purple4: #a78bfa;
-$purple5: #ddd6fe;
+// Ink
+$ink: #14110f;
+$ink-soft: #38312b;
+$ink-faint: #6f665c;
+$ink-ghost: #a99f93;
 
-$white: #e1e1e1;
+// Paper stock
+$paper: #f2ece0;
+$paper-white: #fbf8f0;
+$paper-warm: #e8dfcd;
+$paper-shadow: #d5c9b1;
+
+// Spot colours
+$vermillion: #e8402a;
+$vermillion-deep: #b32a18;
+$vermillion-pale: #f9cfc7;
+
+$cyan: #2a9df4;
+$cyan-deep: #1367ad;
+$cyan-pale: #cbe5fc;
+
+$sunburst: #ffc93c;
+$sunburst-deep: #d99b00;
+$sunburst-pale: #ffeab3;
+
+// Typography stacks
+$font-sfx: "Bangers", "Impact", sans-serif;
+$font-body: "Zen Kaku Gothic New", "Montserrat", system-ui, sans-serif;

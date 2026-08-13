@@ -1,51 +1,56 @@
 import "./index.scss";
 import data from "../../data";
-import { motion, useAnimation, useInView } from "framer-motion";
-import { ForwardedRef, RefObject, forwardRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import { ForwardedRef, forwardRef } from "react";
+import { balloon, inViewOnce, page, panel } from "../../utils/motion";
 
 const Contact = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
-  const isInView = useInView(ref as RefObject<Element>, { once: true });
-  const controls = useAnimation();
-  const variants = {
-    visible: { opacity: 1, transition: { duration: 1.5, delay: !isInView ? 1.5 : 0 } },
-    hidden: { opacity: 0 }
-  };
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
-  }, [isInView, controls]);
-
   return (
-    <motion.div
+    <motion.section
       className="contact"
       ref={ref}
-      // animate={{ translateY: "0px", opacity: 1 }}
-      // initial={{ translateY: "-200px", opacity: 0 }}
-      // transition={{ duration: 1 }}
-      variants={variants}
-      animate={controls}
+      variants={page}
       initial="hidden"
+      whileInView="visible"
+      viewport={inViewOnce}
     >
-      <span className="contact_header">Contact</span>
-      <span className="contact_tagline">
-        If you would like to get in touch for any types of query, please opt for any of the options
-        below:
-      </span>
-      <div className="contact_items">
-        {data.contact.map(({ image, url }, i) => {
-          return (
-            <a key={i} href={url} target={"_blank"} className="contact_items_item">
-              {/* <img src={image} alt="Not found" height={50} width={50} /> */}
-              {image}
-            </a>
-          );
-        })}
-      </div>
-    </motion.div>
+      <motion.header className="chapter contact_chapter" variants={panel}>
+        <span className="chapter_mark">最終話</span>
+        <h2 className="chapter_title">Contact</h2>
+        <span className="chapter_ja">連絡先</span>
+      </motion.header>
 
+      <motion.div className="contact_panel" variants={panel}>
+        <span className="contact_panel_burst" aria-hidden="true" />
+
+        <motion.p className="contact_panel_balloon" variants={balloon}>
+          If you would like to get in touch for any kind of query, take your pick
+          below —
+        </motion.p>
+
+        <div className="contact_panel_links">
+          {data.contact.map(({ image, url, label, ja }, i) => (
+            <motion.a
+              key={label}
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={label}
+              className="contact_panel_links_link"
+              data-tone={i % 3}
+              variants={panel}
+            >
+              <span className="contact_panel_links_link_disc">{image}</span>
+              <span className="contact_panel_links_link_name">{label}</span>
+              <span className="contact_panel_links_link_ja">{ja}</span>
+            </motion.a>
+          ))}
+        </div>
+      </motion.div>
+    </motion.section>
   );
 });
+
+Contact.displayName = "Contact";
 
 export default Contact;

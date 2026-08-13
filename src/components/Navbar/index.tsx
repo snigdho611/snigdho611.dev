@@ -3,106 +3,57 @@ import "./index.scss";
 import { motion } from "framer-motion";
 
 const navLinks = [
-  {
-    title: "Home",
-    hash: "#hero"
-  },
-  {
-    title: "Experience",
-    hash: "#hero"
-  },
-  {
-    title: "Project",
-    hash: "#hero"
-  },
-  {
-    title: "Contact",
-    hash: "#hero"
-  }
+  { title: "Home", ja: "序章" },
+  { title: "Experience", ja: "経歴" },
+  { title: "Projects", ja: "作品" },
+  { title: "Contact", ja: "連絡" }
 ];
 
 interface INavbarProps {
-  // children: React.ReactNode;
   _refs_: (() => void)[];
 }
 
 const Navbar: React.FC<INavbarProps> = ({ _refs_ }) => {
   return (
-    <motion.div
+    <motion.nav
       className="navbar"
-      animate={{ translateY: "0px", opacity: 1 }}
-      initial={{ translateY: "-200px", opacity: 0 }}
-      transition={{ duration: 1 }}
+      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: -80, opacity: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 0.9, 0.28, 1] }}
     >
-      <div className="navbar_left">
-        <motion.img
-          transition={{ duration: 0.5 }}
-          animate={{
-            rotate: "180deg"
-          }}
-          src={
-            "/logo.svg"
-          }
-          alt="Not found"
-          className="navbar_left_img"
-        />
+      {/* Motion streaks along the top edge of the header band. */}
+      <span className="navbar_streaks" aria-hidden="true" />
+
+      <button
+        className="navbar_brand"
+        onClick={() => _refs_[0]()}
+        aria-label="Back to top"
+      >
+        <span className="navbar_brand_seal">
+          <img src="/logo-ink.svg" alt="" className="navbar_brand_seal_img" />
+        </span>
+        <span className="navbar_brand_text">
+          <span className="navbar_brand_text_name">SNIGDHO</span>
+          <span className="navbar_brand_text_ja">スニグド</span>
+        </span>
+      </button>
+
+      <div className="navbar_links">
+        {navLinks.map((element, i) => (
+          <motion.button
+            key={element.title}
+            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.4, delay: 0.35 + i * 0.07 }}
+            className="navbar_links_link"
+            onClick={() => _refs_[i]()}
+          >
+            <span className="navbar_links_link_ja">{element.ja}</span>
+            <span className="navbar_links_link_label">{element.title}</span>
+          </motion.button>
+        ))}
       </div>
-      <div className="navbar_right">
-        {
-          navLinks.map((element, i) => {
-            return (
-              <motion.a
-                key={i}
-                animate={{
-                  opacity: 1
-                }}
-                initial={{ opacity: 0 }}
-                transition={{ duration: 0.05 + (i * 0.25), delay: 0.5 + (i * 0.05) }}
-                className="navbar_right_link"
-                onClick={() => {
-                  _refs_[i]();
-                  // console.log(_refs_[i]);
-                  // heroScroll()
-                  // location.pathname = element.hash;
-                }}>
-                {element.title}
-              </motion.a>
-            );
-          })
-        }
-        {/* <motion.div
-          animate={{
-            opacity: 1
-          }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 0.75 }}
-          className="navbar_right_link" onClick={() => {
-            // heroScroll()
-          }}>
-          Home
-        </motion.div>
-        <div className="navbar_right_link" onClick={() => {
-          // aboutScroll()
-        }}>
-          About
-        </div>
-        <div className="navbar_right_link" onClick={() => {
-          // expScroll()
-        }}>
-          Experience
-        </div>
-        <div className="navbar_right_link" onClick={() => {
-          // projectsScroll()
-        }}>
-          Project
-        </div>
-        <div className="navbar_right_link" onClick={() => {
-          // contactScroll()
-        }}>
-          Contact
-        </div> */}
-      </div>
-    </motion.div>
+    </motion.nav>
   );
 };
 

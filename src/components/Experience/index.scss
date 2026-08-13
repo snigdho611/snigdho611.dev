@@ -1,87 +1,203 @@
-@use "../../styles/colors";
+@use "../../styles/colors" as c;
+@use "../../styles/manga" as m;
 
 .experience {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: auto auto;
-    row-gap: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
-    &_header {
-        grid-column: span 2;
-        color: colors.$purple3;
-        font-size: 2.5rem;
-        font-weight: 600;
-        text-align: center;
+    &_chapter {
+        align-self: center;
     }
 
-    &_company {
+    // A tier is one horizontal row of panels on the page.
+    &_tier {
+        display: grid;
+        grid-template-columns: 17rem minmax(0, 1fr);
+        gap: 1.25rem;
+        align-items: start;
+    }
+
+    // --- employer tabs -----------------------------------------------------
+    &_tabs {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
 
-        &_item {
-            padding: 0.35rem 0.5rem;
-            cursor: pointer;
-            font-size: 1.15rem;
-            font-weight: 400;
-            transition: 0.25s color, 0.25s text-shadow;
+        &_tab {
+            position: relative;
             display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            width: 100%;
+            text-align: left;
+            padding: 0.7rem 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            color: c.$ink;
+            background: c.$paper-white;
+            border: 3px solid c.$ink;
+            box-shadow: 4px 4px 0 rgba(c.$ink, 0.85);
+            transition: transform 0.2s ease, box-shadow 0.2s ease,
+                background-color 0.2s ease, color 0.2s ease;
 
-            &_date {
-                font-size: 0.8rem;
-                color: colors.$slate-primary;
-                display: flex;
-                justify-content: center;
-                align-items: center
+            &_no {
+                font-family: c.$font-sfx;
+                font-size: 1.25rem;
+                line-height: 1;
+                color: c.$vermillion;
+                transition: color 0.2s ease;
             }
 
-            &-active {
-                @extend .experience_company_item;
-                color: colors.$purple3;
-                border-left: 5px solid colors.$purple3;
+            &_body {
+                display: flex;
+                flex-direction: column;
+                line-height: 1.25;
+
+                &_company {
+                    font-weight: 700;
+                    font-size: 1.05rem;
+                }
+
+                &_date {
+                    font-size: 0.72rem;
+                    color: c.$ink-faint;
+                    transition: color 0.2s ease;
+                }
             }
 
             &:hover {
-                color: colors.$purple3;
+                transform: translate(-2px, -2px);
+                box-shadow: 6px 6px 0 rgba(c.$ink, 0.85);
+            }
+
+            // The selected tab is inked solid and points at the panel.
+            &-active {
+                background: c.$ink;
+                color: c.$paper-white;
+
+                .experience_tabs_tab_no {
+                    color: c.$sunburst;
+                }
+
+                .experience_tabs_tab_body_date {
+                    color: c.$paper-shadow;
+                }
+
+                // Arrow linking the tab to the panel beside it.
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: -0.95rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-left: 11px solid c.$ink;
+                }
             }
         }
     }
 
-    &_display {
-        font-size: 0.85rem;
+    // --- the content panel -------------------------------------------------
+    &_panel {
+        @include m.ink-panel(c.$paper-white, 4px, 8px);
+        padding: 1.75rem 1.75rem 1.5rem;
+        overflow: hidden;
 
-        &_list {
-            display: grid;
-            grid-template-columns: 2.5% 97.5%;
-            grid-template-columns: minmax(1rem, 2.5%) 97.5%;
-            margin: 0 0 2rem 0;
-            width: 90%;
-            row-gap: 0.5rem;
-            // align-items: center;
-            // text-align: justify;
+        // Screentone bleeding out of the top-right corner.
+        &_tone {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.55;
+            @include m.halftone-fade(c.$cyan, 0.55, 225deg);
         }
 
-        &_stacks {
-            display: grid;
-            grid-template-columns: repeat(5, 7rem);
-            column-gap: 0.75rem;
-            row-gap: 0.5rem;
-            justify-content: center;
+        &_inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
 
-            &_stack {
-                color: colors.$purple5;
-                background-color: colors.$purple1;
-                border-radius: 0.25rem;
-                padding: 0 0.5rem;
-                border: 1px solid colors.$purple3;
-                text-align: center;
-                transition: 0.2s color, 0.2s background-color;
-                font-size: 0.75rem;
+            // Caption box — the rectangular narration block in a manga panel.
+            &_caption {
+                align-self: flex-start;
+                display: inline-flex;
+                flex-wrap: wrap;
+                align-items: baseline;
+                gap: 0.5rem;
+                font-weight: 700;
+                font-size: 1.05rem;
+                padding: 0.45rem 0.9rem;
+                background: c.$sunburst-pale;
+                border: 3px solid c.$ink;
+                box-shadow: 4px 4px 0 rgba(c.$ink, 0.85);
 
-                &:hover {
-                    color: colors.$purple5;
-                    background-color: colors.$purple2;
-                    cursor: default;
+                &_at {
+                    font-size: 0.85rem;
+                }
+            }
+
+            &_list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0.7rem;
+
+                &_item {
+                    display: grid;
+                    grid-template-columns: 1.1rem 1fr;
+                    gap: 0.6rem;
+                    font-size: 0.9rem;
+                    line-height: 1.6;
+
+                    &_mark {
+                        color: c.$vermillion;
+                        font-size: 0.7rem;
+                        line-height: 1.9;
+                    }
+                }
+            }
+
+            &_stacks {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                padding-top: 0.35rem;
+                border-top: 2px dashed rgba(c.$ink, 0.25);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .experience {
+        &_tier {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        &_tabs {
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            &_tab {
+                width: auto;
+                flex: 1 1 12rem;
+
+                &-active::after {
+                    // Point downwards once the tabs sit above the panel.
+                    right: 50%;
+                    top: auto;
+                    bottom: -0.95rem;
+                    transform: translateX(50%);
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-top: 11px solid c.$ink;
+                    border-bottom: none;
                 }
             }
         }
@@ -90,33 +206,12 @@
 
 @media only screen and (max-width: 600px) {
     .experience {
-        grid-template-columns: 100%;
-        // grid-template-rows: auto auto auto;
-
-        &_header {
-            grid-column: span 1;
+        &_panel {
+            padding: 1.25rem 1rem;
         }
 
-        &_company {
-            flex-direction: row;
-            overflow-x: scroll;
-
-            &_item {
-                &-active {
-                    border-top: 5px solid colors.$purple3;
-                    border-left: none;
-                }
-
-                &_date {
-                    display: none;
-                }
-            }
-        }
-
-        &_display {
-            &_stacks {
-                grid-template-columns: repeat(2, 7rem);
-            }
+        &_tabs_tab {
+            flex: 1 1 100%;
         }
     }
 }

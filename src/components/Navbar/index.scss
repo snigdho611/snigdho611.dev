@@ -1,56 +1,155 @@
-@use "../../styles/colors";
+@use "../../styles/colors" as c;
+@use "../../styles/manga" as m;
 
 .navbar {
-    z-index: 2;
-    font-size: 1.25rem;
-    padding-top: 1.75rem;
-    padding-bottom: 1.75rem;
     position: sticky;
-    width: 100%;
     top: 0;
-    background-color: colors.$purple1;
-    margin: 0 auto;
-    z-index: 10;
+    z-index: 20;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1.75rem;
+    background-color: c.$paper-white;
+    // The heavy rule under a manga chapter heading.
+    border-bottom: 4px solid c.$ink;
+    box-shadow: 0 6px 0 rgba(c.$ink, 0.12);
 
-    // max-width: 1533px;
-    &_left {
-        width: 25%;
+    // Streaks bleeding in from the left edge, implying the page is in motion.
+    &_streaks {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 40%;
+        pointer-events: none;
+        opacity: 0.25;
+        @include m.motion-streaks(c.$ink, 0.55, 90deg);
+    }
+
+    // --- brand -------------------------------------------------------------
+    &_brand {
+        position: relative;
         display: flex;
-        height: 2.5rem;
-        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        background: none;
+        border: none;
+        padding: 0;
         cursor: pointer;
+        font-family: inherit;
 
-        &_img {
-            & img {
-                position: absolute;
-                width: 2.5rem;
-                height: 2.5rem;
+        &_seal {
+            display: grid;
+            place-items: center;
+            width: 2.6rem;
+            height: 2.6rem;
+            background: c.$sunburst;
+            border: 3px solid c.$ink;
+            box-shadow: 3px 3px 0 c.$ink;
+            transition: transform 0.22s ease, background-color 0.22s ease;
+
+            &_img {
+                width: 1.1rem;
+                height: 1.9rem;
             }
+        }
+
+        &_text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1;
+
+            &_name {
+                font-family: c.$font-sfx;
+                font-size: 1.5rem;
+                letter-spacing: 0.06em;
+                color: c.$ink;
+            }
+
+            &_ja {
+                @include m.ja-label(c.$ink-faint, 0.55rem);
+            }
+        }
+
+        &:hover &_seal {
+            background: c.$vermillion;
+            transform: translate(-2px, -2px) rotate(-4deg);
         }
     }
 
-    &_right {
-        display: flex;
+    // --- links -------------------------------------------------------------
+    &_links {
         position: relative;
-        width: 75%;
-        gap: 2.5rem;
-        margin: 0 4rem;
-        justify-content: flex-end;
+        display: flex;
+        align-items: flex-end;
+        gap: 2rem;
 
         &_link {
-            font-size: 1.2rem;
-            color: colors.$purple4;
+            position: relative;
             display: flex;
+            flex-direction: column;
             align-items: center;
+            gap: 0.1rem;
+            background: none;
+            border: none;
+            padding: 0.15rem 0.1rem 0.35rem;
             cursor: pointer;
-            transition: color 0.25s, margin-top 0.15s;
+            font-family: inherit;
+            color: c.$ink;
+            transition: transform 0.18s ease, color 0.18s ease;
+
+            &_ja {
+                @include m.ja-label(c.$ink-ghost, 0.55rem);
+                transition: color 0.18s ease;
+            }
+
+            &_label {
+                font-family: c.$font-sfx;
+                font-size: 1.15rem;
+                letter-spacing: 0.05em;
+                line-height: 1;
+            }
+
+            // Brush stroke that sweeps in under the label.
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 4px;
+                background: c.$vermillion;
+                transform: scaleX(0);
+                transform-origin: right center;
+                transition: transform 0.26s cubic-bezier(0.22, 0.9, 0.28, 1);
+            }
 
             &:hover {
-                color: colors.$white;
-                margin-top: -0.25rem;
-                // color: colors.$purple3;
-                text-shadow: 0px 0px 5px colors.$purple4;
+                color: c.$vermillion-deep;
+                transform: translateY(-2px);
+            }
+
+            &:hover &_ja {
+                color: c.$vermillion;
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+                transform-origin: left center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .navbar {
+        padding: 0.7rem 1rem;
+
+        &_links {
+            gap: 1.15rem;
+
+            &_link_label {
+                font-size: 1rem;
             }
         }
     }
@@ -58,8 +157,42 @@
 
 @media only screen and (max-width: 600px) {
     .navbar {
-        &_right {
-            display: none;
+        padding: 0.6rem 0.7rem;
+
+        &_brand {
+            flex: none;
+
+            // Only the seal survives — the wordmark costs room the links need.
+            &_text {
+                display: none;
+            }
+
+            &_seal {
+                width: 2.2rem;
+                height: 2.2rem;
+
+                &_img {
+                    width: 0.9rem;
+                    height: 1.55rem;
+                }
+            }
+        }
+
+        &_links {
+            gap: 0.7rem;
+            min-width: 0;
+
+            &_link {
+                padding: 0.15rem 0 0.3rem;
+
+                &_ja {
+                    display: none;
+                }
+
+                &_label {
+                    font-size: 0.8rem;
+                }
+            }
         }
     }
 }

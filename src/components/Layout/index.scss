@@ -1,11 +1,132 @@
+@use "../../styles/colors" as c;
+@use "../../styles/manga" as m;
+
 .layout {
+    min-height: 100vh;
+    padding: 1.75rem 1.25rem 3rem;
+    display: flex;
+    justify-content: center;
+    // Let the sheet size to its content instead of stretching to the viewport,
+    // which would leave dead paper under the footer on tall screens.
+    align-items: flex-start;
+
+    // --- the sheet ---------------------------------------------------------
+    &_page {
+        position: relative;
+        width: 100%;
+        max-width: 1240px;
+        background-color: c.$paper;
+        border: 4px solid c.$ink;
+        box-shadow: 12px 12px 0 rgba(c.$ink, 0.9);
+        padding-bottom: 1rem;
+
+        // Very light screentone across the whole sheet, plus a printing
+        // misregistration blush in the corners.
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            @include m.halftone(c.$ink, 0.055, 6px, 1.3px);
+        }
+    }
+
+    // --- margin notes ------------------------------------------------------
+    &_margin {
+        @include m.ja-label(c.$ink-ghost, 0.62rem);
+        position: absolute;
+        top: 12rem;
+        writing-mode: vertical-rl;
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 1;
+
+        &-left {
+            left: -1.9rem;
+            transform: rotate(180deg);
+        }
+
+        &-right {
+            right: -1.9rem;
+            color: c.$vermillion-deep;
+        }
+    }
+
+    // --- panel area --------------------------------------------------------
     &_body {
-        margin-top: 96px;
-        width: 80%;
+        position: relative;
+        z-index: 1;
+        width: 88%;
+        margin: 4.5rem auto 0;
         display: flex;
         flex-direction: column;
-        gap: 14.5rem;
-        // justify-content: center;
-        margin: 96px auto;
+        // Generous gutters — the white space between manga panels.
+        gap: 5rem;
+    }
+
+    // --- foot of the page --------------------------------------------------
+    &_footer {
+        position: relative;
+        z-index: 1;
+        width: 88%;
+        margin: 6rem auto 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        &_rule {
+            width: 100%;
+            @include m.ink-rule(rgba(c.$ink, 0.45), 3px);
+        }
+
+        &_next {
+            @include m.sfx(c.$paper-white, c.$ink, 2px, 4px, c.$cyan);
+            font-size: 2rem;
+            margin-top: 0.75rem;
+        }
+
+        &_note {
+            font-size: 0.75rem;
+            color: c.$ink-faint;
+            text-align: center;
+        }
+
+        &_page {
+            @include m.ja-label(c.$ink-ghost, 0.7rem);
+            position: absolute;
+            right: 0;
+            bottom: -0.25rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .layout {
+        &_body,
+        &_footer {
+            width: 92%;
+        }
+
+        &_margin {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .layout {
+        padding: 0.75rem 0.75rem 2rem;
+
+        &_page {
+            border-width: 3px;
+            box-shadow: 6px 6px 0 rgba(c.$ink, 0.9);
+        }
+
+        &_body {
+            margin-top: 3rem;
+            gap: 5rem;
+        }
     }
 }

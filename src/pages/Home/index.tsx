@@ -5,6 +5,9 @@ import Experience from '../../components/Experience';
 import Projects from '../../components/Projects';
 import Contact from '../../components/Contact';
 
+// Clearance for the sticky chapter header, so a section never lands under it.
+const HEADER_OFFSET = 110;
+
 const Home: React.FC = () => {
 
   const heroRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
@@ -12,21 +15,13 @@ const Home: React.FC = () => {
   const projectsRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const contactRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
-  const heroScroll = () => {
-    window.scrollTo({ behavior: "smooth", left: 0, top: (heroRef.current?.offsetTop ?? 0) - 1000 });
-  };
-  const expScroll = () => {
-    window.scrollTo({ behavior: "smooth", left: 0, top: (expRef.current?.offsetTop ?? 0) - 100 });
-  };
-  const projectsScroll = () => {
-    window.scrollTo({ behavior: "smooth", left: 0, top: (projectsRef.current?.offsetTop ?? 0) - 100 });
-  };
-  const contactScroll = () => {
-    window.scrollTo({ behavior: "smooth", left: 0, top: (contactRef.current?.offsetTop ?? 0) - 100 });
+  const scrollTo = (target: MutableRefObject<HTMLDivElement | null>) => () => {
+    const top = (target.current?.getBoundingClientRect().top ?? 0) + window.scrollY;
+    window.scrollTo({ behavior: "smooth", left: 0, top: Math.max(top - HEADER_OFFSET, 0) });
   };
 
   return (
-    <Layout _refs_={[heroScroll, expScroll, projectsScroll, contactScroll]} >
+    <Layout _refs_={[scrollTo(heroRef), scrollTo(expRef), scrollTo(projectsRef), scrollTo(contactRef)]} >
       <Hero ref={heroRef} />
       <Experience ref={expRef} />
       <Projects ref={projectsRef} />

@@ -1,0 +1,111 @@
+// ---------------------------------------------------------------------------
+// Manga drawing kit
+// Reusable ink/panel/screentone primitives shared by every section.
+// ---------------------------------------------------------------------------
+
+@use "sass:color";
+@use "colors" as c;
+
+// Screentone. The dot grid that fills manga shading.
+@mixin halftone($color: c.$ink, $alpha: 0.32, $size: 7px, $dot: 1.7px) {
+    background-image: radial-gradient(circle, rgba($color, $alpha) $dot, transparent ($dot + 0.6px));
+    background-size: $size $size;
+}
+
+// A screentone wash that fades out towards one corner, the way a shaded
+// panel bleeds into flat paper.
+@mixin halftone-fade($color: c.$ink, $alpha: 0.3, $angle: 135deg) {
+    @include halftone($color, $alpha);
+    -webkit-mask-image: linear-gradient($angle, #000 0%, transparent 78%);
+    mask-image: linear-gradient($angle, #000 0%, transparent 78%);
+}
+
+// Panel border. Hard ink outline plus an unblurred offset shadow, so panels
+// read as cut paper stacked on the page rather than as soft CSS cards.
+@mixin ink-panel($bg: c.$paper-white, $w: 3px, $offset: 6px, $shadow: c.$ink) {
+    position: relative;
+    background-color: $bg;
+    border: $w solid c.$ink;
+    box-shadow: $offset $offset 0 rgba($shadow, 0.9);
+}
+
+// Radiating speed lines — the classic impact burst behind a reveal.
+@mixin speed-burst($color: c.$ink, $alpha: 0.14, $hole: 16%, $edge: 62%) {
+    background: repeating-conic-gradient(from 0deg, rgba($color, $alpha) 0deg 0.45deg, transparent 0.45deg 2.6deg);
+    -webkit-mask-image: radial-gradient(circle at center, transparent $hole, #000 $edge);
+    mask-image: radial-gradient(circle at center, transparent $hole, #000 $edge);
+}
+
+// Horizontal motion streaks — used along panel edges to imply movement.
+@mixin motion-streaks($color: c.$ink, $alpha: 0.5, $dir: 90deg) {
+    background: repeating-linear-gradient($dir, rgba($color, $alpha) 0 2px, transparent 2px 9px);
+    -webkit-mask-image: linear-gradient($dir, #000, transparent);
+    mask-image: linear-gradient($dir, #000, transparent);
+}
+
+// Sound-effect lettering: fat display face, ink outline, hard colour drop.
+@mixin sfx($fill: c.$paper-white, $stroke: c.$ink, $stroke-w: 3px, $drop: 6px, $drop-color: c.$vermillion) {
+    font-family: c.$font-sfx;
+    font-weight: 400;
+    color: $fill;
+    -webkit-text-stroke: $stroke-w $stroke;
+    paint-order: stroke fill;
+    text-shadow: $drop $drop 0 $drop-color;
+    letter-spacing: 0.045em;
+    line-height: 1.05;
+}
+
+// Speech balloon. The tail is drawn twice: an ink triangle with a slightly
+// smaller paper triangle on top, which is how you fake a stroked tail.
+@mixin balloon($bg: c.$paper-white, $w: 3px, $radius: 1.75rem) {
+    position: relative;
+    background: $bg;
+    border: $w solid c.$ink;
+    border-radius: $radius;
+}
+
+// The tail juts out of the right edge; $top is how far down that edge it
+// starts, $size how far it reaches out, $skew how tall it is at the base.
+@mixin balloon-tail($bg: c.$paper-white, $top: 3rem, $size: 22px, $skew: 16px, $w: 3px) {
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: $top;
+        width: 0;
+        height: 0;
+    }
+
+    // ink layer
+    &::before {
+        right: -($size + $w);
+        border-top: $skew solid transparent;
+        border-bottom: ($skew * 0.35) solid transparent;
+        border-left: ($size + $w) solid c.$ink;
+    }
+
+    // paper layer, inset so a stroke of $w remains visible
+    &::after {
+        right: -($size - $w * 0.75);
+        margin-top: $w;
+        border-top: ($skew - $w * 1.6) solid transparent;
+        border-bottom: ($skew * 0.35) solid transparent;
+        border-left: ($size - $w * 0.25) solid $bg;
+    }
+}
+
+// Small vertical Japanese label used in panel margins.
+@mixin ja-label($color: c.$ink-faint, $size: 0.7rem) {
+    font-family: c.$font-body;
+    font-weight: 500;
+    font-size: $size;
+    letter-spacing: 0.34em;
+    color: $color;
+}
+
+// A thin ink rule with a hand-inked taper at the end.
+@mixin ink-rule($color: c.$ink, $h: 3px) {
+    height: $h;
+    background: linear-gradient(90deg, $color 0%, $color 82%, transparent 100%);
+    border-radius: $h;
+}
