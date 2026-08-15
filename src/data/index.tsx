@@ -263,7 +263,7 @@ const data = {
         {
             id: 1,
             title: "Frontend",
-            ja: "前線",
+            ja: "前衛",
             note: "Interfaces, from the layout down to the state that drives it.",
             items: ["React JS", "Next JS", "Vue JS", "TypeScript", "Tailwind CSS", "Material UI", "Flutter"],
         },

@@ -108,6 +108,9 @@
                 font-size: 1.15rem;
                 letter-spacing: 0.05em;
                 line-height: 1;
+                // The row is sized to hold all six on one line; a label that
+                // breaks internally would defeat that.
+                white-space: nowrap;
             }
 
             // Brush stroke that sweeps in under the label.
@@ -155,19 +158,22 @@
     }
 }
 
-// Six chapters will not fit as Bangers labels below roughly this width, so the
-// links fall back to their Japanese glyphs — same information, half the room.
+// Six chapters stop fitting on one line here. The English labels are the ones
+// that have to survive, so the Japanese under them goes and the labels shrink
+// to hold the row together.
 @media only screen and (max-width: 760px) {
     .navbar {
-        &_links_link {
-            &_ja {
-                font-size: 0.95rem;
-                letter-spacing: 0.04em;
-                color: c.$ink;
-            }
+        &_links {
+            gap: 0.8rem;
 
-            &_label {
-                display: none;
+            &_link {
+                &_ja {
+                    display: none;
+                }
+
+                &_label {
+                    font-size: 0.95rem;
+                }
             }
         }
     }
@@ -180,7 +186,9 @@
         &_brand {
             flex: none;
 
-            // Only the seal survives — the wordmark costs room the links need.
+            // Only the seal survives. The wordmark is the one piece of text
+            // that can go without losing a destination, and the six labels
+            // need every pixel it was holding to stay on one line.
             &_text {
                 display: none;
             }
@@ -197,15 +205,33 @@
         }
 
         &_links {
-            gap: 0.6rem;
+            gap: 0.55rem;
             min-width: 0;
 
             &_link {
                 padding: 0.15rem 0 0.3rem;
 
-                &_ja {
-                    font-size: 0.82rem;
+                &_label {
+                    font-size: 0.72rem;
+                    letter-spacing: 0.03em;
                 }
+            }
+        }
+    }
+}
+
+// The narrowest phones still in circulation. "Experience" and "Education" are
+// what set the floor here — everything else has room to spare by this point.
+@media only screen and (max-width: 380px) {
+    .navbar {
+        padding: 0.55rem 0.5rem;
+
+        &_links {
+            gap: 0.35rem;
+
+            &_link_label {
+                font-size: 0.62rem;
+                letter-spacing: 0.02em;
             }
         }
     }
