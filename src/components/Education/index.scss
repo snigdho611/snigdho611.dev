@@ -1,0 +1,228 @@
+@use "../../styles/colors" as c;
+@use "../../styles/manga" as m;
+
+.education {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &_chapter {
+        align-self: center;
+    }
+
+    // The education panel and its stamp share a tier, same as the hero.
+    &_tier {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 13rem;
+        gap: 1.25rem;
+        align-items: stretch;
+    }
+
+    &_education {
+        @include m.ink-panel(c.$paper-white, 4px, 8px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+        padding: 1.75rem 1.85rem 1.6rem;
+        overflow: hidden;
+
+        &_tone {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.45;
+            @include m.halftone-fade(c.$cyan, 0.55, 215deg);
+        }
+
+        > *:not(.education_education_tone) {
+            position: relative;
+            z-index: 1;
+        }
+
+        &_years {
+            @include m.ja-label(c.$vermillion-deep, 0.72rem);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+
+            &::after {
+                content: "";
+                width: 2.5rem;
+                height: 2px;
+                background: currentColor;
+            }
+        }
+
+        &_name {
+            font-family: c.$font-sfx;
+            font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+            line-height: 1.15;
+            letter-spacing: 0.02em;
+            color: c.$ink;
+            margin: 0;
+        }
+
+        &_degree {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 700;
+            color: c.$ink-soft;
+        }
+
+        &_note {
+            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: c.$ink-soft;
+            max-width: 42rem;
+        }
+    }
+
+    // Vertical seal in the margin — the training-arc stamp.
+    &_stamp {
+        @include m.ink-panel(c.$vermillion-pale, 4px, 8px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.85rem;
+        padding: 1.5rem 1rem;
+        overflow: hidden;
+
+        &_ja {
+            font-family: c.$font-body;
+            font-weight: 900;
+            font-size: 2.6rem;
+            letter-spacing: 0.3em;
+            // Indent matches the tracking, so the glyphs stay optically centred.
+            text-indent: 0.3em;
+            line-height: 1.1;
+            writing-mode: vertical-rl;
+            color: c.$vermillion-deep;
+        }
+
+        &_label {
+            @include m.ja-label(c.$ink-faint, 0.66rem);
+            text-align: center;
+        }
+    }
+
+    // --- publications ------------------------------------------------------
+    &_papers {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+    }
+
+    &_papers_label {
+        @include m.ja-label(c.$ink-faint, 0.68rem);
+        text-transform: uppercase;
+    }
+
+    &_papers_paper {
+        @include m.ink-panel(c.$paper-white, 3px, 6px);
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+        padding: 1.4rem 1.5rem 1.25rem;
+        overflow: hidden;
+
+        &_tone {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.4;
+            @include m.halftone-fade(c.$sunburst-deep, 0.55, 145deg);
+        }
+
+        > *:not(.education_papers_paper_tone) {
+            position: relative;
+            z-index: 1;
+        }
+
+        &_title {
+            margin: 0;
+            font-family: c.$font-sfx;
+            font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            max-width: 48rem;
+        }
+
+        &_authors {
+            margin: 0;
+            font-size: 0.85rem;
+            color: c.$ink-soft;
+
+            strong {
+                color: c.$ink;
+                // The one name on the page that matters.
+                box-shadow: inset 0 -0.45em 0 rgba(c.$sunburst, 0.55);
+            }
+        }
+
+        &_meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.3rem 0.7rem;
+            margin: 0;
+            font-size: 0.76rem;
+            color: c.$ink-faint;
+
+            // Ink dots between the citation fields.
+            > span + span::before {
+                content: "・";
+                margin-right: 0.7rem;
+                color: c.$ink-ghost;
+            }
+        }
+
+        &_summary {
+            margin: 0;
+            padding-top: 0.7rem;
+            border-top: 2px dashed rgba(c.$ink, 0.25);
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: c.$ink-soft;
+            max-width: 46rem;
+        }
+
+        &_doi {
+            align-self: flex-start;
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .education {
+        &_tier {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        &_education {
+            padding: 1.4rem 1.25rem 1.25rem;
+        }
+
+        // Stacked, the stamp reads better lying on its side.
+        &_stamp {
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 1rem;
+            padding: 0.9rem 1.25rem;
+
+            &_ja {
+                writing-mode: horizontal-tb;
+                font-size: 1.8rem;
+                text-indent: 0;
+            }
+        }
+
+        &_papers_paper {
+            padding: 1.15rem 1.1rem 1rem;
+        }
+    }
+}

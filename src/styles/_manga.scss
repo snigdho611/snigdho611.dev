@@ -30,8 +30,10 @@
 }
 
 // Radiating speed lines — the classic impact burst behind a reveal.
-@mixin speed-burst($color: c.$ink, $alpha: 0.14, $hole: 16%, $edge: 62%) {
-    background: repeating-conic-gradient(from 0deg, rgba($color, $alpha) 0deg 0.45deg, transparent 0.45deg 2.6deg);
+// $from is the angle the rays start at; pass an animated custom property to
+// make them sweep, which beats rotating the element (see hero-burst-drift).
+@mixin speed-burst($color: c.$ink, $alpha: 0.14, $hole: 16%, $edge: 62%, $from: 0deg) {
+    background: repeating-conic-gradient(from $from, rgba($color, $alpha) 0deg 0.45deg, transparent 0.45deg 2.6deg);
     -webkit-mask-image: radial-gradient(circle at center, transparent $hole, #000 $edge);
     mask-image: radial-gradient(circle at center, transparent $hole, #000 $edge);
 }
@@ -91,6 +93,45 @@
         border-top: ($skew - $w * 1.6) solid transparent;
         border-bottom: ($skew * 0.35) solid transparent;
         border-left: ($size - $w * 0.25) solid $bg;
+    }
+}
+
+// The same tail rotated a quarter turn, for stacked layouts where whatever the
+// balloon is speaking to sits below it instead of beside it. Overrides the
+// offsets `balloon-tail` sets, so it can be layered on top of it in a query.
+@mixin balloon-tail-down($bg: c.$paper-white, $left: 3rem, $size: 22px, $skew: 16px, $w: 3px) {
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        // Wipe the horizontal tail's geometry before rebuilding it a quarter
+        // turn over. The borders matter as much as the offsets: this box is
+        // anchored from its bottom, so a stale `border-bottom` would sit
+        // between the anchor and the triangle and lift the tail off the edge.
+        top: auto;
+        right: auto;
+        left: $left;
+        margin: 0;
+        border: 0 solid transparent;
+        width: 0;
+        height: 0;
+    }
+
+    // ink layer
+    &::before {
+        bottom: -($size + $w);
+        border-left: $skew solid transparent;
+        border-right: ($skew * 0.35) solid transparent;
+        border-top: ($size + $w) solid c.$ink;
+    }
+
+    // paper layer, inset so a stroke of $w remains visible
+    &::after {
+        bottom: -($size - $w * 0.75);
+        margin-left: $w;
+        border-left: ($skew - $w * 1.6) solid transparent;
+        border-right: ($skew * 0.35) solid transparent;
+        border-top: ($size - $w * 0.25) solid $bg;
     }
 }
 

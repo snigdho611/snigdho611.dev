@@ -1,0 +1,135 @@
+@use "../../styles/colors" as c;
+@use "../../styles/manga" as m;
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &_chapter {
+        align-self: center;
+    }
+
+    &_grid {
+        display: grid;
+        // Deliberately two-up rather than auto-fit: four disciplines land as a
+        // balanced 2×2 spread instead of a row of three and an orphan.
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    &_grid_school {
+        @include m.ink-panel(c.$paper-white, 3px, 6px);
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        // Right padding leaves the margin clear for the vertical label.
+        padding: 1.4rem 3.25rem 1.3rem 1.5rem;
+        overflow: hidden;
+        transition:
+            transform 0.25s cubic-bezier(0.22, 0.9, 0.28, 1),
+            box-shadow 0.25s ease;
+
+        &:hover {
+            transform: translate(-3px, -4px);
+            box-shadow: 9px 11px 0 rgba(c.$ink, 0.9);
+        }
+
+        // Corner screentone, cycling through the three spot colours.
+        &_tone {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.45;
+        }
+
+        &[data-tone="0"] &_tone {
+            @include m.halftone-fade(c.$cyan, 0.55, 215deg);
+        }
+
+        &[data-tone="1"] &_tone {
+            @include m.halftone-fade(c.$vermillion, 0.5, 215deg);
+        }
+
+        &[data-tone="2"] &_tone {
+            @include m.halftone-fade(c.$sunburst-deep, 0.55, 215deg);
+        }
+
+        // Lifts the content above the screentone. The margin label is left out
+        // on purpose: it is positioned absolutely and this rule outranks it.
+        > *:not(.skills_grid_school_tone):not(.skills_grid_school_ja) {
+            position: relative;
+            z-index: 1;
+        }
+
+        &_no {
+            @include m.ja-label(c.$vermillion-deep, 0.68rem);
+        }
+
+        // Discipline name set vertically down the right margin.
+        &_ja {
+            font-family: c.$font-body;
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 0.18em;
+            line-height: 1;
+            writing-mode: vertical-rl;
+            position: absolute;
+            top: 1.3rem;
+            right: 0.9rem;
+            z-index: 1;
+            color: rgba(c.$ink, 0.18);
+            pointer-events: none;
+        }
+
+        &_title {
+            font-family: c.$font-sfx;
+            font-size: 1.85rem;
+            line-height: 1.1;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: c.$ink;
+            margin: 0;
+        }
+
+        &_note {
+            margin: 0 0 0.35rem;
+            font-size: 0.84rem;
+            line-height: 1.6;
+            color: c.$ink-soft;
+        }
+
+        &_list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            list-style: none;
+            margin: 0;
+            padding: 0.85rem 0 0;
+            border-top: 2px dashed rgba(c.$ink, 0.25);
+            // Push the rule to the bottom when panels differ in height.
+            margin-top: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .skills {
+        &_grid {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 1.25rem;
+        }
+
+        &_grid_school {
+            padding: 1.2rem 2.75rem 1.15rem 1.2rem;
+
+            &_title {
+                font-size: 1.6rem;
+            }
+
+            &_ja {
+                font-size: 1.35rem;
+            }
+        }
+    }
+}

@@ -155,6 +155,24 @@
     }
 }
 
+// Six chapters will not fit as Bangers labels below roughly this width, so the
+// links fall back to their Japanese glyphs — same information, half the room.
+@media only screen and (max-width: 760px) {
+    .navbar {
+        &_links_link {
+            &_ja {
+                font-size: 0.95rem;
+                letter-spacing: 0.04em;
+                color: c.$ink;
+            }
+
+            &_label {
+                display: none;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .navbar {
         padding: 0.6rem 0.7rem;
@@ -179,18 +197,14 @@
         }
 
         &_links {
-            gap: 0.7rem;
+            gap: 0.6rem;
             min-width: 0;
 
             &_link {
                 padding: 0.15rem 0 0.3rem;
 
                 &_ja {
-                    display: none;
-                }
-
-                &_label {
-                    font-size: 0.8rem;
+                    font-size: 0.82rem;
                 }
             }
         }

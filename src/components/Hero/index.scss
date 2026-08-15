@@ -20,12 +20,13 @@
         align-items: flex-start;
         gap: 1.35rem;
 
-        // Impact lines radiating out from behind the name.
+        // Impact lines radiating out from behind the name. The box never
+        // moves — only the angle the rays start at does.
         &_burst {
             position: absolute;
             inset: -30%;
             pointer-events: none;
-            @include m.speed-burst(c.$ink, 0.16, 14%, 58%);
+            @include m.speed-burst(c.$ink, 0.2, 14%, 58%, var(--burst-angle));
             animation: hero-burst-drift 28s linear infinite;
         }
 
@@ -207,14 +208,25 @@
     }
 }
 
-// Slow rotation keeps the impact lines alive without drawing attention.
+// Registered so it interpolates as an angle; an unregistered custom property
+// would jump from keyframe to keyframe instead of sweeping.
+@property --burst-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+// Slow drift keeps the impact lines alive without drawing attention. This
+// turns the gradient, not the element: the burst box is a rectangle, and
+// rotating a rectangle swings its short axis across the panel's long axis,
+// so every quarter turn the rays visibly fall short of the panel edges.
 @keyframes hero-burst-drift {
     from {
-        transform: rotate(0deg);
+        --burst-angle: 0deg;
     }
 
     to {
-        transform: rotate(360deg);
+        --burst-angle: 360deg;
     }
 }
 
@@ -237,7 +249,7 @@
 
             &_name {
                 font-size: 4rem;
-                // text-align: center;
+                text-align: center;
             }
 
             &_vertical {
@@ -251,7 +263,13 @@
                 gap: 0;
             }
 
+            // Stacked here, so the portrait it points at is below the balloon
+            // rather than off to its right.
             &_balloon {
+                @include m.balloon-tail-down(c.$paper-white, 2.75rem, 20px, 15px, 3px);
+                // Bottom margin clears the balloon tail; the right edge no
+                // longer needs to.
+                margin: 0.35rem 0 0rem;
                 font-size: 0.95rem;
                 max-width: 100%;
             }
