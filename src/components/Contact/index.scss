@@ -24,7 +24,8 @@
             position: absolute;
             inset: -40%;
             pointer-events: none;
-            @include m.speed-burst(c.$vermillion, 0.16, 12%, 55%);
+            @include m.speed-burst(c.$vermillion, 0.16, 12%, 55%, var(--burst-angle));
+            animation: burst-drift 28s linear infinite;
         }
 
         > *:not(.contact_panel_burst) {

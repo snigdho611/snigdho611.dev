@@ -117,6 +117,29 @@ body {
     }
 }
 
+// Registered so it interpolates as an angle; an unregistered custom property
+// would jump from keyframe to keyframe instead of sweeping.
+@property --burst-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+// Slow drift keeps the impact lines alive without drawing attention; shared by
+// every speed-burst panel (Hero, Contact). This turns the gradient, not the
+// element: the burst box is a rectangle, and rotating a rectangle swings its
+// short axis across the panel's long axis, so every quarter turn the rays
+// visibly fall short of the panel edges.
+@keyframes burst-drift {
+    from {
+        --burst-angle: 0deg;
+    }
+
+    to {
+        --burst-angle: 360deg;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
 
     *,

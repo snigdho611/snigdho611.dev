@@ -26,9 +26,9 @@ const Experience = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
       <div className="experience_tier">
         {/* --- chapter tabs, one per employer --------------------------- */}
         <motion.div className="experience_tabs" variants={panelFrom(-24)}>
-          {data.experience.map(({ company, timeStart, timeEnd }, i) => (
+          {data.experience.map(({ id, company, roles }, i) => (
             <button
-              key={company}
+              key={id}
               onClick={() => setCurrentExp(i)}
               aria-pressed={currentExp === i}
               className={
@@ -43,7 +43,8 @@ const Experience = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
               <span className="experience_tabs_tab_body">
                 <span className="experience_tabs_tab_body_company">{company}</span>
                 <span className="experience_tabs_tab_body_date">
-                  {timeStart} — {timeEnd ?? "Present"}
+                  {/* The whole stay: roles run newest first. */}
+                  {roles[roles.length - 1].timeStart} — {roles[0].timeEnd ?? "Present"}
                 </span>
               </span>
             </button>
@@ -61,39 +62,52 @@ const Experience = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
             transition={{ duration: 0.4, ease: [0.22, 0.9, 0.28, 1] }}
             className="experience_panel_inner"
           >
-            <span className="experience_panel_inner_caption">
-              {active.title}
-              <a
-                className="experience_panel_inner_caption_at ink-link"
-                href={active.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                @ {active.company}
-              </a>
-            </span>
-
-            <ul className="experience_panel_inner_list">
-              {active.works?.map((element, i) => (
-                <li key={i} className="experience_panel_inner_list_item">
-                  <span
-                    className="experience_panel_inner_list_item_mark"
-                    aria-hidden="true"
+            {/* A promotion stays inside the one panel, newest role first. */}
+            {active.roles.map((role) => (
+              <div key={role.title} className="experience_panel_inner_role">
+                <span className="experience_panel_inner_role_caption">
+                  {role.title}
+                  <a
+                    className="experience_panel_inner_role_caption_at ink-link"
+                    href={active.url}
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    ▶
+                    @ {active.company}
+                  </a>
+                  <span className="experience_panel_inner_role_caption_date">
+                    {role.timeStart} — {role.timeEnd ?? "Present"}
                   </span>
-                  <span>{element}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="experience_panel_inner_stacks">
-              {active.stack?.map((element) => (
-                <span key={element} className="ink-tag">
-                  {element}
                 </span>
-              ))}
-            </div>
+
+                <ul className="experience_panel_inner_role_list">
+                  {role.works.map((element, i) => (
+                    <li key={i} className="experience_panel_inner_role_list_item">
+                      <span
+                        className="experience_panel_inner_role_list_item_mark"
+                        aria-hidden="true"
+                      >
+                        ▶
+                      </span>
+                      <span>
+                        <strong className="experience_panel_inner_role_list_item_label">
+                          {element.label}:
+                        </strong>{" "}
+                        {element.text}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="experience_panel_inner_role_stacks">
+                  {role.stack.map((element) => (
+                    <span key={element} className="ink-tag">
+                      {element}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </motion.div>
         </motion.div>
       </div>

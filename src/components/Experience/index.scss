@@ -121,54 +121,79 @@
             flex-direction: column;
             gap: 1.25rem;
 
-            // Caption box — the rectangular narration block in a manga panel.
-            &_caption {
-                align-self: flex-start;
-                display: inline-flex;
-                flex-wrap: wrap;
-                align-items: baseline;
-                gap: 0.5rem;
-                font-weight: 700;
-                font-size: 1.05rem;
-                padding: 0.45rem 0.9rem;
-                background: c.$sunburst-pale;
-                border: 3px solid c.$ink;
-                box-shadow: 4px 4px 0 rgba(c.$ink, 0.85);
-
-                &_at {
-                    font-size: 0.85rem;
-                }
-            }
-
-            &_list {
-                list-style: none;
-                margin: 0;
-                padding: 0;
+            // One block per role held at the company. A second role (a
+            // promotion) is set off by a heavy ink rule, like a panel border.
+            &_role {
                 display: flex;
                 flex-direction: column;
-                gap: 0.7rem;
+                gap: 1.25rem;
 
-                &_item {
-                    display: grid;
-                    grid-template-columns: 1.1rem 1fr;
-                    gap: 0.6rem;
-                    font-size: 0.9rem;
-                    line-height: 1.6;
+                & + & {
+                    padding-top: 1.5rem;
+                    border-top: 3px solid c.$ink;
+                }
 
-                    &_mark {
-                        color: c.$vermillion;
-                        font-size: 0.7rem;
-                        line-height: 1.9;
+                // Caption box — the rectangular narration block in a manga panel.
+                &_caption {
+                    align-self: flex-start;
+                    display: inline-flex;
+                    flex-wrap: wrap;
+                    align-items: baseline;
+                    gap: 0.5rem;
+                    font-weight: 700;
+                    font-size: 1.05rem;
+                    padding: 0.45rem 0.9rem;
+                    background: c.$sunburst-pale;
+                    border: 3px solid c.$ink;
+                    box-shadow: 4px 4px 0 rgba(c.$ink, 0.85);
+
+                    &_at {
+                        font-size: 0.85rem;
+                    }
+
+                    &_date {
+                        font-size: 0.78rem;
+                        font-weight: 500;
+                        color: c.$ink-faint;
                     }
                 }
-            }
 
-            &_stacks {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                padding-top: 0.35rem;
-                border-top: 2px dashed rgba(c.$ink, 0.25);
+                &_list {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.7rem;
+
+                    &_item {
+                        display: grid;
+                        grid-template-columns: 1.1rem 1fr;
+                        gap: 0.6rem;
+                        font-size: 0.9rem;
+                        line-height: 1.6;
+
+                        &_mark {
+                            color: c.$vermillion;
+                            font-size: 0.7rem;
+                            line-height: 1.9;
+                        }
+
+                        // The project a bullet belongs to, set in ink ahead of it.
+                        &_label {
+                            font-weight: 700;
+                            color: c.$ink;
+                        }
+                    }
+                }
+
+                &_stacks {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                    padding-top: 0.35rem;
+                    border-top: 2px dashed rgba(c.$ink, 0.25);
+                }
             }
         }
     }

@@ -2,6 +2,7 @@ import { ForwardedRef, forwardRef } from "react";
 import "./index.scss";
 import { motion } from "framer-motion";
 import { balloon, page, panel, panelFrom, sfx } from "../../utils/motion";
+import data from "../../data";
 
 const Hero = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
     return (
@@ -56,6 +57,13 @@ const Hero = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
                 </motion.span>
 
                 <span className="hero_portrait_role">Software Engineer</span>
+
+                <a className="hero_portrait_cv" href={data.cv} target="_blank" rel="noreferrer">
+                    <span className="hero_portrait_cv_ja" aria-hidden="true">
+                        履歴書
+                    </span>
+                    Read My CV
+                </a>
             </motion.div>
         </motion.section>
     );

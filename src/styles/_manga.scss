@@ -31,7 +31,7 @@
 
 // Radiating speed lines — the classic impact burst behind a reveal.
 // $from is the angle the rays start at; pass an animated custom property to
-// make them sweep, which beats rotating the element (see hero-burst-drift).
+// make them sweep, which beats rotating the element (see burst-drift in index.scss).
 @mixin speed-burst($color: c.$ink, $alpha: 0.14, $hole: 16%, $edge: 62%, $from: 0deg) {
     background: repeating-conic-gradient(from $from, rgba($color, $alpha) 0deg 0.45deg, transparent 0.45deg 2.6deg);
     -webkit-mask-image: radial-gradient(circle at center, transparent $hole, #000 $edge);

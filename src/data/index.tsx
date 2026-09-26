@@ -1,4 +1,11 @@
+// Served from public/ — drop the PDF in as public/cv.pdf. Linked from both the
+// Prologue portrait panel and the Contact panel.
+const cvUrl = "https://drive.google.com/file/d/1xC0sskESQ7J1qU2blHU8AeyuPjeAwF-O/view?usp=drive_link";
+
 const data = {
+    cv: cvUrl,
+    // Rendered newest-first (the section reverses this list), so the CV's
+    // personal projects sit at the end of the array to lead the grid.
     projects: [
         // {
         //   id: 1,
@@ -18,40 +25,31 @@ const data = {
         //   url: "https://github.com/fffffatah/Industryal-An-ERP-System",
         //   hosted: null
         // },
-        {
-            id: 3,
-            title: "e-Bookshelf",
-            description:
-                "A simple social media website for bookworms who want to share all their opinions and reviews of books.",
-            stack: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
-            url: "https://github.com/Atanusaha143/eBookshelf---a-Book-Cataloging-Social-Platform",
-            hosted: null,
-        },
-        {
-            id: 4,
-            title: "Hospital Management System",
-            description:
-                "A desktop application that lets the user keep track of patients and employees in a hospital according to different categories.",
-            stack: ["C# (.NET)", "Oracle SQL"],
-            url: "https://github.com/snigdho611/hospital-management-system",
-            hosted: null,
-        },
-        {
-            id: 5,
-            title: "MERN Super Store",
-            description: "A simple superstore project, with cart, searching, filtering, sorting and pagination",
-            stack: ["MongoDB", "React JS", "Node JS", "Express JS", "SCSS", "TypeScript"],
-            url: "https://github.com/snigdho611/mern-superstore",
-            hosted: null,
-        },
-        {
-            id: 6,
-            title: "Custom Date Picker",
-            description: "A simple datepicker that can take in customized inputs depending on the parameters provided.",
-            stack: ["React JS", "SCSS", "TypeScript"],
-            url: null,
-            hosted: "https://custom-react-datepicker-yfku.vercel.app/",
-        },
+        // {
+        //     id: 3,
+        //     title: "e-Bookshelf",
+        //     description:
+        //         "A simple social media website for bookworms who want to share all their opinions and reviews of books.",
+        //     stack: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
+        //     url: "https://github.com/Atanusaha143/eBookshelf---a-Book-Cataloging-Social-Platform",
+        //     hosted: null,
+        // },
+        // {
+        //     id: 5,
+        //     title: "MERN Super Store",
+        //     description: "A simple superstore project, with cart, searching, filtering, sorting and pagination",
+        //     stack: ["MongoDB", "React JS", "Node JS", "Express JS", "SCSS", "TypeScript"],
+        //     url: "https://github.com/snigdho611/mern-superstore",
+        //     hosted: null,
+        // },
+        // {
+        //     id: 6,
+        //     title: "Custom Date Picker",
+        //     description: "A simple datepicker that can take in customized inputs depending on the parameters provided.",
+        //     stack: ["React JS", "SCSS", "TypeScript"],
+        //     url: null,
+        //     hosted: "https://custom-react-datepicker-yfku.vercel.app/",
+        // },
         {
             id: 7,
             title: "Drum Machine",
@@ -69,97 +67,166 @@ const data = {
             url: null,
             hosted: "https://react-type-speed.vercel.app",
         },
+        {
+            id: 4,
+            title: "Hospital Ward Management System",
+            description:
+                "A desktop app for running hospital wards, with a C# .NET GUI over an Oracle database and PL/SQL for the advanced queries. Built for a university Advanced Database Management course. 14 stars on GitHub.",
+            stack: ["C# (.NET)", "Oracle SQL", "PL/SQL"],
+            url: "https://github.com/snigdho611/hospital-management-system",
+            hosted: null,
+        },
+        {
+            id: 9,
+            title: "Full Stack Setup Template",
+            description:
+                "A boilerplate that brings up a client, server and database for a full-stack project in Docker containers. 23 stars on GitHub.",
+            stack: ["React JS", "Express JS", "PostgreSQL", "MongoDB", "Docker"],
+            url: "https://github.com/snigdho611/docker-compose-react-nodejs-postgres",
+            hosted: null,
+        },
+        {
+            id: 10,
+            title: "E-Commerce Platform",
+            description:
+                "A multi-vendor e-commerce platform with separate admin and customer interfaces, analytics and inventory management.",
+            stack: ["Spring Boot", "PostgreSQL", "Flutter"],
+            url: null,
+            hosted: null,
+        },
+        {
+            id: 11,
+            title: "Expense Tracker Application",
+            description:
+                "An Android and iOS app for personal budget management, with report generation, data import/export and spending analytics.",
+            stack: ["Flutter", "SQL"],
+            url: null,
+            hosted: null,
+        },
     ],
+    // One entry per employer (one tab each); a promotion adds a role, newest first.
     experience: [
         {
             id: 1,
-            company: "BJIT",
-            title: "Software Engineer (Web)",
-            timeStart: "Mar '22",
-            timeEnd: null,
+            company: "BJIT Ltd",
             url: "https://bjitgroup.com/",
-            works: [
-                "Worked on the front end and server side for an Online Gaming System. Worked with various modules including user management, transactions, score management, payment gateways and pub/sub notification system.",
-                "Worked on the front end for an Administrative Panel for a client, focusing on modules such as user management, notification management and device management for a separate service of the same client.",
-                "Provided training to new recruits for the MERN Stack as an Instructor. Taught how to implement REST API with optimized database queries and service-repository REST API architecture.",
-                "Worked on the front end for a Product Management Platform for a client. Modules such as product management, transaction management, history management and translations were implemented.",
-            ],
-            stack: [
-                "React JS",
-                "TypeScript",
-                "Material UI",
-                "Redux Toolkit",
-                "Node JS",
-                "Express JS",
-                "PostgreSQL",
-                "Python",
-                "RabbitMQ",
-                "Docker",
-            ],
-            projects: [
+            roles: [
                 {
-                    title: "Administrative Panel",
-                    description:
-                        "The project focused on user management and notification management for another product or service of the same client.",
-                    stack: ["React JS", "TypeScript", "Material UI", "Redux Toolkit", "RTK Query", "Google Auth"],
-                    role: "Front End Developer",
+                    title: "Senior Software Engineer",
+                    timeStart: "Jul '25",
+                    timeEnd: null,
+                    works: [
+                        {
+                            label: "Gaming Platform (Belgium)",
+                            text: "Architected and deployed 15+ Node.js and PostgreSQL microservices on Google Cloud Platform with Docker, handling high-volume transactional gaming data and enabling real-time analytics. Also maintained the React client.",
+                        },
+                        {
+                            label: "Retail E-Commerce Platform (Japan)",
+                            text: "Extended an authentication system serving millions of users to support phone-based verification on a Symfony (EC-Cube) platform, and optimized SQL queries and payment gateway logic to keep it stable under high traffic. Built a product colour swatch system with variant-level lowest-price logic that holds during sales, and migrated 15M rows to Snowflake with batch processing.",
+                        },
+                        {
+                            label: "AI Investor Relations Tool (Japan)",
+                            text: "Built a FastAPI service on the OpenAI API that transcribes investor meeting audio and generates formatted minutes as PDF/DOC documents; later migrated its data layer from CosmosDB to PostgreSQL.",
+                        },
+                        {
+                            label: "Inventory Management System (Japan)",
+                            text: "Migrated a legacy PowerBuilder desktop application to a web application built with React (Ant Design, Vite) and Spring Boot, moving the database from Oracle to MySQL.",
+                        },
+                    ],
+                    stack: [
+                        "Node JS",
+                        "PostgreSQL",
+                        "GCP",
+                        "Docker",
+                        "React JS",
+                        "PHP",
+                        "Symfony (EC-Cube)",
+                        "Vue JS",
+                        "Snowflake",
+                        "FastAPI",
+                        "OpenAI API",
+                        "Spring Boot",
+                        "Ant Design",
+                        "MySQL",
+                    ],
                 },
                 {
-                    title: "Product Management Panel",
-                    description:
-                        "The project focused on device management, transaction management, history management and notification management for certain services and functionality of the client.",
-                    stack: ["React JS", "TypeScript", "Material UI", "Redux Toolkit"],
-                    role: "Front End Developer",
-                },
-                {
-                    title: "Online Gaming System",
-                    description:
-                        "Needed to work with various modules including user management, transactions, score management, payment gateways and pub/sub notification system. The enter system was a group of microservices that were interconnected to one another",
-                    stack: ["React JS", "TypeScript", "Node JS", "Express JS", "PostgreSQL", "RabbitMQ", "Docker"],
-                    role: "Full Stack Developer",
+                    title: "Software Engineer (Web)",
+                    timeStart: "Apr '22",
+                    timeEnd: "Jun '25",
+                    works: [
+                        {
+                            label: "Game Integration Platform (Netherlands)",
+                            text: "Built and maintained GitLab CI/CD pipelines to automate deployments on AWS, and integrated payment, ad and analytics SDKs for browser and mobile platforms.",
+                        },
+                        {
+                            label: "Device Management System (Japan)",
+                            text: "Developed a global platform handling translation device data across 8 countries with Spring Boot and React, engineering REST APIs to sync real-time telemetry between mobile and web clients.",
+                        },
+                        {
+                            label: "Marketing Data Platform (Netherlands)",
+                            text: "Optimized client-side performance in React and TypeScript, cutting page load times by 25% and reducing the share of lagging requests from ~20% to ~1%.",
+                        },
+                        {
+                            label: "Data Analytics System (Japan)",
+                            text: "Converted a legacy .NET desktop app to a web application built with Django and Flask, implementing statistical reporting (regression, correlation) and customer behaviour tracking.",
+                        },
+                        {
+                            label: "Leadership",
+                            text: "Mentored new hires in backend development, teaching REST API design with Node.js and MongoDB.",
+                        },
+                    ],
+                    stack: [
+                        "React JS",
+                        "TypeScript",
+                        "Java",
+                        "Spring Boot",
+                        "Python",
+                        "Django",
+                        "Flask",
+                        "Node JS",
+                        "MongoDB",
+                        "AWS",
+                        "GitLab CI/CD",
+                    ],
                 },
             ],
         },
         {
             id: 2,
             company: "Sohopathi",
-            title: "Software Engineer (Full Stack)",
-            timeStart: "Sep '21",
-            timeEnd: "Mar '22",
             url: "https://sohopathi.io/",
-            stack: ["React JS", "TypeScript", "SCSS", "Node JS", "Express JS", "MongoDB"],
-            works: [
-                "Created E-Learning Platform for the company web application with various designs and functionality, including payment gateway.",
-                "Created robust REST API in order to allow users to complete transactions with the web and the mobile applications.",
-            ],
-            projects: [
+            roles: [
                 {
-                    title: "E-learning Platform",
-                    description:
-                        "Created maintainable UI for the company web application with various designs and functionality, including payment gateway. Additionally, also created robust REST API in order to allow users to complete transactions with the web and the mobile applications.",
-                    stack: ["React JS", "TypeScript", "SCSS", "Node JS", "Express JS", "MongoDB"],
-                    role: "Full Stack Developer",
+                    title: "Jr. Software Engineer (Full Stack)",
+                    timeStart: "Sep '21",
+                    timeEnd: "Mar '22",
+                    works: [
+                        {
+                            label: "Ed-Tech Learning Platform (Bangladesh)",
+                            text: "Built a platform for students and teachers with secure Vimeo-integrated video streaming, analytics modules and consistent data across learning modules.",
+                        },
+                    ],
+                    stack: ["React JS", "TypeScript", "Node JS", "AWS", "Vimeo"],
                 },
             ],
         },
         {
             id: 3,
             company: "Deepchainlabs",
-            title: "Software Engineer Intern",
-            timeStart: "Jul '21",
-            timeEnd: "Sep '22",
             url: "https://www.deepchainlabs.com/",
-            stack: ["Laravel", "MySQL"],
-            works: [
-                "Worked on an Online Medical Platform. Maintained modules that worked with user, client, transactions and sessions for the system. Wrote API as per requirement for proper integration with UI.",
-            ],
-            projects: [
+            roles: [
                 {
-                    title: "Online Medical Platform",
-                    description:
-                        "Maintained modules that worked with user, client, transactions and sessions for the system. Wrote API as per requirement for proper integration with UI.",
+                    title: "Software Engineer Intern",
+                    timeStart: "Jul '21",
+                    timeEnd: "Sep '22",
+                    works: [
+                        {
+                            label: "Online Medical Platform",
+                            text: "Maintained modules that worked with user, client, transactions and sessions for the system. Wrote API as per requirement for proper integration with UI.",
+                        },
+                    ],
                     stack: ["Laravel", "MySQL"],
-                    role: "Software Engineer Intern",
                 },
             ],
         },
@@ -255,6 +322,29 @@ const data = {
             label: "Discord",
             ja: "ディスコード",
             url: "https://discordapp.com/users/snigdho611#4850",
+        },
+        {
+            id: 5,
+            image: (
+                <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                >
+                    <path d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+                    <path d="M14 2v6h6" />
+                    <path d="M8 13h8M8 17h5" />
+                </svg>
+            ),
+            label: "CV",
+            ja: "履歴書",
+            url: cvUrl,
         },
     ],
     // Grouped by discipline rather than listed flat — the section prints them
