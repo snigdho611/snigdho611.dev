@@ -38,8 +38,11 @@
             background: c.$paper-white;
             border: 3px solid c.$ink;
             box-shadow: 4px 4px 0 rgba(c.$ink, 0.85);
-            transition: transform 0.2s ease, box-shadow 0.2s ease,
-                background-color 0.2s ease, color 0.2s ease;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background-color 0.2s ease,
+                color 0.2s ease;
 
             &_no {
                 font-family: c.$font-sfx;
@@ -110,7 +113,7 @@
             position: absolute;
             inset: 0;
             pointer-events: none;
-            opacity: 0.55;
+            opacity: 0.35;
             @include m.halftone-fade(c.$cyan, 0.55, 225deg);
         }
 
